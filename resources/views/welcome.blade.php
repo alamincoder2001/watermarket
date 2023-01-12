@@ -2,869 +2,4403 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="https://demo2.posthemes.com/pos_benito/img/favicon.ico?1545363180" />
-    <link rel="shortcut icon" type="image/x-icon" href="https://demo2.posthemes.com/pos_benito/img/favicon.ico?1545363180" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benito - Mega Store Responsive Bootstrap 5 Template</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend')}}/assets/images/favicon.ico" />
 
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700,900" rel="stylesheet" />
-    <link rel="stylesheet" href="{{asset('frontend')}}/themes/theme_benito1/assets/css/theme.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{asset('frontend')}}/modules/posslideshows/css/nivo-slider/nivo-slider.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{asset('frontend')}}/modules/posinstagramblock/css/jquery.fancybox.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{asset('frontend')}}/modules/possearchproducts/bootstrap-select.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{asset('frontend')}}/modules/blockwishlist/blockwishlist.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{asset('frontend')}}/js/jquery/ui/themes/base/minified/jquery-ui.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{asset('frontend')}}/js/jquery/ui/themes/base/minified/jquery.ui.theme.min.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{asset('frontend')}}/modules/productcomments/productcomments.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{asset('frontend')}}/modules/xipblog/css/xipblog.css" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{asset('frontend')}}/themes/theme_benito1/assets/css/custom.css" type="text/css" media="all" />
-    <script src="{{asset('frontend')}}/ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/vendor/ionicons.css" />
+    <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/vendor/linearicons-free.css" />
+    <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/vendor/font-awesome.css" />
+    <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/plugins/animate.min.css" />
+    <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/plugins/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{asset('frontend')}}/assets/css/style.css" />
+
 </head>
 
 <body>
-    <main id="app">
-        <header id="header">
-            <nav class="header-nav">
-                <div class="conten-box">
-                    <div class="language-selector-wrapper selector-block">
-                        <span id="language-selector-label" class="text">
-                            <img src="img/l/1.jpg" alt="" width="16" height="11" />
-                            Language:
-                        </span>
-                        <div class="language-selector localiz_block dropdown js-dropdown">
-                            <button data-toggle="dropdown" class="btn-unstyle" aria-haspopup="true" aria-expanded="false" aria-label="Language dropdown">
-                                <span class="expand-more">English</span>
-                                <i class="fa fa-angle-down"></i>
-                            </button>
+    <!-- Modal -->
+    <div class="modal fade offcanvas-modal" id="exampleModal">
+        <div class="modal-dialog offcanvas-dialog">
+            <div class="modal-content">
+                <div class="modal-header offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
-                            <ul class="dropdown-menu">
-                                <li class="current">
-                                    <a href="index.html" class="dropdown-item"><img src="img/l/1.jpg" alt="" width="16" height="11" />English</a>
+                <form action="#" class="offcanvas-form">
+                    <div class="input-group border">
+                        <div class="input-group-text">
+                            <select class="form-select d-none d-xl-block" aria-label="Default select example">
+                                <option selected="">All categories</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <input type="text" class="form-control border-0" placeholder="Enter your search key ... " />
+                        <div class="input-group-text">
+                            <button class="btn-search btn btn-hover-primary" type="submit">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- offcanvas-mobile-menu start -->
+
+                <nav id="offcanvasNav" class="offcanvas-menu">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">Home</a>
+                            <!-- home sub menu -->
+                            <ul>
+                                <li><a href="index.html">Home 1</a></li>
+                                <li><a href="index-2.html">Home 2</a></li>
+                                <li><a href="index-3.html">Home 3</a></li>
+                                <li><a href="index-4.html">Home 4</a></li>
+                            </ul>
+                            <!-- home sub menu end-->
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">shop</a>
+
+                            <!-- shop mega menu -->
+
+                            <ul>
+                                <li>
+                                    <a href="#">Shop Grid</a>
+                                    <ul>
+                                        <li>
+                                            <a href="shop-grid-5-column.html">Shop Grid 5 Column</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid-6-column.html">Shop Grid 6 Column</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid-left-sidebar.html">Shop Grid Left Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid-right-sidebar.html">Shop Grid Right Sidebar</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
-                                    <a href="https://demo2.posthemes.com/pos_benito/fr/" class="dropdown-item"><img src="img/l/2.jpg" alt="" width="16" height="11" />Français</a>
+                                    <a href="#">Shop List</a>
+                                    <ul>
+                                        <li><a href="shop-grid-list.html">Shop List</a></li>
+                                        <li>
+                                            <a href="shop-grid-list-left-sidebar.html">Shop List Left Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a href="shop-grid-list-right-sidebar.html">Shop List Right Sidebar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Shop Single</a>
+                                    <ul>
+                                        <li><a href="single-product.html">Shop Single</a></li>
+                                        <li>
+                                            <a href="single-product-configurable.html">Shop Variable</a>
+                                        </li>
+                                        <li>
+                                            <a href="single-product-affiliate.html">Shop Affiliate</a>
+                                        </li>
+                                        <li><a href="single-product-group.html">Shop Group</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">other pages</a>
+                                    <ul>
+                                        <li><a href="about-us.html">About Page</a></li>
+                                        <li><a href="cart.html">Cart Page</a></li>
+                                        <li><a href="checkout.html">Checkout Page</a></li>
+                                        <li><a href="compare.html">Compare Page</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- shop mega menu end-->
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">pages</a>
+                            <!-- pages sub menu -->
+                            <ul>
+                                <li><a href="about-us.html">About Page</a></li>
+                                <li><a href="cart.html">Cart Page</a></li>
+                                <li><a href="checkout.html">Checkout Page</a></li>
+                                <li><a href="compare.html">Compare Page</a></li>
+                                <li><a href="login.html">Login &amp; Register Page</a></li>
+                                <li><a href="myaccount.html">Account Page</a></li>
+                                <li><a href="wishlist.html">Wishlist Page</a></li>
+                            </ul>
+                            <!-- pages sub menu end-->
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Blog</a>
+                            <!-- blog sub menu -->
+                            <ul>
+                                <li>
+                                    <a href="#">Blog Grid</a>
+                                    <ul>
+                                        <li>
+                                            <a href="blog-grid-5-column.html">Blog Grid 5 column</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-grid-6-column.html">Blog Grid 6 column</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-grid-left-sidebar.html">Blog Grid Left Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-grid-right-sidebar.html">Blog Grid Right Sidebar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Blog List</a>
+                                    <ul>
+                                        <li>
+                                            <a href="blog-list-left-sidebar.html">Blog List Left Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-list-right-sidebar.html">Blog List Right Sidebar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">Blog details</a>
+                                    <ul>
+                                        <li>
+                                            <a href="blog-details-left-sidebar.html">Blog details Left Sidebar</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog-details-right-sidebar.html">Blog details Right Sidbar</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- blog sub menu end-->
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="offcanvas-social">
+                        <ul>
+                            <li>
+                                <a href="#"><i class="ion-social-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="ion-social-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="ion-social-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="ion-social-google"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="ion-social-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- offcanvas-mobile-menu end -->
+                <div class="header-top">
+                    <p>
+                        Email:
+                        <a class="header-top-link" href="https://hasthemes.com/">hastech@gmail.com</a>
+                    </p>
+                    <p>Free Shipping for all Order of $99</p>
+
+                    <ul id="offcanvas-menu2" class="blog-ctry-menu blog-ctry-menu2">
+                        <li>
+                            <a href="javascript:void(0)">My Account</a>
+                            <ul class="category-sub-menu">
+                                <li>
+                                    <a href="account.html">account</a>
+                                </li>
+                                <li>
+                                    <a href="checkout.html">Checkout</a>
+                                </li>
+                                <li>
+                                    <a href="login.html">Sign in</a>
+                                </li>
+                                <li>
+                                    <a href="wishlist.html">Wishlist</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript:void(0)">currency: USD $</a>
+                            <ul class="category-sub-menu">
+                                <li><a href="#">EUR €</a></li>
+                                <li><a href="#">USD $</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"><img class="me-1" src="{{asset('frontend')}}/assets/images/flag/1.jpg" alt="img" />English</a>
+                            <ul class="category-sub-menu">
+                                <li>
+                                    <a href="#"><img src="{{asset('frontend')}}/assets/images/flag/1.jpg" alt="flags" />language:
+                                        English</a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="{{asset('frontend')}}/assets/images/flag/2.jpg" alt="flags" />
+                                        Français</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header  Start -->
+    <header>
+        <div class="header-top bg-primary d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <p>Email: <a class="header-top-link" href="https://hasthemes.com/">hastech@gmail.com</a></p>
+                        <p>Free Shipping for all Order of $99</p>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <div class="header-top-nav">
+                            <ul class="d-flex flex-wrap justify-content-center align-items-center justify-content-sm-end">
+                                <li class="dropdown top-nav-item"><a class="top-nav-link" href="#" role="button" id="account" data-bs-toggle="dropdown">My Account <i class="ion-ios-arrow-down"></i></a>
+
+                                    <!-- dropdown-menu start -->
+                                    <ul class="dropdown-menu" aria-labelledby="account">
+                                        <li><a class="dropdown-item" href="account.html">My account</a></li>
+                                        <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+                                        <li><a class="dropdown-item" href="login.html">Sign in</a></li>
+                                        <li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
+                                    </ul>
+                                    <!-- dropdown-menu start -->
+                                </li>
+                                <li class="dropdown top-nav-item"><span></span><a class="top-nav-link" role="button" id="currency" data-bs-toggle="dropdown" href="#">USD $<i class="ion-ios-arrow-down"></i></a>
+
+                                    <!-- dropdown-menu start -->
+                                    <ul class="dropdown-menu" aria-labelledby="currency">
+                                        <li><a class="dropdown-item" href="#">EUR €</a></li>
+                                        <li><a class="dropdown-item" href="#">USD $</a></li>
+                                    </ul>
+                                    <!-- dropdown-menu start -->
+
+                                </li>
+                                <li class="dropdown top-nav-item"><img class="me-1" src="{{asset('frontend')}}/assets/images/flag/1.jpg" alt="img"> <span></span><a class="top-nav-link" role="button" id="language" data-bs-toggle="dropdown" href="#">English<i class="ion-ios-arrow-down"></i></a>
+                                    <!-- dropdown-menu start -->
+                                    <ul class="dropdown-menu" aria-labelledby="language">
+                                        <li><a class="dropdown-item" href="#"><img src="{{asset('frontend')}}/assets/images/flag/1.jpg" alt="flags"> English</a></li>
+                                        <li><a class="dropdown-item" href="#"><img src="{{asset('frontend')}}/assets/images/flag/2.jpg" alt="flags"> Français</a></li>
+                                    </ul>
+                                    <!-- dropdown-menu start -->
                                 </li>
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
 
-                    <div class="currency-selector-wrapper selector-block">
-                        <span id="currency-selector-label" class="text">Currency:</span>
-                        <div class="currency-selector localiz_block dropdown js-dropdown">
-                            <button data-target="#" data-toggle="dropdown" class="btn-unstyle" aria-haspopup="true" aria-expanded="false" aria-label="Currency dropdown">
-                                <span class="expand-more _gray-darker">USD $</span>
-                                <i class="fa fa-angle-down"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a title="Euro" rel="nofollow" href="index6edc.html?SubmitCurrency=1&amp;id_currency=2" class="dropdown-item">EUR €</a>
-                                </li>
-                                <li class="current">
-                                    <a title="US Dollar" rel="nofollow" href="indexe3c8.html?SubmitCurrency=1&amp;id_currency=1" class="dropdown-item">USD $</a>
-                                </li>
-                            </ul>
+
+        <div id="active-sticky" class="header-section">
+            <div class="container position-relative">
+                <div class="row align-items-center">
+                    <!-- Header Logo Start -->
+                    <div class="col-6 col-md-3 col-md-3 col-lg-3">
+                        <div class="header-logo">
+                            <a href="index.html"><img src="{{asset('frontend')}}/assets/images/logo/logo.png" alt="Site Logo" /></a>
                         </div>
                     </div>
-                    <div class="static_nav">
-                        <p class="email"><span>Email:</span> support@posthemes.com</p>
-                        <p class="free">Free Shipping for all Order of $99</p>
-                    </div>
+                    <!-- Header Logo End -->
 
-                    <div class="setting_top dropdown js-dropdown">
-                        <span class="icon ion-android-settings" data-toggle="dropdown">
-                            My Account</span>
-                        <div class="content-setting dropdown-menu">
-                            <div class="user-info-block">
-                                <a href="loginfd9a.html" rel="nofollow">My account</a>
-                                <a href="cart75f4.html?action=show">Checkout</a>
+                    <!-- Header Menu Start -->
+                    <div class="col-md-6 col-lg-4 d-none d-lg-block">
+                        <form action="#">
+                            <div class="input-group border">
+                                <div class="input-group-text">
+                                    <select class="form-select d-none d-xl-block" aria-label="Default select example">
+                                        <option value="0">All categories</option>
+                                        <option value="10">Cookware</option>
+                                        <option value="19">- - Baking &amp; Pastry Mats</option>
+                                        <option value="21">- - - - Baking Cups</option>
+                                        <option value="22">- - - - Baking Dishes</option>
+                                        <option value="23">- - - - Baking Mats</option>
+                                        <option value="24">- - - - Pastry Boards</option>
+                                        <option value="25">- - - - Pastry Mats</option>
+                                        <option value="20">- - Chocolate Moulds</option>
+                                        <option value="26">- - - - Decorating Pens</option>
+                                        <option value="27">- - - - Decorating Sets</option>
+                                        <option value="28">- - - - Decorating Tips</option>
+                                        <option value="29">- - - - Sweetly Does It</option>
+                                        <option value="30">- - - - Aprons</option>
+                                        <option value="72">- - - - Electric Mixers</option>
+                                        <option value="11">Appliances</option>
+                                        <option value="31">- - Chopping Boards</option>
+                                        <option value="33">- - - - Aprons</option>
+                                        <option value="34">- - - - Baking Cups</option>
+                                        <option value="35">- - - - Baking Dishes</option>
+                                        <option value="36">- - - - Coffee</option>
+                                        <option value="37">- - - - Coffee</option>
+                                        <option value="38">- - - - Tea Accessories</option>
+                                        <option value="32">- - Tea Towels</option>
+                                        <option value="39">- - - - Baking Cups</option>
+                                        <option value="40">- - - - Baking Moulds</option>
+                                        <option value="41">- - - - Bundt Pans</option>
+                                        <option value="42">- - - - Cake Moulds</option>
+                                        <option value="43">- - - - Cake Pans</option>
+                                        <option value="12">Kitchenair</option>
+                                        <option value="44">- - Knives</option>
+                                        <option value="46">- - - - Baking Dishes</option>
+                                        <option value="47">- - - - Ice Cream</option>
+                                        <option value="48">- - - - Mandoline Slicers</option>
+                                        <option value="49">- - - - Slushy Makers</option>
+                                        <option value="45">- - Pans</option>
+                                        <option value="50">- - - - Decorating Tips</option>
+                                        <option value="51">- - - - DecoSpoon</option>
+                                        <option value="52">- - - - Rasps</option>
+                                        <option value="53">- - - - Shavers</option>
+                                        <option value="54">- - - - Sweetly Does It</option>
+                                        <option value="13">KitchenAid Artisan</option>
+                                        <option value="55">- - Appliances</option>
+                                        <option value="57">- - - - DecoSpoon</option>
+                                        <option value="58">- - - - Scales1</option>
+                                        <option value="59">- - - - Sweetly Does It</option>
+                                        <option value="60">- - - - Timers</option>
+                                        <option value="56">- - Tea Towels</option>
+                                        <option value="61">- - - - Cleaning Supplies</option>
+                                        <option value="62">- - - - Cutting</option>
+                                        <option value="63">- - - - Cutting1</option>
+                                        <option value="64">- - - - Decorating Sets</option>
+                                        <option value="14">Ceramic Artisan</option>
+                                        <option value="68">- - Pots</option>
+                                        <option value="69">- - Pans</option>
+                                        <option value="70">- - Living</option>
+                                        <option value="15">Appliances1</option>
+                                        <option value="16">Bakeware</option>
+                                        <option value="17">Knives</option>
+                                        <option value="18">Tableware</option>
+                                        <option value="71">DIY</option>
+                                        <option value="74">Baking Cups</option>
+                                        <option value="75">Decorating Pens</option>
+                                    </select>
 
-                                <a href="loginfd9a.html" title="Log in to your customer account" rel="nofollow">
-                                    <span class="login">Sign in</span>
-                                </a>
+                                </div>
+                                <input type="text" class="form-control border-0" placeholder="Enter your search key ... " />
+                                <div class="input-group-text">
+                                    <button class="btn-search btn btn-hover-primary" type="submit">
+                                        Search
+                                    </button>
+                                </div>
                             </div>
-                            <div id="_desktop_wishtlist">
-                                <div class="wishtlist_top">
-                                    <a class="" href="login76cc.html">
-                                        <span class="txt_wishlist">Wishlist</span>
-                                        <span class="cart-wishlist-number">0</span>
-                                    </a>
+                        </form>
+                    </div>
+                    <div class="col-6 col-md-9 col-lg-5">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <nav class="main-menu d-none d-lg-inline-block">
+                                <ul class="d-flex">
+                                    <li class="main-menu-item">
+                                        <a class="main-menu-link" href="index.html">Home</a>
+                                        <!-- home sub menu -->
+                                        <ul class="sub-menu">
+                                            <li><a class="sub-menu-link" href="index.html">Home 1</a></li>
+                                            <li><a class="sub-menu-link" href="index-2.html">Home 2</a></li>
+                                            <li><a class="sub-menu-link" href="index-3.html">Home 3</a></li>
+                                            <li><a class="sub-menu-link" href="index-4.html">Home 4</a></li>
+                                        </ul>
+                                        <!-- home sub menu end-->
+                                    </li>
+                                    <li class="position-static main-menu-item">
+                                        <a class="main-menu-link" href="#">shop</a>
+
+                                        <!-- shop mega menu -->
+                                        <ul class="mega-menu row">
+                                            <li class="col-3">
+                                                <ul>
+                                                    <li class="mega-menu-title"><a href="#">Shop Grid</a></li>
+                                                    <li><a href="shop-grid-5-column.html">Shop Grid 5 Column</a></li>
+                                                    <li><a href="shop-grid-6-column.html">Shop Grid 6 Column</a></li>
+                                                    <li><a href="shop-grid-left-sidebar.html">Shop Grid Left Sidebar</a></li>
+                                                    <li><a href="shop-grid-right-sidebar.html">Shop Grid Right Sidebar</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-3">
+                                                <ul>
+                                                    <li class="mega-menu-title"><a href="#">Shop List</a></li>
+                                                    <li><a href="shop-grid-list.html">Shop List</a></li>
+                                                    <li><a href="shop-grid-list-left-sidebar.html">Shop List Left Sidebar</a>
+                                                    </li>
+                                                    <li><a href="shop-grid-list-right-sidebar.html">Shop List Right Sidebar</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-3">
+                                                <ul>
+                                                    <li class="mega-menu-title"><a href="#">Shop Single</a></li>
+                                                    <li><a href="single-product.html">Shop Single</a></li>
+                                                    <li><a href="single-product-configurable.html">Shop Variable</a></li>
+                                                    <li><a href="single-product-affiliate.html">Shop Affiliate</a></li>
+                                                    <li><a href="single-product-group.html">Shop Group</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-3">
+                                                <ul>
+                                                    <li class="mega-menu-title"><a href="#">other pages</a></li>
+                                                    <li><a href="about-us.html">About Page</a></li>
+                                                    <li><a href="cart.html">Cart Page</a></li>
+                                                    <li><a href="checkout.html">Checkout Page</a></li>
+                                                    <li><a href="compare.html">Compare Page</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="col-4 mt-4">
+                                                <a href="single-product.html" class="zoom-in"><img src="{{asset('frontend')}}/assets/images/mega-menu/1.jpg" alt="img"></a>
+                                            </li>
+                                            <li class="col-4 mt-4">
+                                                <a href="single-product.html" class="zoom-in"><img src="{{asset('frontend')}}/assets/images/mega-menu/2.jpg" alt="img"></a>
+                                            </li>
+                                            <li class="col-4 mt-4">
+                                                <a href="single-product.html" class="zoom-in"><img src="{{asset('frontend')}}/assets/images/mega-menu/3.jpg" alt="img"></a>
+                                            </li>
+                                        </ul>
+                                        <!-- shop mega menu end-->
+                                    </li>
+                                    <li class="main-menu-item">
+                                        <a class="main-menu-link" href="#">pages</a>
+                                        <!-- pages sub menu -->
+                                        <ul class="sub-menu">
+                                            <li><a class="sub-menu-link" href="about-us.html">About Page</a></li>
+                                            <li><a class="sub-menu-link" href="cart.html">Cart Page</a></li>
+                                            <li><a class="sub-menu-link" href="checkout.html">Checkout Page</a></li>
+                                            <li><a class="sub-menu-link" href="compare.html">Compare Page</a></li>
+                                            <li><a class="sub-menu-link" href="login.html">Login &amp; Register Page</a></li>
+                                            <li><a class="sub-menu-link" href="myaccount.html">Account Page</a></li>
+                                            <li><a class="sub-menu-link" href="wishlist.html">Wishlist Page</a></li>
+                                        </ul>
+                                        <!-- pages sub menu end-->
+                                    </li>
+                                    <li class="main-menu-item">
+                                        <a class="main-menu-link" href="#">Blog</a>
+                                        <!-- blog sub menu -->
+                                        <ul class="sub-menu blog-sub-menu">
+                                            <li>
+                                                <a class="sub-menu-link" href="#">Blog Grid</a>
+                                                <ul class="sub-menu">
+                                                    <li><a class="sub-menu-link" href="blog-grid-5-column.html">Blog Grid 5 column</a></li>
+                                                    <li><a class="sub-menu-link" href="blog-grid-6-column.html">Blog Grid 6 column</a></li>
+                                                    <li><a class="sub-menu-link" href="blog-grid-left-sidebar.html">Blog Grid Left Sidebar</a></li>
+                                                    <li><a class="sub-menu-link" href="blog-grid-right-sidebar.html">Blog Grid Right Sidebar</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a class="sub-menu-link" href="#">Blog List</a>
+                                                <ul class="sub-menu">
+                                                    <li><a class="sub-menu-link" href="blog-list-left-sidebar.html">Blog List Left Sidebar</a></li>
+                                                    <li><a class="sub-menu-link" href="blog-list-right-sidebar.html">Blog List Right Sidebar</a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a class="sub-menu-link" href="#">Blog details</a>
+                                                <ul class="sub-menu">
+                                                    <li><a class="sub-menu-link" href="blog-details-left-sidebar.html">Blog details Left Sidebar</a>
+                                                    </li>
+                                                    <li><a class="sub-menu-link" href="blog-details-right-sidebar.html">Blog details Right Sidbar</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <!-- blog sub menu end-->
+                                    </li>
+                                    <li class="main-menu-item">
+                                        <a class="main-menu-link" href="contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div class="block-cart-btn-wrapp">
+                                    <button class="cart-action">
+                                        <span class="lnr lnr-cart"></span>
+                                        <span class="badge bg-dark">2</span>
+                                    </button>
+
+                                    <div class="checkout-cart">
+                                        <ul class="checkout-scroll">
+                                            <li class="checkout-cart-list">
+                                                <div class="checkout-img">
+                                                    <img class="product-image" src="{{asset('frontend')}}/assets/images/mini-cart/1.jpg" alt="img" />
+                                                    <span class="product-quantity">1x</span>
+                                                </div>
+                                                <div class="checkout-block">
+                                                    <a class="product-name" href="#">Leaf & Bean Electric Milk Frother & Warmets</a>
+                                                    <span class="product-price">$75.10</span>
+                                                    <a class="remove-cart" href="#">
+                                                        <i class="fa fa-remove pull-xs-left"></i>
+                                                    </a>
+                                                    <div class="product-size">
+                                                        <span>Size: S</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="checkout-cart-list">
+                                                <div class="checkout-img">
+                                                    <img class="product-image" src="{{asset('frontend')}}/assets/images/mini-cart/2.jpg" alt="img" />
+                                                    <span class="product-quantity">1x</span>
+                                                </div>
+                                                <div class="checkout-block">
+                                                    <a href="#" class="product-name">Le Creuset Signature Cast Iron Round Casserole</a>
+                                                    <span class="product-price">$70.90</span>
+                                                    <a class="remove-cart" href="#">
+                                                        <i class="fa fa-remove pull-xs-left"></i>
+                                                    </a>
+                                                    <div class="product-size">
+                                                        <span>Size: S</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="list-group checkout-sub-total">
+                                            <li class="list-group-item">
+                                                <span>Subtotal</span>
+                                                <span>$146.00</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span>shipping</span>
+                                                <span>$7.00</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span>Taxes</span>
+                                                <span>$0.00</span>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <span>Total</span>
+                                                <span>$153.00</span>
+                                            </li>
+                                        </ul>
+
+                                        <!-- checkout-action button start -->
+                                        <div class="checkout-action">
+                                            <a href="checkout.html" class="btn btn-lg btn-primary d-block">Checkout</a>
+                                        </div>
+                                        <!-- checkout-action button end -->
+                                    </div>
+
+                                </div>
+                                <button class="toggle" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    <span class="icon-top"></span>
+                                    <span class="icon-middle"></span>
+                                    <span class="icon-bottom"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Header Menu End -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header  End -->
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="mobile-category-nav d-lg-none pt-4">
+                    <!--=======  category menu  =======-->
+                    <div class="hero-side-category">
+                        <!-- Category Toggle Wrap -->
+                        <div class="category-toggle-wrap">
+                            <!-- Category Toggle -->
+                            <button class="more-btn">
+                                <span class="lnr lnr-text-align-left"></span> All Categories
+                            </button>
+                        </div>
+
+                        <!-- Category Menu -->
+                        <nav class="category-menu">
+                            <ul>
+                                <li class="menu-item-has-children menu-item-has-children-1">
+                                    <a href="#">Accessories &amp; Parts<i class="ion-ios-arrow-down"></i></a>
+                                    <!-- category submenu -->
+                                    <ul class="category-mega-menu category-mega-menu-1">
+                                        <li><a href="#">Cables &amp; Adapters</a></li>
+                                        <li><a href="#">Batteries</a></li>
+                                        <li><a href="#">Chargers</a></li>
+                                        <li><a href="#">Bags &amp; Cases</a></li>
+                                        <li><a href="#">Electronic Cigarettes</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children menu-item-has-children-2">
+                                    <a href="#">Camera &amp; Photo<i class="ion-ios-arrow-down"></i></a>
+                                    <!-- category submenu -->
+                                    <ul class="category-mega-menu category-mega-menu-2">
+                                        <li><a href="#">Digital Cameras</a></li>
+                                        <li><a href="#">Camcorders</a></li>
+                                        <li><a href="#">Camera Drones</a></li>
+                                        <li><a href="#">Action Cameras</a></li>
+                                        <li><a href="#">Photo Studio Supplies</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children menu-item-has-children-3">
+                                    <a href="#">Smart Electronics <i class="ion-ios-arrow-down"></i></a>
+                                    <!-- category submenu -->
+                                    <ul class="category-mega-menu category-mega-menu-3">
+                                        <li><a href="#">Wearable Devices</a></li>
+                                        <li><a href="#">Smart Home Appliances</a></li>
+                                        <li><a href="#">Smart Remote Controls</a></li>
+                                        <li><a href="#">Smart Watches</a></li>
+                                        <li><a href="#">Smart Wristbands</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children menu-item-has-children-4">
+                                    <a href="#">Audio &amp; Video <i class="ion-ios-arrow-down"></i></a>
+                                    <!-- category submenu -->
+                                    <ul class="category-mega-menu category-mega-menu-4">
+                                        <li><a href="#">Televisions</a></li>
+                                        <li><a href="#">TV Receivers</a></li>
+                                        <li><a href="#">Projectors</a></li>
+                                        <li><a href="#">Audio Amplifier Boards</a></li>
+                                        <li><a href="#">TV Sticks</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children menu-item-has-children-5">
+                                    <a href="#">Portable Audio &amp; Video
+                                        <i class="ion-ios-arrow-down"></i></a>
+                                    <!-- category submenu -->
+                                    <ul class="category-mega-menu category-mega-menu-5">
+                                        <li><a href="#">Headphones</a></li>
+                                        <li><a href="#">Speakers</a></li>
+                                        <li><a href="#">MP3 Players</a></li>
+                                        <li><a href="#">VR/AR Devices</a></li>
+                                        <li><a href="#">Microphones</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children menu-item-has-children-6">
+                                    <a href="#">Video Game <i class="ion-ios-arrow-down"></i></a>
+                                    <!-- category submenu -->
+                                    <ul class="category-mega-menu category-mega-menu-6">
+                                        <li><a href="#">Handheld Game Players</a></li>
+                                        <li><a href="#">Game Controllers</a></li>
+                                        <li><a href="#">Joysticks</a></li>
+                                        <li><a href="#">Stickers</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Televisions</a></li>
+                                <li><a href="#">Digital Cameras</a></li>
+                                <li><a href="#">Headphones</a></li>
+                                <li><a href="#">Wearable Devices</a></li>
+                                <li><a href="#">Smart Watches</a></li>
+                                <li><a href="#">Game Controllers</a></li>
+                                <li><a href="#"> Smart Home Appliances</a></li>
+                                <li class="hidden" style="display: none">
+                                    <a href="#">Projectors</a>
+                                </li>
+                                <li>
+                                    <a href="#" id="more-btn"><i class="ion-ios-plus-empty"></i> More Categories</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Hero Slider Start -->
+    <section class="hero-section position-relative">
+        <div class="container">
+            <div class="row mb-n7">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="vertical-menu d-none d-lg-block">
+                        <button class="menu-btn d-flex">
+                            <span class="lnr lnr-text-align-left"></span>Browse categories
+                        </button>
+                        <ul class="vmenu-content">
+                            <li class="menu-item">
+                                <a href="#">Cookware<i class="ion-ios-arrow-right"></i></a>
+                                <ul class="verticale-mega-menu flex-wrap">
+                                    <li>
+                                        <a href="#">
+                                            <strong> Baking & Pastry Mats</strong>
+                                        </a>
+                                        <ul class="submenu-item">
+                                            <li><a href="#">Baking Cups</a></li>
+                                            <li><a href="#">Baking Dishes</a></li>
+                                            <li><a href="#">Baking Mats</a></li>
+                                            <li><a href="#">Pastry Boards</a></li>
+                                            <li><a href="#">Pastry Mats</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span><strong>Chocolate Moulds</strong></span>
+                                        </a>
+                                        <ul class="submenu-item">
+                                            <li><a href="#">Decorating Pens</a></li>
+                                            <li><a href="#">Decorating Sets</a></li>
+                                            <li><a href="#">Decorating Tips</a></li>
+                                            <li><a href="#">Sweetly Does It</a></li>
+                                            <li><a href="#">Aprons</a></li>
+                                            <li><a href="#">Electric Mixers</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!-- sub menu -->
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Appliances<i class="ion-ios-arrow-right"></i></a>
+                                <ul class="verticale-mega-menu flex-wrap">
+                                    <li>
+                                        <a href="#">
+                                            <strong> Baking & Pastry Mats</strong>
+                                        </a>
+                                        <ul class="submenu-item">
+                                            <li><a href="#">Baking Cups</a></li>
+                                            <li><a href="#">Baking Dishes</a></li>
+                                            <li><a href="#">Baking Mats</a></li>
+                                            <li><a href="#">Pastry Boards</a></li>
+                                            <li><a href="#">Pastry Mats</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span><strong>Chocolate Moulds</strong></span>
+                                        </a>
+                                        <ul class="submenu-item">
+                                            <li><a href="#">Decorating Pens</a></li>
+                                            <li><a href="#">Decorating Sets</a></li>
+                                            <li><a href="#">Decorating Tips</a></li>
+                                            <li><a href="#">Sweetly Does It</a></li>
+                                            <li><a href="#">Aprons</a></li>
+                                            <li><a href="#">Electric Mixers</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Kitchenair<i class="ion-ios-arrow-right"></i></a>
+                                <ul class="verticale-mega-menu flex-wrap">
+                                    <li>
+                                        <a href="#">
+                                            <strong> Baking & Pastry Mats</strong>
+                                        </a>
+                                        <ul class="submenu-item">
+                                            <li><a href="#">Baking Cups</a></li>
+                                            <li><a href="#">Baking Dishes</a></li>
+                                            <li><a href="#">Baking Mats</a></li>
+                                            <li><a href="#">Pastry Boards</a></li>
+                                            <li><a href="#">Pastry Mats</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span><strong>Chocolate Moulds</strong></span>
+                                        </a>
+                                        <ul class="submenu-item">
+                                            <li><a href="#">Decorating Pens</a></li>
+                                            <li><a href="#">Decorating Sets</a></li>
+                                            <li><a href="#">Decorating Tips</a></li>
+                                            <li><a href="#">Sweetly Does It</a></li>
+                                            <li><a href="#">Aprons</a></li>
+                                            <li><a href="#">Electric Mixers</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">KitchenAid Artisan<i class="ion-ios-arrow-right"></i></a>
+                                <ul class="verticale-mega-menu flex-wrap">
+                                    <li>
+                                        <a href="#">
+                                            <strong> Baking & Pastry Mats</strong>
+                                        </a>
+                                        <ul class="submenu-item">
+                                            <li><a href="#">Baking Cups</a></li>
+                                            <li><a href="#">Baking Dishes</a></li>
+                                            <li><a href="#">Baking Mats</a></li>
+                                            <li><a href="#">Pastry Boards</a></li>
+                                            <li><a href="#">Pastry Mats</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span><strong>Chocolate Moulds</strong></span>
+                                        </a>
+                                        <ul class="submenu-item">
+                                            <li><a href="#">Decorating Pens</a></li>
+                                            <li><a href="#">Decorating Sets</a></li>
+                                            <li><a href="#">Decorating Tips</a></li>
+                                            <li><a href="#">Sweetly Does It</a></li>
+                                            <li><a href="#">Aprons</a></li>
+                                            <li><a href="#">Electric Mixers</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Ceramic Artisan<i class="ion-ios-arrow-right"></i></a>
+                                <ul class="verticale-sub-menu">
+                                    <li>
+                                        <ul class="submenu-item">
+                                            <li><a href="#">Pots</a></li>
+                                            <li><a href="#">Pans</a></li>
+                                            <li><a href="#">Living</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a href="#">Appliances1</a></li>
+                            <li class="menu-item"><a href="#">Bakeware</a></li>
+                            <li class="menu-item"><a href="#">Knives</a></li>
+                            <li class="menu-item"><a href="#">Tableware</a></li>
+                            <li class="menu-item"><a href="#">DIY</a></li>
+                            <li class="menu-item"><a href="#">Baking Cups</a></li>
+                            <li class="menu-item"><a href="#">Decorating Pens</a></li>
+                            <li class="menu-item"><a href="#">Sweetly Does It</a></li>
+                        </ul>
+                        <!-- menu content -->
+                    </div>
+
+                </div>
+                <div class="col-xl-6 col-lg-8">
+                    <div class="hero-slider position-relative">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <!-- swiper-slide start -->
+                                <div class="hero-slide-item swiper-slide slide-bg1">
+                                    <div class="hero-slide-content">
+                                        <h2 class="title delay1 animated">Cookware Set</h2>
+                                        <h2 class="title delay2 animated">New Vidre Digital</h2>
+                                        <p class="text animated">
+                                            When you buy a selected westinghouse
+                                        </p>
+                                        <p class="price animated">Only $479.95</p>
+                                        <a href="shop-grid-3-column.html" class="btn animated btn-primary btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    </div>
+                                </div>
+                                <!-- swiper-slide end-->
+                                <!-- swiper-slide start -->
+                                <div class="hero-slide-item swiper-slide slide-bg2">
+                                    <div class="hero-slide-content">
+                                        <h2 class="title delay1 animated">New Vidre Digital</h2>
+                                        <h2 class="title delay2 animated">Electric Kettle</h2>
+                                        <p class="text animated">
+                                            Big anti-scald handle match up to human</p>
+                                        <p class="price animated">Only $479.95</p>
+                                        <a href="shop-grid-3-column.html" class="btn animated btn-primary btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    </div>
+                                </div>
+                                <!-- swiper-slide end-->
+                                <!-- swiper-slide start -->
+                                <div class="hero-slide-item swiper-slide slide-bg3">
+                                    <div class="hero-slide-content">
+                                        <h2 class="title delay1 animated">Bonus 3 Piece</h2>
+                                        <h2 class="title delay2 animated">Cookware Set</h2>
+                                        <p class="text animated">
+                                            When you buy a selected
+                                        </p>
+                                        <p class="price animated">Only $479.95</p>
+                                        <a href="shop-grid-3-column.html" class="btn animated btn-primary btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    </div>
+                                </div>
+                                <!-- swiper-slide end-->
+                            </div>
+                        </div>
+
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                        <!-- swiper navigation -->
+                        <div class="swiper-button-prev">
+                            <i class="fa fa-angle-left"></i>
+                        </div>
+                        <div class="swiper-button-next">
+                            <i class="fa fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 offset-lg-4 col-lg-8 offset-xl-0 custom-padding">
+                    <div class="d-flex custom-flex-column">
+                        <a class="zoom-in d-block mb-7 me-sm-7 me-0" href="shop-grid-left-sidebar.html">
+                            <img src="{{asset('frontend')}}/assets/images/banner/1.jpg" alt="img">
+                        </a>
+                        <a class="zoom-in d-block mb-7" href="shop-grid-left-sidebar.html">
+                            <img src="{{asset('frontend')}}/assets/images/banner/2.jpg" alt="img">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Slider End -->
+
+    <!-- Product tab Start -->
+    <section class="section">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-12">
+                    <div class="title-section text-center text-lg-start">
+                        <div class="row">
+                            <!-- title section Start -->
+                            <div class="col-12 col-lg-4">
+                                <h3 class="title">Featured Products</h3>
+                            </div>
+                            <!-- title section End -->
+                            <div class="col-12  col-lg-8">
+                                <ul class="nav nav-pills product-tab-links mt-8 mt-lg-0 justify-content-md-center">
+                                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#baking">Baking & Pastry Mats</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#chocolate">Chocolate Moulds</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#chopping">Chopping Boards</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="baking">
+                            <div class="product-carousel1">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
+                                    </div>
+                                </div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Graphic Corner</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM153 Stand Mixer</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="chocolate">
+                            <div class="product-carousel1">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
+                                    </div>
+                                </div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Graphic Corner</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM153 Stand Mixer</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="chopping">
+                            <div class="product-carousel1">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
+                                    </div>
+                                </div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Graphic Corner</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM153 Stand Mixer</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </nav>
 
-            <div class="header-top">
-                <div class="conten-box">
-                    <div class="row">
-                        <div class="header_logo col-left col col-lg-3 col-md-12 col-xs-12">
-                            <a href="https://demo2.posthemes.com/pos_benito/">
-                                <img class="logo img-responsive" src="img/benito-responsive-prestashop-theme-logo-1545363180.jpg" alt="Benito - Responsive Prestashop Theme" />
-                            </a>
+            </div>
+        </div>
+    </section>
+    <!-- Product tab End -->
+
+    <!-- Banner Section Start -->
+    <div class="banner-section section-pt">
+        <div class="container">
+            <div class="row mb-n7">
+                <!-- banner box start -->
+                <div class="col-md-4 mb-7">
+                    <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                        <img src="{{asset('frontend')}}/assets/images/banner/3.jpg" alt="img">
+                    </a>
+                </div>
+                <!-- banner box end -->
+                <!-- banner box start -->
+                <div class="col-md-4 mb-7">
+                    <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                        <img src="{{asset('frontend')}}/assets/images/banner/4.jpg" alt="img">
+                    </a>
+                </div>
+                <!-- banner box end -->
+                <!-- banner box start -->
+                <div class="col-md-4 mb-7">
+                    <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                        <img src="{{asset('frontend')}}/assets/images/banner/5.jpg" alt="img">
+                    </a>
+                </div>
+                <!-- banner box end -->
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+
+    <!-- Product tab Start -->
+    <section class="section-pt">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title-section">
+                        <ul class="nav nav-pills product-tab-links2">
+                            <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#newarrival">New Arrival</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#bestseller">Best seller</a></li>
+                            <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#featuredproducts">Featured Products</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="newarrival">
+                    <div class="row mb-n7">
+                        <div class="col-lg-5 col-xl-4 mb-7">
+                            <div class="product-card-large">
+                                <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset('frontend')}}/assets/images/products/product-lg1.jpg" alt="img" />
+                                </a>
+                                <div class="product-content">
+                                    <a class="product-category" href="#?">Studio Design</a>
+                                    <h3 class="product-title">
+                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                    </h3>
+                                    <span class="price-lg onsale-price d-block mb-7">$68.30</span>
+                                    <button class="product-btn-lg btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                        Add to cart
+                                    </button>
+                                </div>
+                                <!-- actions links start -->
+                                <ul class="actions">
+                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                </ul>
+                                <!-- actions links end -->
+                            </div>
                         </div>
-                        <div class="col-right col col-xs-12 col-lg-12 col-md-12">
-                            <div class="seach-cart">
-                                <div class="blockcart cart-preview" data-refresh-url="//demo2.posthemes.com/pos_benito/en/module/ps_shoppingcart/ajax" data-cartitems="0">
-                                    <div class="header">
-                                        <a rel="nofollow" href="cart75f4.html?action=show">
-                                            <span class="item_txt">
-                                                My Cart <span class="item_count">0</span></span>
-                                            <span class="item_total">$0.00</span>
-                                        </a>
+                        <div class="col-lg-7 col-xl-8 mb-7 order-first order-lg-last">
+                            <div class="product-carousel2">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
                                     </div>
-                                    <div class="body">
-                                        <ul></ul>
-                                        <div class="price_content">
-                                            <div class="cart-subtotals">
-                                                <div class="products price_inline">
-                                                    <span class="label">Subtotal</span>
-                                                    <span class="value">$0.00</span>
-                                                </div>
-                                                <div class="price_inline">
-                                                    <span class="label"></span>
-                                                    <span class="value"></span>
-                                                </div>
-                                                <div class="shipping price_inline">
-                                                    <span class="label">Shipping</span>
-                                                    <span class="value">Free</span>
-                                                </div>
-                                                <div class="tax price_inline">
-                                                    <span class="label">Taxes</span>
-                                                    <span class="value">$0.00</span>
-                                                </div>
-                                            </div>
-                                            <div class="cart-total price_inline">
-                                                <span class="label">Total</span>
-                                                <span class="value">$0.00</span>
-                                            </div>
-                                        </div>
-                                        <div class="checkout">
-                                            <a href="cart75f4.html?action=show" class="btn btn-primary">Checkout</a>
-                                        </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
                                     </div>
                                 </div>
-                                <!-- pos search module TOP -->
-                                <div id="pos_search_top">
-                                    <form method="get" action="https://demo2.posthemes.com/pos_benito/en/search" id="searchbox" class="form-inline form_search" data-search-controller-url="/pos_benito/modules/possearchproducts/SearchProducts.php">
-                                        <label for="pos_query_top"><!-- image on background --></label>
-                                        <input type="hidden" name="controller" value="search" />
-                                        <div class="pos_search form-group">
-                                            <select class="bootstrap-select" name="poscats">
-                                                <option value="0">All categories</option>
-                                                <option value="10">Cookware</option>
-                                                <option value="19">
-                                                    - - Baking &amp; Pastry Mats
-                                                </option>
-                                                <option value="21">- - - - Baking Cups</option>
-                                                <option value="22">- - - - Baking Dishes</option>
-                                                <option value="23">- - - - Baking Mats</option>
-                                                <option value="24">- - - - Pastry Boards</option>
-                                                <option value="25">- - - - Pastry Mats</option>
-                                                <option value="20">- - Chocolate Moulds</option>
-                                                <option value="26">- - - - Decorating Pens</option>
-                                                <option value="27">- - - - Decorating Sets</option>
-                                                <option value="28">- - - - Decorating Tips</option>
-                                                <option value="29">- - - - Sweetly Does It</option>
-                                                <option value="30">- - - - Aprons</option>
-                                                <option value="72">- - - - Electric Mixers</option>
-                                                <option value="11">Appliances</option>
-                                                <option value="31">- - Chopping Boards</option>
-                                                <option value="33">- - - - Aprons</option>
-                                                <option value="34">- - - - Baking Cups</option>
-                                                <option value="35">- - - - Baking Dishes</option>
-                                                <option value="36">- - - - Coffee</option>
-                                                <option value="37">- - - - Coffee</option>
-                                                <option value="38">- - - - Tea Accessories</option>
-                                                <option value="32">- - Tea Towels</option>
-                                                <option value="39">- - - - Baking Cups</option>
-                                                <option value="40">- - - - Baking Moulds</option>
-                                                <option value="41">- - - - Bundt Pans</option>
-                                                <option value="42">- - - - Cake Moulds</option>
-                                                <option value="43">- - - - Cake Pans</option>
-                                                <option value="12">Kitchenair</option>
-                                                <option value="44">- - Knives</option>
-                                                <option value="46">- - - - Baking Dishes</option>
-                                                <option value="47">- - - - Ice Cream</option>
-                                                <option value="48">- - - - Mandoline Slicers</option>
-                                                <option value="49">- - - - Slushy Makers</option>
-                                                <option value="45">- - Pans</option>
-                                                <option value="50">- - - - Decorating Tips</option>
-                                                <option value="51">- - - - DecoSpoon</option>
-                                                <option value="52">- - - - Rasps</option>
-                                                <option value="53">- - - - Shavers</option>
-                                                <option value="54">- - - - Sweetly Does It</option>
-                                                <option value="13">KitchenAid Artisan</option>
-                                                <option value="55">- - Appliances</option>
-                                                <option value="57">- - - - DecoSpoon</option>
-                                                <option value="58">- - - - Scales1</option>
-                                                <option value="59">- - - - Sweetly Does It</option>
-                                                <option value="60">- - - - Timers</option>
-                                                <option value="56">- - Tea Towels</option>
-                                                <option value="61">- - - - Cleaning Supplies</option>
-                                                <option value="62">- - - - Cutting</option>
-                                                <option value="63">- - - - Cutting1</option>
-                                                <option value="64">- - - - Decorating Sets</option>
-                                                <option value="14">Ceramic Artisan</option>
-                                                <option value="68">- - Pots</option>
-                                                <option value="69">- - Pans</option>
-                                                <option value="70">- - Living</option>
-                                                <option value="15">Appliances1</option>
-                                                <option value="16">Bakeware</option>
-                                                <option value="17">Knives</option>
-                                                <option value="18">Tableware</option>
-                                                <option value="71">DIY</option>
-                                                <option value="74">Baking Cups</option>
-                                                <option value="75">Decorating Pens</option>
-                                                <option value="76">Sweetly Does It</option>
-                                            </select>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Graphic Corner</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM100 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
                                         </div>
-                                        <input type="text" name="s" value="" placeholder="Enter your search key ... " id="pos_query_top" class="search_query form-control ac_input" />
-                                        <button type="submit" class="btn btn-default search_submit">
-                                            <span>Search</span>
-                                        </button>
-                                    </form>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product10.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product11.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixe</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                    </div>
                                 </div>
-
-                                <!-- /pos search module TOP -->
                             </div>
 
-                            <div class="megamenu">
-                                <!-- Block categories module -->
-                                <div class="ma-nav-mobile-container hidden-lg-up">
-                                    <div class="pt_custommenu_mobile">
-                                        <div class="navbar">
-                                            <div id="navbar-inner" class="navbar-inner navbar-inactive">
-                                                <a class="btn-navbar">Category</a>
-                                                <ul id="pt_custommenu_itemmobile" class="tree dhtml mobilemenu nav-collapse collapse">
-                                                    <li>
-                                                        <a href="10-cookware.html">Cookware </a>
-                                                        <ul class="dhtml">
-                                                            <li>
-                                                                <a href="19-baking-pastry-mats.html">Baking &amp; Pastry Mats
-                                                                </a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="21-baking-cups.html">Baking Cups
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="22-baking-dishes.html">Baking Dishes
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="23-baking-mats.html">Baking Mats
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="24-pastry-boards.html">Pastry Boards
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="25-pastry-mats.html">Pastry Mats
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="20-chocolate-moulds.html">Chocolate Moulds
-                                                                </a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="26-decorating-pens.html">Decorating Pens
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="27-decorating-sets.html">Decorating Sets
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="28-decorating-tips.html">Decorating Tips
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="29-sweetly-does-it.html">Sweetly Does It
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="30-aprons.html">Aprons </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="72-electric-mixers.html">Electric Mixers
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="11-appliances.html">Appliances </a>
-                                                        <ul class="dhtml">
-                                                            <li>
-                                                                <a href="31-chopping-boards.html">Chopping Boards
-                                                                </a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="33-aprons.html">Aprons </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="34-baking-cups.html">Baking Cups
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="35-baking-dishes.html">Baking Dishes
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="36-coffee.html">Coffee </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="37-coffee.html">Coffee </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="38-tea-accessories.html">Tea Accessories
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="32-tea-towels.html">Tea Towels </a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="39-baking-cups.html">Baking Cups
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="40-baking-moulds.html">Baking Moulds
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="41-bundt-pans.html">Bundt Pans
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="42-cake-moulds.html">Cake Moulds
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="43-cake-pans.html">Cake Pans </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="12-kitchenair.html">Kitchenair </a>
-                                                        <ul class="dhtml">
-                                                            <li>
-                                                                <a href="44-knives.html">Knives </a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="46-baking-dishes.html">Baking Dishes
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="47-ice-cream.html">Ice Cream </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="48-mandoline-slicers.html">Mandoline Slicers
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="49-slushy-makers.html">Slushy Makers
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="45-pans.html">Pans </a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="50-decorating-tips.html">Decorating Tips
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="51-decospoon.html">DecoSpoon </a>
-                                                                    </li>
-                                                                    <li><a href="52-rasps.html">Rasps </a></li>
-                                                                    <li>
-                                                                        <a href="53-shavers.html">Shavers </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="54-sweetly-does-it.html">Sweetly Does It
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="13-kitchenaid-artisan.html">KitchenAid Artisan
-                                                        </a>
-                                                        <ul class="dhtml">
-                                                            <li>
-                                                                <a href="55-appliances.html">Appliances </a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="57-decospoon.html">DecoSpoon </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="58-scales1.html">Scales1 </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="59-sweetly-does-it.html">Sweetly Does It
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="60-timers.html">Timers </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="56-tea-towels.html">Tea Towels </a>
-                                                                <ul>
-                                                                    <li>
-                                                                        <a href="61-cleaning-supplies.html">Cleaning Supplies
-                                                                        </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="62-cutting.html">Cutting </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="63-cutting1.html">Cutting1 </a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <a href="64-decorating-sets.html">Decorating Sets
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="14-ceramic-artisan.html">Ceramic Artisan
-                                                        </a>
-                                                        <ul class="dhtml">
-                                                            <li>
-                                                                <a href="68-pots.html">Pots </a>
-                                                                <ul></ul>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="69-pans.html">Pans </a>
-                                                                <ul></ul>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="70-living.html">Living </a>
-                                                                <ul></ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <a href="15-appliances1.html">Appliances1 </a>
-                                                    </li>
-                                                    <li><a href="16-bakeware.html">Bakeware </a></li>
-                                                    <li><a href="17-knives.html">Knives </a></li>
-                                                    <li><a href="18-tableware.html">Tableware </a></li>
-                                                    <li><a href="71-diy.html">DIY </a></li>
-                                                    <li>
-                                                        <a href="74-baking-cups.html">Baking Cups </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="75-decorating-pens.html">Decorating Pens
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="76-sweetly-does-it.html">Sweetly Does It
-                                                        </a>
-                                                    </li>
-
-                                                    <li class="cms">
-                                                        <a href="#" title="Contains Subs">About us</a>
-                                                    </li>
-                                                    <li class="cms">
-                                                        <a href="#" title="Contains Subs">Delivery</a>
-                                                    </li>
-                                                    <li class="cms">
-                                                        <a href="#" title="Contains Subs">Legal Notice</a>
-                                                    </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="bestseller">
+                    <div class="row mb-n7">
+                        <div class="col-lg-5 col-xl-4 mb-7">
+                            <div class="product-card-large">
+                                <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset('frontend')}}/assets/images/products/product-lg1.jpg" alt="img" />
+                                </a>
+                                <div class="product-content">
+                                    <a class="product-category" href="#?">Studio Design</a>
+                                    <h3 class="product-title">
+                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                    </h3>
+                                    <span class="price-lg onsale-price d-block mb-7">$68.30</span>
+                                    <button class="product-btn-lg btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                        Add to cart
+                                    </button>
+                                </div>
+                                <!-- actions links start -->
+                                <ul class="actions">
+                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                </ul>
+                                <!-- actions links end -->
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-xl-8 mb-7 order-first order-lg-last">
+                            <div class="product-carousel2">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
+                                    </div>
+                                </div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Graphic Corner</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM100 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product10.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product11.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixe</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
                                                 </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
                                             </div>
                                         </div>
+                                        <!-- single slide End -->
                                     </div>
                                 </div>
-                                <!-- /Block categories module -->
-                                <div class="nav-container hidden-md-down">
-                                    <div class="nav-inner">
-                                        <div id="pt_custommenu" class="pt_custommenu">
-                                            <div id="pt_menu_home" class="pt_menu act">
-                                                <div class="parentMenu">
-                                                    <a class="fontcustom2" href="https://demo2.posthemes.com/pos_benito/"><span>Home</span></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="featuredproducts">
+                    <div class="row mb-n7">
+                        <div class="col-lg-5 col-xl-4 mb-7">
+                            <div class="product-card-large">
+                                <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset('frontend')}}/assets/images/products/product-lg1.jpg" alt="img" />
+                                </a>
+                                <div class="product-content">
+                                    <a class="product-category" href="#?">Studio Design</a>
+                                    <h3 class="product-title">
+                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                    </h3>
+                                    <span class="price-lg onsale-price d-block mb-7">$68.30</span>
+                                    <button class="product-btn-lg btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                        Add to cart
+                                    </button>
+                                </div>
+                                <!-- actions links start -->
+                                <ul class="actions">
+                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                </ul>
+                                <!-- actions links end -->
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-xl-8 mb-7 order-first order-lg-last">
+                            <div class="product-carousel2">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
+                                    </div>
+                                </div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
                                                 </div>
-                                            </div>
-                                            <div class="pt_menu pt_menu_cms">
-                                                <div class="parentMenu">
-                                                    <a class="fontcustom2" href="content/4-about-us.html"><span>About us</span></a>
-                                                </div>
-                                            </div>
-                                            <div class="pt_menu pt_menu_cms">
-                                                <div class="parentMenu">
-                                                    <a class="fontcustom2" href="content/1-delivery.html"><span>Delivery</span></a>
-                                                </div>
-                                            </div>
-                                            <div class="pt_menu pt_menu_cms">
-                                                <div class="parentMenu">
-                                                    <a class="fontcustom2" href="content/2-legal-notice.html"><span>Legal Notice</span></a>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Graphic Corner</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM100 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product10.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product11.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixe</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-list">
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                                <div class="product-card">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
+                                                        <div class="onsales-badges">
+                                                            <span class="badge bg-dark">new</span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="product-content">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                        </h3>
+                                                        <span class="price regular-price">$68.30</span>
+                                                        <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                            Add to cart
+                                                        </button>
+                                                    </div>
+                                                    <!-- actions links start -->
+                                                    <ul class="actions">
+                                                        <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                        <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    </ul>
+                                                    <!-- actions links end -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                            <div class="product-card">
+                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
+                                                    <div class="onsales-badges">
+                                                        <span class="badge bg-dark">new</span>
+                                                    </div>
+                                                </a>
+                                                <div class="product-content">
+                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <h3 class="product-title">
+                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                                    </h3>
+                                                    <span class="price regular-price">$68.30</span>
+                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                        Add to cart
+                                                    </button>
+                                                </div>
+                                                <!-- actions links start -->
+                                                <ul class="actions">
+                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                </ul>
+                                                <!-- actions links end -->
+                                            </div>
+                                        </div>
+                                        <!-- single slide End -->
                                     </div>
                                 </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Product tab End -->
+
+    <!-- Banner Section Start -->
+    <div class="banner-section section-pt">
+        <div class="container">
+            <div class="row mb-n7">
+                <!-- banner box start -->
+                <div class="col-md-4 mb-7">
+                    <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                        <img src="{{asset('frontend')}}/assets/images/banner/6.jpg" alt="img">
+                    </a>
+                </div>
+                <!-- banner box end -->
+                <!-- banner box start -->
+                <div class="col-md-4 mb-7">
+                    <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                        <img src="{{asset('frontend')}}/assets/images/banner/7.jpg" alt="img">
+                    </a>
+                </div>
+                <!-- banner box end -->
+                <!-- banner box start -->
+                <div class="col-md-4 mb-7">
+                    <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                        <img src="{{asset('frontend')}}/assets/images/banner/8.jpg" alt="img">
+                    </a>
+                </div>
+                <!-- banner box end -->
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+
+
+    <!-- Product tab Start -->
+    <section class="section-pt">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-12">
+                    <div class="title-section text-center text-lg-start">
+                        <div class="row">
+                            <!-- title section Start -->
+                            <div class="col-12 col-lg-4">
+                                <h3 class="title">Ceramic Artisan</h3>
+                            </div>
+                            <!-- title section End -->
+                            <div class="col-12 col-lg-6 custom-col1">
+                                <ul class="nav nav-pills product-tab-links mt-8 mt-lg-0 justify-content-md-center">
+                                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#pots">pots</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#pans">pans</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#living">Living</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </header>
-        <div class="box-banner">
-            <div class="conten-box">
-                <div class="row">
-                    <div class="col col-lg-3 col-md-12 col-xs-12 box1">
-                        <div class="navleft-container hidden-md-down">
-                            <div class="pt_vegamenu">
-                                <div class="pt_vmegamenu_title">
-                                    <h2>Browse categories</h2>
-                                </div>
-                                <div id="pt_vmegamenu" class="pt_vmegamenu pt_vegamenu_cate">
-                                    <div id="ver_pt_menu10" class="pt_menu">
-                                        <div class="parentMenu">
-                                            <a href="10-cookware.html"><span>Cookware</span></a>
-                                        </div>
-                                        <div class="wrap-popup">
-                                            <div id="ver_popup10" class="popup">
-                                                <div class="box-popup">
-                                                    <div class="block1">
-                                                        <div class="column first col1" style="float: left">
-                                                            <div class="itemMenu level1">
-                                                                <a class="itemMenuName level3" href="19-baking-pastry-mats.html"><span>Baking & Pastry
-                                                                        Mats</span></a>
-                                                                <div class="itemSubMenu level3">
-                                                                    <div class="itemMenu level4">
-                                                                        <a class="itemMenuName level4" href="21-baking-cups.html"><span>Baking
-                                                                                Cups</span></a><a class="itemMenuName level4" href="22-baking-dishes.html"><span>Baking Dishes</span></a><a class="itemMenuName level4" href="23-baking-mats.html"><span>Baking
-                                                                                Mats</span></a><a class="itemMenuName level4" href="24-pastry-boards.html"><span>Pastry Boards</span></a><a class="itemMenuName level4" href="25-pastry-mats.html"><span>Pastry
-                                                                                Mats</span></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="column last col2" style="float: left">
-                                                            <div class="itemMenu level1">
-                                                                <a class="itemMenuName level3" href="20-chocolate-moulds.html"><span>Chocolate
-                                                                        Moulds</span></a>
-                                                                <div class="itemSubMenu level3">
-                                                                    <div class="itemMenu level4">
-                                                                        <a class="itemMenuName level4" href="26-decorating-pens.html"><span>Decorating
-                                                                                Pens</span></a><a class="itemMenuName level4" href="27-decorating-sets.html"><span>Decorating Sets</span></a><a class="itemMenuName level4" href="28-decorating-tips.html"><span>Decorating
-                                                                                Tips</span></a><a class="itemMenuName level4" href="29-sweetly-does-it.html"><span>Sweetly Does It</span></a><a class="itemMenuName level4" href="30-aprons.html"><span>Aprons</span></a><a class="itemMenuName level4" href="72-electric-mixers.html"><span>Electric
-                                                                                Mixers</span></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="clearBoth"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="pots">
+                    <div class="row mb-n7">
+                        <div class="order-last order-lg-first col-lg-4 col-xl-3 custom-col-20 mb-7">
+                            <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                                <img src="{{asset('frontend')}}/assets/images/banner/9.jpg" alt="img">
+                            </a>
+                        </div>
+                        <div class="col-lg-8 col-xl-9 custom-col-80 mb-7">
+                            <div class="product-list-carousel">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
                                     </div>
-                                    <div id="ver_pt_menu11" class="pt_menu">
-                                        <div class="parentMenu">
-                                            <a href="11-appliances.html"><span>Appliances</span></a>
-                                        </div>
-                                        <div class="wrap-popup">
-                                            <div id="ver_popup11" class="popup">
-                                                <div class="box-popup">
-                                                    <div class="block1">
-                                                        <div class="column first col1" style="float: left">
-                                                            <div class="itemMenu level1">
-                                                                <a class="itemMenuName level3" href="31-chopping-boards.html"><span>Chopping
-                                                                        Boards</span></a>
-                                                                <div class="itemSubMenu level3">
-                                                                    <div class="itemMenu level4">
-                                                                        <a class="itemMenuName level4" href="33-aprons.html"><span>Aprons</span></a><a class="itemMenuName level4" href="34-baking-cups.html"><span>Baking
-                                                                                Cups</span></a><a class="itemMenuName level4" href="35-baking-dishes.html"><span>Baking Dishes</span></a><a class="itemMenuName level4" href="36-coffee.html"><span>Coffee</span></a><a class="itemMenuName level4" href="37-coffee.html"><span>Coffee</span></a><a class="itemMenuName level4" href="38-tea-accessories.html"><span>Tea
-                                                                                Accessories</span></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="column last col2" style="float: left">
-                                                            <div class="itemMenu level1">
-                                                                <a class="itemMenuName level3" href="32-tea-towels.html"><span>Tea Towels</span></a>
-                                                                <div class="itemSubMenu level3">
-                                                                    <div class="itemMenu level4">
-                                                                        <a class="itemMenuName level4" href="39-baking-cups.html"><span>Baking
-                                                                                Cups</span></a><a class="itemMenuName level4" href="40-baking-moulds.html"><span>Baking Moulds</span></a><a class="itemMenuName level4" href="41-bundt-pans.html"><span>Bundt
-                                                                                Pans</span></a><a class="itemMenuName level4" href="42-cake-moulds.html"><span>Cake Moulds</span></a><a class="itemMenuName level4" href="43-cake-pans.html"><span>Cake Pans</span></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="clearBoth"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu12" class="pt_menu">
-                                        <div class="parentMenu">
-                                            <a href="12-kitchenair.html"><span>Kitchenair</span></a>
-                                        </div>
-                                        <div class="wrap-popup">
-                                            <div id="ver_popup12" class="popup">
-                                                <div class="box-popup">
-                                                    <div class="block1">
-                                                        <div class="column first col1" style="float: left">
-                                                            <div class="itemMenu level1">
-                                                                <a class="itemMenuName level3" href="44-knives.html"><span>Knives</span></a>
-                                                                <div class="itemSubMenu level3">
-                                                                    <div class="itemMenu level4">
-                                                                        <a class="itemMenuName level4" href="46-baking-dishes.html"><span>Baking
-                                                                                Dishes</span></a><a class="itemMenuName level4" href="47-ice-cream.html"><span>Ice Cream</span></a><a class="itemMenuName level4" href="48-mandoline-slicers.html"><span>Mandoline Slicers</span></a><a class="itemMenuName level4" href="49-slushy-makers.html"><span>Slushy
-                                                                                Makers</span></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="column last col2" style="float: left">
-                                                            <div class="itemMenu level1">
-                                                                <a class="itemMenuName level3" href="45-pans.html"><span>Pans</span></a>
-                                                                <div class="itemSubMenu level3">
-                                                                    <div class="itemMenu level4">
-                                                                        <a class="itemMenuName level4" href="50-decorating-tips.html"><span>Decorating
-                                                                                Tips</span></a><a class="itemMenuName level4" href="51-decospoon.html"><span>DecoSpoon</span></a><a class="itemMenuName level4" href="52-rasps.html"><span>Rasps</span></a><a class="itemMenuName level4" href="53-shavers.html"><span>Shavers</span></a><a class="itemMenuName level4" href="54-sweetly-does-it.html"><span>Sweetly Does It</span></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="clearBoth"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu13" class="pt_menu">
-                                        <div class="parentMenu">
-                                            <a href="13-kitchenaid-artisan.html"><span>KitchenAid Artisan</span></a>
-                                        </div>
-                                        <div class="wrap-popup">
-                                            <div id="ver_popup13" class="popup">
-                                                <div class="box-popup">
-                                                    <div class="block1">
-                                                        <div class="column first col1" style="float: left">
-                                                            <div class="itemMenu level1">
-                                                                <a class="itemMenuName level3" href="55-appliances.html"><span>Appliances</span></a>
-                                                                <div class="itemSubMenu level3">
-                                                                    <div class="itemMenu level4">
-                                                                        <a class="itemMenuName level4" href="57-decospoon.html"><span>DecoSpoon</span></a><a class="itemMenuName level4" href="58-scales1.html"><span>Scales1</span></a><a class="itemMenuName level4" href="59-sweetly-does-it.html"><span>Sweetly Does
-                                                                                It</span></a><a class="itemMenuName level4" href="60-timers.html"><span>Timers</span></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="column last col2" style="float: left">
-                                                            <div class="itemMenu level1">
-                                                                <a class="itemMenuName level3" href="56-tea-towels.html"><span>Tea Towels</span></a>
-                                                                <div class="itemSubMenu level3">
-                                                                    <div class="itemMenu level4">
-                                                                        <a class="itemMenuName level4" href="61-cleaning-supplies.html"><span>Cleaning
-                                                                                Supplies</span></a><a class="itemMenuName level4" href="62-cutting.html"><span>Cutting</span></a><a class="itemMenuName level4" href="63-cutting1.html"><span>Cutting1</span></a><a class="itemMenuName level4" href="64-decorating-sets.html"><span>Decorating Sets</span></a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="clearBoth"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu14" class="pt_menu">
-                                        <div class="parentMenu">
-                                            <a href="14-ceramic-artisan.html"><span>Ceramic Artisan</span></a>
-                                        </div>
-                                        <div class="wrap-popup">
-                                            <div id="ver_popup14" class="popup">
-                                                <div class="box-popup">
-                                                    <div class="block1">
-                                                        <div class="column last col1" style="float: left">
-                                                            <div class="itemMenu level1">
-                                                                <a class="itemMenuName level3 nochild" href="68-pots.html"><span>Pots</span></a><a class="itemMenuName level3 nochild" href="69-pans.html"><span>Pans</span></a><a class="itemMenuName level3 nochild" href="70-living.html"><span>Living</span></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="clearBoth"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu15" class="pt_menu noSub">
-                                        <div class="parentMenu">
-                                            <a href="15-appliances1.html"><span>Appliances1</span></a>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu16" class="pt_menu noSub">
-                                        <div class="parentMenu">
-                                            <a href="16-bakeware.html"><span>Bakeware</span></a>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu17" class="pt_menu noSub">
-                                        <div class="parentMenu">
-                                            <a href="17-knives.html"><span>Knives</span></a>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu18" class="pt_menu noSub">
-                                        <div class="parentMenu">
-                                            <a href="18-tableware.html"><span>Tableware</span></a>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu71" class="pt_menu noSub">
-                                        <div class="parentMenu">
-                                            <a href="71-diy.html"><span>DIY</span></a>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu74" class="pt_menu noSub">
-                                        <div class="parentMenu">
-                                            <a href="74-baking-cups.html"><span>Baking Cups</span></a>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu75" class="pt_menu noSub">
-                                        <div class="parentMenu">
-                                            <a href="75-decorating-pens.html"><span>Decorating Pens</span></a>
-                                        </div>
-                                    </div>
-                                    <div id="ver_pt_menu76" class="pt_menu noSub">
-                                        <div class="parentMenu">
-                                            <a href="76-sweetly-does-it.html"><span>Sweetly Does It</span></a>
-                                        </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
                                     </div>
                                 </div>
-                                <div class="clearfix"></div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/1.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/10.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/4.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/5.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1815 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/7.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/8.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pans">
+                    <div class="row mb-n7">
+                        <div class="order-last order-lg-first col-lg-4 col-xl-3 custom-col-20 mb-7">
+                            <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                                <img src="{{asset('frontend')}}/assets/images/banner/9.jpg" alt="img">
+                            </a>
+                        </div>
+                        <div class="col-lg-8 col-xl-9 custom-col-80 mb-7">
+                            <div class="product-list-carousel">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
+                                    </div>
+                                </div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/1.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/10.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/4.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/5.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1815 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/7.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/8.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="living">
+                    <div class="row mb-n7">
+                        <div class="order-last order-lg-first col-lg-4 col-xl-3 custom-col-20 mb-7">
+                            <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                                <img src="{{asset('frontend')}}/assets/images/banner/9.jpg" alt="img">
+                            </a>
+                        </div>
+                        <div class="col-lg-8 col-xl-9 custom-col-80 mb-7">
+                            <div class="product-list-carousel">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
+                                    </div>
+                                </div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/1.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/10.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/4.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/5.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1815 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/7.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/8.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product tab End -->
+
+
+    <!-- Product tab Start -->
+    <section class="section-pt">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-12">
+                    <div class="title-section text-center text-lg-start">
+                        <div class="row">
+                            <!-- title section Start -->
+                            <div class="col-12 col-lg-4">
+                                <h3 class="title">KitchenAid Artisan</h3>
+                            </div>
+                            <!-- title section End -->
+                            <div class="col-12  col-lg-6">
+                                <ul class="nav nav-pills product-tab-links mt-8 mt-lg-0 justify-content-md-center">
+                                    <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#appliance">Appliances</a></li>
+                                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#tea_towel">Tea Towels</a></li>
+                                    <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#kitchen_towel">kitchen Towels</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col col-lg-9 col-md-12 col-xs-12 box2">
-                        <div class="pos_bannerslide">
-                            <div class="slideshow_container">
-                                <div class="pos-slideshow">
-                                    <div class="flexslider ma-nivoslider">
-                                        <div class="pos-loading"></div>
-                                        <div id="pos-slideshow-home" class="slides">
-                                            <a href="http://www.posthemes.com/" title="Sample 1"><img style="display: none" src="modules/posslideshows/images/d5412411159bcddf523055f81bf0ce55bbd47734_banner1_home1.jpg" data-thumb="https://demo2.posthemes.com/pos_benito/modules/posslideshows/images/d5412411159bcddf523055f81bf0ce55bbd47734_banner1_home1.jpg" alt="" title="#htmlcaption1" />
-                                            </a>
-                                            <a href="http://www.posthemes.com/" title="Sample 2"><img style="display: none" src="modules/posslideshows/images/7120023ca9169b12c82d35a3844b12c3edfad532_banner2_home1.jpg" data-thumb="https://demo2.posthemes.com/pos_benito/modules/posslideshows/images/7120023ca9169b12c82d35a3844b12c3edfad532_banner2_home1.jpg" alt="" title="#htmlcaption2" />
-                                            </a>
-                                            <a href="http://www.posthemes.com/" title="Sample 3"><img style="display: none" src="modules/posslideshows/images/1aa81e1d2747263fe2bc733be59907a077f3af62_banner3_home1.jpg" data-thumb="https://demo2.posthemes.com/pos_benito/modules/posslideshows/images/1aa81e1d2747263fe2bc733be59907a077f3af62_banner3_home1.jpg" alt="" title="#htmlcaption3" />
-                                            </a>
-                                        </div>
-                                        <div id="htmlcaption1" class="pos-slideshow-caption nivo-html-caption nivo-caption">
-                                            <div class="timethai" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            z-index: 8;
-                            background-color: rgba(49, 56, 72, 0.298);
-                            height: 5px;
-                            -webkit-animation: myfirst 5000ms ease-in-out;
-                            -moz-animation: myfirst 5000ms ease-in-out;
-                            -ms-animation: myfirst 5000ms ease-in-out;
-                            animation: myfirst 5000ms ease-in-out;
-                          "></div>
-                                            <div class="banner7-des">
-                                                <div class="info desc1">
-                                                    <p class="title1">Kitchenair 175</p>
-                                                    <p class="title2">Artisan mixers</p>
-                                                    <p class="title3">
-                                                        Multi-use bowl - mix one egg or 60 cookies
-                                                    </p>
-                                                    <p class="title4">Only $749.95</p>
-                                                    <p class="readmore"><a href="#">shopping Now</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="htmlcaption2" class="pos-slideshow-caption nivo-html-caption nivo-caption">
-                                            <div class="timethai" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            z-index: 8;
-                            background-color: rgba(49, 56, 72, 0.298);
-                            height: 5px;
-                            -webkit-animation: myfirst 5000ms ease-in-out;
-                            -moz-animation: myfirst 5000ms ease-in-out;
-                            -ms-animation: myfirst 5000ms ease-in-out;
-                            animation: myfirst 5000ms ease-in-out;
-                          "></div>
-                                            <div class="banner7-des">
-                                                <div class="info desc1 desc2">
-                                                    <p class="title1">New Vidre Digital</p>
-                                                    <p class="title2">Electric Kettle</p>
-                                                    <p class="title3">
-                                                        Big anti-scald handle match up to human
-                                                        engineering design
-                                                    </p>
-                                                    <p class="title4">Only $479.95</p>
-                                                    <p class="readmore"><a href="#">shopping Now</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="htmlcaption3" class="pos-slideshow-caption nivo-html-caption nivo-caption">
-                                            <div class="timethai" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            z-index: 8;
-                            background-color: rgba(49, 56, 72, 0.298);
-                            height: 5px;
-                            -webkit-animation: myfirst 5000ms ease-in-out;
-                            -moz-animation: myfirst 5000ms ease-in-out;
-                            -ms-animation: myfirst 5000ms ease-in-out;
-                            animation: myfirst 5000ms ease-in-out;
-                          "></div>
-                                            <div class="banner7-des">
-                                                <div class="info desc1 desc3">
-                                                    <p class="title1">Bonus 3 Piece</p>
-                                                    <p class="title2">Cookware Set</p>
-                                                    <p class="title3">
-                                                        When you buy a selected westinghouse cooktop
-                                                    </p>
-                                                    <p class="title4">Only $367.99</p>
-                                                    <p class="readmore"><a href="#">shopping Now</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
+                </div>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="appliance">
+                    <div class="row mb-n7">
+                        <div class="order-last order-lg-first col-lg-4 col-xl-3 cu mb-7 custom-col-20">
+                            <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                                <img src="{{asset('frontend')}}/assets/images/banner/10.jpg" alt="img">
+                            </a>
+                        </div>
+
+                        <div class="col-lg-8 col-xl-9 mb-7 custom-col-80">
+                            <div class="product-list-carousel2">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
                                     </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
+                                    </div>
+                                </div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/7.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1815 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/8.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer1</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/4.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/5.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class="static1-home1">
-                                <div class="box1">
-                                    <div class="banner-box">
-                                        <a href="#"><img src="img/cms/img1_home1.jpg" alt="banner" class="img-responsive" /></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tea_towel">
+
+                    <div class="row mb-n7">
+                        <div class="order-last order-lg-first col-lg-4 col-xl-3 custom-col-20 mb-7">
+                            <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                                <img src="{{asset('frontend')}}/assets/images/banner/10.jpg" alt="img">
+                            </a>
+                        </div>
+
+                        <div class="col-lg-8 col-xl-9 custom-col-80 mb-7">
+                            <div class="product-list-carousel2">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
                                     </div>
                                 </div>
-                                <div class="box2">
-                                    <div class="banner-box">
-                                        <a href="#"><img src="img/cms/img2_home1.jpg" alt="banner" class="img-responsive" /></a>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/7.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1815 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/8.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer1</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/4.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/5.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="kitchen_towel">
+
+                    <div class="row mb-n7">
+                        <div class="order-last order-lg-first col-lg-4 col-xl-3 custom-col-20 mb-7">
+                            <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
+                                <img src="{{asset('frontend')}}/assets/images/banner/10.jpg" alt="img">
+                            </a>
+                        </div>
+
+                        <div class="col-lg-8 col-xl-9 custom-col-80 mb-7">
+                            <div class="product-list-carousel2">
+                                <div class="d-none d-sm-block swiper-navination-arrows">
+                                    <div class="swiper-button-prev">
+                                        <span class="ion-android-arrow-back"></span>
+                                    </div>
+                                    <div class="swiper-button-next">
+                                        <span class="ion-android-arrow-forward"></span>
+                                    </div>
+                                </div>
+                                <div class="swiper-container">
+                                    <div class="swiper-wrapper">
+
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/7.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Royal Doulton 1815 Tableware Pasta Bowl</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/8.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/6.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer1</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/4.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/5.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                        <!-- single slide Start -->
+                                        <div class="swiper-slide">
+                                            <!-- media-list -->
+                                            <div class="media-list mb-4">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                            <!-- media-list -->
+                                            <div class="media-list">
+                                                <div class="media">
+                                                    <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="img" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <a class="product-category" href="#?">Studio Design</a>
+                                                        <h3 class="product-title">
+                                                            <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
+                                                        </h3>
+                                                        <span class="price-lg regular-price">$68.30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- media-list end -->
+                                        </div>
+                                        <!-- single slide End -->
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Product tab End -->
+
+
+
+    <!-- Brand Slider Satrt -->
+
+    <div class="brand-section section-py">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="brand-carousel">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <!-- single-brand Start -->
+                                <div class="swiper-slide">
+                                    <div class="single-brand">
+                                        <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/1.png" alt="brand logo"></a>
+                                    </div>
+                                </div>
+                                <!-- single-brand End -->
+
+                                <!-- single-brand Start -->
+                                <div class="swiper-slide">
+                                    <div class="single-brand">
+                                        <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/2.png" alt="brand logo"></a>
+                                    </div>
+                                </div>
+                                <!-- single-brand End -->
+
+                                <!-- single-brand Start -->
+                                <div class="swiper-slide">
+                                    <div class="single-brand">
+                                        <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/3.png" alt="brand logo"></a>
+                                    </div>
+                                </div>
+                                <!-- single-brand End -->
+
+                                <!-- single-brand Start -->
+                                <div class="swiper-slide">
+                                    <div class="single-brand">
+                                        <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/4.png" alt="brand logo"></a>
+                                    </div>
+                                </div>
+                                <!-- single-brand End -->
+                                <!-- single-brand Start -->
+                                <div class="swiper-slide">
+                                    <div class="single-brand">
+                                        <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/5.png" alt="brand logo"></a>
+                                    </div>
+                                </div>
+                                <!-- single-brand End -->
+                                <!-- single-brand Start -->
+                                <div class="swiper-slide">
+                                    <div class="single-brand">
+                                        <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/6.png" alt="brand logo"></a>
+                                    </div>
+                                </div>
+                                <!-- single-brand End -->
+                                <!-- single-brand Start -->
+                                <div class="swiper-slide">
+                                    <div class="single-brand">
+                                        <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/7.png" alt="brand logo"></a>
+                                    </div>
+                                </div>
+                                <!-- single-brand End -->
+                                <!-- single-brand Start -->
+                                <div class="swiper-slide">
+                                    <div class="single-brand">
+                                        <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/4.png" alt="brand logo"></a>
+                                    </div>
+                                </div>
+                                <!-- single-brand End -->
+                            </div>
+                        </div>
+                        <div class="swiper-pagination d-none"></div>
+                        <!-- <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Slider End -->
+
+    <!-- Blog Section Start-->
+    <section class="blog-section section-py bg-light">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-12">
+                    <div class="title-section">
+                        <div class="row">
+                            <!-- title section Start -->
+                            <div class="col-12">
+                                <h3 class="title">Latest Blogs</h3>
+                            </div>
+                            <!-- title section End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="blog-carousel">
+                        <div class="d-none d-sm-block swiper-navination-arrows">
+                            <div class="swiper-button-prev">
+                                <span class="ion-android-arrow-back"></span>
+                            </div>
+                            <div class="swiper-button-next">
+                                <span class="ion-android-arrow-forward"></span>
+                            </div>
+                        </div>
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <!-- single-blog Start -->
+                                <div class="swiper-slide">
+                                    <div class="blog-card">
+                                        <div class="thumb">
+                                            <a href="blog-details.html">
+                                                <img src="{{asset('frontend')}}/assets/images/blog/1.jpg" alt="img" />
+                                            </a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <h3 class="title">
+                                                <a href="blog-details.html">Top 5 Insanely Popular (& Affordable) Bluetooth1</a>
+                                            </h3>
+                                            <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single-blog End -->
+                                <!-- single-blog Start -->
+                                <div class="swiper-slide">
+                                    <div class="blog-card">
+                                        <div class="thumb">
+                                            <a href="blog-details.html">
+                                                <img src="{{asset('frontend')}}/assets/images/blog/2.jpg" alt="img" />
+                                            </a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <h3 class="title">
+                                                <a href="blog-details.html">8 Insanely Popular Must-Haves for the Traveller</a>
+                                            </h3>
+                                            <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single-blog End -->
+                                <!-- single-blog Start -->
+                                <div class="swiper-slide">
+                                    <div class="blog-card">
+                                        <div class="thumb">
+                                            <a href="blog-details.html">
+                                                <img src="{{asset('frontend')}}/assets/images/blog/3.jpg" alt="img" />
+                                            </a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <h3 class="title">
+                                                <a href="blog-details.html">Last 6 months have been phenomenal for me</a>
+                                            </h3>
+                                            <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single-blog End -->
+                                <!-- single-blog Start -->
+                                <div class="swiper-slide">
+                                    <div class="blog-card">
+                                        <div class="thumb">
+                                            <a href="blog-details.html">
+                                                <img src="{{asset('frontend')}}/assets/images/blog/4.jpg" alt="img" />
+                                            </a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <h3 class="title">
+                                                <a href="blog-details.html">A candid face-time session with the.</a>
+                                            </h3>
+                                            <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single-blog End -->
+                                <!-- single-blog Start -->
+                                <div class="swiper-slide">
+                                    <div class="blog-card">
+                                        <div class="thumb">
+                                            <a href="blog-details.html">
+                                                <img src="{{asset('frontend')}}/assets/images/blog/5.jpg" alt="img" />
+                                            </a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <h3 class="title">
+                                                <a href="blog-details.html">Top 5 Incredibly Popular (& Affordable) Massagers</a>
+                                            </h3>
+                                            <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single-blog End -->
+                                <!-- single-blog Start -->
+                                <div class="swiper-slide">
+                                    <div class="blog-card">
+                                        <div class="thumb">
+                                            <a href="blog-details.html">
+                                                <img src="{{asset('frontend')}}/assets/images/blog/6.jpg" alt="img" />
+                                            </a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <h3 class="title">
+                                                <a href="blog-details.html">7 Insanely Popular Must-Have Massagers</a>
+                                            </h3>
+                                            <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single-blog End -->
+                                <!-- single-blog Start -->
+                                <div class="swiper-slide">
+                                    <div class="blog-card">
+                                        <div class="thumb">
+                                            <a href="blog-details.html">
+                                                <img src="{{asset('frontend')}}/assets/images/blog/1.jpg" alt="img" />
+                                            </a>
+                                        </div>
+                                        <div class="blog-content">
+                                            <h3 class="title">
+                                                <a href="blog-details.html">Top 5 Insanely Popular (& Affordable) Bluetooth</a>
+                                            </h3>
+                                            <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single-blog End -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section End-->
+
+    <!-- News letter Section Start -->
+    <section class="bg-primary section-py">
+        <div class="container">
+            <div class="row align-items-center mb-n7">
+                <div class="col-xl-3 col-lg-5 col-md-6 mb-7 order-first">
+                    <div class="text-center text-md-start">
+                        <h3 class="news-title">Sign Up For Newsletters</h3>
+                        <p class="text">Be the First to Know. Sign up for newsletter today</p>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-4 mb-7 order-last order-lg-0">
+                    <form id="mc-form" action="#">
+                        <div class="input-group">
+                            <input id="mc-email" type="email" class="form-control border-0" required="" placeholder="Enter your email address" />
+                            <div class="input-group-text">
+                                <button class="btn-search btn btn-hover-dark" type="submit">subcrib</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xl-4 col-lg-3 col-md-6 mb-7">
+                    <ul class="social d-flex flex-wrap align-items-center justify-content-center justify-content-md-end">
+                        <li class="social-link-item"><a class="social-link" href="#"><span class="ion-social-facebook"></span></a></li>
+                        <li class="social-link-item"><a class="social-link" href="#"><span class="ion-social-googleplus"></span></a></li>
+                        <li class="social-link-item"><a class="social-link" href="#"><span class="ion-social-pinterest-outline"></span></a></li>
+                        <li class="social-link-item"><a class="social-link" href="#"><span class="ion-social-twitter"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- News letter Section End -->
+
+    <footer class="footer-section">
+        <div class="footer-top position-relative">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <div class="border-bottom section-py">
+                            <div class="row mb-n7">
+                                <div class="col-lg-4 col-sm-6 mb-7">
+                                    <div class="footer-widget">
+                                        <a class="footer-logo mb-8" href="index.html">
+                                            <img src="{{asset('frontend')}}/assets/images/logo/logo.png" alt="footer-logo" />
+                                        </a>
+                                        <p>
+                                            We are a team of designers and developers that create high quality
+                                            Magento, Prestashop, Opencart.
+                                        </p>
+                                        <ul class="adress">
+                                            <li><span class="text-dark fw-500">Address:</span> 4710-4890 Breckinridge St,Fayetteville</li>
+                                            <li><span class="text-dark fw-500">Email:</span> <a href="mailto:support@hasthemes.com">support@hasthemes.com</a></li>
+                                            <li><span class="text-dark fw-500">Call us:</span><a href="tel:110012345678"><span class="phone-call">1-1001-234-5678</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 mb-7">
+                                    <div class="footer-widget">
+                                        <h4 class="title">Products</h4>
+                                        <ul class="footer-menu">
+                                            <li><a class="footer-link" href="#">Prices drop</a></li>
+                                            <li><a class="footer-link" href="#">New products</a></li>
+                                            <li><a class="footer-link" href="#">Best sales</a></li>
+                                            <li><a class="footer-link" href="#">Blog Post</a></li>
+                                            <li><a class="footer-link" href="#">Contact us</a></li>
+                                            <li><a class="footer-link" href="#">Sitemap</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 mb-7">
+                                    <div class="footer-widget">
+                                        <h4 class="title">Our company</h4>
+                                        <ul class="footer-menu">
+                                            <li><a class="footer-link" href="#">Delivery</a></li>
+                                            <li><a class="footer-link" href="#">Legal Notice</a></li>
+                                            <li><a class="footer-link" href="#">About us</a></li>
+                                            <li><a class="footer-link" href="#">Secure payment</a></li>
+                                            <li><a class="footer-link" href="#">Prices drop</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-sm-6 mb-7">
+                                    <div class="footer-widget">
+                                        <h4 class="title">Your account</h4>
+                                        <ul class="footer-menu">
+                                            <li><a class="footer-link" href="#">Personal info</a></li>
+                                            <li><a class="footer-link" href="#">Orders</a></li>
+                                            <li><a class="footer-link" href="#">Credit slips</a></li>
+                                            <li><a class="footer-link" href="#">Addresses</a></li>
+                                            <li><a class="footer-link" href="#">My wishlists</a></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -873,6062 +4407,202 @@
                 </div>
             </div>
         </div>
+        <!-- coppy right satrt -->
+        <div class="copy-right-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 order-last order-md-first">
+                        <div class="copyright-info text-center text-md-start">
+                            <p>
+                                Copyright &copy; <span id="currentYear"></span>
+                                <a href="https://hasthemes.com/">Hasthemes</a>, All Rights Reserved
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end mb-3 mb-md-0">
+                        <img src="{{asset('frontend')}}/assets/images/payment.png" alt="images">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- coppy right end -->
+    </footer>
 
-        <aside id="notifications">
-            <div class="container"></div>
-        </aside>
 
-        <section id="wrapper">
-            <div class="conten-box">
-                <div class="tab-category-container-slider" data-items="7" data-speed="1000" data-autoplay="0" data-time="3000" data-arrow="1" data-pagination="0" data-move="1" data-pausehover="0" data-md="5" data-sm="4" data-xs="2" data-xxs="1">
-                    <div class="tab-category">
-                        <div class="pos_tab">
-                            <div class="pos_title">
-                                <h2>Featured Products</h2>
-                                <div class="box-tab">
-                                    <ul class="tab_cates">
-                                        <li data-title="tabtitle_19" rel="tab_19" class="active">
-                                            <span>Baking &amp; Pastry Mats</span>
-                                        </li>
 
-                                        <li data-title="tabtitle_20" rel="tab_20">
-                                            <span>Chocolate Moulds</span>
-                                        </li>
 
-                                        <li data-title="tabtitle_31" rel="tab_31">
-                                            <span>Chopping Boards</span>
-                                        </li>
+
+    <!-- Modals -->
+    <!-- quick view modal -->
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="quickview" tabindex="-1" aria-labelledby="quickview">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body my-6">
+                    <div class="row mb-n10">
+                        <div class="col-xl-6 col-lg-6 mb-10">
+                            <div class="product-detail_img vertical-slider_wrap">
+                                <div class="swiper-container pd-vertical_slider lightgallery">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="single-img">
+                                                <img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="Product Image" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="single-img">
+                                                <img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="Product Image" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="single-img">
+                                                <img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="Product Image" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="vertical-slider_nav">
+                                    <div class="swiper-navination-vertical d-none d-md-inline-block">
+                                        <div class="swiper-button-prev">
+                                            <span class="lnr lnr-chevron-up"></span>
+                                        </div>
+                                        <div class="swiper-button-next">
+                                            <span class="lnr lnr-chevron-down"></span>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <a href="#?">
+                                                <img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="Product Thumnail" /></a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#?">
+                                                <img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="Product Thumnail" /></a>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <a href="#?"><img src="{{asset('frontend')}}/assets/images/products/small/4.jpg" alt="Product Thumnail" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-10">
+                            <div class="content">
+                                <h3 class="title">Leaf & Bean Electric Milk Frother & Warmer</h3>
+                                <span class="price-lg regular-price mb-2 d-block">$83.90</span>
+                                <p>
+                                    The Crown Summit Backpack is equally at home in a gym locker, study cube
+                                    or a pup tent, so be sure yours is packed with books, a bag lunch, water
+                                    bottles, yoga block, laptop, or whatever else you want in hand. Rugged
+                                    enough for day hikes and camping trips, it has two large zippered
+                                    compartments and padded, adjustable shoulder straps.
+                                </p>
+                                <h4 class="modal-quantity">Quantity</h4>
+                                <div class="product-count style d-flex my-4">
+                                    <div class="count d-flex">
+                                        <input type="number" min="1" max="100" step="1" value="1" />
+                                        <div class="button-group">
+                                            <button class="count-btn increment">
+                                                <span class="lnr lnr-chevron-up"></span>
+                                            </button>
+                                            <button class="count-btn decrement">
+                                                <span class="lnr lnr-chevron-down"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button class="btn btn-warning btn-hover-primary text-uppercase">
+                                            Add to cart
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-hover-warning text-uppercase">Add to my wishlist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- add to wishlist -->
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="addtowishlist" tabindex="-1" aria-labelledby="addtowishlist">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="wishlist-modal">
+                        <p>You must be logged in to manage your wishlist.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- adto cart -->
+    <!-- Modal -->
+    <div class="modal fade" id="add-to-cart" tabindex="-1" aria-labelledby="add-to-cart">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-warning border-bottom-0 justify-content-center">
+                    <span class="ion-android-done me-5"></span>
+                    <h4 class="modal-title text-center">Product successfully added to your shopping cart</h4>
+                    <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close">×</button>
+                </div>
+                <div class="modal-body p-5">
+                    <div class="row">
+                        <div class="col-lg-5">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="product-image" src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="product-name">Leaf & Bean Electric Milk Frother & Warmets</h6>
+                                    <ul class="quntity-list">
+                                        <li>$83.90</li>
+                                        <li>Quantity:2</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="pos_content">
-                            <div class="tab1_container">
-                                <div id="tab_19" class="tab_category">
-                                    <div class="productTabCategorySlider owl-carousel">
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="13" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                            <img src="35-home_default/scanpan-classic-covered-saute-pan-26cm.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="https://demo2.posthemes.com/pos_benito/35-large_default/scanpan-classic-covered-saute-pan-26cm.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_3" title="Add to wishlist" href="#" data-rel="3" onclick="WishlistCart('wishlist_block_list', 'add', '3', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan 26cm</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="3" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$68.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Nunc facilisis sagittis ullamcorper. Proin
-                                                                lectus ipsum, gravida et mattis vulputate,
-                                                                tristique ut lectus. Sed et lorem nunc.
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend ..
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="22" data-id-product-attribute="54" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                            <img src="81-home_default/scanpan-classic-covered-saute-pan.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="81-large_default/scanpan-classic-covered-saute-pan.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_22" title="Add to wishlist" href="#" data-rel="22" onclick="WishlistCart('wishlist_block_list', 'add', '22', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="22" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$68.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Nunc facilisis sagittis ullamcorper. Proin
-                                                                lectus ipsum, gravida et mattis vulputate,
-                                                                tristique ut lectus. Sed et lorem nunc.
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend ..
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="25" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/25-leaf-bean-electric-milk-frother-warmets.html" class="thumbnail product-thumbnail">
-                                                            <img src="99-home_default/leaf-bean-electric-milk-frother-warmets.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="99-large_default/leaf-bean-electric-milk-frother-warmets.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_25" title="Add to wishlist" href="#" data-rel="25" onclick="WishlistCart('wishlist_block_list', 'add', '25', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/25-leaf-bean-electric-milk-frother-warmets.html" class="product_name">Leaf
-                                                                &amp; Bean Electric Milk Frother
-                                                                &amp;...</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="25" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$75.10</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="13" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="thumbnail product-thumbnail">
-                                                            <img src="53-home_default/leaf-bean-electric-milk-frother-warmer.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="53-large_default/leaf-bean-electric-milk-frother-warmer.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_13" title="Add to wishlist" href="#" data-rel="13" onclick="WishlistCart('wishlist_block_list', 'add', '13', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="product_name">Leaf
-                                                                &amp; Bean Electric Milk Frother
-                                                                &amp;...</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="13" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$83.90</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="2" data-id-product-attribute="9" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="thumbnail product-thumbnail">
-                                                            <img src="29-home_default/le-creuset-signature-cast-iron-round-casserole.jpg" alt="Le Creuset Signature Cast..." data-full-size-image-url="29-large_default/le-creuset-signature-cast-iron-round-casserole.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_2" title="Add to wishlist" href="#" data-rel="2" onclick="WishlistCart('wishlist_block_list', 'add', '2', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="product_name">Le Creuset Signature Cast Iron Round...</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="2" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$70.90</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="5" data-id-product-attribute="19" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                            <img src="44-home_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" alt="KitchenAid Artisan KSM160..." data-full-size-image-url="44-large_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_5" title="Add to wishlist" href="#" data-rel="5" onclick="WishlistCart('wishlist_block_list', 'add', '5', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM160 Stand Mixer</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="5" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$66.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps. Rugged enough for
-                                                                day hikes and camping trips, it has two large
-                                                                zippered compartments and padded, adjustable
-                                                                shoulder straps
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="1" data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                            <img src="24-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="24-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_1" title="Add to wishlist" href="#" data-rel="1" onclick="WishlistCart('wishlist_block_list', 'add', '1', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="1" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$87.80</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Nunc facilisis sagittis ullamcorper. Proin
-                                                                lectus ipsum, gravida et mattis vulputate,
-                                                                tristique ut lectus. Sed et lorem nunc.
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend ..
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="variant-links">
-                                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                            <a href="home/1-2-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                            <span class="js-count count"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="23" data-id-product-attribute="57" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                            <img src="87-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="87-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_23" title="Add to wishlist" href="#" data-rel="23" onclick="WishlistCart('wishlist_block_list', 'add', '23', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="23" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$66.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps. Rugged enough for
-                                                                day hikes and camping trips, it has two large
-                                                                zippered compartments and padded, adjustable
-                                                                shoulder straps
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="tab_20" class="tab_category">
-                                    <div class="productTabCategorySlider owl-carousel">
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="24" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/24-royal-doulton-1915-tableware-pasta-bowl.html" class="thumbnail product-thumbnail">
-                                                            <img src="93-home_default/royal-doulton-1915-tableware-pasta-bowl.jpg" alt="Royal Doulton 1915..." data-full-size-image-url="93-large_default/royal-doulton-1915-tableware-pasta-bowl.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_24" title="Add to wishlist" href="#" data-rel="24" onclick="WishlistCart('wishlist_block_list', 'add', '24', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/24-royal-doulton-1915-tableware-pasta-bowl.html" class="product_name">Royal
-                                                                Doulton 1915 Tableware Pasta Bowl</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="24" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$50.90</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="12" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/12-royal-doulton-1815-tableware-pasta-bowl.html" class="thumbnail product-thumbnail">
-                                                            <img src="49-home_default/royal-doulton-1815-tableware-pasta-bowl.jpg" alt="Royal Doulton 1815..." data-full-size-image-url="49-large_default/royal-doulton-1815-tableware-pasta-bowl.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_12" title="Add to wishlist" href="#" data-rel="12" onclick="WishlistCart('wishlist_block_list', 'add', '12', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/12-royal-doulton-1815-tableware-pasta-bowl.html" class="product_name">Royal
-                                                                Doulton 1815 Tableware Pasta Bowl</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="12" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$50.90</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="2" data-id-product-attribute="9" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="thumbnail product-thumbnail">
-                                                            <img src="29-home_default/le-creuset-signature-cast-iron-round-casserole.jpg" alt="Le Creuset Signature Cast..." data-full-size-image-url="29-large_default/le-creuset-signature-cast-iron-round-casserole.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_2" title="Add to wishlist" href="#" data-rel="2" onclick="WishlistCart('wishlist_block_list', 'add', '2', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="product_name">Le Creuset Signature Cast Iron Round...</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="2" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$70.90</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="5" data-id-product-attribute="19" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                            <img src="44-home_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" alt="KitchenAid Artisan KSM160..." data-full-size-image-url="44-large_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_5" title="Add to wishlist" href="#" data-rel="5" onclick="WishlistCart('wishlist_block_list', 'add', '5', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM160 Stand Mixer</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="5" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$66.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps. Rugged enough for
-                                                                day hikes and camping trips, it has two large
-                                                                zippered compartments and padded, adjustable
-                                                                shoulder straps
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="14" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/14-kitchenaid-artisan-ksm150-stand-mixer1.html" class="thumbnail product-thumbnail">
-                                                            <img src="58-home_default/kitchenaid-artisan-ksm150-stand-mixer1.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="58-large_default/kitchenaid-artisan-ksm150-stand-mixer1.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_14" title="Add to wishlist" href="#" data-rel="14" onclick="WishlistCart('wishlist_block_list', 'add', '14', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/14-kitchenaid-artisan-ksm150-stand-mixer1.html" class="product_name">KitchenAid Artisan KSM150 Stand Mixer1</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="14" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$68.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend laoreet congue. Vivamus
-                                                                adipiscing nisl ut dolor dignissim semper.
-                                                                Nulla luctus malesuada tincidunt. Class aptent
-                                                                taciti sociosqu ad litora torquent per conubia
-                                                                nostra, per inceptos himenaeos. Integer enim
-                                                                purus, posuere at ultricies eu, placerat a
-                                                                felis. Suspendisse aliquet urna pretium eros
-                                                                convallis interdum. Quisque in arcu id dui
-                                                                vulputate mollis eget non arcu. Aenean et
-                                                                nulla purus. Mauris vel tellus non nunc mattis
-                                                                lobortis
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="1" data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                            <img src="24-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="24-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_1" title="Add to wishlist" href="#" data-rel="1" onclick="WishlistCart('wishlist_block_list', 'add', '1', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="1" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$87.80</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Nunc facilisis sagittis ullamcorper. Proin
-                                                                lectus ipsum, gravida et mattis vulputate,
-                                                                tristique ut lectus. Sed et lorem nunc.
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend ..
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="variant-links">
-                                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                            <a href="home/1-2-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                            <span class="js-count count"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="23" data-id-product-attribute="57" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                            <img src="87-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="87-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_23" title="Add to wishlist" href="#" data-rel="23" onclick="WishlistCart('wishlist_block_list', 'add', '23', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="23" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$66.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps. Rugged enough for
-                                                                day hikes and camping trips, it has two large
-                                                                zippered compartments and padded, adjustable
-                                                                shoulder straps
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="20" data-id-product-attribute="47" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                            <img src="68-home_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="68-large_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_20" title="Add to wishlist" href="#" data-rel="20" onclick="WishlistCart('wishlist_block_list', 'add', '20', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixe</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="20" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$68.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Nunc facilisis sagittis ullamcorper. Proin
-                                                                lectus ipsum, gravida et mattis vulputate,
-                                                                tristique ut lectus. Sed et lorem nunc.
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend ..
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="variant-links">
-                                                            <a href="home/20-41-kitchenaid-artisan-ksm150-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                            <a href="home/20-40-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                            <span class="js-count count"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div id="tab_31" class="tab_category">
-                                    <div class="productTabCategorySlider owl-carousel">
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="13" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                            <img src="35-home_default/scanpan-classic-covered-saute-pan-26cm.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="35-large_default/scanpan-classic-covered-saute-pan-26cm.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_3" title="Add to wishlist" href="#" data-rel="3" onclick="WishlistCart('wishlist_block_list', 'add', '3', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan 26cm</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="3" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$68.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Nunc facilisis sagittis ullamcorper. Proin
-                                                                lectus ipsum, gravida et mattis vulputate,
-                                                                tristique ut lectus. Sed et lorem nunc.
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend ..
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="22" data-id-product-attribute="54" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                            <img src="81-home_default/scanpan-classic-covered-saute-pan.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="81-large_default/scanpan-classic-covered-saute-pan.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_22" title="Add to wishlist" href="#" data-rel="22" onclick="WishlistCart('wishlist_block_list', 'add', '22', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="22" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$68.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Nunc facilisis sagittis ullamcorper. Proin
-                                                                lectus ipsum, gravida et mattis vulputate,
-                                                                tristique ut lectus. Sed et lorem nunc.
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend ..
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="25" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/25-leaf-bean-electric-milk-frother-warmets.html" class="thumbnail product-thumbnail">
-                                                            <img src="99-home_default/leaf-bean-electric-milk-frother-warmets.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="99-large_default/leaf-bean-electric-milk-frother-warmets.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_25" title="Add to wishlist" href="#" data-rel="25" onclick="WishlistCart('wishlist_block_list', 'add', '25', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/25-leaf-bean-electric-milk-frother-warmets.html" class="product_name">Leaf
-                                                                &amp; Bean Electric Milk Frother
-                                                                &amp;...</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="25" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$75.10</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="13" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="thumbnail product-thumbnail">
-                                                            <img src="53-home_default/leaf-bean-electric-milk-frother-warmer.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="53-large_default/leaf-bean-electric-milk-frother-warmer.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_13" title="Add to wishlist" href="#" data-rel="13" onclick="WishlistCart('wishlist_block_list', 'add', '13', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="product_name">Leaf
-                                                                &amp; Bean Electric Milk Frother
-                                                                &amp;...</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="13" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$83.90</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                The Crown Summit Backpack is equally at home
-                                                                in a gym locker, study cube or a pup tent, so
-                                                                be sure yours is packed with books, a bag
-                                                                lunch, water bottles, yoga block, laptop, or
-                                                                whatever else you want in hand. Rugged enough
-                                                                for day hikes and camping trips, it has two
-                                                                large zippered compartments and padded,
-                                                                adjustable shoulder straps.
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="14" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/14-kitchenaid-artisan-ksm150-stand-mixer1.html" class="thumbnail product-thumbnail">
-                                                            <img src="58-home_default/kitchenaid-artisan-ksm150-stand-mixer1.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="58-large_default/kitchenaid-artisan-ksm150-stand-mixer1.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_14" title="Add to wishlist" href="#" data-rel="14" onclick="WishlistCart('wishlist_block_list', 'add', '14', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/14-kitchenaid-artisan-ksm150-stand-mixer1.html" class="product_name">KitchenAid Artisan KSM150 Stand Mixer1</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="14" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$68.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend laoreet congue. Vivamus
-                                                                adipiscing nisl ut dolor dignissim semper.
-                                                                Nulla luctus malesuada tincidunt. Class aptent
-                                                                taciti sociosqu ad litora torquent per conubia
-                                                                nostra, per inceptos himenaeos. Integer enim
-                                                                purus, posuere at ultricies eu, placerat a
-                                                                felis. Suspendisse aliquet urna pretium eros
-                                                                convallis interdum. Quisque in arcu id dui
-                                                                vulputate mollis eget non arcu. Aenean et
-                                                                nulla purus. Mauris vel tellus non nunc mattis
-                                                                lobortis
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="1" data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                            <img src="24-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="24-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_1" title="Add to wishlist" href="#" data-rel="1" onclick="WishlistCart('wishlist_block_list', 'add', '1', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="1" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$87.80</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Nunc facilisis sagittis ullamcorper. Proin
-                                                                lectus ipsum, gravida et mattis vulputate,
-                                                                tristique ut lectus. Sed et lorem nunc.
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend ..
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="variant-links">
-                                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                            <a href="home/1-2-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                            <span class="js-count count"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="20" data-id-product-attribute="47" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                            <img src="68-home_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="68-large_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_20" title="Add to wishlist" href="#" data-rel="20" onclick="WishlistCart('wishlist_block_list', 'add', '20', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixe</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="20" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$68.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Nunc facilisis sagittis ullamcorper. Proin
-                                                                lectus ipsum, gravida et mattis vulputate,
-                                                                tristique ut lectus. Sed et lorem nunc.
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend ..
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="variant-links">
-                                                            <a href="home/20-41-kitchenaid-artisan-ksm150-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                            <a href="home/20-40-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                            <span class="js-count count"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                        <div class="item-product">
-                                            <article class="product-miniature js-product-miniature" data-id-product="27" data-id-product-attribute="65" itemscope itemtype="http://schema.org/Product">
-                                                <div class="product_thumb">
-                                                    <div class="img_block">
-                                                        <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                            <img src="112-home_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" alt="KitchenAid Artisan KSM130..." data-full-size-image-url="112-large_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" />
-                                                        </a>
-
-                                                        <ul class="product-flag">
-                                                            <li class="new">New</li>
-                                                        </ul>
-                                                    </div>
-                                                    <ul class="add-to-links">
-                                                        <li>
-                                                            <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                view</a>
-                                                        </li>
-
-                                                        <li>
-                                                            <a class="addToWishlist wishlistProd_27" title="Add to wishlist" href="#" data-rel="27" onclick="WishlistCart('wishlist_block_list', 'add', '27', false, 1); return false;">
-                                                                Add to wishlist
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="product_desc">
-                                                        <div class="manufacturer">
-                                                            <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                        </div>
-
-                                                        <h3 itemprop="name">
-                                                            <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                        </h3>
-
-                                                        <div class="cart">
-                                                            <div class="product-add-to-cart">
-                                                                <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                    <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                    <input type="hidden" name="id_product" value="27" class="product_page_product_id" />
-                                                                    <input type="hidden" name="qty" value="1" />
-                                                                    <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                        Add to cart
-                                                                    </button>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="product-price-and-shipping">
-                                                            <span class="sr-only">Price</span>
-                                                            <span itemprop="price" class="price">$68.30</span>
-                                                            <!--  -->
-                                                        </div>
-
-                                                        <div class="product-desc" itemprop="description">
-                                                            <p>
-                                                                Nunc facilisis sagittis ullamcorper. Proin
-                                                                lectus ipsum, gravida et mattis vulputate,
-                                                                tristique ut lectus. Sed et lorem nunc.
-                                                                Vestibulum ante ipsum primis in faucibus orci
-                                                                luctus et ultrices posuere cubilia Curae;
-                                                                Aenean eleifend ..
-                                                            </p>
-                                                        </div>
-
-                                                        <div class="variant-links">
-                                                            <a href="home/27-59-kitchenaid-artisan-ksm130-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                            <a href="home/27-58-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                            <span class="js-count count"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- .tab_container -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="static2-home1">
-                    <div class="row">
-                        <div class="col col-lg-4 col-md-4 col-xs-12">
-                            <div class="banner-box">
-                                <a href="#"><img src="img/cms/img3_home1.jpg" alt="banner" class="img-responsive" /></a>
-                            </div>
-                        </div>
-                        <div class="col col-lg-4 col-md-4 col-xs-12">
-                            <div class="banner-box">
-                                <a href="#"><img src="img/cms/img4_home1.jpg" alt="banner" class="img-responsive" /></a>
-                            </div>
-                        </div>
-                        <div class="col col-lg-4 col-md-4 col-xs-12">
-                            <div class="banner-box">
-                                <a href="#"><img src="img/cms/img5_home1.jpg" alt="banner" class="img-responsive" /></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-tabs-container-slider product_block_container">
-                    <div class="title-product">
-                        <ul class="tabs_slider">
-                            <li class="new_product first_item item active" rel="tab_new_product">
-                                <span>New Arrival</span>
-                            </li>
-                            <li class="besseller_product item" rel="tab_besseller_product">
-                                <span>Bestseller</span>
-                            </li>
-                            <li class="feature_product last_item item" rel="tab_feature_product">
-                                <span>Featured Products</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pos_content">
-                        <div id="tab_new_product" class="tab_content">
-                            <div class="productTabContent0">
-                                <div class="row">
-                                    <div class="cate_center hidden-md-down col-xs-12 col-sm-12 col-md-8 col-lg-5 col-xl-4">
-                                        <article class="js-product-miniature item_in" data-id-product="27" data-id-product-attribute="65" itemscope itemtype="http://schema.org/Product">
-                                            <div class="img_block">
-                                                <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                    <img src="112-large_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" alt="" data-full-size-image-url="112-large_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" />
-                                                </a>
-                                            </div>
-                                            <div class="product_desc">
-                                                <div class="manufacturer">
-                                                    <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                </div>
-
-                                                <h3>
-                                                    <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" title="KitchenAid Artisan KSM130 Stand Mixe" itemprop="name" class="product_name">KitchenAid
-                                                        Artisan KSM130 Stand Mixe</a>
-                                                </h3>
-
-                                                <div class="product-price-and-shipping">
-                                                    <span itemprop="price" class="price">$68.30</span>
-                                                </div>
-
-                                                <div class="cart">
-                                                    <div class="product-add-to-cart">
-                                                        <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                            <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                            <input type="hidden" name="id_product" value="27" class="product_page_product_id" />
-                                                            <input type="hidden" name="qty" value="1" />
-                                                            <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                Add to cart
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-
-                                    <div class="col-right col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
-                                        <div class="cate_right owl-carousel">
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="27" data-id-product-attribute="65" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                                <img src="112-home_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" alt="KitchenAid Artisan KSM130..." data-full-size-image-url="112-large_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_27" title="Add to wishlist" href="#" data-rel="27" onclick="WishlistCart('wishlist_block_list', 'add', '27', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="27" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="variant-links">
-                                                                <a href="home/27-59-kitchenaid-artisan-ksm130-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                                <a href="home/27-58-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                                <span class="js-count count"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="26" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/26-kitchenaid-artisan-ksm100-stand-mixer.html" class="thumbnail product-thumbnail">
-                                                                <img src="105-home_default/kitchenaid-artisan-ksm100-stand-mixer.jpg" alt="KitchenAid Artisan KSM100..." data-full-size-image-url="105-large_default/kitchenaid-artisan-ksm100-stand-mixer.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_26" title="Add to wishlist" href="#" data-rel="26" onclick="WishlistCart('wishlist_block_list', 'add', '26', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/26-kitchenaid-artisan-ksm100-stand-mixer.html" class="product_name">KitchenAid Artisan KSM100 Stand Mixer</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="26" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend laoreet congue.
-                                                                    Vivamus adipiscing nisl ut dolor dignissim
-                                                                    semper. Nulla luctus malesuada tincidunt.
-                                                                    Class aptent taciti sociosqu ad litora
-                                                                    torquent per conubia nostra, per inceptos
-                                                                    himenaeos. Integer enim purus, posuere at
-                                                                    ultricies eu, placerat a felis. Suspendisse
-                                                                    aliquet urna pretium eros convallis
-                                                                    interdum. Quisque in arcu id dui vulputate
-                                                                    mollis eget non arcu. Aenean et nulla purus.
-                                                                    Mauris vel tellus non nunc mattis lobortis
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="25" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/25-leaf-bean-electric-milk-frother-warmets.html" class="thumbnail product-thumbnail">
-                                                                <img src="99-home_default/leaf-bean-electric-milk-frother-warmets.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="99-large_default/leaf-bean-electric-milk-frother-warmets.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_25" title="Add to wishlist" href="#" data-rel="25" onclick="WishlistCart('wishlist_block_list', 'add', '25', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/25-leaf-bean-electric-milk-frother-warmets.html" class="product_name">Leaf
-                                                                    &amp; Bean Electric Milk Frother
-                                                                    &amp;...</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="25" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$75.10</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="24" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/24-royal-doulton-1915-tableware-pasta-bowl.html" class="thumbnail product-thumbnail">
-                                                                <img src="93-home_default/royal-doulton-1915-tableware-pasta-bowl.jpg" alt="Royal Doulton 1915..." data-full-size-image-url="93-large_default/royal-doulton-1915-tableware-pasta-bowl.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_24" title="Add to wishlist" href="#" data-rel="24" onclick="WishlistCart('wishlist_block_list', 'add', '24', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/24-royal-doulton-1915-tableware-pasta-bowl.html" class="product_name">Royal Doulton 1915 Tableware Pasta Bowl</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="24" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$50.90</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="23" data-id-product-attribute="57" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="87-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="87-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_23" title="Add to wishlist" href="#" data-rel="23" onclick="WishlistCart('wishlist_block_list', 'add', '23', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="23" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$66.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="22" data-id-product-attribute="54" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="81-home_default/scanpan-classic-covered-saute-pan.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="81-large_default/scanpan-classic-covered-saute-pan.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_22" title="Add to wishlist" href="#" data-rel="22" onclick="WishlistCart('wishlist_block_list', 'add', '22', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="22" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="21" data-id-product-attribute="51" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/21-51-creuset-signature-cast-iron-round-cassero.html#/1-size-s" class="thumbnail product-thumbnail">
-                                                                <img src="76-home_default/creuset-signature-cast-iron-round-cassero.jpg" alt="Creuset Signature Cast Iron..." data-full-size-image-url="76-large_default/creuset-signature-cast-iron-round-cassero.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_21" title="Add to wishlist" href="#" data-rel="21" onclick="WishlistCart('wishlist_block_list', 'add', '21', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/21-51-creuset-signature-cast-iron-round-cassero.html#/1-size-s" class="product_name">Creuset Signature Cast Iron Round...</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="21" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$59.70</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="20" data-id-product-attribute="47" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                                <img src="68-home_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="68-large_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_20" title="Add to wishlist" href="#" data-rel="20" onclick="WishlistCart('wishlist_block_list', 'add', '20', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixe</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="20" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="variant-links">
-                                                                <a href="home/20-41-kitchenaid-artisan-ksm150-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                                <a href="home/20-40-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                                <span class="js-count count"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="1" data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                                <img src="24-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="24-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_1" title="Add to wishlist" href="#" data-rel="1" onclick="WishlistCart('wishlist_block_list', 'add', '1', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="1" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$87.80</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="variant-links">
-                                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                                <a href="home/1-2-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                                <span class="js-count count"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="2" data-id-product-attribute="9" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="thumbnail product-thumbnail">
-                                                                <img src="29-home_default/le-creuset-signature-cast-iron-round-casserole.jpg" alt="Le Creuset Signature Cast..." data-full-size-image-url="29-large_default/le-creuset-signature-cast-iron-round-casserole.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_2" title="Add to wishlist" href="#" data-rel="2" onclick="WishlistCart('wishlist_block_list', 'add', '2', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="product_name">Le Creuset Signature Cast Iron Round...</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="2" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$70.90</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="13" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="35-home_default/scanpan-classic-covered-saute-pan-26cm.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="35-large_default/scanpan-classic-covered-saute-pan-26cm.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_3" title="Add to wishlist" href="#" data-rel="3" onclick="WishlistCart('wishlist_block_list', 'add', '3', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan 26cm</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="3" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="4" data-id-product-attribute="16" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/4-16-essteele-australis-4pc-set-w-saucepans.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="38-home_default/essteele-australis-4pc-set-w-saucepans.jpg" alt="Essteele Australis 4pc Set..." data-full-size-image-url="38-large_default/essteele-australis-4pc-set-w-saucepans.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_4" title="Add to wishlist" href="#" data-rel="4" onclick="WishlistCart('wishlist_block_list', 'add', '4', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/4-16-essteele-australis-4pc-set-w-saucepans.html#/19-dimension-40x60cm" class="product_name">Essteele Australis 4pc Set w/ Saucepans</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="4" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$55.60</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend laoreet congue.
-                                                                    Vivamus adipiscing nisl ut dolor dignissim
-                                                                    semper. Nulla luctus malesuada tincidunt.
-                                                                    Class aptent taciti sociosqu ad litora
-                                                                    torquent per conubia nostra, per inceptos
-                                                                    himenaeos. Integer enim purus, posuere at
-                                                                    ultricies eu, placerat a felis. Suspendisse
-                                                                    aliquet urna pretium eros convallis
-                                                                    interdum. Quisque in arcu id dui vulputate
-                                                                    mollis eget non arcu. Aenean et nulla purus.
-                                                                    Mauris vel tellus non nunc mattis lobortis
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab_besseller_product" class="tab_content">
-                            <div class="productTabContent1">
-                                <div class="row">
-                                    <div class="cate_center hidden-md-down col-xs-12 col-sm-12 col-md-8 col-lg-5 col-xl-4">
-                                        <article class="js-product-miniature item_in" data-id-product="2" data-id-product-attribute="9" itemscope itemtype="http://schema.org/Product">
-                                            <div class="img_block">
-                                                <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="thumbnail product-thumbnail">
-                                                    <img src="29-large_default/le-creuset-signature-cast-iron-round-casserole.jpg" alt="" data-full-size-image-url="29-large_default/le-creuset-signature-cast-iron-round-casserole.jpg" />
-                                                </a>
-                                            </div>
-                                            <div class="product_desc">
-                                                <div class="manufacturer">
-                                                    <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                </div>
-
-                                                <h3>
-                                                    <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" title="Le Creuset Signature Cast Iron Round Casserole" itemprop="name" class="product_name">Le Creuset Signature Cast Iron Round Casserole</a>
-                                                </h3>
-
-                                                <div class="product-price-and-shipping">
-                                                    <span itemprop="price" class="price">$70.90</span>
-                                                </div>
-
-                                                <div class="cart">
-                                                    <div class="product-add-to-cart">
-                                                        <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                            <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                            <input type="hidden" name="id_product" value="2" class="product_page_product_id" />
-                                                            <input type="hidden" name="qty" value="1" />
-                                                            <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                Add to cart
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-
-                                    <div class="col-right col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
-                                        <div class="cate_right owl-carousel">
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="2" data-id-product-attribute="9" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="thumbnail product-thumbnail">
-                                                                <img src="29-home_default/le-creuset-signature-cast-iron-round-casserole.jpg" alt="Le Creuset Signature Cast..." data-full-size-image-url="29-large_default/le-creuset-signature-cast-iron-round-casserole.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_2" title="Add to wishlist" href="#" data-rel="2" onclick="WishlistCart('wishlist_block_list', 'add', '2', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="product_name">Le Creuset Signature Cast Iron Round...</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="2" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$70.90</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="13" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="35-home_default/scanpan-classic-covered-saute-pan-26cm.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="35-large_default/scanpan-classic-covered-saute-pan-26cm.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_3" title="Add to wishlist" href="#" data-rel="3" onclick="WishlistCart('wishlist_block_list', 'add', '3', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan 26cm</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="3" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="1" data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                                <img src="24-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="24-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_1" title="Add to wishlist" href="#" data-rel="1" onclick="WishlistCart('wishlist_block_list', 'add', '1', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="1" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$87.80</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="variant-links">
-                                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                                <a href="home/1-2-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                                <span class="js-count count"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="4" data-id-product-attribute="16" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/4-16-essteele-australis-4pc-set-w-saucepans.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="38-home_default/essteele-australis-4pc-set-w-saucepans.jpg" alt="Essteele Australis 4pc Set..." data-full-size-image-url="38-large_default/essteele-australis-4pc-set-w-saucepans.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_4" title="Add to wishlist" href="#" data-rel="4" onclick="WishlistCart('wishlist_block_list', 'add', '4', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/4-16-essteele-australis-4pc-set-w-saucepans.html#/19-dimension-40x60cm" class="product_name">Essteele Australis 4pc Set w/ Saucepans</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="4" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$55.60</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend laoreet congue.
-                                                                    Vivamus adipiscing nisl ut dolor dignissim
-                                                                    semper. Nulla luctus malesuada tincidunt.
-                                                                    Class aptent taciti sociosqu ad litora
-                                                                    torquent per conubia nostra, per inceptos
-                                                                    himenaeos. Integer enim purus, posuere at
-                                                                    ultricies eu, placerat a felis. Suspendisse
-                                                                    aliquet urna pretium eros convallis
-                                                                    interdum. Quisque in arcu id dui vulputate
-                                                                    mollis eget non arcu. Aenean et nulla purus.
-                                                                    Mauris vel tellus non nunc mattis lobortis
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="5" data-id-product-attribute="19" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="44-home_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" alt="KitchenAid Artisan KSM160..." data-full-size-image-url="44-large_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_5" title="Add to wishlist" href="#" data-rel="5" onclick="WishlistCart('wishlist_block_list', 'add', '5', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM160 Stand Mixer</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="5" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$66.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="13" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="thumbnail product-thumbnail">
-                                                                <img src="53-home_default/leaf-bean-electric-milk-frother-warmer.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="53-large_default/leaf-bean-electric-milk-frother-warmer.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_13" title="Add to wishlist" href="#" data-rel="13" onclick="WishlistCart('wishlist_block_list', 'add', '13', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="product_name">Leaf
-                                                                    &amp; Bean Electric Milk Frother
-                                                                    &amp;...</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="13" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$83.90</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="22" data-id-product-attribute="54" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="81-home_default/scanpan-classic-covered-saute-pan.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="81-large_default/scanpan-classic-covered-saute-pan.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_22" title="Add to wishlist" href="#" data-rel="22" onclick="WishlistCart('wishlist_block_list', 'add', '22', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="22" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="27" data-id-product-attribute="65" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                                <img src="112-home_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" alt="KitchenAid Artisan KSM130..." data-full-size-image-url="112-large_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_27" title="Add to wishlist" href="#" data-rel="27" onclick="WishlistCart('wishlist_block_list', 'add', '27', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="27" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="variant-links">
-                                                                <a href="home/27-59-kitchenaid-artisan-ksm130-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                                <a href="home/27-58-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                                <span class="js-count count"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="12" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/12-royal-doulton-1815-tableware-pasta-bowl.html" class="thumbnail product-thumbnail">
-                                                                <img src="49-home_default/royal-doulton-1815-tableware-pasta-bowl.jpg" alt="Royal Doulton 1815..." data-full-size-image-url="49-large_default/royal-doulton-1815-tableware-pasta-bowl.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_12" title="Add to wishlist" href="#" data-rel="12" onclick="WishlistCart('wishlist_block_list', 'add', '12', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/12-royal-doulton-1815-tableware-pasta-bowl.html" class="product_name">Royal Doulton 1815 Tableware Pasta Bowl</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="12" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$50.90</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="24" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/24-royal-doulton-1915-tableware-pasta-bowl.html" class="thumbnail product-thumbnail">
-                                                                <img src="93-home_default/royal-doulton-1915-tableware-pasta-bowl.jpg" alt="Royal Doulton 1915..." data-full-size-image-url="93-large_default/royal-doulton-1915-tableware-pasta-bowl.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_24" title="Add to wishlist" href="#" data-rel="24" onclick="WishlistCart('wishlist_block_list', 'add', '24', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/24-royal-doulton-1915-tableware-pasta-bowl.html" class="product_name">Royal Doulton 1915 Tableware Pasta Bowl</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="24" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$50.90</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="tab_feature_product" class="tab_content">
-                            <div class="productTabContent2">
-                                <div class="row">
-                                    <div class="cate_center hidden-md-down col-xs-12 col-sm-12 col-md-8 col-lg-5 col-xl-4">
-                                        <article class="js-product-miniature item_in" data-id-product="1" data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                                            <div class="img_block">
-                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                    <img src="24-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="" data-full-size-image-url="24-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                </a>
-                                            </div>
-                                            <div class="product_desc">
-                                                <div class="manufacturer">
-                                                    <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                </div>
-
-                                                <h3>
-                                                    <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" title="KitchenAid Artisan KSM150 Stand Mixer" itemprop="name" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                </h3>
-
-                                                <div class="product-price-and-shipping">
-                                                    <span itemprop="price" class="price">$87.80</span>
-                                                </div>
-
-                                                <div class="cart">
-                                                    <div class="product-add-to-cart">
-                                                        <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                            <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                            <input type="hidden" name="id_product" value="1" class="product_page_product_id" />
-                                                            <input type="hidden" name="qty" value="1" />
-                                                            <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                Add to cart
-                                                            </button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-
-                                    <div class="col-right col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
-                                        <div class="cate_right owl-carousel">
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="1" data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                                <img src="24-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="24-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_1" title="Add to wishlist" href="#" data-rel="1" onclick="WishlistCart('wishlist_block_list', 'add', '1', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="1" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$87.80</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="variant-links">
-                                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                                <a href="home/1-2-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                                <span class="js-count count"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="2" data-id-product-attribute="9" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="thumbnail product-thumbnail">
-                                                                <img src="29-home_default/le-creuset-signature-cast-iron-round-casserole.jpg" alt="Le Creuset Signature Cast..." data-full-size-image-url="29-large_default/le-creuset-signature-cast-iron-round-casserole.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_2" title="Add to wishlist" href="#" data-rel="2" onclick="WishlistCart('wishlist_block_list', 'add', '2', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="product_name">Le Creuset Signature Cast Iron Round...</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="2" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$70.90</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="13" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="35-home_default/scanpan-classic-covered-saute-pan-26cm.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="35-large_default/scanpan-classic-covered-saute-pan-26cm.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_3" title="Add to wishlist" href="#" data-rel="3" onclick="WishlistCart('wishlist_block_list', 'add', '3', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan 26cm</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="3" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="4" data-id-product-attribute="16" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/4-16-essteele-australis-4pc-set-w-saucepans.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="38-home_default/essteele-australis-4pc-set-w-saucepans.jpg" alt="Essteele Australis 4pc Set..." data-full-size-image-url="38-large_default/essteele-australis-4pc-set-w-saucepans.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_4" title="Add to wishlist" href="#" data-rel="4" onclick="WishlistCart('wishlist_block_list', 'add', '4', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/4-16-essteele-australis-4pc-set-w-saucepans.html#/19-dimension-40x60cm" class="product_name">Essteele Australis 4pc Set w/ Saucepans</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="4" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$55.60</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend laoreet congue.
-                                                                    Vivamus adipiscing nisl ut dolor dignissim
-                                                                    semper. Nulla luctus malesuada tincidunt.
-                                                                    Class aptent taciti sociosqu ad litora
-                                                                    torquent per conubia nostra, per inceptos
-                                                                    himenaeos. Integer enim purus, posuere at
-                                                                    ultricies eu, placerat a felis. Suspendisse
-                                                                    aliquet urna pretium eros convallis
-                                                                    interdum. Quisque in arcu id dui vulputate
-                                                                    mollis eget non arcu. Aenean et nulla purus.
-                                                                    Mauris vel tellus non nunc mattis lobortis
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="5" data-id-product-attribute="19" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="44-home_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" alt="KitchenAid Artisan KSM160..." data-full-size-image-url="44-large_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_5" title="Add to wishlist" href="#" data-rel="5" onclick="WishlistCart('wishlist_block_list', 'add', '5', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM160 Stand Mixer</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="5" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$66.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="12" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/12-royal-doulton-1815-tableware-pasta-bowl.html" class="thumbnail product-thumbnail">
-                                                                <img src="49-home_default/royal-doulton-1815-tableware-pasta-bowl.jpg" alt="Royal Doulton 1815..." data-full-size-image-url="49-large_default/royal-doulton-1815-tableware-pasta-bowl.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_12" title="Add to wishlist" href="#" data-rel="12" onclick="WishlistCart('wishlist_block_list', 'add', '12', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/12-royal-doulton-1815-tableware-pasta-bowl.html" class="product_name">Royal Doulton 1815 Tableware Pasta Bowl</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="12" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$50.90</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="13" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="thumbnail product-thumbnail">
-                                                                <img src="53-home_default/leaf-bean-electric-milk-frother-warmer.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="53-large_default/leaf-bean-electric-milk-frother-warmer.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_13" title="Add to wishlist" href="#" data-rel="13" onclick="WishlistCart('wishlist_block_list', 'add', '13', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="product_name">Leaf
-                                                                    &amp; Bean Electric Milk Frother
-                                                                    &amp;...</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="13" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$83.90</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="14" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/14-kitchenaid-artisan-ksm150-stand-mixer1.html" class="thumbnail product-thumbnail">
-                                                                <img src="58-home_default/kitchenaid-artisan-ksm150-stand-mixer1.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="58-large_default/kitchenaid-artisan-ksm150-stand-mixer1.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_14" title="Add to wishlist" href="#" data-rel="14" onclick="WishlistCart('wishlist_block_list', 'add', '14', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/14-kitchenaid-artisan-ksm150-stand-mixer1.html" class="product_name">KitchenAid Artisan KSM150 Stand Mixer1</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="14" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend laoreet congue.
-                                                                    Vivamus adipiscing nisl ut dolor dignissim
-                                                                    semper. Nulla luctus malesuada tincidunt.
-                                                                    Class aptent taciti sociosqu ad litora
-                                                                    torquent per conubia nostra, per inceptos
-                                                                    himenaeos. Integer enim purus, posuere at
-                                                                    ultricies eu, placerat a felis. Suspendisse
-                                                                    aliquet urna pretium eros convallis
-                                                                    interdum. Quisque in arcu id dui vulputate
-                                                                    mollis eget non arcu. Aenean et nulla purus.
-                                                                    Mauris vel tellus non nunc mattis lobortis
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="20" data-id-product-attribute="47" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                                <img src="68-home_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="68-large_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_20" title="Add to wishlist" href="#" data-rel="20" onclick="WishlistCart('wishlist_block_list', 'add', '20', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixe</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="20" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-
-                                                            <div class="variant-links">
-                                                                <a href="home/20-41-kitchenaid-artisan-ksm150-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                                <a href="home/20-40-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                                <span class="js-count count"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="21" data-id-product-attribute="51" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/21-51-creuset-signature-cast-iron-round-cassero.html#/1-size-s" class="thumbnail product-thumbnail">
-                                                                <img src="76-home_default/creuset-signature-cast-iron-round-cassero.jpg" alt="Creuset Signature Cast Iron..." data-full-size-image-url="76-large_default/creuset-signature-cast-iron-round-cassero.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_21" title="Add to wishlist" href="#" data-rel="21" onclick="WishlistCart('wishlist_block_list', 'add', '21', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/21-51-creuset-signature-cast-iron-round-cassero.html#/1-size-s" class="product_name">Creuset Signature Cast Iron Round...</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="21" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$59.70</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps.
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-
-                                            <div class="item-product">
-                                                <article class="product-miniature js-product-miniature" data-id-product="22" data-id-product-attribute="54" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="81-home_default/scanpan-classic-covered-saute-pan.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="81-large_default/scanpan-classic-covered-saute-pan.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_22" title="Add to wishlist" href="#" data-rel="22" onclick="WishlistCart('wishlist_block_list', 'add', '22', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="22" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$68.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    Nunc facilisis sagittis ullamcorper. Proin
-                                                                    lectus ipsum, gravida et mattis vulputate,
-                                                                    tristique ut lectus. Sed et lorem nunc.
-                                                                    Vestibulum ante ipsum primis in faucibus
-                                                                    orci luctus et ultrices posuere cubilia
-                                                                    Curae; Aenean eleifend ..
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-
-                                                <article class="product-miniature js-product-miniature" data-id-product="23" data-id-product-attribute="57" itemscope itemtype="http://schema.org/Product">
-                                                    <div class="product_thumb">
-                                                        <div class="img_block">
-                                                            <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                                <img src="87-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="87-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                                            </a>
-
-                                                            <ul class="product-flag">
-                                                                <li class="new">New</li>
-                                                            </ul>
-                                                        </div>
-                                                        <ul class="add-to-links">
-                                                            <li>
-                                                                <a href="#" class="quick-view" data-link-action="quickview" title="Quick view">Quick
-                                                                    view</a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a class="addToWishlist wishlistProd_23" title="Add to wishlist" href="#" data-rel="23" onclick="WishlistCart('wishlist_block_list', 'add', '23', false, 1); return false;">
-                                                                    Add to wishlist
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                        <div class="product_desc">
-                                                            <div class="manufacturer">
-                                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                                            </div>
-
-                                                            <h3 itemprop="name">
-                                                                <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                            </h3>
-
-                                                            <div class="cart">
-                                                                <div class="product-add-to-cart">
-                                                                    <form action="https://demo2.posthemes.com/pos_benito/en/cart" method="post" class="add-to-cart-or-refresh">
-                                                                        <input type="hidden" name="token" value="77ec6b3ef413de5fdd9f67ee0dce22c1" />
-                                                                        <input type="hidden" name="id_product" value="23" class="product_page_product_id" />
-                                                                        <input type="hidden" name="qty" value="1" />
-                                                                        <button class="button ajax_add_to_cart_button add-to-cart btn-default" data-button-action="add-to-cart" type="submit">
-                                                                            Add to cart
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="product-price-and-shipping">
-                                                                <span class="sr-only">Price</span>
-                                                                <span itemprop="price" class="price">$66.30</span>
-                                                                <!--  -->
-                                                            </div>
-
-                                                            <div class="product-desc" itemprop="description">
-                                                                <p>
-                                                                    The Crown Summit Backpack is equally at home
-                                                                    in a gym locker, study cube or a pup tent,
-                                                                    so be sure yours is packed with books, a bag
-                                                                    lunch, water bottles, yoga block, laptop, or
-                                                                    whatever else you want in hand. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps. Rugged
-                                                                    enough for day hikes and camping trips, it
-                                                                    has two large zippered compartments and
-                                                                    padded, adjustable shoulder straps
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </article>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="static3-home1">
-                    <div class="row">
-                        <div class="box1 col col-lg-4 col-md-4 col-xs-12">
-                            <div class="banner-box">
-                                <a href="#"><img src="img/cms/img6_home1.jpg" alt="banner" class="img-responsive" /></a>
-                            </div>
-                        </div>
-                        <div class="box2 col col-lg-4 col-md-4 col-xs-12">
-                            <div class="banner-box">
-                                <a href="#"><img src="img/cms/img7_home1.jpg" alt="banner" class="img-responsive" /></a>
-                            </div>
-                        </div>
-                        <div class="box3 col col-lg-4 col-md-4 col-xs-12">
-                            <div class="banner-box">
-                                <a href="#"><img src="img/cms/img8_home1.jpg" alt="banner" class="img-responsive" /></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="poslistcateproduct poslistcateproduct_0 product_container" data-items="4" data-speed="1000" data-autoplay="0" data-time="0" data-arrow="1" data-pagination="0" data-move="0" data-pausehover="0" data-md="3" data-sm="2" data-xs="2" data-xxs="1">
-                    <div class="pos_title">
-                        <h2>
-                            <span>Ceramic Artisan</span>
-                        </h2>
-                        <ul class="subcategories-list">
-                            <li><a href="68-pots.html" target="_blank">Pots</a></li>
-                            <li><a href="69-pans.html" target="_blank">Pans</a></li>
-                            <li><a href="70-living.html" target="_blank">Living</a></li>
-                        </ul>
-                    </div>
-                    <div class="listcateproduct-products">
-                        <div class="description-list">
-                            <div class="st_modun st1">
-                                <div class="img-box">
-                                    <a href="#"><img src="img/cms/st1.jpg" alt="" class="img-responsive" /></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pos-content row">
-                            <div class="listcateSlide owl-carousel">
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="3" data-id-product-attribute="13" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                <img src="35-home_default/scanpan-classic-covered-saute-pan-26cm.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="35-large_default/scanpan-classic-covered-saute-pan-26cm.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/3-13-scanpan-classic-covered-saute-pan-26cm.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan 26cm</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$68.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Nunc facilisis sagittis ullamcorper. Proin lectus
-                                                    ipsum, gravida et mattis vulputate, tristique ut
-                                                    lectus. Sed et lorem nunc. Vestibulum ante ipsum
-                                                    primis in faucibus orci luctus et ultrices posuere
-                                                    cubilia Curae; Aenean eleifend ..
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="22" data-id-product-attribute="54" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                <img src="81-home_default/scanpan-classic-covered-saute-pan.jpg" alt="Scanpan Classic Covered..." data-full-size-image-url="81-large_default/scanpan-classic-covered-saute-pan.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/22-54-scanpan-classic-covered-saute-pan.html#/19-dimension-40x60cm" class="product_name">Scanpan Classic Covered Saute Pan</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$68.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Nunc facilisis sagittis ullamcorper. Proin lectus
-                                                    ipsum, gravida et mattis vulputate, tristique ut
-                                                    lectus. Sed et lorem nunc. Vestibulum ante ipsum
-                                                    primis in faucibus orci luctus et ultrices posuere
-                                                    cubilia Curae; Aenean eleifend ..
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="24" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/24-royal-doulton-1915-tableware-pasta-bowl.html" class="thumbnail product-thumbnail">
-                                                <img src="93-home_default/royal-doulton-1915-tableware-pasta-bowl.jpg" alt="Royal Doulton 1915..." data-full-size-image-url="93-large_default/royal-doulton-1915-tableware-pasta-bowl.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/24-royal-doulton-1915-tableware-pasta-bowl.html" class="product_name">Royal
-                                                    Doulton 1915 Tableware Pasta Bowl</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$50.90</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="12" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/12-royal-doulton-1815-tableware-pasta-bowl.html" class="thumbnail product-thumbnail">
-                                                <img src="49-home_default/royal-doulton-1815-tableware-pasta-bowl.jpg" alt="Royal Doulton 1815..." data-full-size-image-url="49-large_default/royal-doulton-1815-tableware-pasta-bowl.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/12-royal-doulton-1815-tableware-pasta-bowl.html" class="product_name">Royal
-                                                    Doulton 1815 Tableware Pasta Bowl</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$50.90</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="25" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/25-leaf-bean-electric-milk-frother-warmets.html" class="thumbnail product-thumbnail">
-                                                <img src="99-home_default/leaf-bean-electric-milk-frother-warmets.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="99-large_default/leaf-bean-electric-milk-frother-warmets.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/25-leaf-bean-electric-milk-frother-warmets.html" class="product_name">Leaf &amp;
-                                                    Bean Electric Milk Frother &amp;...</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$75.10</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="13" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="thumbnail product-thumbnail">
-                                                <img src="53-home_default/leaf-bean-electric-milk-frother-warmer.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="53-large_default/leaf-bean-electric-milk-frother-warmer.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="product_name">Leaf &amp;
-                                                    Bean Electric Milk Frother &amp;...</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$83.90</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="2" data-id-product-attribute="9" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="thumbnail product-thumbnail">
-                                                <img src="29-home_default/le-creuset-signature-cast-iron-round-casserole.jpg" alt="Le Creuset Signature Cast..." data-full-size-image-url="29-large_default/le-creuset-signature-cast-iron-round-casserole.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/2-9-le-creuset-signature-cast-iron-round-casserole.html#/1-size-s" class="product_name">Le Creuset Signature Cast Iron Round...</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$70.90</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="5" data-id-product-attribute="19" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                <img src="44-home_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" alt="KitchenAid Artisan KSM160..." data-full-size-image-url="44-large_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM160 Stand Mixer</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$66.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                    Rugged enough for day hikes and camping trips, it
-                                                    has two large zippered compartments and padded,
-                                                    adjustable shoulder straps
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="14" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/14-kitchenaid-artisan-ksm150-stand-mixer1.html" class="thumbnail product-thumbnail">
-                                                <img src="58-home_default/kitchenaid-artisan-ksm150-stand-mixer1.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="58-large_default/kitchenaid-artisan-ksm150-stand-mixer1.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/14-kitchenaid-artisan-ksm150-stand-mixer1.html" class="product_name">KitchenAid
-                                                    Artisan KSM150 Stand Mixer1</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$68.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Vestibulum ante ipsum primis in faucibus orci luctus
-                                                    et ultrices posuere cubilia Curae; Aenean eleifend
-                                                    laoreet congue. Vivamus adipiscing nisl ut dolor
-                                                    dignissim semper. Nulla luctus malesuada tincidunt.
-                                                    Class aptent taciti sociosqu ad litora torquent per
-                                                    conubia nostra, per inceptos himenaeos. Integer enim
-                                                    purus, posuere at ultricies eu, placerat a felis.
-                                                    Suspendisse aliquet urna pretium eros convallis
-                                                    interdum. Quisque in arcu id dui vulputate mollis
-                                                    eget non arcu. Aenean et nulla purus. Mauris vel
-                                                    tellus non nunc mattis lobortis
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="1" data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                <img src="24-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="24-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$87.80</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Nunc facilisis sagittis ullamcorper. Proin lectus
-                                                    ipsum, gravida et mattis vulputate, tristique ut
-                                                    lectus. Sed et lorem nunc. Vestibulum ante ipsum
-                                                    primis in faucibus orci luctus et ultrices posuere
-                                                    cubilia Curae; Aenean eleifend ..
-                                                </p>
-                                            </div>
-
-                                            <div class="variant-links">
-                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                <a href="home/1-2-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                <span class="js-count count"></span>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="23" data-id-product-attribute="57" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                <img src="87-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="87-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$66.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                    Rugged enough for day hikes and camping trips, it
-                                                    has two large zippered compartments and padded,
-                                                    adjustable shoulder straps
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="20" data-id-product-attribute="47" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                <img src="68-home_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="68-large_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixe</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$68.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Nunc facilisis sagittis ullamcorper. Proin lectus
-                                                    ipsum, gravida et mattis vulputate, tristique ut
-                                                    lectus. Sed et lorem nunc. Vestibulum ante ipsum
-                                                    primis in faucibus orci luctus et ultrices posuere
-                                                    cubilia Curae; Aenean eleifend ..
-                                                </p>
-                                            </div>
-
-                                            <div class="variant-links">
-                                                <a href="home/20-41-kitchenaid-artisan-ksm150-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                <a href="home/20-40-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                <span class="js-count count"></span>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="27" data-id-product-attribute="65" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                <img src="112-home_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" alt="KitchenAid Artisan KSM130..." data-full-size-image-url="112-large_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$68.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Nunc facilisis sagittis ullamcorper. Proin lectus
-                                                    ipsum, gravida et mattis vulputate, tristique ut
-                                                    lectus. Sed et lorem nunc. Vestibulum ante ipsum
-                                                    primis in faucibus orci luctus et ultrices posuere
-                                                    cubilia Curae; Aenean eleifend ..
-                                                </p>
-                                            </div>
-
-                                            <div class="variant-links">
-                                                <a href="home/27-59-kitchenaid-artisan-ksm130-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                <a href="home/27-58-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                <span class="js-count count"></span>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="26" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/26-kitchenaid-artisan-ksm100-stand-mixer.html" class="thumbnail product-thumbnail">
-                                                <img src="105-home_default/kitchenaid-artisan-ksm100-stand-mixer.jpg" alt="KitchenAid Artisan KSM100..." data-full-size-image-url="105-large_default/kitchenaid-artisan-ksm100-stand-mixer.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/26-kitchenaid-artisan-ksm100-stand-mixer.html" class="product_name">KitchenAid
-                                                    Artisan KSM100 Stand Mixer</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$68.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Vestibulum ante ipsum primis in faucibus orci luctus
-                                                    et ultrices posuere cubilia Curae; Aenean eleifend
-                                                    laoreet congue. Vivamus adipiscing nisl ut dolor
-                                                    dignissim semper. Nulla luctus malesuada tincidunt.
-                                                    Class aptent taciti sociosqu ad litora torquent per
-                                                    conubia nostra, per inceptos himenaeos. Integer enim
-                                                    purus, posuere at ultricies eu, placerat a felis.
-                                                    Suspendisse aliquet urna pretium eros convallis
-                                                    interdum. Quisque in arcu id dui vulputate mollis
-                                                    eget non arcu. Aenean et nulla purus. Mauris vel
-                                                    tellus non nunc mattis lobortis
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="4" data-id-product-attribute="16" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/4-16-essteele-australis-4pc-set-w-saucepans.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                <img src="38-home_default/essteele-australis-4pc-set-w-saucepans.jpg" alt="Essteele Australis 4pc Set..." data-full-size-image-url="38-large_default/essteele-australis-4pc-set-w-saucepans.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/4-16-essteele-australis-4pc-set-w-saucepans.html#/19-dimension-40x60cm" class="product_name">Essteele Australis 4pc Set w/ Saucepans</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$55.60</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Vestibulum ante ipsum primis in faucibus orci luctus
-                                                    et ultrices posuere cubilia Curae; Aenean eleifend
-                                                    laoreet congue. Vivamus adipiscing nisl ut dolor
-                                                    dignissim semper. Nulla luctus malesuada tincidunt.
-                                                    Class aptent taciti sociosqu ad litora torquent per
-                                                    conubia nostra, per inceptos himenaeos. Integer enim
-                                                    purus, posuere at ultricies eu, placerat a felis.
-                                                    Suspendisse aliquet urna pretium eros convallis
-                                                    interdum. Quisque in arcu id dui vulputate mollis
-                                                    eget non arcu. Aenean et nulla purus. Mauris vel
-                                                    tellus non nunc mattis lobortis
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="21" data-id-product-attribute="51" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/21-51-creuset-signature-cast-iron-round-cassero.html#/1-size-s" class="thumbnail product-thumbnail">
-                                                <img src="76-home_default/creuset-signature-cast-iron-round-cassero.jpg" alt="Creuset Signature Cast Iron..." data-full-size-image-url="76-large_default/creuset-signature-cast-iron-round-cassero.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/21-51-creuset-signature-cast-iron-round-cassero.html#/1-size-s" class="product_name">Creuset Signature Cast Iron Round...</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$59.70</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="poslistcateproduct poslistcateproduct_1 product_container" data-items="4" data-speed="1000" data-autoplay="0" data-time="0" data-arrow="1" data-pagination="0" data-move="0" data-pausehover="0" data-md="3" data-sm="2" data-xs="2" data-xxs="1">
-                    <div class="pos_title">
-                        <h2>
-                            <span>KitchenAid Artisan</span>
-                        </h2>
-                        <ul class="subcategories-list">
-                            <li>
-                                <a href="55-appliances.html" target="_blank">Appliances</a>
-                            </li>
-                            <li>
-                                <a href="56-tea-towels.html" target="_blank">Tea Towels</a>
-                            </li>
-                            <li>
-                                <a href="15-appliances1.html" target="_blank">Appliances1</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="listcateproduct-products">
-                        <div class="description-list">
-                            <div class="st_modun st1">
-                                <div class="img-box">
-                                    <a href="#"><img src="img/cms/st2.jpg" alt="" class="img-responsive" /></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pos-content row">
-                            <div class="listcateSlide owl-carousel">
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="24" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/24-royal-doulton-1915-tableware-pasta-bowl.html" class="thumbnail product-thumbnail">
-                                                <img src="93-home_default/royal-doulton-1915-tableware-pasta-bowl.jpg" alt="Royal Doulton 1915..." data-full-size-image-url="93-large_default/royal-doulton-1915-tableware-pasta-bowl.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/24-royal-doulton-1915-tableware-pasta-bowl.html" class="product_name">Royal
-                                                    Doulton 1915 Tableware Pasta Bowl</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$50.90</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="12" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/12-royal-doulton-1815-tableware-pasta-bowl.html" class="thumbnail product-thumbnail">
-                                                <img src="49-home_default/royal-doulton-1815-tableware-pasta-bowl.jpg" alt="Royal Doulton 1815..." data-full-size-image-url="49-large_default/royal-doulton-1815-tableware-pasta-bowl.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/12-royal-doulton-1815-tableware-pasta-bowl.html" class="product_name">Royal
-                                                    Doulton 1815 Tableware Pasta Bowl</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$50.90</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="25" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/25-leaf-bean-electric-milk-frother-warmets.html" class="thumbnail product-thumbnail">
-                                                <img src="99-home_default/leaf-bean-electric-milk-frother-warmets.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="99-large_default/leaf-bean-electric-milk-frother-warmets.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/25-leaf-bean-electric-milk-frother-warmets.html" class="product_name">Leaf &amp;
-                                                    Bean Electric Milk Frother &amp;...</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$75.10</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="13" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="thumbnail product-thumbnail">
-                                                <img src="53-home_default/leaf-bean-electric-milk-frother-warmer.jpg" alt="Leaf &amp; Bean Electric Milk..." data-full-size-image-url="53-large_default/leaf-bean-electric-milk-frother-warmer.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/13-leaf-bean-electric-milk-frother-warmer.html" class="product_name">Leaf &amp;
-                                                    Bean Electric Milk Frother &amp;...</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$83.90</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="5" data-id-product-attribute="19" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                <img src="44-home_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" alt="KitchenAid Artisan KSM160..." data-full-size-image-url="44-large_default/kitchenaid-artisan-ksm160-stand-mixer.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/5-19-kitchenaid-artisan-ksm160-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM160 Stand Mixer</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$66.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                    Rugged enough for day hikes and camping trips, it
-                                                    has two large zippered compartments and padded,
-                                                    adjustable shoulder straps
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="14" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/14-kitchenaid-artisan-ksm150-stand-mixer1.html" class="thumbnail product-thumbnail">
-                                                <img src="58-home_default/kitchenaid-artisan-ksm150-stand-mixer1.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="58-large_default/kitchenaid-artisan-ksm150-stand-mixer1.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/14-kitchenaid-artisan-ksm150-stand-mixer1.html" class="product_name">KitchenAid
-                                                    Artisan KSM150 Stand Mixer1</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$68.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Vestibulum ante ipsum primis in faucibus orci luctus
-                                                    et ultrices posuere cubilia Curae; Aenean eleifend
-                                                    laoreet congue. Vivamus adipiscing nisl ut dolor
-                                                    dignissim semper. Nulla luctus malesuada tincidunt.
-                                                    Class aptent taciti sociosqu ad litora torquent per
-                                                    conubia nostra, per inceptos himenaeos. Integer enim
-                                                    purus, posuere at ultricies eu, placerat a felis.
-                                                    Suspendisse aliquet urna pretium eros convallis
-                                                    interdum. Quisque in arcu id dui vulputate mollis
-                                                    eget non arcu. Aenean et nulla purus. Mauris vel
-                                                    tellus non nunc mattis lobortis
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="1" data-id-product-attribute="1" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                <img src="24-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="24-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$87.80</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Nunc facilisis sagittis ullamcorper. Proin lectus
-                                                    ipsum, gravida et mattis vulputate, tristique ut
-                                                    lectus. Sed et lorem nunc. Vestibulum ante ipsum
-                                                    primis in faucibus orci luctus et ultrices posuere
-                                                    cubilia Curae; Aenean eleifend ..
-                                                </p>
-                                            </div>
-
-                                            <div class="variant-links">
-                                                <a href="home/1-1-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                <a href="home/1-2-kitchenaid-artisan-ksm150-stand-mixer.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                <span class="js-count count"></span>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="23" data-id-product-attribute="57" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                <img src="87-home_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="87-large_default/kitchenaid-artisan-ksm150-stand-mixer.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/23-57-kitchenaid-artisan-ksm150-stand-mixer.html#/19-dimension-40x60cm" class="product_name">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$66.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    The Crown Summit Backpack is equally at home in a
-                                                    gym locker, study cube or a pup tent, so be sure
-                                                    yours is packed with books, a bag lunch, water
-                                                    bottles, yoga block, laptop, or whatever else you
-                                                    want in hand. Rugged enough for day hikes and
-                                                    camping trips, it has two large zippered
-                                                    compartments and padded, adjustable shoulder straps.
-                                                    Rugged enough for day hikes and camping trips, it
-                                                    has two large zippered compartments and padded,
-                                                    adjustable shoulder straps
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="20" data-id-product-attribute="47" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                <img src="68-home_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" alt="KitchenAid Artisan KSM150..." data-full-size-image-url="68-large_default/kitchenaid-artisan-ksm150-stand-mixe.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/20-47-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM150 Stand Mixe</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$68.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Nunc facilisis sagittis ullamcorper. Proin lectus
-                                                    ipsum, gravida et mattis vulputate, tristique ut
-                                                    lectus. Sed et lorem nunc. Vestibulum ante ipsum
-                                                    primis in faucibus orci luctus et ultrices posuere
-                                                    cubilia Curae; Aenean eleifend ..
-                                                </p>
-                                            </div>
-
-                                            <div class="variant-links">
-                                                <a href="home/20-41-kitchenaid-artisan-ksm150-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                <a href="home/20-40-kitchenaid-artisan-ksm150-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                <span class="js-count count"></span>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="27" data-id-product-attribute="65" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="thumbnail product-thumbnail">
-                                                <img src="112-home_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" alt="KitchenAid Artisan KSM130..." data-full-size-image-url="112-large_default/kitchenaid-artisan-ksm130-stand-mixe.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/1-studio-design.html?id_manufacturer=1">Studio Design</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/27-65-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/8-color-white" class="product_name">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$68.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Nunc facilisis sagittis ullamcorper. Proin lectus
-                                                    ipsum, gravida et mattis vulputate, tristique ut
-                                                    lectus. Sed et lorem nunc. Vestibulum ante ipsum
-                                                    primis in faucibus orci luctus et ultrices posuere
-                                                    cubilia Curae; Aenean eleifend ..
-                                                </p>
-                                            </div>
-
-                                            <div class="variant-links">
-                                                <a href="home/27-59-kitchenaid-artisan-ksm130-stand-mixe.html#/2-size-m/8-color-white" class="color" title="White" style="background-color: #ffffff"><span class="sr-only">White</span></a>
-                                                <a href="home/27-58-kitchenaid-artisan-ksm130-stand-mixe.html#/1-size-s/11-color-black" class="color" title="Black" style="background-color: #434a54"><span class="sr-only">Black</span></a>
-                                                <span class="js-count count"></span>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
-
-                                <div class="item-product">
-                                    <article class="product-miniature js-product-miniature" data-id-product="26" data-id-product-attribute="0" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/26-kitchenaid-artisan-ksm100-stand-mixer.html" class="thumbnail product-thumbnail">
-                                                <img src="105-home_default/kitchenaid-artisan-ksm100-stand-mixer.jpg" alt="KitchenAid Artisan KSM100..." data-full-size-image-url="105-large_default/kitchenaid-artisan-ksm100-stand-mixer.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/26-kitchenaid-artisan-ksm100-stand-mixer.html" class="product_name">KitchenAid
-                                                    Artisan KSM100 Stand Mixer</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$68.30</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Vestibulum ante ipsum primis in faucibus orci luctus
-                                                    et ultrices posuere cubilia Curae; Aenean eleifend
-                                                    laoreet congue. Vivamus adipiscing nisl ut dolor
-                                                    dignissim semper. Nulla luctus malesuada tincidunt.
-                                                    Class aptent taciti sociosqu ad litora torquent per
-                                                    conubia nostra, per inceptos himenaeos. Integer enim
-                                                    purus, posuere at ultricies eu, placerat a felis.
-                                                    Suspendisse aliquet urna pretium eros convallis
-                                                    interdum. Quisque in arcu id dui vulputate mollis
-                                                    eget non arcu. Aenean et nulla purus. Mauris vel
-                                                    tellus non nunc mattis lobortis
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
-
-                                    <article class="product-miniature js-product-miniature" data-id-product="4" data-id-product-attribute="16" itemscope itemtype="http://schema.org/Product">
-                                        <div class="img_block">
-                                            <a href="home/4-16-essteele-australis-4pc-set-w-saucepans.html#/19-dimension-40x60cm" class="thumbnail product-thumbnail">
-                                                <img src="38-home_default/essteele-australis-4pc-set-w-saucepans.jpg" alt="Essteele Australis 4pc Set..." data-full-size-image-url="38-large_default/essteele-australis-4pc-set-w-saucepans.jpg" />
-                                            </a>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="manufacturer">
-                                                <a href="brand/2-graphic-corner.html?id_manufacturer=2">Graphic Corner</a>
-                                            </div>
-
-                                            <h1 itemprop="name">
-                                                <a href="home/4-16-essteele-australis-4pc-set-w-saucepans.html#/19-dimension-40x60cm" class="product_name">Essteele Australis 4pc Set w/ Saucepans</a>
-                                            </h1>
-
-                                            <div class="product-price-and-shipping">
-                                                <span class="sr-only">Price</span>
-                                                <span itemprop="price" class="price">$55.60</span>
-                                                <!--  -->
-                                            </div>
-
-                                            <div class="product-desc" itemprop="description">
-                                                <p>
-                                                    Vestibulum ante ipsum primis in faucibus orci luctus
-                                                    et ultrices posuere cubilia Curae; Aenean eleifend
-                                                    laoreet congue. Vivamus adipiscing nisl ut dolor
-                                                    dignissim semper. Nulla luctus malesuada tincidunt.
-                                                    Class aptent taciti sociosqu ad litora torquent per
-                                                    conubia nostra, per inceptos himenaeos. Integer enim
-                                                    purus, posuere at ultricies eu, placerat a felis.
-                                                    Suspendisse aliquet urna pretium eros convallis
-                                                    interdum. Quisque in arcu id dui vulputate mollis
-                                                    eget non arcu. Aenean et nulla purus. Mauris vel
-                                                    tellus non nunc mattis lobortis
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </article>
+                        <div class="col-lg-7">
+                            <div class="cart-content">
+                                <p class="title">There are 3 items in your cart.</p>
+                                <p><span>Total products:</span> $218.70</p>
+                                <p><span>Total shipping:</span>Free</p>
+                                <p><span>Taxes:</span> $0.00</p>
+                                <p><span>Total:</span> $218.70 (tax excl.)</p>
+                                <div class="cart-content-btn">
+                                    <button class="btn btn-dark btn-hover-warning text-uppercase me-1" data-bs-dismiss="modal" aria-label="Close">Continue shopping</button>
+                                    <button class="btn btn-dark btn-hover-warning text-uppercase mt-3 mt-sm-0">Proceed to checkout</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="breadcrumb">
-                <div class="conten-box">
-                    <div class="breadcrumb_container">
-                        <nav data-depth="1" class="breadcrumb-inner hidden-sm-down">
-                            <ol itemscope itemtype="http://schema.org/BreadcrumbList">
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a itemprop="item" href="index.html">
-                                        <span itemprop="name">Home</span>
-                                    </a>
-                                    <meta itemprop="position" content="1" />
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            <div class="conten-box">
-                <div class="row">
-                    <div id="content-wrapper" class="col-xs-12">
-                        <section id="main">
-                            <section id="content" class="page-home"></section>
+        </div>
+    </div>
 
-                            <footer class="page-footer">
-                                <!-- Footer content -->
-                            </footer>
-                        </section>
-                    </div>
-                </div>
-            </div>
+    <script src="{{asset('frontend')}}/assets/js/vendor/vendor.min.js"></script>
+    <script src="{{asset('frontend')}}/assets/js/plugins/plugins.min.js"></script>
+    <script src="{{asset('frontend')}}/assets/js/main.min.js"></script>
 
-            <div class="conten-box">
-                <div class="pos_logo product_block_container">
-                    <div class="row pos_content">
-                        <div class="logo-slider owl-carousel">
-                            <div>
-                                <div class="item-banklogo">
-                                    <a href="http://posthemes.com/">
-                                        <img class="replace-2x img-responsive" src="img/blocklogo/1.jpg" alt="Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item-banklogo">
-                                    <a href="http://posthemes.com/">
-                                        <img class="replace-2x img-responsive" src="img/blocklogo/2.jpg" alt="Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item-banklogo">
-                                    <a href="http://posthemes.com/">
-                                        <img class="replace-2x img-responsive" src="img/blocklogo/3.jpg" alt="Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item-banklogo">
-                                    <a href="http://posthemes.com/">
-                                        <img class="replace-2x img-responsive" src="img/blocklogo/4.jpg" alt="Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item-banklogo">
-                                    <a href="http://posthemes.com/">
-                                        <img class="replace-2x img-responsive" src="img/blocklogo/5.jpg" alt="Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item-banklogo">
-                                    <a href="http://posthemes.com/">
-                                        <img class="replace-2x img-responsive" src="img/blocklogo/6.jpg" alt="Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item-banklogo">
-                                    <a href="http://posthemes.com/">
-                                        <img class="replace-2x img-responsive" src="img/blocklogo/7.jpg" alt="Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item-banklogo">
-                                    <a href="#">
-                                        <img class="replace-2x img-responsive" src="img/blocklogo/8.jpg" alt="Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item-banklogo">
-                                    <a href="#">
-                                        <img class="replace-2x img-responsive" src="img/blocklogo/9.jpg" alt="Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item-banklogo">
-                                    <a href="#">
-                                        <img class="replace-2x img-responsive" src="img/blocklogo/10.jpg" alt="Logo" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="home_blog_post_area general product_block_container">
-                <div class="conten-box">
-                    <div class="home_blog_post">
-                        <div class="page_title_area pos_title">
-                            <h2>Latest Blogs</h2>
-                        </div>
-                        <div class="home_blog_post_inner pos_content">
-                            <div class="row pos_content">
-                                <div class="blog_slider owl-carousel">
-                                    <div class="item">
-                                        <article class="blog_post">
-                                            <div class="blog_post_content_top">
-                                                <div class="post_thumbnail">
-                                                    <a href="xipblog/post/7_top-5-insanely-popular-affordable-bluetooth14884.html?page_type=post" class="img_content"><img class="xipblog_img img-responsive" src="modules/xipblog/img/home_default-8.jpg" alt="Top 5 Insanely Popular (&amp; Affordable) Bluetooth1" /></a>
-                                                    <!-- <div class="blog_mask"> -->
-                                                    <!-- <div class="blog_mask_content"> -->
-                                                    <!-- <a class="thumbnail_lightbox" href="/pos_benito/modules/xipblog/img/large-8.jpg" target="_blank" > -->
-                                                    <!-- <i class="material-icons">add_circle_outline</i> -->
-                                                    <!-- </a> -->
-                                                    <!-- </div> -->
-                                                    <!-- </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="post_content">
-                                                <div class="content-inner">
-                                                    <h4>
-                                                        <a href="xipblog/post/7_top-5-insanely-popular-affordable-bluetooth14884.html?page_type=post" class="post_title">Top 5 Insanely Popular (&amp; Affordable)
-                                                            Bluetooth1</a>
-                                                    </h4>
-                                                    <p class="post_description">
-                                                        Lorem Ipsum is simply dummy text of the printing
-                                                        and typesetting industry. Lorem Ipsum has been the
-                                                        industrys standard dummy text ever since the ...
-                                                    </p>
-                                                    <!-- <a href="https://demo2.posthemes.com/pos_benito/en/xipblog/post/7_top-5-insanely-popular-affordable-bluetooth1.html?page_type=post" class="read-more">Read More</a> -->
-                                                </div>
-                                                <div class="post_meta">
-                                                    <span class="meta_date"> Jan 10, 2019 </span>
-                                                    <!-- <span class="meta_author"> -->
-                                                    <!-- <i class="fa-user"></i> -->
-                                                    <!-- Theme Plazathemes -->
-                                                    <!-- </span> -->
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="item">
-                                        <article class="blog_post">
-                                            <div class="blog_post_content_top">
-                                                <div class="post_thumbnail">
-                                                    <a href="xipblog/post/6_8-insanely-popular-must-haves-for-the-traveller4884.html?page_type=post" class="img_content"><img class="xipblog_img img-responsive" src="modules/xipblog/img/home_default-6.jpg" alt="8 Insanely Popular Must-Haves for the Traveller" /></a>
-                                                    <!-- <div class="blog_mask"> -->
-                                                    <!-- <div class="blog_mask_content"> -->
-                                                    <!-- <a class="thumbnail_lightbox" href="/pos_benito/modules/xipblog/img/large-6.jpg" target="_blank" > -->
-                                                    <!-- <i class="material-icons">add_circle_outline</i> -->
-                                                    <!-- </a> -->
-                                                    <!-- </div> -->
-                                                    <!-- </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="post_content">
-                                                <div class="content-inner">
-                                                    <h4>
-                                                        <a href="xipblog/post/6_8-insanely-popular-must-haves-for-the-traveller4884.html?page_type=post" class="post_title">8 Insanely Popular Must-Haves for the
-                                                            Traveller</a>
-                                                    </h4>
-                                                    <p class="post_description">
-                                                        Lorem Ipsum is simply dummy text of the printing
-                                                        and typesetting industry. Lorem Ipsum has been the
-                                                        industrys standard dummy text ever since the ...
-                                                    </p>
-                                                    <!-- <a href="https://demo2.posthemes.com/pos_benito/en/xipblog/post/6_8-insanely-popular-must-haves-for-the-traveller.html?page_type=post" class="read-more">Read More</a> -->
-                                                </div>
-                                                <div class="post_meta">
-                                                    <span class="meta_date"> Jan 10, 2019 </span>
-                                                    <!-- <span class="meta_author"> -->
-                                                    <!-- <i class="fa-user"></i> -->
-                                                    <!-- Theme Plazathemes -->
-                                                    <!-- </span> -->
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="item">
-                                        <article class="blog_post">
-                                            <div class="blog_post_content_top">
-                                                <div class="post_thumbnail">
-                                                    <a href="xipblog/post/5_last-6-months-have-been-phenomenal-for-me4884.html?page_type=post" class="img_content"><img class="xipblog_img img-responsive" src="modules/xipblog/img/home_default-5.jpg" alt="Last 6 months have been phenomenal for me" /></a>
-                                                    <!-- <div class="blog_mask"> -->
-                                                    <!-- <div class="blog_mask_content"> -->
-                                                    <!-- <a class="thumbnail_lightbox" href="/pos_benito/modules/xipblog/img/large-5.jpg" target="_blank" > -->
-                                                    <!-- <i class="material-icons">add_circle_outline</i> -->
-                                                    <!-- </a> -->
-                                                    <!-- </div> -->
-                                                    <!-- </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="post_content">
-                                                <div class="content-inner">
-                                                    <h4>
-                                                        <a href="xipblog/post/5_last-6-months-have-been-phenomenal-for-me4884.html?page_type=post" class="post_title">Last 6 months have been phenomenal for me</a>
-                                                    </h4>
-                                                    <p class="post_description">
-                                                        Lorem Ipsum is simply dummy text of the printing
-                                                        and typesetting industry. Lorem Ipsum has been the
-                                                        industrys standard dummy text ever since the ...
-                                                    </p>
-                                                    <!-- <a href="https://demo2.posthemes.com/pos_benito/en/xipblog/post/5_last-6-months-have-been-phenomenal-for-me.html?page_type=post" class="read-more">Read More</a> -->
-                                                </div>
-                                                <div class="post_meta">
-                                                    <span class="meta_date"> Jan 10, 2019 </span>
-                                                    <!-- <span class="meta_author"> -->
-                                                    <!-- <i class="fa-user"></i> -->
-                                                    <!-- Theme Plazathemes -->
-                                                    <!-- </span> -->
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="item">
-                                        <article class="blog_post">
-                                            <div class="blog_post_content_top">
-                                                <div class="post_thumbnail">
-                                                    <a href="xipblog/post/2_a-candid-face-time-session-with-the4884.html?page_type=post" class="img_content"><img class="xipblog_img img-responsive" src="modules/xipblog/img/home_default-4.jpg" alt="A candid face-time session with the." /></a>
-                                                    <!-- <div class="blog_mask"> -->
-                                                    <!-- <div class="blog_mask_content"> -->
-                                                    <!-- <a class="thumbnail_lightbox" href="/pos_benito/modules/xipblog/img/large-4.jpg" target="_blank" > -->
-                                                    <!-- <i class="material-icons">add_circle_outline</i> -->
-                                                    <!-- </a> -->
-                                                    <!-- </div> -->
-                                                    <!-- </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="post_content">
-                                                <div class="content-inner">
-                                                    <h4>
-                                                        <a href="xipblog/post/2_a-candid-face-time-session-with-the4884.html?page_type=post" class="post_title">A candid face-time session with the.</a>
-                                                    </h4>
-                                                    <p class="post_description">
-                                                        Lorem Ipsum is simply dummy text of the printing
-                                                        and typesetting industry. Lorem Ipsum has been the
-                                                        industrys standard dummy text ever since the ...
-                                                    </p>
-                                                    <!-- <a href="https://demo2.posthemes.com/pos_benito/en/xipblog/post/2_a-candid-face-time-session-with-the.html?page_type=post" class="read-more">Read More</a> -->
-                                                </div>
-                                                <div class="post_meta">
-                                                    <span class="meta_date"> Dec 20, 2018 </span>
-                                                    <!-- <span class="meta_author"> -->
-                                                    <!-- <i class="fa-user"></i> -->
-                                                    <!-- Theme Plazathemes -->
-                                                    <!-- </span> -->
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="item">
-                                        <article class="blog_post">
-                                            <div class="blog_post_content_top">
-                                                <div class="post_thumbnail">
-                                                    <a href="xipblog/post/3_top-5-incredibly-popular-affordable-massagers4884.html?page_type=post" class="img_content"><img class="xipblog_img img-responsive" src="modules/xipblog/img/home_default-3.jpg" alt="Top 5 Incredibly Popular (&amp; Affordable) Massagers" /></a>
-                                                    <!-- <div class="blog_mask"> -->
-                                                    <!-- <div class="blog_mask_content"> -->
-                                                    <!-- <a class="thumbnail_lightbox" href="/pos_benito/modules/xipblog/img/large-3.jpg" target="_blank" > -->
-                                                    <!-- <i class="material-icons">add_circle_outline</i> -->
-                                                    <!-- </a> -->
-                                                    <!-- </div> -->
-                                                    <!-- </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="post_content">
-                                                <div class="content-inner">
-                                                    <h4>
-                                                        <a href="xipblog/post/3_top-5-incredibly-popular-affordable-massagers4884.html?page_type=post" class="post_title">Top 5 Incredibly Popular (&amp; Affordable)
-                                                            Massagers</a>
-                                                    </h4>
-                                                    <p class="post_description">
-                                                        Lorem Ipsum is simply dummy text of the printing
-                                                        and typesetting industry. Lorem Ipsum has been the
-                                                        industrys standard dummy text ever since the ...
-                                                    </p>
-                                                    <!-- <a href="https://demo2.posthemes.com/pos_benito/en/xipblog/post/3_top-5-incredibly-popular-affordable-massagers.html?page_type=post" class="read-more">Read More</a> -->
-                                                </div>
-                                                <div class="post_meta">
-                                                    <span class="meta_date"> Dec 20, 2018 </span>
-                                                    <!-- <span class="meta_author"> -->
-                                                    <!-- <i class="fa-user"></i> -->
-                                                    <!-- Theme Plazathemes -->
-                                                    <!-- </span> -->
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="item">
-                                        <article class="blog_post">
-                                            <div class="blog_post_content_top">
-                                                <div class="post_thumbnail">
-                                                    <a href="xipblog/post/4_7-insanely-popular-must-have-massagers4884.html?page_type=post" class="img_content"><img class="xipblog_img img-responsive" src="modules/xipblog/img/home_default-2.jpg" alt="7 Insanely Popular Must-Have Massagers" /></a>
-                                                    <!-- <div class="blog_mask"> -->
-                                                    <!-- <div class="blog_mask_content"> -->
-                                                    <!-- <a class="thumbnail_lightbox" href="/pos_benito/modules/xipblog/img/large-2.jpg" target="_blank" > -->
-                                                    <!-- <i class="material-icons">add_circle_outline</i> -->
-                                                    <!-- </a> -->
-                                                    <!-- </div> -->
-                                                    <!-- </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="post_content">
-                                                <div class="content-inner">
-                                                    <h4>
-                                                        <a href="xipblog/post/4_7-insanely-popular-must-have-massagers4884.html?page_type=post" class="post_title">7 Insanely Popular Must-Have Massagers</a>
-                                                    </h4>
-                                                    <p class="post_description">
-                                                        Lorem Ipsum is simply dummy text of the printing
-                                                        and typesetting industry. Lorem Ipsum has been the
-                                                        industrys standard dummy text ever since the ...
-                                                    </p>
-                                                    <!-- <a href="https://demo2.posthemes.com/pos_benito/en/xipblog/post/4_7-insanely-popular-must-have-massagers.html?page_type=post" class="read-more">Read More</a> -->
-                                                </div>
-                                                <div class="post_meta">
-                                                    <span class="meta_date"> Dec 20, 2018 </span>
-                                                    <!-- <span class="meta_author"> -->
-                                                    <!-- <i class="fa-user"></i> -->
-                                                    <!-- Theme Plazathemes -->
-                                                    <!-- </span> -->
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                    <div class="item">
-                                        <article class="blog_post">
-                                            <div class="blog_post_content_top">
-                                                <div class="post_thumbnail">
-                                                    <a href="xipblog/post/1_top-5-insanely-popular-affordable-bluetooth4884.html?page_type=post" class="img_content"><img class="xipblog_img img-responsive" src="modules/xipblog/img/home_default-1.jpg" alt="Top 5 Insanely Popular (&amp; Affordable) Bluetooth" /></a>
-                                                    <!-- <div class="blog_mask"> -->
-                                                    <!-- <div class="blog_mask_content"> -->
-                                                    <!-- <a class="thumbnail_lightbox" href="/pos_benito/modules/xipblog/img/large-1.jpg" target="_blank" > -->
-                                                    <!-- <i class="material-icons">add_circle_outline</i> -->
-                                                    <!-- </a> -->
-                                                    <!-- </div> -->
-                                                    <!-- </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="post_content">
-                                                <div class="content-inner">
-                                                    <h4>
-                                                        <a href="xipblog/post/1_top-5-insanely-popular-affordable-bluetooth4884.html?page_type=post" class="post_title">Top 5 Insanely Popular (&amp; Affordable)
-                                                            Bluetooth</a>
-                                                    </h4>
-                                                    <p class="post_description">
-                                                        Lorem Ipsum is simply dummy text of the printing
-                                                        and typesetting industry. Lorem Ipsum has been the
-                                                        industrys standard dummy text ever since the ...
-                                                    </p>
-                                                    <!-- <a href="https://demo2.posthemes.com/pos_benito/en/xipblog/post/1_top-5-insanely-popular-affordable-bluetooth.html?page_type=post" class="read-more">Read More</a> -->
-                                                </div>
-                                                <div class="post_meta">
-                                                    <span class="meta_date"> Dec 20, 2018 </span>
-                                                    <!-- <span class="meta_author"> -->
-                                                    <!-- <i class="fa-user"></i> -->
-                                                    <!-- Theme Plazathemes -->
-                                                    <!-- </span> -->
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer id="footer">
-            <div class="footer-container">
-                <div class="newsletter-before">
-                    <div class="conten-box">
-                        <ul class="link-follow-foter">
-                            <li class="first">
-                                <a class="twitter fa fa-twitter" title="Twitter" href="https://twitter.com/posthemes"><span>twitter</span></a>
-                            </li>
-                            <li>
-                                <a class="pinterest fa fa-rss" title="pinterest" href="#"><span>wifi</span></a>
-                            </li>
-                            <li>
-                                <a class="google fa fa-google-plus" title="Google" href="#"><span>google</span></a>
-                            </li>
-                            <li>
-                                <a class="facebook fa fa-facebook" title="Facebook" href="https://www.facebook.com/posthemes"><span>facebook</span></a>
-                            </li>
-                        </ul>
-
-                        <div class="ft_newsletter">
-                            <div id="block-newsletter-label">
-                                <div class="title-newsletter">
-                                    <h2>Sign Up For Newsletters</h2>
-                                    <p class="desc">
-                                        Be the First to Know. Sign up for newsletter today
-                                    </p>
-                                </div>
-                            </div>
-
-                            <form action="https://demo2.posthemes.com/pos_benito/en/#footer" method="post">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <div class="input-wrapper">
-                                            <input name="email" type="text" value="" placeholder="Enter your email.." aria-labelledby="block-newsletter-label" />
-                                        </div>
-                                        <input class="btn btn-primary float-xs-right hidden-xs-down" name="submitNewsletter" type="submit" value="Sign Up" />
-                                        <input class="btn btn-primary float-xs-right hidden-sm-up" name="submitNewsletter" type="submit" value="OK" />
-
-                                        <input type="hidden" name="action" value="0" />
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="col-xs-12"></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="conten-box">
-                    <div class="footer-top">
-                        <div class="col-xs-12 col-md-4 col-lg-4">
-                            <div class="about_us">
-                                <div class="logo_footer">
-                                    <a href="#"><img src="img/cms/logo_footer.png" alt="" /></a>
-                                </div>
-                                <div class="desc">
-                                    <p class="t1">
-                                        We are a team of designers and developers that create high
-                                        quality Magento, Prestashop, Opencart.
-                                    </p>
-                                    <div class="Address">
-                                        <p class="t1">
-                                            <span>Address:</span> 4710-4890 Breckinridge
-                                            St,Fayetteville
-                                        </p>
-                                        <p class="t2">
-                                            <span>Email:</span> support@posthemes.com
-                                        </p>
-                                        <p class="t3"><span>Call us:</span> 1-1001-234-5678</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-md-5 col-lg-6 footer_block links">
-                            <div class="col-md-6 wrapper">
-                                <h3 class="h3 hidden-sm-down">Products</h3>
-                                <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_90375" data-toggle="collapse">
-                                    <h3>Products</h3>
-                                    <span class="float-xs-right">
-                                        <span class="navbar-toggler collapse-icons">
-                                            <i class="material-icons add">&#xE313;</i>
-                                            <i class="material-icons remove">&#xE316;</i>
-                                        </span>
-                                    </span>
-                                </div>
-                                <ul id="footer_sub_menu_90375" class="footer_list collapse">
-                                    <li>
-                                        <a id="link-product-page-prices-drop-1" class="cms-page-link" href="prices-drop.html" title="Our special products">
-                                            Prices drop
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="link-product-page-new-products-1" class="cms-page-link" href="new-products.html" title="Our new products">
-                                            New products
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="link-product-page-best-sales-1" class="cms-page-link" href="best-sales.html" title="Our best sales">
-                                            Best sales
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="link-static-page-contact-1" class="cms-page-link" href="contact-us.html" title="Use our form to contact us">
-                                            Contact us
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="link-static-page-sitemap-1" class="cms-page-link" href="sitemap.html" title="Lost ? Find what your are looking for">
-                                            Sitemap
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6 wrapper">
-                                <h3 class="h3 hidden-sm-down">Our company</h3>
-                                <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_86541" data-toggle="collapse">
-                                    <h3>Our company</h3>
-                                    <span class="float-xs-right">
-                                        <span class="navbar-toggler collapse-icons">
-                                            <i class="material-icons add">&#xE313;</i>
-                                            <i class="material-icons remove">&#xE316;</i>
-                                        </span>
-                                    </span>
-                                </div>
-                                <ul id="footer_sub_menu_86541" class="footer_list collapse">
-                                    <li>
-                                        <a id="link-cms-page-1-2" class="cms-page-link" href="content/1-delivery.html" title="Our terms and conditions of delivery">
-                                            Delivery
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="link-cms-page-2-2" class="cms-page-link" href="content/2-legal-notice.html" title="Legal notice">
-                                            Legal Notice
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="link-cms-page-4-2" class="cms-page-link" href="content/4-about-us.html" title="Learn more about us">
-                                            About us
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="link-cms-page-5-2" class="cms-page-link" href="content/5-secure-payment.html" title="Our secure payment method">
-                                            Secure payment
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="link-product-page-prices-drop-2" class="cms-page-link" href="prices-drop.html" title="Our special products">
-                                            Prices drop
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div id="block_myaccount_infos" class="col-xs-12 col-sm-12 col-md-3 col-lg-2 links footer_block wrapper">
-                            <h3 class="myaccount-title hidden-sm-down">Your account</h3>
-                            <div class="title clearfix hidden-md-up" data-target="#footer_account_list" data-toggle="collapse">
-                                <h3 class="myaccount-title">Your account</h3>
-                                <span class="float-xs-right">
-                                    <span class="navbar-toggler collapse-icons">
-                                        <i class="material-icons add">keyboard_arrow_down</i>
-                                        <i class="material-icons remove">keyboard_arrow_up</i>
-                                    </span>
-                                </span>
-                            </div>
-                            <ul class="footer_list collapse" id="footer_account_list">
-                                <li>
-                                    <a href="login2432.html" title="Personal info" rel="nofollow">
-                                        Personal info
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="login856b.html" title="Orders" rel="nofollow">
-                                        Orders
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="login2f9b.html" title="Credit slips" rel="nofollow">
-                                        Credit slips
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="login9f3d.html" title="Addresses" rel="nofollow">
-                                        Addresses
-                                    </a>
-                                </li>
-                                <!-- MODULE WishList -->
-                                <li>
-                                    <a class="lnk_wishlist" href="login76cc.html" title="My wishlists">
-                                        My wishlists
-                                    </a>
-                                </li>
-                                <!-- END : MODULE WishList -->
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="footer-bottom">
-                        <div class="row">
-                            <div class="col col-lg-6 col-md-6 col-xs-12">
-                                <p>
-                                    Copyright @ <a href="http://posthemes.com/">Posthemes</a>.
-                                    All Rights Reserved
-                                </p>
-                            </div>
-                            <div class="col col-lg-6 col-md-6 col-xs-12">
-                                <div class="payment">
-                                    <img src="img/cms/payment.png" alt="" class="img-responsive" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </main>
-
-    <script src="{{asset('js/app.js')}}"></script>
-
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/xipblogdisplayposts/js/xipblogdisplayposts.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/modules/productcomments/js/jquery.malihu.PageScroll2id.min.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/poslogo/js/poslogo.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/modules/posmegamenu/js/mobile_menu.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/modules/posmegamenu/js/custommenu.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/posslideshows/js/nivo-slider/jquery.nivo.slider.pack.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/posslideshows/js/posslideshow.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/posspecialproducts/js/posspecialproducts.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/posnewproducts/js/posnewproducts.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/posbestsellers/js/posbestsellers.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/poscountdown/js/jquery.plugin.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/poscountdown/js/jquery.countdown.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/poscountdown/js/poscountdown.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/posvegamenu/js/custommenu.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/postabcateslider/js/postabcateslider.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/postabproductslider/js/producttab.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/posinstagramblock/js/jquery.fancybox.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/poslistcateproduct/js/poslistcateproducts.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/modules/possearchproducts/bootstrap-select.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/modules/blockwishlist/js/ajax-wishlist.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/js/jquery/ui/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/ps_searchbar/ps_searchbar.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/modules/ps_shoppingcart/ps_shoppingcart.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/modules/possearchproducts/possearch.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/modules/xipblog/js/xipblog.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/modules/xipblog/js/validator.min.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/assets/js/theme.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/core.js"></script>
-    <script type="text/javascript" src="{{'frontend'}}/themes/theme_benito1/assets/js/custom.js"></script>
-
-    <div class="back-top"><a href="#" class="back-top-button"></a></div>
 </body>
 
 </html>

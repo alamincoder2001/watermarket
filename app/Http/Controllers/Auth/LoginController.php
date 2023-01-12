@@ -40,14 +40,6 @@ class LoginController extends Controller
         }
     }
 
-    public function AdminLogout()
-    {
-        if (Auth::guard("admin")->check()) {
-            Auth::guard("admin")->logout();
-            return redirect("admin");
-        }
-    }
-
     //credentials check
     public function credentials($username, $password)
     {

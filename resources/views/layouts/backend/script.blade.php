@@ -9,5 +9,10 @@
 @stack("js")
 <script src="{{asset('backend')}}/dist/js/custom.min.js"></script>
 <script>
-    $("#zero_config").DataTable();
+    $("#datatable").DataTable();
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
 </script>
