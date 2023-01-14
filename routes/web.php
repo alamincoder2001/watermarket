@@ -5,11 +5,10 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('website');
 
 
 // Admin Login Route
@@ -18,6 +17,10 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/', [LoginController::class, 'AdminLogin'])->name('admin.login');
     Route::get('/logout', [DashboardController::class, 'AdminLogout'])->name('admin.logout');
 
+    //profile Route
+    Route::get('/profile', [DashboardController::class, 'profileIndex'])->name("admin.profile");
+    Route::post('/profile', [DashboardController::class, 'profileUpdate'])->name("admin.profile.update");
+    Route::post('/profileImage', [DashboardController::class, 'imageUpdate'])->name("admin.profile.imageUpdate");
     // admin dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     // Banner Route

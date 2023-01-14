@@ -18,10 +18,10 @@
                 <div class="form-group">
                     <label for="image">Image</label>
                     <input type="file" name="image" autocomplete="off" class="form-control" onchange="document.querySelector('.img').src = window.URL.createObjectURL(this.files[0])">
+                    <span class="text-danger error error-image"></span>
                     <div class="text-left">
                         <img src="{{asset('noImage.jpg')}}" class="img" style="width: 30%;height: 85px;border: 1px solid #c1c1c1;margin-top: 5px;">
                     </div>
-                    <span class="text-danger error error-image"></span>
                 </div>
 
                 <div class="form-group text-center">

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -10,6 +11,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <title>@yield('title')</title>
     <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('backend/assets/images/logo-text.png')}}" />
     @include("layouts.backend.style")
 </head>
 
@@ -48,13 +50,24 @@
                     </div>
 
                     <footer class="footer text-center">
-                        Developed by 
+                        Developed by
                         <a href="https://linktechbd.com/" target="_blank">linktechbd.com</a>
                     </footer>
                 </div>
             </div>
     </main>
     @include("layouts.backend.script")
+    <script>
+        function dateTime() {
+            d = new Date().toDateString();
+            time = new Date().toLocaleTimeString();
+            document.getElementById("time").innerText = d + ', ' + time
+            setTimeout(() => {
+                dateTime()
+            }, 1000)
+        }
+        dateTime()
+    </script>
 </body>
 
 </html>
