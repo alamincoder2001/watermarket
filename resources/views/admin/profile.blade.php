@@ -15,7 +15,7 @@
                         <div class="text-left" style="margin-bottom: 10px;">
                             <img src="{{asset($data->image != null ? $data->image : 'noImage.jpg')}}" class="img" style="width: 50%;height: 85px;border: 1px solid #c1c1c1;margin-top: 5px;">
                         </div>
-                        <input type="file" id="image" name="image" autocomplete="off" class="form-control" onchange="imageUpdate(event)">
+                        <input type="file" id="image" name="image" autocomplete="off" class="form-control shadow-none" onchange="imageUpdate(event)">
                         <span class="text-danger error error-image"></span>
                     </div>
                 </div>
@@ -23,32 +23,32 @@
                     <form onsubmit="Update(event)">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" name="name" id="name" value="{{$data->name}}" autocomplete="off" class="form-control">
+                            <input type="text" name="name" id="name" value="{{$data->name}}" autocomplete="off" class="form-control shadow-none">
                             <span class="text-danger error error-name"></span>
                         </div>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" name="username" id="username" value="{{$data->username}}" autocomplete="off" class="form-control">
+                            <input type="text" name="username" id="username" value="{{$data->username}}" autocomplete="off" class="form-control shadow-none">
                             <span class="text-danger error error-username"></span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" name="email" id="email" value="{{$data->email}}" autocomplete="off" class="form-control">
+                            <input type="text" name="email" id="email" value="{{$data->email}}" autocomplete="off" class="form-control shadow-none">
                             <span class="text-danger error error-email"></span>
                         </div>
                         <div class="form-group">
                             <label for="old_password">Current Password</label>
-                            <input type="password" name="old_password" id="old_password" autocomplete="off" class="form-control">
+                            <input type="password" name="old_password" id="old_password" autocomplete="off" class="form-control shadow-none">
                             <span class="text-danger error error-old_password"></span>
                         </div>
                         <div class="form-group">
                             <label for="new_password">New Password</label>
-                            <input type="password" name="new_password" id="new_password" autocomplete="off" class="form-control">
+                            <input type="password" name="new_password" id="new_password" autocomplete="off" class="form-control shadow-none">
                             <span class="text-danger error error-new_password"></span>
                         </div>
                         <div class="form-group">
                             <label for="confirm_password">Old Password</label>
-                            <input type="password" name="confirm_password" id="confirm_password" autocomplete="off" class="form-control">
+                            <input type="password" name="confirm_password" id="confirm_password" autocomplete="off" class="form-control shadow-none">
                             <span class="text-danger error error-confirm_password"></span>
                         </div>
 
@@ -116,7 +116,7 @@
                         $("#image").val("")
                         alert(res)
                     }else{
-                        $(res.error, (index, value) => {
+                        $.each(res.error, (index, value) => {
                             $(".error-"+index).text(value)
                         })
                     }

@@ -1,8 +1,8 @@
 @extends("layouts.backend_master")
 
-@section("title", "Admin Category")
-@section("breadcrumb_title", "Category")
-@section("breadcrumb_item", "Category Create")
+@section("title", "Admin Subcategory")
+@section("breadcrumb_title", "Subcategory")
+@section("breadcrumb_item", "Subcategory Create")
 
 @section("content")
 <div class="col-12 col-lg-4">
@@ -11,9 +11,22 @@
             <form onsubmit="Store(event)">
                 <input type="hidden" id="id" name="id">
                 <div class="form-group">
-                    <label for="name">Category Name</label>
+                    <label for="name">Subcategory Name</label>
                     <input type="text" name="name" id="name" autocomplete="off" class="form-control shadow-none">
                     <span class="text-danger error error-name"></span>
+                </div>
+                <div class="form-group">
+                    <label for="name">Category</label>
+                    <select name="category_id" id="category_id" autocomplete="off" class="form-control shadow-none">
+                        <option value="">Select Category</option>
+                        @php
+                        $category = App\Models\Category::get();
+                        @endphp
+                        @foreach($category as $d)
+                        <option value="{{$d->id}}">{{$d->name}}</option>
+                        @endforeach
+                    </select>
+                    <span class="text-danger error error-category_id"></span>
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>
@@ -40,8 +53,9 @@
                     <thead>
                         <tr>
                             <th>Sl</th>
-                            <th>Category Name</th>
+                            <th>Subcategory Name</th>
                             <th>Slug</th>
+                            <th>Category</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -59,7 +73,7 @@
 <script>
     //get Data
     var table = $('#datatable').DataTable({
-        ajax: location.origin + "/admin/category/fetch",
+        ajax: location.origin + "/admin/subcategory/fetch",
         order: [[ 0, "desc" ]],
         columns: [{
                 data: 'id',
@@ -69,6 +83,12 @@
             },
             {
                 data: 'slug',
+            },
+            {
+                data: null,
+                render: data => {
+                    return data.category.name;
+                }
             },
             {
                 data: null,
@@ -92,7 +112,7 @@
         event.preventDefault();
         var formdata = new FormData(event.target)
         $.ajax({
-            url: location.origin + "/admin/category",
+            url: location.origin + "/admin/subcategory",
             method: "POST",
             data: formdata,
             processData: false,
@@ -121,7 +141,7 @@
     function Edit(id) {
         $(".changeBtn").text("Update").removeClass("btn-success").addClass("btn-primary");
         $.ajax({
-            url: location.origin + "/admin/category/fetch/" + id,
+            url: location.origin + "/admin/subcategory/fetch/" + id,
             method: "GET",
             dataType: "JSON",
             success: res => {
@@ -140,7 +160,7 @@
     function Delete(id) {
         if (confirm("Are you sure want delete this !")) {
             $.ajax({
-                url: location.origin + "/admin/category/delete/",
+                url: location.origin + "/admin/subcategory/delete/",
                 method: "POST",
                 data: {
                     id: id

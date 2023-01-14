@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Models\Brand;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
@@ -54,6 +55,7 @@ class BrandController extends Controller
             }
 
             $data->name = $request->name;
+            $data->slug = Str::slug($request->name);
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {

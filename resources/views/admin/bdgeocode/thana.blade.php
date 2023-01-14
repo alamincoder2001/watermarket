@@ -1,8 +1,8 @@
 @extends("layouts.backend_master")
 
-@section("title", "Admin Category")
-@section("breadcrumb_title", "Category")
-@section("breadcrumb_item", "Category Create")
+@section("title", "Admin Upazila")
+@section("breadcrumb_title", "Upazila")
+@section("breadcrumb_item", "Upazila Create")
 
 @section("content")
 <div class="col-12 col-lg-4">
@@ -11,17 +11,22 @@
             <form onsubmit="Store(event)">
                 <input type="hidden" id="id" name="id">
                 <div class="form-group">
-                    <label for="name">Category Name</label>
+                    <label for="name">Upazila Name</label>
                     <input type="text" name="name" id="name" autocomplete="off" class="form-control shadow-none">
                     <span class="text-danger error error-name"></span>
                 </div>
                 <div class="form-group">
-                    <label for="image">Image</label>
-                    <input type="file" name="image" autocomplete="off" class="form-control shadow-none" onchange="document.querySelector('.img').src = window.URL.createObjectURL(this.files[0])">
-                    <div class="text-left">
-                        <img src="{{asset('noImage.jpg')}}" class="img" style="width: 30%;height: 85px;border: 1px solid #c1c1c1;margin-top: 5px;">
-                    </div>
-                    <span class="text-danger error error-image"></span>
+                    <label for="district_id">District Name</label>
+                    <select name="district_id" id="district_id" autocomplete="off" class="form-control shadow-none">
+                        <option value="">Select District</option>
+                        @php
+                        $district = App\District::get();
+                        @endphp
+                        @foreach($district as $d)
+                        <option value="{{$d->id}}">{{$d->name}}</option>
+                        @endforeach
+                    </select>
+                    <span class="text-danger error error-district_id"></span>
                 </div>
 
                 <div class="form-group text-center">
@@ -34,15 +39,14 @@
 <div class="col-12 col-lg-8">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Category List</h5>
+            <h5 class="card-title">Upazila List</h5>
             <div class="table-responsive">
                 <table id="datatable" class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Sl</th>
-                            <th>Category Name</th>
-                            <th>Slug</th>
-                            <th>Image</th>
+                            <th>Upazila Name</th>
+                            <th>District</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -59,8 +63,10 @@
 <script>
     //get Data
     var table = $('#datatable').DataTable({
-        ajax: location.origin + "/admin/category/fetch",
-        order: [[ 0, "desc" ]],
+        ajax: location.origin + "/admin/thana/fetch",
+        order: [
+            [0, "desc"]
+        ],
         columns: [{
                 data: 'id',
             },
@@ -68,12 +74,9 @@
                 data: 'name',
             },
             {
-                data: 'slug',
-            },
-            {
                 data: null,
                 render: data => {
-                    return `<img src='${data.image ? location.origin+'/'+data.image:location.origin+"/noImage.jpg"}' width='50' />`
+                    return data.district.name
                 }
             },
             {
@@ -92,7 +95,7 @@
         event.preventDefault();
         var formdata = new FormData(event.target)
         $.ajax({
-            url: location.origin + "/admin/category",
+            url: location.origin + "/admin/thana",
             method: "POST",
             data: formdata,
             processData: false,
@@ -106,7 +109,6 @@
                     $("form").trigger("reset")
                     $("#id").val("");
                     $(".changeBtn").text("Save").addClass("btn-success").removeClass("btn-primary");
-                    document.querySelector('.img').src = location.origin + "/noImage.jpg"
                     table.ajax.reload()
                 } else {
                     $.each(res.error, (index, value) => {
@@ -121,18 +123,13 @@
     function Edit(id) {
         $(".changeBtn").text("Update").removeClass("btn-success").addClass("btn-primary");
         $.ajax({
-            url: location.origin + "/admin/category/fetch/" + id,
+            url: location.origin + "/admin/thana/fetch/" + id,
             method: "GET",
             dataType: "JSON",
             success: res => {
                 $.each(res.data, (index, value) => {
                     $("form").find("#" + index).val(value);
                 })
-                if (res.data.image != null) {
-                    document.querySelector('.img').src = location.origin + "/" + res.data.image
-                } else {
-                    document.querySelector('.img').src = location.origin + "/noImage.jpg"
-                }
             }
         })
     }
@@ -140,7 +137,7 @@
     function Delete(id) {
         if (confirm("Are you sure want delete this !")) {
             $.ajax({
-                url: location.origin + "/admin/category/delete/",
+                url: location.origin + "/admin/thana/delete/",
                 method: "POST",
                 data: {
                     id: id

@@ -81,8 +81,8 @@ class DashboardController extends Controller
             $admin = Auth::guard('admin')->user();
 
             $validator = Validator::make($request->all(), [
-                "image" => "mimes:jpg,png,jpeg"
-            ]);
+                "image" => "mimes:jpg,png,jpeg|dimensions:width=200,height=200"
+            ], ["image.dimensions" => "Image dimension must be (200 x 200)"]);
 
             if($validator->fails()){
                 return response()->json(["error" => $validator->errors()]);

@@ -1,16 +1,13 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+require("./bootstrap");
 
-require('./bootstrap');
+window.Vue = require("vue").default;
+import VueGoodTablePlugin from "vue-good-table";
+import "vue-good-table/dist/vue-good-table.css";
 
-window.Vue = require('vue').default;
+Vue.use(VueGoodTablePlugin);
 
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component("Supplier", require("./components/Supplier.vue").default);
 
 const app = new Vue({
-    el: '#app',
+    el: "#app",
 });

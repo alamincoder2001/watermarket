@@ -12,12 +12,12 @@
                 <input type="hidden" id="id" name="id">
                 <div class="form-group">
                     <label for="name">Brand Name</label>
-                    <input type="text" name="name" id="name" autocomplete="off" class="form-control">
+                    <input type="text" name="name" id="name" autocomplete="off" class="form-control shadow-none">
                     <span class="text-danger error error-name"></span>
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>
-                    <input type="file" name="image" autocomplete="off" class="form-control" onchange="document.querySelector('.img').src = window.URL.createObjectURL(this.files[0])">
+                    <input type="file" name="image" autocomplete="off" class="form-control shadow-none" onchange="document.querySelector('.img').src = window.URL.createObjectURL(this.files[0])">
                     <div class="text-left">
                         <img src="{{asset('noImage.jpg')}}" class="img" style="width: 30%;height: 85px;border: 1px solid #c1c1c1;margin-top: 5px;">
                     </div>
@@ -41,6 +41,7 @@
                         <tr>
                             <th>Sl</th>
                             <th>Brand Name</th>
+                            <th>Slug</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -65,6 +66,9 @@
             },
             {
                 data: 'name',
+            },
+            {
+                data: 'slug',
             },
             {
                 data: null,

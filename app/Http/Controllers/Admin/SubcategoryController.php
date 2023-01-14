@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
-use App\Models\Category;
+use App\Models\Subcategory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
-class CategoryController extends Controller
+class SubcategoryController extends Controller
 {
     public function __construct()
     {
@@ -19,15 +19,15 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return view("admin.category.index");
+        return view("admin.category.subcategory");
     }
 
     public function fetch($id = null)
     {
         if ($id != null) {
-            $data = Category::find($id);
+            $data = Subcategory::find($id);
         } else {
-            $data = Category::get();
+            $data = Subcategory::with('category')->get();
         }
         return response()->json(["data" => $data]);
     }
@@ -37,16 +37,18 @@ class CategoryController extends Controller
         try {
             if (!empty($request->id)) {
                 $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:categories,name," . $request->id
+                    "name" => "required|unique:subcategories,name," . $request->id,
+                    "category_id" => "required"
                 ]);
-                $data = Category::find($request->id);
+                $data = Subcategory::find($request->id);
                 $old = $data->image;
                 $data->updated_at = Carbon::now();
             } else {
                 $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:categories"
+                    "name" => "required|unique:subcategories",
+                    "category_id" => "required"
                 ]);
-                $data = new Category();
+                $data = new Subcategory();
                 $data->created_at = Carbon::now();
             }
 
@@ -54,22 +56,23 @@ class CategoryController extends Controller
                 return response()->json(["error" => $validator->errors()]);
             }
 
-            $data->name = $request->name;
-            $data->slug = Str::slug($request->name);
+            $data->name        = $request->name;
+            $data->slug        = Str::slug($request->name);
+            $data->category_id = $request->category_id;
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {
                         File::delete($old);
                     }
                 }
-                $data->image = $this->imageUpload($request, 'image', 'uploads/categories') ?? '';
+                $data->image = $this->imageUpload($request, 'image', 'uploads/subcategories') ?? '';
             }
             $data->save();
 
             if (!empty($request->id)) {
-                return "Category updated successfully";
+                return "Subcategory updated successfully";
             } else {
-                return "Category insert successfully";
+                return "Subcategory insert successfully";
             }
         } catch (\Throwable $e) {
             return "Something went wrong";
@@ -79,13 +82,13 @@ class CategoryController extends Controller
     public function destroy(Request $request)
     {
         try {
-            $data = Category::find($request->id);
+            $data = Subcategory::find($request->id);
             $old = $data->image;
             if (File::exists($old)) {
                 File::delete($old);
             }
             $data->delete();
-            return "Category Delete successfully";
+            return "Subcategory Delete successfully";
         } catch (\Throwable $e) {
             return "Something went wrong";
         }

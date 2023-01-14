@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
-use App\Models\Category;
-use Illuminate\Support\Str;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
-class CategoryController extends Controller
+class SupplierController extends Controller
 {
     public function __construct()
     {
@@ -19,57 +18,61 @@ class CategoryController extends Controller
 
     public function index()
     {
-        return view("admin.category.index");
+        return view("admin.supplier.index");
     }
 
     public function fetch($id = null)
     {
+        $supplier_code = $this->generateCode("Supplier", "S");
         if ($id != null) {
-            $data = Category::find($id);
+            $data = Supplier::find($id);
         } else {
-            $data = Category::get();
+            $data = Supplier::get();
         }
-        return response()->json(["data" => $data]);
+        return response()->json(["data" => $data, "supplier_code"=> $supplier_code]);
     }
 
     public function store(Request $request)
     {
         try {
-            if (!empty($request->id)) {
-                $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:categories,name," . $request->id
-                ]);
-                $data = Category::find($request->id);
-                $old = $data->image;
-                $data->updated_at = Carbon::now();
-            } else {
-                $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:categories"
-                ]);
-                $data = new Category();
-                $data->created_at = Carbon::now();
-            }
+            $validator = Validator::make($request->all(), [
+                "name" => "required"
+            ]);
 
             if ($validator->fails()) {
                 return response()->json(["error" => $validator->errors()]);
             }
 
-            $data->name = $request->name;
-            $data->slug = Str::slug($request->name);
+            if (!empty($request->id)) {
+                $data = Supplier::find($request->id);
+                $old = $data->image;
+                $data->updated_at = Carbon::now();
+            } else {
+                $data = new Supplier();
+                $data->created_at = Carbon::now();
+            }
+
+            $data->supplier_code = $request->supplier_code;
+            $data->name          = $request->name;
+            $data->owner_name    = $request->owner_name;
+            $data->address       = $request->address;
+            $data->mobile        = $request->mobile;
+            $data->email         = $request->email;
+            $data->previous_due  = $request->previous_due;
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {
                         File::delete($old);
                     }
                 }
-                $data->image = $this->imageUpload($request, 'image', 'uploads/categories') ?? '';
+                $data->image = $this->imageUpload($request, 'image', 'uploads/suppliers') ?? '';
             }
             $data->save();
 
             if (!empty($request->id)) {
-                return "Category updated successfully";
+                return "Supplier updated successfully";
             } else {
-                return "Category insert successfully";
+                return "Supplier insert successfully";
             }
         } catch (\Throwable $e) {
             return "Something went wrong";
@@ -79,13 +82,13 @@ class CategoryController extends Controller
     public function destroy(Request $request)
     {
         try {
-            $data = Category::find($request->id);
+            $data = Supplier::find($request->id);
             $old = $data->image;
             if (File::exists($old)) {
                 File::delete($old);
             }
             $data->delete();
-            return "Category Delete successfully";
+            return "Supplier Delete successfully";
         } catch (\Throwable $e) {
             return "Something went wrong";
         }
