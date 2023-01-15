@@ -1,8 +1,8 @@
 @extends("layouts.backend_master")
 
-@section("title", "Admin Upazila")
-@section("breadcrumb_title", "Upazila")
-@section("breadcrumb_item", "Upazila Create")
+@section("title", "Admin Unit")
+@section("breadcrumb_title", "Unit")
+@section("breadcrumb_item", "Unit Create")
 
 @section("content")
 <div class="col-12 col-lg-4">
@@ -11,22 +11,9 @@
             <form onsubmit="Store(event)">
                 <input type="hidden" id="id" name="id">
                 <div class="form-group">
-                    <label for="name">Upazila Name</label>
+                    <label for="name">Unit Name</label>
                     <input type="text" name="name" id="name" autocomplete="off" class="form-control shadow-none">
                     <span class="text-danger error error-name"></span>
-                </div>
-                <div class="form-group">
-                    <label for="district_id">District Name</label>
-                    <select name="district_id" id="district_id" autocomplete="off" class="form-select shadow-none">
-                        <option value="">Select District</option>
-                        @php
-                        $district = App\District::get();
-                        @endphp
-                        @foreach($district as $d)
-                        <option value="{{$d->id}}">{{$d->name}}</option>
-                        @endforeach
-                    </select>
-                    <span class="text-danger error error-district_id"></span>
                 </div>
 
                 <div class="form-group text-center">
@@ -39,14 +26,13 @@
 <div class="col-12 col-lg-8">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Upazila List</h5>
+            <h5 class="card-title">Unit List</h5>
             <div class="table-responsive">
                 <table id="datatable" class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Sl</th>
-                            <th>Upazila Name</th>
-                            <th>District</th>
+                            <th>Unit Name</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -63,7 +49,7 @@
 <script>
     //get Data
     var table = $('#datatable').DataTable({
-        ajax: location.origin + "/admin/thana/fetch",
+        ajax: location.origin + "/admin/unit/fetch",
         order: [
             [0, "desc"]
         ],
@@ -72,12 +58,6 @@
             },
             {
                 data: 'name',
-            },
-            {
-                data: null,
-                render: data => {
-                    return data.district.name
-                }
             },
             {
                 data: null,
@@ -95,7 +75,7 @@
         event.preventDefault();
         var formdata = new FormData(event.target)
         $.ajax({
-            url: location.origin + "/admin/thana",
+            url: location.origin + "/admin/unit",
             method: "POST",
             data: formdata,
             processData: false,
@@ -123,7 +103,7 @@
     function Edit(id) {
         $(".changeBtn").text("Update").removeClass("btn-success").addClass("btn-primary");
         $.ajax({
-            url: location.origin + "/admin/thana/fetch/" + id,
+            url: location.origin + "/admin/unit/fetch/" + id,
             method: "GET",
             dataType: "JSON",
             success: res => {
@@ -137,7 +117,7 @@
     function Delete(id) {
         if (confirm("Are you sure want delete this !")) {
             $.ajax({
-                url: location.origin + "/admin/thana/delete/",
+                url: location.origin + "/admin/unit/delete/",
                 method: "POST",
                 data: {
                     id: id

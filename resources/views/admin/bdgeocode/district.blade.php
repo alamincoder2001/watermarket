@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label for="division_id">Division Name</label>
-                    <select name="division_id" id="division_id" autocomplete="off" class="form-control shadow-none shadow-none">
+                    <select name="division_id" id="division_id" autocomplete="off" class="form-select shadow-none shadow-none">
                         <option value="">Select Division</option>
                         @php
                         $division = App\Division::get();

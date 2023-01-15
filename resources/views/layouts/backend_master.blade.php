@@ -32,7 +32,7 @@
                             <div class="ms-auto text-end">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="{{url('admin')}}">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Home</a></li>
                                         <li class="breadcrumb-item" aria-current="page">
                                             @yield('breadcrumb_item')
                                         </li>

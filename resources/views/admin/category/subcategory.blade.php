@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label for="name">Category</label>
-                    <select name="category_id" id="category_id" autocomplete="off" class="form-control shadow-none">
+                    <select name="category_id" id="category_id" autocomplete="off" class="form-select shadow-none">
                         <option value="">Select Category</option>
                         @php
                         $category = App\Models\Category::get();

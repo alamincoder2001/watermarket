@@ -22,6 +22,7 @@ class CreateSuppliersTable extends Migration
             $table->string("mobile");
             $table->string("email")->nullable();
             $table->string("previous_due");
+            $table->string("supplier_type");
             $table->char("status", 5)->default("a");
             $table->string("image")->nullable();
             $table->timestamps();

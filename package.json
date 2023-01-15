@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "vue-good-table": "^2.21.11"
+        "moment": "^2.29.4",
+        "vue-good-table": "^2.21.11",
+        "vue-select": "^3.20.2"
     }
 }

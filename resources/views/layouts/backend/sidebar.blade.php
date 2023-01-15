@@ -22,6 +22,12 @@
                         <li class="sidebar-item">
                             <a href="{{route('admin.subcategory.index')}}" class="sidebar-link {{Request::is('admin.subcategory.index') ? 'active':''}}"><i class="fas fa-list-alt"></i><span class="hide-menu"> Sub-Category </span></a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.unit.index')}}" class="sidebar-link {{Request::is('admin.unit.index') ? 'active':''}}"><i class="fas fa-list-alt"></i><span class="hide-menu"> Unit </span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.product.index')}}" class="sidebar-link {{Request::is('admin.product.index') ? 'active':''}}"><i class="fab fa-product-hunt"></i><span class="hide-menu"> Product </span></a>
+                        </li>
                     </ul>
                 </li>
                 <li class="sidebar-item">
@@ -38,9 +44,17 @@
                         </li>
                     </ul>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cart-plus"></i><span class="hide-menu"> Purchase Module </span></a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.purchase.index')}}" class="sidebar-link {{Request::is('admin.purchase.index') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Purchase </span></a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li class="sidebar-item {{Request::is('admin.setting') ? 'selected':''}}">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link {{Request::is('admin.setting') ? 'active':''}}" href="{{route('admin.setting')}}" aria-expanded="false"><i class="fas fa-cog"></i><span class="hide-menu">Settings</span></a>
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link {{Request::is('admin.setting') ? 'active':''}}" href="{{route('admin.setting')}}" aria-expanded="false"><i class="mdi mdi-settings"></i><span class="hide-menu">Settings</span></a>
                 </li>
             </ul>
         </nav>

@@ -59,6 +59,7 @@ class SupplierController extends Controller
             $data->mobile        = $request->mobile;
             $data->email         = $request->email;
             $data->previous_due  = $request->previous_due;
+            $data->supplier_type = "retail";
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {

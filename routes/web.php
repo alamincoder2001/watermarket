@@ -5,10 +5,13 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DistrictController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\PurchaseController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\ThanaContoller;
+use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +25,9 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/', [LoginController::class, 'AdminLogin'])->name('admin.login');
     Route::get('/logout', [DashboardController::class, 'AdminLogout'])->name('admin.logout');
 
+    // admin dashboard
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+
     //profile Route
     Route::get('/profile', [DashboardController::class, 'profileIndex'])->name('admin.profile');
     Route::post('/profile', [DashboardController::class, 'profileUpdate'])->name('admin.profile.update');
@@ -31,8 +37,8 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/setting', [SettingController::class, 'updateSetting'])->name('admin.setting.store');
     Route::post('/logoUpdate', [SettingController::class, 'logoUpdate'])->name('admin.setting.logoUpdate');
     Route::post('/naviconUpdate', [SettingController::class, 'naviconUpdate'])->name('admin.setting.naviconUpdate');
-    // admin dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    
+    // Website content route
     // Banner Route
     Route::get('/banner', [BannerController::class, 'index'])->name('admin.banner.index');
     Route::get('/banner/fetch/{id?}', [BannerController::class, 'fetch'])->name('admin.banner.fetch');
@@ -53,6 +59,17 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/subcategory/fetch/{id?}', [SubcategoryController::class, 'fetch'])->name('admin.subcategory.fetch');
     Route::post('/subcategory', [SubcategoryController::class, 'store'])->name('admin.subcategory.store');
     Route::post('/subcategory/delete', [SubcategoryController::class, 'destroy'])->name('admin.subcategory.destroy');
+    // unit Route
+    Route::get('/unit', [UnitController::class, 'index'])->name('admin.unit.index');
+    Route::get('/unit/fetch/{id?}', [UnitController::class, 'fetch'])->name('admin.unit.fetch');
+    Route::post('/unit', [UnitController::class, 'store'])->name('admin.unit.store');
+    Route::post('/unit/delete', [UnitController::class, 'destroy'])->name('admin.unit.destroy');
+    // product Route
+    Route::get('/product', [ProductController::class, 'index'])->name('admin.product.index');
+    Route::get('/product/fetch/{id?}', [ProductController::class, 'fetch'])->name('admin.product.fetch');
+    Route::post('/product', [ProductController::class, 'store'])->name('admin.product.store');
+    Route::post('/product/delete', [ProductController::class, 'destroy'])->name('admin.product.destroy');
+
     // Administration route
 
     // district Route
@@ -70,4 +87,12 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/supplier/fetch/{id?}', [SupplierController::class, 'fetch'])->name('admin.supplier.fetch');
     Route::post('/supplier', [SupplierController::class, 'store'])->name('admin.supplier.store');
     Route::post('/supplier/delete', [SupplierController::class, 'destroy'])->name('admin.supplier.destroy');
+
+    // Purchase module route
+    // purchase route
+    Route::get('/purchase', [PurchaseController::class, 'index'])->name('admin.purchase.index');
+    Route::post('/purchase/fetch', [PurchaseController::class, 'fetch'])->name('admin.purchase.fetch');
+    Route::post('/purchase', [PurchaseController::class, 'store'])->name('admin.purchase.store');
+    Route::post('/purchase/delete', [PurchaseController::class, 'destroy'])->name('admin.purchase.destroy');
+    
 });

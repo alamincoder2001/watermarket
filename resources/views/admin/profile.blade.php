@@ -10,14 +10,13 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="form-group">
-                        <div class="text-left" style="margin-bottom: 10px;">
-                            <img src="{{asset($data->image != null ? $data->image : 'noImage.jpg')}}" class="img" style="width: 50%;height: 85px;border: 1px solid #c1c1c1;margin-top: 5px;">
-                        </div>
-                        <input type="file" id="image" name="image" autocomplete="off" class="form-control shadow-none" onchange="imageUpdate(event)">
-                        <span class="text-danger error error-image"></span>
+                <div class="col-12 col-lg-4">
+                    <div class="form-group ImageBackground">
+                        <img src="{{asset($data->image != null ? $data->image : 'noImage.jpg')}}" class="imageShow" />
+                        <label for="image">Image</label>
+                        <input type="file" id="image" class="form-control shadow-none" onchange="imageUpdate(event)" />
                     </div>
+                    <span class="text-danger error error-image"></span>
                 </div>
                 <div class="col-lg-8">
                     <form onsubmit="Update(event)">
@@ -47,7 +46,7 @@
                             <span class="text-danger error error-new_password"></span>
                         </div>
                         <div class="form-group">
-                            <label for="confirm_password">Old Password</label>
+                            <label for="confirm_password">Confirm Password</label>
                             <input type="password" name="confirm_password" id="confirm_password" autocomplete="off" class="form-control shadow-none">
                             <span class="text-danger error error-confirm_password"></span>
                         </div>
@@ -64,64 +63,64 @@
 @endsection
 
 @push('js')
-    <script>
-        function Update(event){
-            event.preventDefault();
-            var formdata = new FormData(event.target);
-            $.ajax({
-                url: location.origin+"/admin/profile",
-                method: "POST",
-                data: formdata,
-                processData: false,
-                contentType: false,
-                beforeSend: () => {
-                    $(".error").text("")
-                },
-                success: res => {
-                    if(!res.error){
-                        if(res.errors){
-                            $("form").find(".error-old_password").text(res.errors)
-                        }else{
-                            $("form").find("#old_password").val("")
-                            $("form").find("#new_password").val("")
-                            $("form").find("#confirm_password").val("")
-                            alert(res)
-                        }
-                    }else{
-                        $.each(res.error, (index, value) => {
-                            $(".error-"+index).text(value)
-                        })
-                    }
-                }
-            })
-        }
-
-        function imageUpdate(event){
-            event.preventDefault();
-
-            var formdata = new FormData()
-            formdata.append("image", event.target.files[0]);
-            $.ajax({
-                url: location.origin+"/admin/profileImage",
-                method: "POST",
-                data: formdata,
-                contentType: false,
-                processData: false,
-                beforeSend: () => {
-                    $(".error").text("")
-                },
-                success: res => {
-                    if(!res.error){
-                        document.querySelector('.img').src = window.URL.createObjectURL(event.target.files[0])
-                        $("#image").val("")
+<script>
+    function Update(event) {
+        event.preventDefault();
+        var formdata = new FormData(event.target);
+        $.ajax({
+            url: location.origin + "/admin/profile",
+            method: "POST",
+            data: formdata,
+            processData: false,
+            contentType: false,
+            beforeSend: () => {
+                $(".error").text("")
+            },
+            success: res => {
+                if (!res.error) {
+                    if (res.errors) {
+                        $("form").find(".error-old_password").text(res.errors)
+                    } else {
+                        $("form").find("#old_password").val("")
+                        $("form").find("#new_password").val("")
+                        $("form").find("#confirm_password").val("")
                         alert(res)
-                    }else{
-                        $.each(res.error, (index, value) => {
-                            $(".error-"+index).text(value)
-                        })
                     }
+                } else {
+                    $.each(res.error, (index, value) => {
+                        $(".error-" + index).text(value)
+                    })
                 }
-            })
-        }
-    </script>
+            }
+        })
+    }
+
+    function imageUpdate(event) {
+        event.preventDefault();
+
+        var formdata = new FormData()
+        formdata.append("image", event.target.files[0]);
+        $.ajax({
+            url: location.origin + "/admin/profileImage",
+            method: "POST",
+            data: formdata,
+            contentType: false,
+            processData: false,
+            beforeSend: () => {
+                $(".error").text("")
+            },
+            success: res => {
+                if (!res.error) {
+                    document.querySelector('.imageShow').src = window.URL.createObjectURL(event.target.files[0])
+                    $("#image").val("")
+                    alert(res)
+                } else {
+                    $.each(res.error, (index, value) => {
+                        $(".error-" + index).text(value)
+                    })
+                }
+            }
+        })
+    }
+</script>
 @endpush
