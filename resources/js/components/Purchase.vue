@@ -601,11 +601,11 @@ export default {
 
 @media screen and (min-device-width: 360px) and (max-device-width: 768px) {
     #supplier {
-        width: 81% !important;
+        width: 80% !important;
     }
 
     #product {
-        width: 81% !important;
+        width: 80% !important;
     }
 }
 </style>
