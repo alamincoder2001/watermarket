@@ -555,9 +555,7 @@ export default {
 
 
 <style>
-#category {
-    width: 100% !important;
-}
+
 #category [role="combobox"]{
     padding: 0 !important;
 }
@@ -570,14 +568,14 @@ export default {
 }
 
 #supplier {
-    width: 87% !important;
+    width: 85.5% !important;
 }
 #supplier [role="combobox"]{
     padding: 0 !important;
 }
 
 #product {
-    width: 87% !important;
+    width: 85.5% !important;
 }
 #product [role="combobox"]{
     padding: 0 !important;
@@ -593,11 +591,11 @@ export default {
     left: 3px;
 }
 
-#supplier #vs3__listbox {
+#supplier [role='listbox'] {
     width: 300px !important;
 }
 
-#vs4__listbox {
+#product [role='listbox'] {
     width: 300px !important;
 }
 
