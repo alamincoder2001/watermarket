@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,7 +28,7 @@ class SupplierController extends Controller
         if ($id != null) {
             $data = Supplier::find($id);
         } else {
-            $data = Supplier::get();
+            $data = DB::select("SELECT s.*, CONCAT(s.supplier_code,' - ',s.name) as display_name FROM suppliers s");
         }
         return response()->json(["data" => $data, "supplier_code"=> $supplier_code]);
     }

@@ -3,7 +3,7 @@
 
 <head>
     @php
-        $setting = App\Models\Setting::first();
+    $setting = App\Models\Setting::first();
     @endphp
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -258,9 +258,11 @@
     @include("layouts.frontend.navbar")
     <!-- Header  End -->
     <main>
+
         @yield("content")
+
     </main>
-    <footer class="footer-section">
+    <footer class="footer-section" style="background:#ffda93">
         <div class="footer-top position-relative">
             <div class="container">
                 <div class="row g-0">

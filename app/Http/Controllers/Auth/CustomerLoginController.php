@@ -6,27 +6,13 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-class LoginController extends Controller
+class CustomerLoginController extends Controller
 {
-    use AuthenticatesUsers;
-
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-        $this->middleware('guest:technician')->except('logout');
-        $this->middleware('guest:admin')->except('logout');
-    }
     
     public function showSignUpForm()
     {
-        return view("auth.frontend.login");
-    }
-
-    public function showAdminLoginForm()
-    {
-        return view("auth.backend.login");
+        return view("auth.frontend.signup");
     }
 
     public function AdminLogin(Request $request)
@@ -39,7 +25,7 @@ class LoginController extends Controller
         if($validator->fails()){
             return response()->json(["error" => $validator->errors()]);
         }
-        if (Auth::guard('admin')->attempt($this->credentials($request->username, $request->password))) {
+        if (Auth::guard('technician')->attempt($this->credentials($request->username, $request->password))) {
             return response()->json("Successfully Login");
         } else {
             return response()->json(["errors" => "Password or Email Not Match"]);

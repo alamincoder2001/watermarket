@@ -48,7 +48,10 @@
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cart-plus"></i><span class="hide-menu"> Purchase Module </span></a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="{{route('admin.purchase.index')}}" class="sidebar-link {{Request::is('admin.purchase.index') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Purchase </span></a>
+                            <a href="{{route('admin.purchase.index')}}" class="sidebar-link {{Route::is('admin.purchase.index') || Route::is('admin.purchase.edit') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Purchase </span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.purchase.purchaseList')}}" class="sidebar-link {{Request::is('admin.purchase.purchaseList') ? 'active':''}}"><i class="fas fa-clipboard-list"></i><span class="hide-menu"> Purchase List </span></a>
                         </li>
                     </ul>
                 </li>

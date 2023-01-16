@@ -12,12 +12,15 @@ use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\ThanaContoller;
 use App\Http\Controllers\Admin\UnitController;
+use App\Http\Controllers\Auth\CustomerLoginController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('website');
-
+// Technician and customer login
+Route::get('/signup', [CustomerLoginController::class, 'showSignUpForm'])->name('showSignUpForm');
+Route::post('/signup', [CustomerLoginController::class, 'signupStore'])->name('signupStore');
 
 // Admin Login Route
 Route::group(["prefix" => "admin"], function () {
@@ -91,8 +94,9 @@ Route::group(["prefix" => "admin"], function () {
     // Purchase module route
     // purchase route
     Route::get('/purchase', [PurchaseController::class, 'index'])->name('admin.purchase.index');
+    Route::get('/purchase/edit/{invoice?}', [PurchaseController::class, 'edit'])->name('admin.purchase.edit');
     Route::post('/purchase/fetch', [PurchaseController::class, 'fetch'])->name('admin.purchase.fetch');
     Route::post('/purchase', [PurchaseController::class, 'store'])->name('admin.purchase.store');
     Route::post('/purchase/delete', [PurchaseController::class, 'destroy'])->name('admin.purchase.destroy');
-    
+    Route::get("/purchaseList", [PurchaseController::class, 'purchaseList'])->name("admin.purchase.purchaseList");
 });

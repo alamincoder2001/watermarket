@@ -174,15 +174,27 @@ class PurchaseController extends Controller
         }
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $details = PurchaseDetail::where("purchase_id", $id)->get();
+        $details = PurchaseDetail::where("purchase_id", $request->id)->get();
         foreach ($details as $item) {
             $inventory = ProductInventory::where("product_id", $item->product_id)->first();
             $inventory->purchase_qty = $inventory->purchase_qty - $item->quantity;
             $inventory->save();
         }
-        Purchase::find($id)->delete();
+        Purchase::find($request->id)->delete();
         return "Purchae Delete Successfully";
+    }
+
+
+
+    // Purchase List
+    public function purchaseList()
+    {
+        return view("admin.purchase.purchase_list");
+    }
+
+    public function edit($id = null){
+        return view("admin.purchase.edit", compact('id'));
     }
 }

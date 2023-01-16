@@ -165,7 +165,7 @@ export default {
     methods: {
         getSupplier() {
             axios.get(location.origin + "/admin/supplier/fetch").then((res) => {
-                this.suppliers = res.data.data;
+                this.suppliers = res.data.data.filter(sup => sup.supplier_type != "G");
                 this.supplier.supplier_code = res.data.supplier_code;
             });
         },

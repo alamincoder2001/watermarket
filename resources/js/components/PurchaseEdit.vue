@@ -297,8 +297,12 @@
 <script>
 var moment = require('moment');
 export default {
+    template: '#purchase-edit',
+    props: ['invoiceNumber'],
+
     data() {
         return {
+            invoice: this.invoiceNumber,
             categories: [],
             selectedCategory: {
                 id: "",
@@ -384,8 +388,35 @@ export default {
             });
         },
         getPurchase() {
-            axios.post("/admin/purchase/fetch", {invoice: ""}).then((res) => {
-                this.purchase.invoice = res.data.invoice;
+            let data = { invoice: this.invoice }
+            axios.post("/admin/purchase/fetch", data).then((res) => {
+                this.purchase = res.data.purchases[0]
+                this.carts = res.data.purchases[0].purchaseDetails
+                if (res.data.purchases[0].account_id) {
+                    this.selectedAccount = {
+                        id: res.data.purchases[0].account_id,
+                        display_name: res.data.purchases[0].bank_display_name
+                    }
+                }
+                if (res.data.purchases[0].supplier_type == "G") {
+                    this.selectedSupplier = {
+                        id: res.data.purchases[0].supplier_id,
+                        name: res.data.purchases[0].name,
+                        display_name: "General Supplier",
+                        mobile: res.data.purchases[0].mobile,
+                        address: res.data.purchases[0].address,
+                        supplier_type: res.data.purchases[0].supplier_type
+                    }
+                } else {
+                    this.selectedSupplier = {
+                        id: res.data.purchases[0].supplier_id,
+                        name: res.data.purchases[0].name,
+                        display_name: res.data.purchases[0].display_name,
+                        mobile: res.data.purchases[0].mobile,
+                        address: res.data.purchases[0].address,
+                        supplier_type: res.data.purchases[0].supplier_type
+                    }
+                }
             });
         },
         onChangeSupplier() {
@@ -504,9 +535,11 @@ export default {
             axios.post("/admin/purchase", data)
                 .then(res => {
                     alert(res.data.msg)
-                    // if (confirm("Are you sure want print")) {
-                    //     this.$router.push({ path: '/purchase-invoice/' + res.data.invoice })
-                    // }
+                    if (confirm("Are you sure want print")) {
+                        
+                    }else{
+                        location.href = "/admin/purchaseList"
+                    }
                     this.clearData()
                     this.getPurchase()
                     this.carts = [];
@@ -554,29 +587,31 @@ export default {
 
 
 <style>
-
-#category [role="combobox"]{
+#category [role="combobox"] {
     padding: 0 !important;
 }
 
 #brand {
     width: 100% !important;
 }
-#brand [role="combobox"]{
+
+#brand [role="combobox"] {
     padding: 0 !important;
 }
 
 #supplier {
     width: 85.5% !important;
 }
-#supplier [role="combobox"]{
+
+#supplier [role="combobox"] {
     padding: 0 !important;
 }
 
 #product {
     width: 85.5% !important;
 }
-#product [role="combobox"]{
+
+#product [role="combobox"] {
     padding: 0 !important;
 }
 

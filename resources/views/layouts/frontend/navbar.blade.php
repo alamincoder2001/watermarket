@@ -22,7 +22,7 @@
                                 <!-- dropdown-menu start -->
                             </li>
                             @else
-                            <li class="dropdown top-nav-item"><a class="top-nav-link" href="#" role="button" id="account" data-bs-toggle="dropdown">Sign In</a></li>
+                            <li class="dropdown top-nav-item"><a class="top-nav-link" href="{{route('showSignUpForm')}}" role="button" id="account">Sign In</a></li>
                             @endif
                             <li class="dropdown top-nav-item"><span></span><a class="top-nav-link" role="button" id="currency" data-bs-toggle="dropdown" href="#">USD $<i class="ion-ios-arrow-down"></i></a>
                                 <!-- dropdown-menu start -->

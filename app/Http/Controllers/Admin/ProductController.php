@@ -37,7 +37,7 @@ class ProductController extends Controller
                     products p
                     LEFT JOIN brands b ON b.id = p.brand_id
                     LEFT JOIN subcategories sc ON sc.id = p.subcategory_id
-                    LEFT JOIN categories c ON c.id = sc.category_id
+                    JOIN categories c ON c.id = p.category_id
                     LEFT JOIN units u ON u.id = p.unit_id");
 
         return response()->json(["data" => $data, "product_code"=> $product_code]);
@@ -66,6 +66,7 @@ class ProductController extends Controller
             $data->product_code   = $request->product_code;
             $data->name           = $request->name;
             $data->brand_id       = $request->brand_id;
+            $data->category_id    = $request->category_id;
             $data->subcategory_id = $request->subcategory_id;
             $data->unit_id        = $request->unit_id;
             $data->vat            = $request->vat;

@@ -158,8 +158,12 @@ export default {
                     field: "name",
                 },
                 {
-                    label: "Subcategory",
-                    field: "subcategory_name",
+                    label: "Brand",
+                    field: "brand_name",
+                },
+                {
+                    label: "Category",
+                    field: "category_name",
                 },
                 {
                     label: "Vat",
@@ -255,7 +259,8 @@ export default {
             formdata.append("image", this.product.image)
             formdata.append("id", this.product.id)
             formdata.append("brand_id", this.selectedBrand != null ? this.selectedBrand.id : "")
-            formdata.append("subcategory_id", this.selectedCategory != null ? this.selectedCategory.id : "")
+            formdata.append("category_id", this.selectedCategory != null ? this.selectedCategory.id : "")
+            formdata.append("subcategory_id", this.selectedSubcategory != null ? this.selectedSubcategory.id : "")
             formdata.append("unit_id", this.selectedUnit != null ? this.selectedUnit.id : "")
             axios
                 .post(location.origin + "/admin/product", formdata)
