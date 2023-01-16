@@ -6,7 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Login</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
     <style>
@@ -197,7 +197,7 @@
             <div class="form-group py-2">
                 <div class="input-field">
                     <span class="far fa-user p-2"></span>
-                    <input type="text" name="username" placeholder="Username or Email Address" autocomplete="off">
+                    <input type="text" name="username" placeholder="Username or Email Address" autocomplete="off" autofocus>
                 </div>
                 <span class="text-danger error error-username"></span>
             </div>
