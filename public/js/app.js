@@ -6518,18 +6518,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
 /* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var vue_select_dist_vue_select_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-select/dist/vue-select.css */ "./node_modules/vue-select/dist/vue-select.css");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_4__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js")["default"]);
 
 
 Vue.use(vue_good_table__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
+// v-select
+
 
 Vue.component('v-select', (vue_select__WEBPACK_IMPORTED_MODULE_2___default()));
-
-Vue.use((moment__WEBPACK_IMPORTED_MODULE_4___default()));
 Vue.component("Supplier", (__webpack_require__(/*! ./components/Supplier.vue */ "./resources/js/components/Supplier.vue")["default"]));
 Vue.component("Product", (__webpack_require__(/*! ./components/Product.vue */ "./resources/js/components/Product.vue")["default"]));
 Vue.component("Purchase", (__webpack_require__(/*! ./components/Purchase.vue */ "./resources/js/components/Purchase.vue")["default"]));
@@ -6549,32 +6547,8 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 try {
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 } catch (e) {}
-
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-
-// import Echo from 'laravel-echo';
-
-// window.Pusher = require('pusher-js');
-
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     forceTLS: true
-// });
 
 /***/ }),
 
@@ -11897,7 +11871,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#category {\r\n    width: 100% !important;\n}\n#category [role=\"combobox\"]{\r\n    padding: 0 !important;\n}\n#brand {\r\n    width: 100% !important;\n}\n#brand [role=\"combobox\"]{\r\n    padding: 0 !important;\n}\n#supplier {\r\n    width: 87% !important;\n}\n#supplier [role=\"combobox\"]{\r\n    padding: 0 !important;\n}\n#product {\r\n    width: 87% !important;\n}\n#product [role=\"combobox\"]{\r\n    padding: 0 !important;\n}\n.vs__selected-options {\r\n    overflow: hidden;\n}\n.vs__selected {\r\n    position: absolute;\r\n    top: 0px;\r\n    left: 3px;\n}\n#supplier #vs3__listbox {\r\n    width: 300px !important;\n}\n#vs4__listbox {\r\n    width: 300px !important;\n}\n@media screen and (min-device-width: 360px) and (max-device-width: 768px) {\n#supplier {\r\n        width: 81% !important;\n}\n#product {\r\n        width: 81% !important;\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#category [role=\"combobox\"]{\r\n    padding: 0 !important;\n}\n#brand {\r\n    width: 100% !important;\n}\n#brand [role=\"combobox\"]{\r\n    padding: 0 !important;\n}\n#supplier {\r\n    width: 85.5% !important;\n}\n#supplier [role=\"combobox\"]{\r\n    padding: 0 !important;\n}\n#product {\r\n    width: 85.5% !important;\n}\n#product [role=\"combobox\"]{\r\n    padding: 0 !important;\n}\n.vs__selected-options {\r\n    overflow: hidden;\n}\n.vs__selected {\r\n    position: absolute;\r\n    top: 0px;\r\n    left: 3px;\n}\n#supplier [role='listbox'] {\r\n    width: 300px !important;\n}\n#product [role='listbox'] {\r\n    width: 300px !important;\n}\n@media screen and (min-device-width: 360px) and (max-device-width: 768px) {\n#supplier {\r\n        width: 80% !important;\n}\n#product {\r\n        width: 80% !important;\n}\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
