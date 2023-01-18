@@ -1,5 +1,5 @@
 <header>
-    <div class="header-top d-none d-lg-block" style="background: #ad8700;">
+    <div class="header-top d-none d-lg-block" style="background: #59bbad;">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6">
@@ -324,7 +324,7 @@
 
                                     <!-- checkout-action button start -->
                                     <div class="checkout-action">
-                                        <a href="checkout.html" class="btn btn-lg btn-primary d-block">Checkout</a>
+                                        <a href="checkout.html" style="background:#59BBAD;" class="btn text-white btn-hover-primary btn-lg d-block">Checkout</a>
                                     </div>
                                     <!-- checkout-action button end -->
                                 </div>

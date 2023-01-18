@@ -200,6 +200,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.bg-common{
+  background:#59BBAD !important;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -17504,11 +17508,11 @@ p:last-child {
 }
 
 .section-py {
-  padding: 40px 0px !important;
+  padding: 25px 0px !important;
 }
 @media screen and (min-width: 1200px) {
   .section-py {
-    padding: 50px 0px !important;
+    padding: 25px 0px !important;
   }
 }
 
@@ -17981,7 +17985,7 @@ label {
   height: 50px;
   line-height: 50px;
   font-size: 24px;
-  background: #fe6022;
+  background: #59BBAD;
   border-radius: 50%;
 }
 @media screen and (min-width: 992px) {
@@ -18061,7 +18065,7 @@ label {
 
 .dropdown-menu {
   top: 50px !important;
-  right: 15px !important;
+  right: -60px !important;
   left: auto !important;
   min-width: 130px;
   overflow: hidden;
@@ -18087,7 +18091,7 @@ label {
 }
 
 .dropdown-menu.show {
-  top: 35px !important;
+  top: 27px !important;
   opacity: 1;
   visibility: visible;
 }
@@ -18827,8 +18831,10 @@ button:focus {
 }
 
 .btn-hover-primary:hover {
-  border-color: #2b46a8;
-  background-color: #2b46a8;
+  /* border-color: #2b46a8;
+  background-color: #2b46a8; */
+  border-color: #FE6022 !important;
+  background-color: #FE6022 !important;
   color: #fff;
 }
 
@@ -18892,8 +18898,8 @@ button:focus {
 }
 
 .btn-hover-warning:hover {
-  border-color: #fe6022;
-  background-color: #fe6022;
+  border-color: #fe6022 !important;
+  background-color: #fe6022 !important;
   color: #fff;
   background: #fe6022;
   border-color: #fe6022;
@@ -18938,7 +18944,7 @@ button:focus {
 }
 
 .btn-search {
-  background: #fe6022;
+  background: #59BBAD;
   height: 100%;
   display: inline-block;
   line-height: 1;
@@ -18947,7 +18953,7 @@ button:focus {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
-  border: 1px solid #fe6022;
+  border: 1px solid #59BBAD;
   border-radius: 0 4px 4px 0;
 }
 
@@ -20119,7 +20125,8 @@ textarea.form-control {
   padding: 15px 0;
   opacity: 0;
   visibility: hidden;
-  border-top: 2px solid #fe6022;
+  /* border-top: 2px solid #fe6022; */
+  border-top: 2px solid #59BBAD;
   background-color: #fff;
   -webkit-box-shadow: 0 2px 29px rgba(0, 0, 0, 0.05);
           box-shadow: 0 2px 29px rgba(0, 0, 0, 0.05);
@@ -20172,7 +20179,7 @@ textarea.form-control {
 .vertical-menu .menu-btn {
   width: 100%;
   font-weight: 500;
-  background: #2b46a8;
+  background: #48a597;
   color: #fff;
   font-size: 15px;
   text-transform: uppercase;
@@ -20501,7 +20508,7 @@ textarea.form-control {
   width: 355px;
   opacity: 0;
   visibility: hidden;
-  border-top: 2px solid #fe6022;
+  border-top: 2px solid #48a597;  
   -webkit-box-shadow: 0px 2px 7.44px 0.56px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 2px 7.44px 0.56px rgba(0, 0, 0, 0.1);
   -webkit-transition: ease-in-out 0.3s;
@@ -22671,7 +22678,7 @@ textarea.form-control {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .login-register-wrapper .login-register-tab-list a {
@@ -22710,7 +22717,8 @@ textarea.form-control {
 }
 
 .login-register-wrapper .login-form-container {
-  background: transparent none repeat scroll 0 0;
+  /* background: transparent none repeat scroll 0 0; */
+  background: #d6dedf none repeat scroll 0 0;
   -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
   padding: 80px;
@@ -22724,11 +22732,11 @@ textarea.form-control {
 
 .login-register-wrapper .login-form-container .login-register-form form input {
   background-color: transparent;
-  border: 1px solid #ebebeb;
-  color: #666;
+  border: 1px solid #63a5bf;
+  color: #000;
   font-size: 14px;
-  height: 45px;
-  margin-bottom: 30px;
+  height: 35px;
+  margin-bottom: 15px;
   padding: 0 15px;
   width: 100%;
   outline: none;

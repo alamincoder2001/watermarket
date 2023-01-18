@@ -274,7 +274,7 @@
                                         When you buy a selected westinghouse
                                     </p>
                                     <p class="price animated">Only $479.95</p>
-                                    <a href="shop-grid-3-column.html" class="btn animated btn-primary btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    <a href="shop-grid-3-column.html" class="btn animated bg-common text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
                                 </div>
                             </div>
                             <!-- swiper-slide end-->
@@ -286,7 +286,7 @@
                                     <p class="text animated">
                                         Big anti-scald handle match up to human</p>
                                     <p class="price animated">Only $479.95</p>
-                                    <a href="shop-grid-3-column.html" class="btn animated btn-primary btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    <a href="shop-grid-3-column.html" class="btn animated bg-common text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
                                 </div>
                             </div>
                             <!-- swiper-slide end-->
@@ -299,7 +299,7 @@
                                         When you buy a selected
                                     </p>
                                     <p class="price animated">Only $479.95</p>
-                                    <a href="shop-grid-3-column.html" class="btn animated btn-primary btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    <a href="shop-grid-3-column.html" class="btn animated bg-common text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
                                 </div>
                             </div>
                             <!-- swiper-slide end-->

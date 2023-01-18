@@ -272,7 +272,7 @@
                                 <div class="col-lg-4 col-sm-6 mb-7">
                                     <div class="footer-widget">
                                         <a class="footer-logo mb-8" href="index.html">
-                                            <img src="{{asset('frontend')}}/assets/images/logo/logo.png" alt="footer-logo" />
+                                            <img src="{{asset('backend/assets/images/logo-text.png')}}" alt="footer-logo" />
                                         </a>
                                         <p>
                                             We are a team of designers and developers that create high quality
@@ -335,8 +335,8 @@
                     <div class="col-md-6 order-last order-md-first">
                         <div class="copyright-info text-center text-md-start">
                             <p>
-                                Copyright &copy; <span id="currentYear"></span>
-                                <a href="https://hasthemes.com/">Hasthemes</a>, All Rights Reserved
+                                Copyright &copy; {{date("Y")}}
+                                <a href="https://linktechbd.com/">Linkup Technology</a>
                             </p>
                         </div>
                     </div>
