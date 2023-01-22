@@ -18,6 +18,7 @@ class CreateSettingsTable extends Migration
             $table->string("company_name");
             $table->string("mobile");
             $table->string("email")->nullable();
+            $table->text("address")->nullable();
             $table->string("logo")->nullable();
             $table->string("navicon")->nullable();
             $table->string("facebook")->nullable();

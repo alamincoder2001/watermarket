@@ -37,6 +37,7 @@ class SettingController extends Controller
             $data->company_name = $request->company_name;
             $data->mobile       = $request->mobile;
             $data->email        = $request->email;
+            $data->address      = $request->address;
             $data->facebook     = $request->facebook;
             $data->instagram    = $request->instagram;
             $data->twitter      = $request->twitter;
