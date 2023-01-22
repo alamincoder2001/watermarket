@@ -11,12 +11,13 @@ import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css';
 Vue.component('v-select', vSelect)
 
-Vue.component("Supplier", require("./components/Supplier.vue").default);
-Vue.component("Product", require("./components/Product.vue").default);
-Vue.component("Purchase", require("./components/Purchase.vue").default);
-Vue.component("purchase_list", require("./components/PurchaseList.vue").default);
-Vue.component("purchase_edit", require("./components/PurchaseEdit.vue").default);
-
+// Vue.component("Supplier", require("./components/Supplier.vue").default);
+// Vue.component("Product", require("./components/Product.vue").default);
+// Vue.component("Purchase", require("./components/Purchase.vue").default);
+// Vue.component("purchase_list", require("./components/PurchaseList.vue").default);
+// Vue.component("purchase_edit", require("./components/PurchaseEdit.vue").default);
+import product from "./components/Product.vue";
 const app = new Vue({
+    template: {product},
     el: "#app",
 });
