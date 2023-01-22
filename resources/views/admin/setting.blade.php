@@ -42,8 +42,13 @@
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" name="email" id="email" value="{{$data->email}}" autocomplete="off" class="form-control shadow-none">
+                            <input type="email" name="email" id="email" value="{{$data->email}}" autocomplete="off" class="form-control shadow-none">
                             <span class="text-danger error error-email"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <textarea name="address" id="address" autocomplete="off" class="form-control shadow-none">{{$data->address}}</textarea>
+                            <span class="text-danger error error-address"></span>
                         </div>
                         <div class="form-group">
                             <label for="facebook">Facebook</label>

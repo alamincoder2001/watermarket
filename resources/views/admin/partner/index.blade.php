@@ -1,8 +1,8 @@
 @extends("layouts.backend_master")
 
-@section("title", "Admin Category")
-@section("breadcrumb_title", "Category")
-@section("breadcrumb_item", "Category Create")
+@section("title", "Admin Corporate Partner")
+@section("breadcrumb_title", "Corporate Partner")
+@section("breadcrumb_item", "Corporate Partner Create")
 
 @section("content")
 <div class="col-12 col-lg-4">
@@ -11,9 +11,14 @@
             <form onsubmit="Store(event)">
                 <input type="hidden" id="id" name="id">
                 <div class="form-group">
-                    <label for="name">Category Name</label>
-                    <input type="text" name="name" id="name" autocomplete="off" class="form-control shadow-none">
-                    <span class="text-danger error error-name"></span>
+                    <label for="title">Corporate Partner Title</label>
+                    <input type="text" name="title" id="title" autocomplete="off" class="form-control shadow-none">
+                    <span class="text-danger error error-title"></span>
+                </div>
+                <div class="form-group">
+                    <label for="url">Corporate Partner Url</label>
+                    <input type="url" name="url" id="url" autocomplete="off" class="form-control shadow-none">
+                    <span class="text-danger error error-url"></span>
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>
@@ -34,14 +39,14 @@
 <div class="col-12 col-lg-8">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Category List</h5>
+            <h5 class="card-title">Corporate Partner List</h5>
             <div class="table-responsive">
                 <table id="datatable" class="table table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Sl</th>
-                            <th>Category Name</th>
-                            <th>Slug</th>
+                            <th>Title</th>
+                            <th>Url</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -59,7 +64,7 @@
 <script>
     //get Data
     var table = $('#datatable').DataTable({
-        ajax: location.origin + "/admin/category/fetch",
+        ajax: location.origin + "/admin/partner/fetch",
         order: [[ 0, "desc" ]],
         columns: [{
                 data: 'id',
@@ -92,7 +97,7 @@
         event.preventDefault();
         var formdata = new FormData(event.target)
         $.ajax({
-            url: location.origin + "/admin/category",
+            url: location.origin + "/admin/partner",
             method: "POST",
             data: formdata,
             processData: false,
@@ -121,7 +126,7 @@
     function Edit(id) {
         $(".changeBtn").text("Update").removeClass("btn-success").addClass("btn-primary");
         $.ajax({
-            url: location.origin + "/admin/category/fetch/" + id,
+            url: location.origin + "/admin/partner/fetch/" + id,
             method: "GET",
             dataType: "JSON",
             success: res => {
@@ -140,7 +145,7 @@
     function Delete(id) {
         if (confirm("Are you sure want delete this !")) {
             $.ajax({
-                url: location.origin + "/admin/category/delete/",
+                url: location.origin + "/admin/partner/delete/",
                 method: "POST",
                 data: {
                     id: id

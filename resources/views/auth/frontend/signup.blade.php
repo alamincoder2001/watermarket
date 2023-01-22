@@ -19,7 +19,13 @@
 
                     <div class="tab-content">
                         <div id="lg1" class="tab-pane show active" style="width: 600px !important;margin: 0 auto;">
-                            <div class="login-form-container">
+                            <div class="login-form-container" style="position: relative;">
+                                <div class="d-flex gap-1" style="position: absolute;top: 15px;right: 80px;background: #42d5c1;padding: 5px;">
+                                    <input type="checkbox" value="technician" id="technician" style="height: 15px;margin: 0;position: relative;top: 1px;width: 17px;" />
+                                    <label for="technician" style="cursor:pointer;margin: 0;color:white;">
+                                        Technician
+                                    </label>
+                                </div>
                                 <div class="login-register-form">
                                     <form action="#" method="post">
                                         <input type="text" name="user-name" placeholder="Username" autocomplete="off" />
@@ -30,7 +36,7 @@
                                                 <label for="remember">Remember me</label>
                                                 <a href="#">Forgot Password?</a>
                                             </div>
-                                            <a href="#" style="background:#59BBAD;" class="btn text-white btn-hover-primary w-100">
+                                            <a href="#" class="btn btn-primary text-white btn-hover-warning w-100">
                                                 <span>Login</span>
                                             </a>
                                         </div>
@@ -39,11 +45,14 @@
                             </div>
                         </div>
                         <div id="lg2" class="tab-pane" style="width: 600px !important;margin: 0 auto;">
-                            <div class="login-form-container">
-                                <div class="login-register-form">
-                                    <label for="technician">
-                                        <input type="checkbox" value="technician" id="technician" style="height: 15px;margin: 0;position: relative;top: 1px;width: 17px;" /> Technician
+                            <div class="login-form-container" style="position: relative;">
+                                <div class="d-flex gap-1" style="position: absolute;top: 15px;right: 80px;background: #42d5c1;padding: 5px;">
+                                    <input type="checkbox" value="technician" id="technician1" style="height: 15px;margin: 0;position: relative;top: 1px;width: 17px;" />
+                                    <label for="technician1" style="cursor:pointer;margin: 0;color:white;">
+                                        Technician
                                     </label>
+                                </div>
+                                <div class="login-register-form">
                                     <form action="#" method="post">
                                         <input type="text" name="name" placeholder="Name" autocomplete="off" />
                                         <input type="text" name="username" placeholder="Username" autocomplete="off" />
@@ -52,7 +61,7 @@
                                         <input type="password" name="password" placeholder="Password" autocomplete="off" />
                                         <input type="password" name="confirm_password" placeholder="Confirm Password" autocomplete="off" />
                                         <div class="button-box">
-                                            <button href="#" class="btn bg-common text-white btn-hover-primary w-100">
+                                            <button href="#" class="btn btn-primary text-white btn-hover-warning w-100">
                                                 <span>Register</span>
                                             </button>
                                         </div>

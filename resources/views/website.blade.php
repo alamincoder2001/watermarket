@@ -29,68 +29,7 @@
                                     <li><a href="#">Electronic Cigarettes</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item-has-children menu-item-has-children-2">
-                                <a href="#">Camera &amp; Photo<i class="ion-ios-arrow-down"></i></a>
-                                <!-- category submenu -->
-                                <ul class="category-mega-menu category-mega-menu-2">
-                                    <li><a href="#">Digital Cameras</a></li>
-                                    <li><a href="#">Camcorders</a></li>
-                                    <li><a href="#">Camera Drones</a></li>
-                                    <li><a href="#">Action Cameras</a></li>
-                                    <li><a href="#">Photo Studio Supplies</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children menu-item-has-children-3">
-                                <a href="#">Smart Electronics <i class="ion-ios-arrow-down"></i></a>
-                                <!-- category submenu -->
-                                <ul class="category-mega-menu category-mega-menu-3">
-                                    <li><a href="#">Wearable Devices</a></li>
-                                    <li><a href="#">Smart Home Appliances</a></li>
-                                    <li><a href="#">Smart Remote Controls</a></li>
-                                    <li><a href="#">Smart Watches</a></li>
-                                    <li><a href="#">Smart Wristbands</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children menu-item-has-children-4">
-                                <a href="#">Audio &amp; Video <i class="ion-ios-arrow-down"></i></a>
-                                <!-- category submenu -->
-                                <ul class="category-mega-menu category-mega-menu-4">
-                                    <li><a href="#">Televisions</a></li>
-                                    <li><a href="#">TV Receivers</a></li>
-                                    <li><a href="#">Projectors</a></li>
-                                    <li><a href="#">Audio Amplifier Boards</a></li>
-                                    <li><a href="#">TV Sticks</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children menu-item-has-children-5">
-                                <a href="#">Portable Audio &amp; Video
-                                    <i class="ion-ios-arrow-down"></i></a>
-                                <!-- category submenu -->
-                                <ul class="category-mega-menu category-mega-menu-5">
-                                    <li><a href="#">Headphones</a></li>
-                                    <li><a href="#">Speakers</a></li>
-                                    <li><a href="#">MP3 Players</a></li>
-                                    <li><a href="#">VR/AR Devices</a></li>
-                                    <li><a href="#">Microphones</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children menu-item-has-children-6">
-                                <a href="#">Video Game <i class="ion-ios-arrow-down"></i></a>
-                                <!-- category submenu -->
-                                <ul class="category-mega-menu category-mega-menu-6">
-                                    <li><a href="#">Handheld Game Players</a></li>
-                                    <li><a href="#">Game Controllers</a></li>
-                                    <li><a href="#">Joysticks</a></li>
-                                    <li><a href="#">Stickers</a></li>
-                                </ul>
-                            </li>
                             <li><a href="#">Televisions</a></li>
-                            <li><a href="#">Digital Cameras</a></li>
-                            <li><a href="#">Headphones</a></li>
-                            <li><a href="#">Wearable Devices</a></li>
-                            <li><a href="#">Smart Watches</a></li>
-                            <li><a href="#">Game Controllers</a></li>
-                            <li><a href="#"> Smart Home Appliances</a></li>
                             <li class="hidden" style="display: none">
                                 <a href="#">Projectors</a>
                             </li>
@@ -266,7 +205,7 @@
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <!-- swiper-slide start -->
-                            <div class="hero-slide-item swiper-slide slide-bg1">
+                            <div class="hero-slide-item swiper-slide" style="background-image: url('{{asset('frontend/assets/images/slider/slider1.jpg')}}');background-repeat: no-repeat;background-size: cover;background-position: 0% center;">
                                 <div class="hero-slide-content">
                                     <h2 class="title delay1 animated">Cookware Set</h2>
                                     <h2 class="title delay2 animated">New Vidre Digital</h2>
@@ -274,7 +213,7 @@
                                         When you buy a selected westinghouse
                                     </p>
                                     <p class="price animated">Only $479.95</p>
-                                    <a href="shop-grid-3-column.html" class="btn animated bg-common text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    <a href="shop-grid-3-column.html" class="btn animated btn-primary text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
                                 </div>
                             </div>
                             <!-- swiper-slide end-->
@@ -286,7 +225,7 @@
                                     <p class="text animated">
                                         Big anti-scald handle match up to human</p>
                                     <p class="price animated">Only $479.95</p>
-                                    <a href="shop-grid-3-column.html" class="btn animated bg-common text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    <a href="shop-grid-3-column.html" class="btn animated btn-primary text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
                                 </div>
                             </div>
                             <!-- swiper-slide end-->
@@ -299,7 +238,7 @@
                                         When you buy a selected
                                     </p>
                                     <p class="price animated">Only $479.95</p>
-                                    <a href="shop-grid-3-column.html" class="btn animated bg-common text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    <a href="shop-grid-3-column.html" class="btn animated btn-primary text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
                                 </div>
                             </div>
                             <!-- swiper-slide end-->
@@ -317,7 +256,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 offset-lg-4 col-lg-8 offset-xl-0 custom-padding">
+            <!-- <div class="col-xl-3 offset-lg-4 col-lg-8 offset-xl-0 custom-padding">
                 <div class="d-flex custom-flex-column">
                     <a class="zoom-in d-block mb-7 me-sm-7 me-0" href="shop-grid-left-sidebar.html">
                         <img src="{{asset('frontend')}}/assets/images/banner/1.jpg" alt="img">
@@ -326,7 +265,7 @@
                         <img src="{{asset('frontend')}}/assets/images/banner/2.jpg" alt="img">
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -371,7 +310,7 @@
                                 <div class="swiper-wrapper">
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -398,7 +337,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -425,7 +364,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -452,7 +391,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -479,7 +418,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -506,7 +445,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -533,7 +472,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -560,7 +499,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -604,7 +543,7 @@
                                 <div class="swiper-wrapper">
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -631,7 +570,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -658,7 +597,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -685,7 +624,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -712,7 +651,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -739,7 +678,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -766,7 +705,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -793,7 +732,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -837,7 +776,7 @@
                                 <div class="swiper-wrapper">
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -864,7 +803,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -891,7 +830,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -918,7 +857,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -945,7 +884,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -972,7 +911,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -999,7 +938,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -1026,7 +965,7 @@
                                     <!-- single slide End -->
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
-                                        <div class="product-card">
+                                        <div class="product-card" style="height:380px;">
                                             <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -3705,7 +3644,7 @@
 <!-- Blog Section End-->
 
 <!-- News letter Section Start -->
-<section class="bg-primary section-py">
+<section class="section-py bg-primary">
     <div class="container">
         <div class="row align-items-center mb-n7">
             <div class="col-xl-3 col-lg-5 col-md-6 mb-7 order-first">
@@ -3719,17 +3658,17 @@
                     <div class="input-group">
                         <input id="mc-email" type="email" class="form-control border-0" required="" placeholder="Enter your email address" />
                         <div class="input-group-text">
-                            <button class="btn-search btn btn-hover-dark" type="submit">subcrib</button>
+                            <button class="btn-search btn btn-hover-dark" type="submit">Subscribe</button>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="col-xl-4 col-lg-3 col-md-6 mb-7">
                 <ul class="social d-flex flex-wrap align-items-center justify-content-center justify-content-md-end">
-                    <li class="social-link-item"><a class="social-link" href="#"><span class="ion-social-facebook"></span></a></li>
-                    <li class="social-link-item"><a class="social-link" href="#"><span class="ion-social-googleplus"></span></a></li>
-                    <li class="social-link-item"><a class="social-link" href="#"><span class="ion-social-pinterest-outline"></span></a></li>
-                    <li class="social-link-item"><a class="social-link" href="#"><span class="ion-social-twitter"></span></a></li>
+                    <li class="social-link-item"><a class="social-link" href="{{$profile->facebook}}" target="_blank"><span class="ion-social-facebook"></span></a></li>
+                    <li class="social-link-item"><a class="social-link" href="{{$profile->instagram}}" target="_blank"><span class="ion-social-instagram"></span></a></li>
+                    <li class="social-link-item"><a class="social-link" href="{{$profile->linkedin}}" target="_blank"><span class="ion-social-linkedin"></span></a></li>
+                    <li class="social-link-item"><a class="social-link" href="{{$profile->twitter}}" target="_blank"><span class="ion-social-twitter"></span></a></li>
                 </ul>
             </div>
         </div>

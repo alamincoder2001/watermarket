@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DistrictController;
+use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PurchaseController;
 use App\Http\Controllers\Admin\SettingController;
@@ -14,13 +15,19 @@ use App\Http\Controllers\Admin\ThanaContoller;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Auth\CustomerLoginController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('website');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 // Technician and customer login
 Route::get('/signup', [CustomerLoginController::class, 'showSignUpForm'])->name('showSignUpForm');
 Route::post('/signup', [CustomerLoginController::class, 'signupStore'])->name('signupStore');
+Route::get("/account", [CustomerController::class, 'index'])->name('customer.dashboard');
+
+// get data from database
+Route::get("/getUpazila/{id}", [HomeController::class, "getUpazila"]);
 
 // Admin Login Route
 Route::group(["prefix" => "admin"], function () {
@@ -67,6 +74,11 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/unit/fetch/{id?}', [UnitController::class, 'fetch'])->name('admin.unit.fetch');
     Route::post('/unit', [UnitController::class, 'store'])->name('admin.unit.store');
     Route::post('/unit/delete', [UnitController::class, 'destroy'])->name('admin.unit.destroy');
+    // partner Route
+    Route::get('/partner', [PartnerController::class, 'index'])->name('admin.partner.index');
+    Route::get('/partner/fetch/{id?}', [PartnerController::class, 'fetch'])->name('admin.partner.fetch');
+    Route::post('/partner', [PartnerController::class, 'store'])->name('admin.partner.store');
+    Route::post('/partner/delete', [PartnerController::class, 'destroy'])->name('admin.partner.destroy');
     // product Route
     Route::get('/product', [ProductController::class, 'index'])->name('admin.product.index');
     Route::get('/product/fetch/{id?}', [ProductController::class, 'fetch'])->name('admin.product.fetch');

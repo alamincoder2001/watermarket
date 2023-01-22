@@ -1,9 +1,9 @@
 <header>
-    <div class="header-top d-none d-lg-block" style="background: #59bbad;">
+    <div class="header-top d-none d-lg-block bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6">
-                    <p>Email: <a class="header-top-link" href="https://hasthemes.com/">hastech@gmail.com</a></p>
+                    <p>Email: <a class="header-top-link" href="https://gmail.com/">{{$profile->email}}</a></p>
                     <p>Free Shipping for all Order of $99</p>
                 </div>
                 <div class="col-12 col-sm-6">
@@ -24,15 +24,6 @@
                             @else
                             <li class="dropdown top-nav-item"><a class="top-nav-link" href="{{route('showSignUpForm')}}" role="button" id="account">Sign In</a></li>
                             @endif
-                            <li class="dropdown top-nav-item"><span></span><a class="top-nav-link" role="button" id="currency" data-bs-toggle="dropdown" href="#">USD $<i class="ion-ios-arrow-down"></i></a>
-                                <!-- dropdown-menu start -->
-                                <ul class="dropdown-menu" aria-labelledby="currency">
-                                    <li><a class="dropdown-item" href="#">EUR €</a></li>
-                                    <li><a class="dropdown-item" href="#">USD $</a></li>
-                                </ul>
-                                <!-- dropdown-menu start -->
-
-                            </li>
                             <li class="dropdown top-nav-item"><img class="me-1" src="{{asset('frontend')}}/assets/images/flag/1.jpg" alt="img"> <span></span><a class="top-nav-link" role="button" id="language" data-bs-toggle="dropdown" href="#">English<i class="ion-ios-arrow-down"></i></a>
                                 <!-- dropdown-menu start -->
                                 <ul class="dropdown-menu" aria-labelledby="language">
@@ -133,7 +124,7 @@
                             </div>
                             <input type="text" class="form-control border-0" placeholder="Enter your search key ... " />
                             <div class="input-group-text">
-                                <button class="btn-search btn btn-hover-primary" type="submit">
+                                <button class="btn btn-hover-warning btn-primary h-100" style="border-radius: 0;" type="submit">
                                     Search
                                 </button>
                             </div>
@@ -146,123 +137,33 @@
                             <ul class="d-flex">
                                 <li class="main-menu-item">
                                     <a class="main-menu-link" href="index.html">Home</a>
-                                    <!-- home sub menu -->
-                                    <ul class="sub-menu">
-                                        <li><a class="sub-menu-link" href="index.html">Home 1</a></li>
-                                        <li><a class="sub-menu-link" href="index-2.html">Home 2</a></li>
-                                        <li><a class="sub-menu-link" href="index-3.html">Home 3</a></li>
-                                        <li><a class="sub-menu-link" href="index-4.html">Home 4</a></li>
-                                    </ul>
-                                    <!-- home sub menu end-->
                                 </li>
                                 <li class="position-static main-menu-item">
-                                    <a class="main-menu-link" href="#">shop</a>
-
-                                    <!-- shop mega menu -->
-                                    <ul class="mega-menu row">
-                                        <li class="col-3">
-                                            <ul>
-                                                <li class="mega-menu-title"><a href="#">Shop Grid</a></li>
-                                                <li><a href="shop-grid-5-column.html">Shop Grid 5 Column</a></li>
-                                                <li><a href="shop-grid-6-column.html">Shop Grid 6 Column</a></li>
-                                                <li><a href="shop-grid-left-sidebar.html">Shop Grid Left Sidebar</a></li>
-                                                <li><a href="shop-grid-right-sidebar.html">Shop Grid Right Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-3">
-                                            <ul>
-                                                <li class="mega-menu-title"><a href="#">Shop List</a></li>
-                                                <li><a href="shop-grid-list.html">Shop List</a></li>
-                                                <li><a href="shop-grid-list-left-sidebar.html">Shop List Left Sidebar</a>
-                                                </li>
-                                                <li><a href="shop-grid-list-right-sidebar.html">Shop List Right Sidebar</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-3">
-                                            <ul>
-                                                <li class="mega-menu-title"><a href="#">Shop Single</a></li>
-                                                <li><a href="single-product.html">Shop Single</a></li>
-                                                <li><a href="single-product-configurable.html">Shop Variable</a></li>
-                                                <li><a href="single-product-affiliate.html">Shop Affiliate</a></li>
-                                                <li><a href="single-product-group.html">Shop Group</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-3">
-                                            <ul>
-                                                <li class="mega-menu-title"><a href="#">other pages</a></li>
-                                                <li><a href="about-us.html">About Page</a></li>
-                                                <li><a href="cart.html">Cart Page</a></li>
-                                                <li><a href="checkout.html">Checkout Page</a></li>
-                                                <li><a href="compare.html">Compare Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="col-4 mt-4">
-                                            <a href="single-product.html" class="zoom-in"><img src="{{asset('frontend')}}/assets/images/mega-menu/1.jpg" alt="img"></a>
-                                        </li>
-                                        <li class="col-4 mt-4">
-                                            <a href="single-product.html" class="zoom-in"><img src="{{asset('frontend')}}/assets/images/mega-menu/2.jpg" alt="img"></a>
-                                        </li>
-                                        <li class="col-4 mt-4">
-                                            <a href="single-product.html" class="zoom-in"><img src="{{asset('frontend')}}/assets/images/mega-menu/3.jpg" alt="img"></a>
-                                        </li>
-                                    </ul>
-                                    <!-- shop mega menu end-->
+                                    <a class="main-menu-link" href="#">Shop</a>
                                 </li>
                                 <li class="main-menu-item">
-                                    <a class="main-menu-link" href="#">pages</a>
+                                    <a class="main-menu-link" href="#">Pages</a>
                                     <!-- pages sub menu -->
                                     <ul class="sub-menu">
-                                        <li><a class="sub-menu-link" href="about-us.html">About Page</a></li>
                                         <li><a class="sub-menu-link" href="cart.html">Cart Page</a></li>
                                         <li><a class="sub-menu-link" href="checkout.html">Checkout Page</a></li>
-                                        <li><a class="sub-menu-link" href="compare.html">Compare Page</a></li>
-                                        <li><a class="sub-menu-link" href="login.html">Login &amp; Register Page</a></li>
-                                        <li><a class="sub-menu-link" href="myaccount.html">Account Page</a></li>
                                         <li><a class="sub-menu-link" href="wishlist.html">Wishlist Page</a></li>
+                                        <li><a class="sub-menu-link" href="about-us.html">About Page</a></li>
+                                        <li><a class="sub-menu-link" href="login.html">Login &amp; Register Page</a></li>
                                     </ul>
                                     <!-- pages sub menu end-->
                                 </li>
                                 <li class="main-menu-item">
                                     <a class="main-menu-link" href="#">Blog</a>
-                                    <!-- blog sub menu -->
-                                    <ul class="sub-menu blog-sub-menu">
-                                        <li>
-                                            <a class="sub-menu-link" href="#">Blog Grid</a>
-                                            <ul class="sub-menu">
-                                                <li><a class="sub-menu-link" href="blog-grid-5-column.html">Blog Grid 5 column</a></li>
-                                                <li><a class="sub-menu-link" href="blog-grid-6-column.html">Blog Grid 6 column</a></li>
-                                                <li><a class="sub-menu-link" href="blog-grid-left-sidebar.html">Blog Grid Left Sidebar</a></li>
-                                                <li><a class="sub-menu-link" href="blog-grid-right-sidebar.html">Blog Grid Right Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="#">Blog List</a>
-                                            <ul class="sub-menu">
-                                                <li><a class="sub-menu-link" href="blog-list-left-sidebar.html">Blog List Left Sidebar</a></li>
-                                                <li><a class="sub-menu-link" href="blog-list-right-sidebar.html">Blog List Right Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="sub-menu-link" href="#">Blog details</a>
-                                            <ul class="sub-menu">
-                                                <li><a class="sub-menu-link" href="blog-details-left-sidebar.html">Blog details Left Sidebar</a>
-                                                </li>
-                                                <li><a class="sub-menu-link" href="blog-details-right-sidebar.html">Blog details Right Sidbar</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <!-- blog sub menu end-->
                                 </li>
                                 <li class="main-menu-item">
-                                    <a class="main-menu-link" href="contact.html">Contact</a>
+                                    <a class="main-menu-link" href="{{route('contact')}}">Contact</a>
                                 </li>
                             </ul>
                         </nav>
                         <div class="d-flex align-items-center justify-content-end">
                             <div class="block-cart-btn-wrapp">
-                                <button class="cart-action">
+                                <button class="cart-action bg-primary">
                                     <span class="lnr lnr-cart"></span>
                                     <span class="badge bg-dark">2</span>
                                 </button>
@@ -324,7 +225,7 @@
 
                                     <!-- checkout-action button start -->
                                     <div class="checkout-action">
-                                        <a href="checkout.html" style="background:#59BBAD;" class="btn text-white btn-hover-primary btn-lg d-block">Checkout</a>
+                                        <a href="checkout.html"  class="btn btn-primary btn-hover-warning btn-lg d-block">Checkout</a>
                                     </div>
                                     <!-- checkout-action button end -->
                                 </div>

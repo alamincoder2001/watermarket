@@ -12,6 +12,33 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('backend/assets/images/logo-text.png')}}" />
     @include("layouts.frontend.style")
 
+    <style>
+        .ImageBackground .imageShow {
+            display: block;
+            height: 120px;
+            width: 135px;
+            margin-top: 10px;
+            border: 1px solid #042ab5;
+            border-bottom: 0;
+            box-sizing: border-box;
+        }
+
+        .ImageBackground input {
+            display: none;
+        }
+
+        .ImageBackground label {
+            background: #042ab5;
+            width: 135px;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-family: monospace;
+            text-transform: uppercase;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -279,9 +306,9 @@
                                             Magento, Prestashop, Opencart.
                                         </p>
                                         <ul class="adress">
-                                            <li><span class="text-dark fw-500">Address:</span> 4710-4890 Breckinridge St,Fayetteville</li>
-                                            <li><span class="text-dark fw-500">Email:</span> <a href="mailto:support@hasthemes.com">support@hasthemes.com</a></li>
-                                            <li><span class="text-dark fw-500">Call us:</span><a href="tel:110012345678"><span class="phone-call">1-1001-234-5678</span></a></li>
+                                            <li><span class="text-dark fw-500">Address:</span> {{$profile->address}}</li>
+                                            <li><span class="text-dark fw-500">Email:</span> <a href="mailto:support@hasthemes.com">{{$profile->email}}</a></li>
+                                            <li><span class="text-dark fw-500">Call us:</span><a href="tel:110012345678"><span class="phone-call">{{$profile->mobile}}</span></a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -15,7 +15,7 @@ class CustomerLoginController extends Controller
         return view("auth.frontend.signup");
     }
 
-    public function AdminLogin(Request $request)
+    public function CustomerLogin(Request $request)
     {
         $validator = Validator::make($request->all(), [
             "username" => "required",
@@ -32,7 +32,7 @@ class CustomerLoginController extends Controller
         }
     }
 
-    //credentials check
+    //credentials checkb 
     public function credentials($username, $password)
     {
         if (filter_var($username, FILTER_VALIDATE_EMAIL)) {
