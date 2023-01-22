@@ -3825,7 +3825,7 @@ textarea.form-control-lg {
   -webkit-box-shadow: var(--bs-btn-focus-box-shadow);
           box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
+.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn.active, .btn.show {
   color: var(--bs-btn-active-color);
   background-color: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
@@ -18932,11 +18932,8 @@ button:focus {
 }
 
 .btn-hover-dark:hover {
-  border-color: #32383e;
   background-color: #32383e;
   color: #fff;
-  background: #32383e;
-  border-color: #32383e;
 }
 
 .btn-search {
@@ -18945,7 +18942,6 @@ button:focus {
   display: inline-block;
   line-height: 1;
   text-transform: capitalize;
-  padding: 0 30px;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
