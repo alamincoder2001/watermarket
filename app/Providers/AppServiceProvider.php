@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::share("profile", Setting::first());
+        // View::share("profile", Setting::first());
         View::share("districts", District::orderBy("name", "ASC")->get());
         Schema::defaultStringLength(191);
     }
