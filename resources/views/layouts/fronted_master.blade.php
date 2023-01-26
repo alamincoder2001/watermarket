@@ -16,7 +16,7 @@
         .ImageBackground .imageShow {
             display: block;
             height: 120px;
-            width: 135px;
+            width: 100%;
             margin-top: 10px;
             border: 1px solid #042ab5;
             border-bottom: 0;
@@ -29,7 +29,7 @@
 
         .ImageBackground label {
             background: #042ab5;
-            width: 135px;
+            width: 100%;
             color: white;
             padding: 5px;
             text-align: center;
@@ -62,7 +62,7 @@
                         </div>
                         <input type="text" class="form-control border-0" placeholder="Enter your search key ... " />
                         <div class="input-group-text">
-                            <button class="btn-search btn btn-hover-primary" type="submit">
+                            <button class="btn btn-primary btn-hover-warning" type="submit">
                                 Search
                             </button>
                         </div>
@@ -75,134 +75,15 @@
                     <ul>
                         <li>
                             <a href="javascript:void(0)">Home</a>
-                            <!-- home sub menu -->
-                            <ul>
-                                <li><a href="index.html">Home 1</a></li>
-                                <li><a href="index-2.html">Home 2</a></li>
-                                <li><a href="index-3.html">Home 3</a></li>
-                                <li><a href="index-4.html">Home 4</a></li>
-                            </ul>
-                            <!-- home sub menu end-->
                         </li>
                         <li>
-                            <a href="javascript:void(0)">shop</a>
-
-                            <!-- shop mega menu -->
-
-                            <ul>
-                                <li>
-                                    <a href="#">Shop Grid</a>
-                                    <ul>
-                                        <li>
-                                            <a href="shop-grid-5-column.html">Shop Grid 5 Column</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-grid-6-column.html">Shop Grid 6 Column</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-grid-left-sidebar.html">Shop Grid Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-grid-right-sidebar.html">Shop Grid Right Sidebar</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Shop List</a>
-                                    <ul>
-                                        <li><a href="shop-grid-list.html">Shop List</a></li>
-                                        <li>
-                                            <a href="shop-grid-list-left-sidebar.html">Shop List Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="shop-grid-list-right-sidebar.html">Shop List Right Sidebar</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Shop Single</a>
-                                    <ul>
-                                        <li><a href="single-product.html">Shop Single</a></li>
-                                        <li>
-                                            <a href="single-product-configurable.html">Shop Variable</a>
-                                        </li>
-                                        <li>
-                                            <a href="single-product-affiliate.html">Shop Affiliate</a>
-                                        </li>
-                                        <li><a href="single-product-group.html">Shop Group</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">other pages</a>
-                                    <ul>
-                                        <li><a href="about-us.html">About Page</a></li>
-                                        <li><a href="cart.html">Cart Page</a></li>
-                                        <li><a href="checkout.html">Checkout Page</a></li>
-                                        <li><a href="compare.html">Compare Page</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <!-- shop mega menu end-->
+                            <a href="javascript:void(0)">Shop</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">pages</a>
-                            <!-- pages sub menu -->
-                            <ul>
-                                <li><a href="about-us.html">About Page</a></li>
-                                <li><a href="cart.html">Cart Page</a></li>
-                                <li><a href="checkout.html">Checkout Page</a></li>
-                                <li><a href="compare.html">Compare Page</a></li>
-                                <li><a href="login.html">Login &amp; Register Page</a></li>
-                                <li><a href="myaccount.html">Account Page</a></li>
-                                <li><a href="wishlist.html">Wishlist Page</a></li>
-                            </ul>
-                            <!-- pages sub menu end-->
+                            <a href="javascript:void(0)">Technician</a>
                         </li>
                         <li>
                             <a href="javascript:void(0)">Blog</a>
-                            <!-- blog sub menu -->
-                            <ul>
-                                <li>
-                                    <a href="#">Blog Grid</a>
-                                    <ul>
-                                        <li>
-                                            <a href="blog-grid-5-column.html">Blog Grid 5 column</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-grid-6-column.html">Blog Grid 6 column</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-grid-left-sidebar.html">Blog Grid Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-grid-right-sidebar.html">Blog Grid Right Sidebar</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Blog List</a>
-                                    <ul>
-                                        <li>
-                                            <a href="blog-list-left-sidebar.html">Blog List Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-list-right-sidebar.html">Blog List Right Sidebar</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Blog details</a>
-                                    <ul>
-                                        <li>
-                                            <a href="blog-details-left-sidebar.html">Blog details Left Sidebar</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-details-right-sidebar.html">Blog details Right Sidbar</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <!-- blog sub menu end-->
                         </li>
                         <li>
                             <a href="contact.html">Contact</a>
@@ -233,11 +114,12 @@
                 <div class="header-top">
                     <p>
                         Email:
-                        <a class="header-top-link" href="https://hasthemes.com/">hastech@gmail.com</a>
+                        <a class="header-top-link" href="https://www.gmail.com">{{$profile->email}}</a>
                     </p>
                     <p>Free Shipping for all Order of $99</p>
 
                     <ul id="offcanvas-menu2" class="blog-ctry-menu blog-ctry-menu2">
+                        @if(Auth::check())
                         <li>
                             <a href="javascript:void(0)">My Account</a>
                             <ul class="category-sub-menu">
@@ -245,24 +127,16 @@
                                     <a href="account.html">account</a>
                                 </li>
                                 <li>
-                                    <a href="checkout.html">Checkout</a>
-                                </li>
-                                <li>
                                     <a href="login.html">Sign in</a>
                                 </li>
-                                <li>
-                                    <a href="wishlist.html">Wishlist</a>
-                                </li>
                             </ul>
+                        </li>
+                        @else
+                        <li>
+                            <a href="{{route('showSignUpForm')}}">Sign In</a>
                         </li>
 
-                        <li>
-                            <a href="javascript:void(0)">currency: USD $</a>
-                            <ul class="category-sub-menu">
-                                <li><a href="#">EUR €</a></li>
-                                <li><a href="#">USD $</a></li>
-                            </ul>
-                        </li>
+                        @endif
                         <li>
                             <a href="javascript:void(0)"><img class="me-1" src="{{asset('frontend')}}/assets/images/flag/1.jpg" alt="img" />English</a>
                             <ul class="category-sub-menu">

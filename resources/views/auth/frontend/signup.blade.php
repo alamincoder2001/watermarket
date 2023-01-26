@@ -6,7 +6,7 @@
 <div class="login-register-area section-py">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 col-md-12 mx-auto">
+            <div class="col-lg-7 col-md-12 col-12 mx-auto">
                 <div class="login-register-wrapper">
                     <div class="login-register-tab-list nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="active" data-bs-toggle="tab" href="#lg1">
@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="tab-content">
-                        <div id="lg1" class="tab-pane show active" style="width: 600px !important;margin: 0 auto;">
+                        <div id="lg1" class="tab-pane show active">
                             <div class="login-form-container" style="position: relative;">
                                 <div class="d-flex gap-1" style="position: absolute;top: 15px;right: 80px;background: #42d5c1;padding: 5px;">
                                     <input type="checkbox" value="technician" id="technician" style="height: 15px;margin: 0;position: relative;top: 1px;width: 17px;" />
@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="lg2" class="tab-pane" style="width: 600px !important;margin: 0 auto;">
+                        <div id="lg2" class="tab-pane">
                             <div class="login-form-container" style="position: relative;">
                                 <div class="d-flex gap-1" style="position: absolute;top: 15px;right: 80px;background: #42d5c1;padding: 5px;">
                                     <input type="checkbox" value="technician" id="technician1" style="height: 15px;margin: 0;position: relative;top: 1px;width: 17px;" />

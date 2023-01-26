@@ -84,7 +84,8 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/product/fetch/{id?}', [ProductController::class, 'fetch'])->name('admin.product.fetch');
     Route::post('/product', [ProductController::class, 'store'])->name('admin.product.store');
     Route::post('/product/delete', [ProductController::class, 'destroy'])->name('admin.product.destroy');
-
+    Route::get("product/published", [ProductController::class, 'published'])->name("admin.product.published");
+    Route::post("product/published", [ProductController::class, 'savePublished'])->name("admin.product.savepublished");
     // Administration route
 
     // district Route

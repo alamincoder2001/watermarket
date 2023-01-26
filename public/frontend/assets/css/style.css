@@ -3167,7 +3167,6 @@ textarea.form-control-lg {
 .form-check-input {
   width: 1em;
   height: 1em;
-  margin-top: 0.214em;
   vertical-align: top;
   background-color: #fff;
   background-repeat: no-repeat;
@@ -19255,7 +19254,7 @@ textarea.form-control {
   display: block;
 }
 .single-brand .thumb img {
-  opacity: 0.3;
+  /* opacity: 0.3; */
 }
 .single-brand .thumb:hover img {
   opacity: 1;
@@ -20915,7 +20914,7 @@ textarea.form-control {
   }
 }
 .product-tab-links .nav-link.active, .product-tab-links .nav-link:hover {
-  background: #fe6022;
+  background: #1f1fa9;
   color: #fff;
 }
 

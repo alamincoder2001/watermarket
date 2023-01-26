@@ -27,6 +27,15 @@ class ProductController extends Controller
         $product_code = $this->generateCode("Product", "P");
         $data = DB::select("SELECT
                     p.*,
+                    (CASE WHEN (p.is_arrival = 1) THEN 'Published'
+                        ELSE 'Unpublished'
+                    END) AS is_arrival_text,
+                    (CASE WHEN (p.is_feature = 1) THEN 'Published'
+                        ELSE 'Unpublished'
+                    END) AS is_feature_text,
+                    (CASE WHEN (p.is_popular = 1) THEN 'Published'
+                        ELSE 'Unpublished'
+                    END) AS is_popular_text,
                     concat(p.product_code, '-', p.name) AS display_name,
                     b.name AS brand_name,
                     sc.name AS subcategory_name,
@@ -40,7 +49,7 @@ class ProductController extends Controller
                     JOIN categories c ON c.id = p.category_id
                     LEFT JOIN units u ON u.id = p.unit_id");
 
-        return response()->json(["data" => $data, "product_code"=> $product_code]);
+        return response()->json(["data" => $data, "product_code" => $product_code]);
     }
 
     public function store(Request $request)
@@ -74,6 +83,7 @@ class ProductController extends Controller
             $data->purchase_rate  = $request->purchase_rate;
             $data->selling_rate   = $request->selling_rate;
             $data->wholesale_rate = $request->wholesale_rate;
+            $data->description    = $request->description;
 
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
@@ -91,7 +101,7 @@ class ProductController extends Controller
                 return "Product insert successfully";
             }
         } catch (\Throwable $e) {
-            return "Something went wrong".$e->getMessage();
+            return "Something went wrong" . $e->getMessage();
         }
     }
 
@@ -107,6 +117,26 @@ class ProductController extends Controller
             return "Product Delete successfully";
         } catch (\Throwable $e) {
             return "Something went wrong";
+        }
+    }
+
+    // published product
+    public function published()
+    {
+        return view("admin.product.published");
+    }
+
+    public function savePublished(Request $request)
+    {
+        try{
+            $data             = Product::find($request->product_id);
+            $data->is_arrival = $request->is_arrival;
+            $data->is_feature = $request->is_feature;
+            $data->is_popular = $request->is_popular;
+            $data->save();
+            return "Product Published successfully";
+        }catch(\Throwable $e){
+
         }
     }
 }

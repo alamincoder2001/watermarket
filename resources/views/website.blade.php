@@ -322,7 +322,7 @@
                                                     <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -349,7 +349,7 @@
                                                     <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -376,7 +376,7 @@
                                                     <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -403,7 +403,7 @@
                                                     <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -430,7 +430,7 @@
                                                     <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -457,7 +457,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -484,7 +484,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -511,7 +511,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM153 Stand Mixer</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -555,7 +555,7 @@
                                                     <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -582,7 +582,7 @@
                                                     <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -609,7 +609,7 @@
                                                     <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -636,7 +636,7 @@
                                                     <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -663,7 +663,7 @@
                                                     <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -690,7 +690,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -717,7 +717,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -744,7 +744,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM153 Stand Mixer</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -788,7 +788,7 @@
                                                     <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -815,7 +815,7 @@
                                                     <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -842,7 +842,7 @@
                                                     <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -869,7 +869,7 @@
                                                     <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -896,7 +896,7 @@
                                                     <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -923,7 +923,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -950,7 +950,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -977,7 +977,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM153 Stand Mixer</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -1061,7 +1061,7 @@
                                     <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">$68.30</span>
-                                <button class="product-btn-lg btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                <button class="product-btn-lg btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                     Add to cart
                                 </button>
                             </div>
@@ -1100,7 +1100,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixer</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1123,7 +1123,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM100 Stand Mixer</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1152,7 +1152,7 @@
                                                         <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1175,7 +1175,7 @@
                                                         <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1204,7 +1204,7 @@
                                                         <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1227,7 +1227,7 @@
                                                         <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1256,7 +1256,7 @@
                                                         <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1279,7 +1279,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixe</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1308,7 +1308,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1331,7 +1331,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1359,7 +1359,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -1382,7 +1382,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -1414,7 +1414,7 @@
                                     <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">$68.30</span>
-                                <button class="product-btn-lg btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                <button class="product-btn-lg btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                     Add to cart
                                 </button>
                             </div>
@@ -1453,7 +1453,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixer</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1476,7 +1476,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM100 Stand Mixer</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1505,7 +1505,7 @@
                                                         <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1528,7 +1528,7 @@
                                                         <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1557,7 +1557,7 @@
                                                         <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1580,7 +1580,7 @@
                                                         <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1609,7 +1609,7 @@
                                                         <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1632,7 +1632,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixe</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1661,7 +1661,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1684,7 +1684,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1712,7 +1712,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -1735,7 +1735,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -1767,7 +1767,7 @@
                                     <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">$68.30</span>
-                                <button class="product-btn-lg btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                <button class="product-btn-lg btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                     Add to cart
                                 </button>
                             </div>
@@ -1806,7 +1806,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixer</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1829,7 +1829,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM100 Stand Mixer</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1858,7 +1858,7 @@
                                                         <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1881,7 +1881,7 @@
                                                         <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1910,7 +1910,7 @@
                                                         <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1933,7 +1933,7 @@
                                                         <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1962,7 +1962,7 @@
                                                         <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -1985,7 +1985,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixe</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -2014,7 +2014,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -2037,7 +2037,7 @@
                                                         <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                     </h3>
                                                     <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -2065,7 +2065,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -2088,7 +2088,7 @@
                                                     <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
                                                 </h3>
                                                 <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-warning btn-hover-primary" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
                                             </div>
@@ -3762,7 +3762,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button class="btn btn-warning btn-hover-primary text-uppercase">
+                                    <button class="btn btn-primary btn-hover-warning text-uppercase">
                                         Add to cart
                                     </button>
                                 </div>

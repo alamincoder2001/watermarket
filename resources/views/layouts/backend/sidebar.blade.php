@@ -29,6 +29,9 @@
                             <a href="{{route('admin.product.index')}}" class="sidebar-link {{Request::is('admin.product.index') ? 'active':''}}"><i class="fab fa-product-hunt"></i><span class="hide-menu"> Product </span></a>
                         </li>
                         <li class="sidebar-item">
+                            <a href="{{route('admin.product.published')}}" class="sidebar-link {{Request::is('admin.product.published') ? 'active':''}}"><i class="fas fa-upload"></i><span class="hide-menu"> Product Published </span></a>
+                        </li>
+                        <li class="sidebar-item">
                             <a href="{{route('admin.partner.index')}}" class="sidebar-link {{Request::is('admin.partner.index') ? 'active':''}}"><i class="fas fa-handshake"></i><span class="hide-menu"> Partner </span></a>
                         </li>
                     </ul>

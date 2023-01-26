@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <textarea name="address" id="address" autocomplete="off" class="form-control shadow-none">{{$data->address}}</textarea>
+                            <textarea name="address" autocomplete="off" class="form-control shadow-none">{{$data->address}}</textarea>
                             <span class="text-danger error error-address"></span>
                         </div>
                         <div class="form-group">

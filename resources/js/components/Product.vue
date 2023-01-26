@@ -99,6 +99,11 @@
                                             v-model="product.wholesale_rate" autocomplete="off" />
                                     </div>
                                 </div>
+                                <div class="row mt-2">
+                                    <div class="col-12">
+                                        <ckeditor :editor="editor" v-model="product.description"></ckeditor>
+                                    </div>
+                                </div>
                                 <div class="row mt-4">
                                     <label for="previous_due" class="col-5 col-lg-4 d-flex align-items-center"></label>
                                     <div class="col-7 col-lg-8 text-end">
@@ -145,9 +150,11 @@
 </template>
 
 <script>
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export default {
     data() {
         return {
+            editor: ClassicEditor,
             columns: [
                 {
                     label: "Code",
@@ -198,6 +205,7 @@ export default {
                 purchase_rate: 0,
                 selling_rate: 0,
                 wholesale_rate: 0,
+                description: "",
                 image: ""
             },
             brands: [],
@@ -262,6 +270,7 @@ export default {
             formdata.append("category_id", this.selectedCategory != null ? this.selectedCategory.id : "")
             formdata.append("subcategory_id", this.selectedSubcategory != null ? this.selectedSubcategory.id : "")
             formdata.append("unit_id", this.selectedUnit != null ? this.selectedUnit.id : "")
+            formdata.append("description", this.product.description != null ? this.product.description : "")
             axios
                 .post(location.origin + "/admin/product", formdata)
                 .then((res) => {
@@ -284,6 +293,7 @@ export default {
                 purchase_rate: val.purchase_rate,
                 selling_rate: val.selling_rate,
                 wholesale_rate: val.wholesale_rate,
+                description:val.description
             };
             this.selectedBrand = {
                 id: val.brand_id,

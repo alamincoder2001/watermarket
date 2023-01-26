@@ -17,7 +17,6 @@
                                     <li><a class="dropdown-item" href="account.html">My account</a></li>
                                     <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
                                     <li><a class="dropdown-item" href="login.html">Sign in</a></li>
-                                    <li><a class="dropdown-item" href="wishlist.html">Wishlist</a></li>
                                 </ul>
                                 <!-- dropdown-menu start -->
                             </li>
@@ -51,7 +50,7 @@
                 <!-- Header Logo End -->
 
                 <!-- Header Menu Start -->
-                <div class="col-md-6 col-lg-4 d-none d-lg-block">
+                <div class="col-md-6 col-lg-5 d-none d-lg-block">
                     <form action="#">
                         <div class="input-group border">
                             <div class="input-group-text">
@@ -131,27 +130,18 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-6 col-md-9 col-lg-5">
+                <div class="col-6 col-md-9 col-lg-4">
                     <div class="d-flex align-items-center justify-content-end">
                         <nav class="main-menu d-none d-lg-inline-block">
                             <ul class="d-flex">
                                 <li class="main-menu-item">
-                                    <a class="main-menu-link" href="index.html">Home</a>
+                                    <a class="main-menu-link {{Route::is('website')?'text-warning':''}}" href="{{route('website')}}">Home</a>
                                 </li>
                                 <li class="position-static main-menu-item">
                                     <a class="main-menu-link" href="#">Shop</a>
                                 </li>
-                                <li class="main-menu-item">
-                                    <a class="main-menu-link" href="#">Pages</a>
-                                    <!-- pages sub menu -->
-                                    <ul class="sub-menu">
-                                        <li><a class="sub-menu-link" href="cart.html">Cart Page</a></li>
-                                        <li><a class="sub-menu-link" href="checkout.html">Checkout Page</a></li>
-                                        <li><a class="sub-menu-link" href="wishlist.html">Wishlist Page</a></li>
-                                        <li><a class="sub-menu-link" href="about-us.html">About Page</a></li>
-                                        <li><a class="sub-menu-link" href="login.html">Login &amp; Register Page</a></li>
-                                    </ul>
-                                    <!-- pages sub menu end-->
+                                <li class="position-static main-menu-item">
+                                    <a class="main-menu-link" href="#">Technician</a>
                                 </li>
                                 <li class="main-menu-item">
                                     <a class="main-menu-link" href="#">Blog</a>
