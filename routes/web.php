@@ -22,9 +22,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('website');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 // Technician and customer login
-Route::get('/signup', [CustomerLoginController::class, 'showSignUpForm'])->name('showSignUpForm');
-Route::post('/signup', [CustomerLoginController::class, 'signupStore'])->name('signupStore');
-Route::get("/account", [CustomerController::class, 'index'])->name('customer.dashboard');
+Route::get('/login', [CustomerLoginController::class, 'showSignUpForm'])->name('showSignUpForm')->middleware('checkAuth');
+Route::post('/customer-register', [CustomerLoginController::class, 'CustomerRegister'])->name('customer.register')->middleware('checkAuth');
+Route::post('/customer-login', [CustomerLoginController::class, 'CustomerLogin'])->name('customer.login')->middleware('checkAuth');
+Route::post('/technician-register', [CustomerLoginController::class, 'TechnicianRegister'])->name('technician.register')->middleware('checkAuth');
+Route::post('/technician-login', [CustomerLoginController::class, 'TechnicianLogin'])->name('technician.login')->middleware('checkAuth');
+
+Route::get("/customer-dashboard", [CustomerController::class, 'index'])->name('customer.dashboard');
+Route::get("/customer-logout", [CustomerController::class, 'logout'])->name('customer.logout');
+
 
 // get data from database
 Route::get("/getUpazila/{id}", [HomeController::class, "getUpazila"]);

@@ -64,6 +64,17 @@
                                         <label for="is_popular">Is Popular</label>
                                     </div>
                                 </div>
+                                <div class="row mt-2">
+                                    <span class="col-5 col-lg-4 d-flex align-items-center"></span>
+                                    <div class="col-7 col-lg-8">
+                                        <input type="checkbox" id="is_topsold" name="is_topsold"
+                                            class="form-check-input shadow-none m-0" v-model="published.is_topsold"
+                                            :checked="
+                                                published.is_topsold == true
+                                            " />
+                                        <label for="is_topsold">Is TopSold</label>
+                                    </div>
+                                </div>
                                 <div class="row mt-4">
                                     <label for="previous_due" class="col-5 col-lg-4 d-flex align-items-center"></label>
                                     <div class="col-7 col-lg-8 text-end">
@@ -127,6 +138,10 @@ export default {
                     field: "is_popular_text",
                 },
                 {
+                    label: "Top Sold Product",
+                    field: "is_topsold_text",
+                },
+                {
                     label: "Action",
                     field: "before",
                 },
@@ -142,6 +157,7 @@ export default {
                 is_arrival: false,
                 is_feature: false,
                 is_popular: false,
+                is_topsold: false,
             },
         };
     },
@@ -178,7 +194,7 @@ export default {
 
             axios.post(location.origin + "/admin/product/published",this.published)
                 .then(res => {
-                    alert(res.data)
+                    $.notify(res.data, "success");
                     this.getProduct();
                     this.clearData();
                 });
@@ -190,6 +206,7 @@ export default {
                 is_arrival: val.is_arrival == 1 ? true:false,
                 is_feature: val.is_feature == 1 ? true:false,
                 is_popular: val.is_popular == 1 ? true:false,
+                is_topsold: val.is_topsold == 1 ? true:false,
             };
             this.selectedProduct = {
                 id: val.id,
@@ -203,6 +220,7 @@ export default {
                 is_arrival: false,
                 is_feature: false,
                 is_popular: false,
+                is_topsold: false,
             };
             this.selectedCategory = null
             this.selectedBrand    = null

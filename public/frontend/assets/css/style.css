@@ -18062,7 +18062,7 @@ p:last-child {
 
 .dropdown-menu {
   top: 50px !important;
-  right: 15px !important;
+  right: -20px !important;
   left: auto !important;
   min-width: 130px;
   overflow: hidden;
@@ -18088,7 +18088,7 @@ p:last-child {
 }
 
 .dropdown-menu.show {
-  top: 35px !important;
+  top: 28px !important;
   opacity: 1;
   visibility: visible;
 }

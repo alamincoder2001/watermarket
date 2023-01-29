@@ -5612,7 +5612,7 @@ __webpack_require__.r(__webpack_exports__);
       formdata.append("unit_id", this.selectedUnit != null ? this.selectedUnit.id : "");
       formdata.append("description", this.product.description != null ? this.product.description : "");
       axios.post(location.origin + "/admin/product", formdata).then(function (res) {
-        alert(res.data);
+        $.notify(res.data, "success");
         _this6.clearData();
         _this6.getProduct();
       });
@@ -5656,7 +5656,7 @@ __webpack_require__.r(__webpack_exports__);
         axios.post(location.origin + "/admin/product/delete", {
           id: id
         }).then(function (res) {
-          alert(res.data);
+          $.notify(res.data, "success");
           _this7.getProduct();
         });
       }
@@ -6244,7 +6244,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
         supplier: this.selectedSupplier
       };
       axios.post("/admin/purchase", data).then(function (res) {
-        alert(res.data.msg);
+        $.notify(res.data.msg, "success");
         // if (confirm("Are you sure want print")) {
         //     this.$router.push({ path: '/purchase-invoice/' + res.data.invoice })
         // }
@@ -6873,7 +6873,7 @@ var moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js"
         supplier: this.selectedSupplier
       };
       axios.post("/admin/purchase", data).then(function (res) {
-        alert(res.data.msg);
+        $.notify(res.data.msg, "success");
         if (confirm("Are you sure want print")) {} else {
           location.href = "/admin/purchaseList";
         }
@@ -7087,7 +7087,7 @@ __webpack_require__.r(__webpack_exports__);
         axios.post("/admin/purchase/delete", {
           id: id
         }).then(function (res) {
-          alert(res.data);
+          $.notify(res.data, "success");
           var index = _this3.purchases.indexOf(sl);
           _this3.purchases.splice(index, 1);
         });
@@ -7293,7 +7293,7 @@ __webpack_require__.r(__webpack_exports__);
       formdata.append("image", this.supplier.image);
       formdata.append("id", this.supplier.id);
       axios.post(location.origin + "/admin/supplier", formdata).then(function (res) {
-        alert(res.data);
+        $.notify(res.data, "success");
         _this2.clearData();
         _this2.getSupplier();
       });
@@ -7317,7 +7317,7 @@ __webpack_require__.r(__webpack_exports__);
         axios.post(location.origin + "/admin/supplier/delete", {
           id: id
         }).then(function (res) {
-          alert(res.data);
+          $.notify(res.data, "success");
           _this3.getSupplier();
         });
       }
@@ -7469,6 +7469,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -7490,6 +7501,9 @@ __webpack_require__.r(__webpack_exports__);
         label: "Is Popular",
         field: "is_popular_text"
       }, {
+        label: "Top Sold Product",
+        field: "is_topsold_text"
+      }, {
         label: "Action",
         field: "before"
       }],
@@ -7503,7 +7517,8 @@ __webpack_require__.r(__webpack_exports__);
         product_id: "",
         is_arrival: false,
         is_feature: false,
-        is_popular: false
+        is_popular: false,
+        is_topsold: false
       }
     };
   },
@@ -7539,7 +7554,7 @@ __webpack_require__.r(__webpack_exports__);
       }
       this.published.product_id = this.selectedProduct.id;
       axios__WEBPACK_IMPORTED_MODULE_0___default().post(location.origin + "/admin/product/published", this.published).then(function (res) {
-        alert(res.data);
+        $.notify(res.data, "success");
         _this4.getProduct();
         _this4.clearData();
       });
@@ -7549,7 +7564,8 @@ __webpack_require__.r(__webpack_exports__);
         product_id: val.id,
         is_arrival: val.is_arrival == 1 ? true : false,
         is_feature: val.is_feature == 1 ? true : false,
-        is_popular: val.is_popular == 1 ? true : false
+        is_popular: val.is_popular == 1 ? true : false,
+        is_topsold: val.is_topsold == 1 ? true : false
       };
       this.selectedProduct = {
         id: val.id,
@@ -7561,7 +7577,8 @@ __webpack_require__.r(__webpack_exports__);
         product_id: "",
         is_arrival: false,
         is_feature: false,
-        is_popular: false
+        is_popular: false,
+        is_topsold: false
       };
       this.selectedCategory = null;
       this.selectedBrand = null;
@@ -67885,6 +67902,69 @@ var render = function () {
                       _vm._v(" "),
                       _c("label", { attrs: { for: "is_popular" } }, [
                         _vm._v("Is Popular"),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row mt-2" }, [
+                    _c("span", {
+                      staticClass: "col-5 col-lg-4 d-flex align-items-center",
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-7 col-lg-8" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.published.is_topsold,
+                            expression: "published.is_topsold",
+                          },
+                        ],
+                        staticClass: "form-check-input shadow-none m-0",
+                        attrs: {
+                          type: "checkbox",
+                          id: "is_topsold",
+                          name: "is_topsold",
+                        },
+                        domProps: {
+                          checked: _vm.published.is_topsold == true,
+                          checked: Array.isArray(_vm.published.is_topsold)
+                            ? _vm._i(_vm.published.is_topsold, null) > -1
+                            : _vm.published.is_topsold,
+                        },
+                        on: {
+                          change: function ($event) {
+                            var $$a = _vm.published.is_topsold,
+                              $$el = $event.target,
+                              $$c = $$el.checked ? true : false
+                            if (Array.isArray($$a)) {
+                              var $$v = null,
+                                $$i = _vm._i($$a, $$v)
+                              if ($$el.checked) {
+                                $$i < 0 &&
+                                  _vm.$set(
+                                    _vm.published,
+                                    "is_topsold",
+                                    $$a.concat([$$v])
+                                  )
+                              } else {
+                                $$i > -1 &&
+                                  _vm.$set(
+                                    _vm.published,
+                                    "is_topsold",
+                                    $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                  )
+                              }
+                            } else {
+                              _vm.$set(_vm.published, "is_topsold", $$c)
+                            }
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "is_topsold" } }, [
+                        _vm._v("Is TopSold"),
                       ]),
                     ]),
                   ]),

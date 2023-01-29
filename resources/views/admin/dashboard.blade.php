@@ -1,8 +1,8 @@
 @extends("layouts.backend_master")
 
-@section("title", "Dashboard")
-@section("breadcrumb_title", "Dashboard")
-@section("breadcrumb_item", "Dashboard")
+@section("title", "Admin Dashboard")
+@section("breadcrumb_title", "Admin Dashboard")
+@section("breadcrumb_item", "Admin Dashboard")
 
 @section("content")
 <!-- Column -->

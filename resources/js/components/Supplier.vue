@@ -189,7 +189,7 @@ export default {
             axios
                 .post(location.origin + "/admin/supplier", formdata)
                 .then((res) => {
-                    alert(res.data);
+                    $.notify(res.data, "success");
                     this.clearData();
                     this.getSupplier();
                 });
@@ -212,7 +212,7 @@ export default {
         deleteRow(id) {
             if (confirm("Are you sure want to delete this!")) {
                 axios.post(location.origin + "/admin/supplier/delete", { id: id }).then((res) => {
-                    alert(res.data);
+                    $.notify(res.data, "success");
                     this.getSupplier();
                 });
             }

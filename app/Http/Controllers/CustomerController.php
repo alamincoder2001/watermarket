@@ -3,34 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
     public function index()
     {
-        return view("dashboard.account");
-    }
-
-    public function Register(Request $request)
-    {
-        try{
-            if (isset($request->technician)) {
-                return $this->Technician($request);
-            }else{
-                return $this->Customer($request);
-            }
-        }catch(\Throwable $e){
-            return "Opps something went wrong";
+        if(Auth::guard('web')->check()){
+            return view("dashboard.customer-dashboard");
+        }else{
+            return redirect("/login");
         }
     }
 
-    public function Technician($request)
+    public function logout()
     {
-        return "Technician";
-    }
-    public function Customer($request)
-    {
-        return "Customer";
+        if(Auth::guard("web")->check()){
+            Auth::guard("web")->logout();
+            return redirect("/");
+        }
     }
 }

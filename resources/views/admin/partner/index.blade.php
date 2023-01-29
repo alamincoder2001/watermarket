@@ -107,7 +107,7 @@
             },
             success: res => {
                 if (!res.error) {
-                    alert(res);
+                    $.notify(res, "success");
                     $("form").trigger("reset")
                     $("#id").val("");
                     $(".changeBtn").text("Save").addClass("btn-success").removeClass("btn-primary");
@@ -151,7 +151,7 @@
                     id: id
                 },
                 success: res => {
-                    alert(res)
+                    $.notify(res, "success");
                     table.ajax.reload()
                 }
             })

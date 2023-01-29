@@ -36,6 +36,9 @@ class ProductController extends Controller
                     (CASE WHEN (p.is_popular = 1) THEN 'Published'
                         ELSE 'Unpublished'
                     END) AS is_popular_text,
+                    (CASE WHEN (p.is_topsold = 1) THEN 'Published'
+                        ELSE 'Unpublished'
+                    END) AS is_topsold_text,
                     concat(p.product_code, '-', p.name) AS display_name,
                     b.name AS brand_name,
                     sc.name AS subcategory_name,
@@ -47,7 +50,8 @@ class ProductController extends Controller
                     LEFT JOIN brands b ON b.id = p.brand_id
                     LEFT JOIN subcategories sc ON sc.id = p.subcategory_id
                     JOIN categories c ON c.id = p.category_id
-                    LEFT JOIN units u ON u.id = p.unit_id");
+                    LEFT JOIN units u ON u.id = p.unit_id
+                    ORDER BY p.id DESC");
 
         return response()->json(["data" => $data, "product_code" => $product_code]);
     }
@@ -133,10 +137,11 @@ class ProductController extends Controller
             $data->is_arrival = $request->is_arrival;
             $data->is_feature = $request->is_feature;
             $data->is_popular = $request->is_popular;
+            $data->is_topsold = $request->is_topsold;
             $data->save();
             return "Product Published successfully";
         }catch(\Throwable $e){
-
+            return "Opps! something went wrong";
         }
     }
 }

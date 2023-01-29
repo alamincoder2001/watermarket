@@ -1,5 +1,5 @@
 @extends("layouts.fronted_master")
-@section("title", " - Account")
+@section("title", " - Customer Dashboard")
 
 @section("content")
 
@@ -39,7 +39,7 @@
                             </a>
                         </li>
                         <li class="nav-item mt-1">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('customer.logout')}}" class="nav-link">
                                 <i class="bi bi-box-arrow-in-left me-2"></i>
                                 SignOut
                             </a>
@@ -101,7 +101,7 @@
                             </a>
                         </div>
                         <div class="col-lg-4 mb-5">
-                            <a href="">
+                            <a href="{{route('customer.logout')}}">
                                 <div class="card border-0" style="box-shadow: 3px 5px 10px #838383a3;">
                                     <div class="card-body text-center">
                                         <i class="bi bi-box-arrow-in-left"></i>
@@ -268,25 +268,25 @@
                                             <div class="col-lg-6">
                                                 <div class="form-gorup">
                                                     <label for="name">Customer Name</label>
-                                                    <input type="text" name="name" id="name" class="form-control shadow-none" autocomplete="off">
+                                                    <input type="text" name="name" id="name" value="{{Auth::guard('web')->user()->name}}" class="form-control shadow-none" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-gorup">
                                                     <label for="username">User Name</label>
-                                                    <input type="text" name="username" id="username" class="form-control shadow-none" autocomplete="off">
+                                                    <input type="text" name="username" id="username" value="{{Auth::guard('web')->user()->username}}" class="form-control shadow-none" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="email">Email</label>
-                                                    <input type="text" name="email" id="email" class="form-control shadow-none" autocomplete="off">
+                                                    <input type="text" name="email" id="email" value="{{Auth::guard('web')->user()->email}}" class="form-control shadow-none" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="mobile">Phone</label>
-                                                    <input type="text" name="mobile" id="mobile" class="form-control shadow-none" autocomplete="off">
+                                                    <input type="text" name="mobile" id="mobile" value="{{Auth::guard('web')->user()->mobile}}" class="form-control shadow-none" autocomplete="off">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 mt-2">
@@ -295,7 +295,7 @@
                                                     <select name="district" onchange="getUpazila(event)" id="district" class="form-select shadow-none">
                                                         <option value="">Select District</option>
                                                         @foreach($districts as $district)
-                                                        <option value="{{$district->id}}">{{$district->name}}</option>
+                                                        <option value="{{$district->id}}" {{Auth::guard('web')->user()->district_id ? 'selected':''}}>{{$district->name}}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -311,7 +311,7 @@
                                             <div class="col-lg-12 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="address">Address</label>
-                                                    <textarea name="address" id="address" class="form-control shadow-none"></textarea>
+                                                    <textarea name="address" id="address" class="form-control shadow-none">{{Auth::guard('web')->user()->address}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 mt-2">

@@ -98,7 +98,7 @@
             },
             success: res => {
                 if (!res.error) {
-                    alert(res)
+                    $.notify(res, "success");
                 } else {
                     $.each(res.error, (index, value) => {
                         $(".error-" + index).text(value)
@@ -126,7 +126,7 @@
                 if (!res.error) {
                     document.querySelector('.imglogo').src = window.URL.createObjectURL(event.target.files[0])
                     $("#logo").val("")
-                    alert(res)
+                    $.notify(res, "success");
                 } else {
                     $.each(res.error, (index, value) => {
                         $(".error-" + index).text(value)
@@ -154,7 +154,7 @@
                 if (!res.error) {
                     document.querySelector('.imgnav').src = window.URL.createObjectURL(event.target.files[0])
                     $("#navicon").val("")
-                    alert(res)
+                    $.notify(res, "success");
                 } else {
                     $.each(res.error, (index, value) => {
                         $(".error-" + index).text(value)

@@ -26,19 +26,21 @@
                                         Technician
                                     </label>
                                 </div>
-                                <div class="login-register-form">
-                                    <form action="#" method="post">
-                                        <input type="text" name="user-name" placeholder="Username" autocomplete="off" />
-                                        <input type="password" name="user-password" placeholder="Password" autocomplete="off" />
+                                <div class="login-register-form" id="Login">
+                                    <form onsubmit="Login(event)">
+                                        <input type="text" name="username" placeholder="Username" autocomplete="off" />
+                                        <span class="text-danger error-username error"></span>
+                                        <input type="password" name="password" placeholder="Password" autocomplete="off" />
+                                        <span class="text-danger error-password error"></span>
                                         <div class="button-box">
                                             <div class="login-toggle-btn">
                                                 <input id="remember" type="checkbox" />
                                                 <label for="remember">Remember me</label>
                                                 <a href="#">Forgot Password?</a>
                                             </div>
-                                            <a href="#" class="btn btn-primary text-white btn-hover-warning w-100">
+                                            <button type="submit" class="btn btn-primary text-white btn-hover-warning w-100">
                                                 <span>Login</span>
-                                            </a>
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -52,16 +54,22 @@
                                         Technician
                                     </label>
                                 </div>
-                                <div class="login-register-form">
-                                    <form action="#" method="post">
+                                <div class="login-register-form" id="Register">
+                                    <form onsubmit="Register(event)">
                                         <input type="text" name="name" placeholder="Name" autocomplete="off" />
+                                        <span class="text-danger error-name error"></span>
                                         <input type="text" name="username" placeholder="Username" autocomplete="off" />
-                                        <input name="user-email" placeholder="Email" type="email" autocomplete="off" />
+                                        <span class="text-danger error-username error"></span>
+                                        <input name="email" placeholder="Email" type="email" autocomplete="off" />
+                                        <span class="text-danger error-email error"></span>
                                         <input type="text" name="mobile" placeholder="Phone" autocomplete="off" />
+                                        <span class="text-danger error-mobile error"></span>
                                         <input type="password" name="password" placeholder="Password" autocomplete="off" />
+                                        <span class="text-danger error-password error"></span>
                                         <input type="password" name="confirm_password" placeholder="Confirm Password" autocomplete="off" />
+                                        <span class="text-danger error-confirm_password error"></span>
                                         <div class="button-box">
-                                            <button href="#" class="btn btn-primary text-white btn-hover-warning w-100">
+                                            <button type="submit" class="btn btn-primary text-white btn-hover-warning w-100">
                                                 <span>Register</span>
                                             </button>
                                         </div>
@@ -80,12 +88,73 @@
 
 @push("webjs")
 <script>
-    function changeModule(event) {
-        if (event.target.checked) {
-            document.querySelector(".register-heading span").innerHTML = "Technician"
+    const showTechnician = document.getElementById('technician1');
+    showTechnician.addEventListener("change", event => {
+        $()
+    })
+    function Register(event) {
+        event.preventDefault();
+        let technician = $("#technician1").prop("checked")
+        if (technician != false) {
+            var url = location.origin + "/technician-register"
         } else {
-            document.querySelector(".register-heading span").innerHTML = "Customer"
+            var url = location.origin + "/customer-register"
         }
+        let formdata = new FormData(event.target)
+        $.ajax({
+            url: url,
+            method: "POST",
+            data: formdata,
+            processData: false,
+            contentType: false,
+            beforeSend: () => {
+                $("#Register .error").text("")
+            },
+            success: res => {
+                if (res.error) {
+                    $.each(res.error, (index, value) => {
+                        $("#Register .error-" + index).text(value)
+                    })
+                } else {
+                    $.notify(res, "success");
+                    $("form").trigger("reset")
+                }
+            }
+        })
+    }
+
+    function Login(event) {
+        event.preventDefault();
+        let technician = $("#technician").prop("checked")
+        if (technician != false) {
+            var url = location.origin + "/technician-login"
+        } else {
+            var url = location.origin + "/customer-login"
+        }
+        let formdata = new FormData(event.target)
+        $.ajax({
+            url: url,
+            method: "POST",
+            data: formdata,
+            processData: false,
+            contentType: false,
+            beforeSend: () => {
+                $("#Login .error").text("")
+            },
+            success: res => {
+                if (res.error) {
+                    $.each(res.error, (index, value) => {
+                        $("#Login .error-" + index).text(value)
+                    })
+                } else if (res.errors) {
+                    $("#Login .error-username").text(res.errors)
+                } else {
+                    $.notify(res, "success");
+                    $("form").trigger("reset")
+                    location.href = "{{route('customer.dashboard')}}"
+                }
+            }
+        })
     }
 </script>
 @endpush

@@ -18,7 +18,7 @@ class LoginController extends Controller
         $this->middleware('guest:technician')->except('logout');
         $this->middleware('guest:admin')->except('logout');
     }
-    
+
     public function showSignUpForm()
     {
         return view("auth.frontend.login");
@@ -31,18 +31,22 @@ class LoginController extends Controller
 
     public function AdminLogin(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            "username" => "required",
-            "password" => "required"
-        ],["username.required" => "Username or Email required"]);
+        try {
+            $validator = Validator::make($request->all(), [
+                "username" => "required",
+                "password" => "required"
+            ], ["username.required" => "Username or Email required"]);
 
-        if($validator->fails()){
-            return response()->json(["error" => $validator->errors()]);
-        }
-        if (Auth::guard('admin')->attempt($this->credentials($request->username, $request->password))) {
-            return response()->json("Successfully Login");
-        } else {
-            return response()->json(["errors" => "Password or Email Not Match"]);
+            if ($validator->fails()) {
+                return response()->json(["error" => $validator->errors()]);
+            }
+            if (Auth::guard('admin')->attempt($this->credentials($request->username, $request->password))) {
+                return response()->json("Successfully Login");
+            } else {
+                return response()->json(["errors" => "Password or Email Not Match"]);
+            }
+        } catch (\Throwable $e) {
+            return "Opps! something went wrong";
         }
     }
 
@@ -51,7 +55,7 @@ class LoginController extends Controller
     {
         if (filter_var($username, FILTER_VALIDATE_EMAIL)) {
             return ['email' => $username, 'password' => $password];
-        }else{
+        } else {
             return ['username' => $username, 'password' => $password];
         }
     }

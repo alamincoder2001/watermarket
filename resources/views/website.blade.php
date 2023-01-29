@@ -282,14 +282,6 @@
                         <div class="col-12 col-lg-4">
                             <h3 class="title">Featured Products</h3>
                         </div>
-                        <!-- title section End -->
-                        <div class="col-12  col-lg-8">
-                            <ul class="nav nav-pills product-tab-links mt-8 mt-lg-0 justify-content-md-center">
-                                <li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#baking">Baking & Pastry Mats</a></li>
-                                <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#chocolate">Chocolate Moulds</a></li>
-                                <li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#chopping">Chopping Boards</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -309,19 +301,26 @@
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
                                     <!-- single slide Start -->
+                                    @foreach($feature_product as $item)
                                     <div class="swiper-slide">
                                         <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
+                                            <a class="thumb" href="single-product.html"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
                                                 </div>
                                             </a>
                                             <div class="product-content">
-                                                <a class="product-category" href="#?">Graphic Corner</a>
+                                                <a class="product-category" href="#?">{{$item->category_name}}</a>
                                                 <h3 class="product-title">
-                                                    <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
+                                                    <a href="single-product.html">{{$item->name}}</a>
                                                 </h3>
-                                                <span class="price regular-price">$68.30</span>
+                                                <span class="price regular-price">
+                                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                                    {{$item->wholesale_rate}}
+                                                    @else
+                                                    {{$item->selling_rate}}
+                                                    @endif
+                                                </span>
                                                 <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                     Add to cart
                                                 </button>
@@ -334,665 +333,15 @@
                                             <!-- actions links end -->
                                         </div>
                                     </div>
+                                    @endforeach
                                     <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM153 Stand Mixer</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="chocolate">
-                        <div class="product-carousel1">
-                            <div class="d-none d-sm-block swiper-navination-arrows">
-                                <div class="swiper-button-prev">
-                                    <span class="ion-android-arrow-back"></span>
-                                </div>
-                                <div class="swiper-button-next">
-                                    <span class="ion-android-arrow-forward"></span>
                                 </div>
                             </div>
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Graphic Corner</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM153 Stand Mixer</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                </div>
-
+                            @if(count($feature_product) == 0)
+                            <div class="text-center">
+                                <img src="{{asset('no-product.png')}}" width="300">
                             </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="chopping">
-                        <div class="product-carousel1">
-                            <div class="d-none d-sm-block swiper-navination-arrows">
-                                <div class="swiper-button-prev">
-                                    <span class="ion-android-arrow-back"></span>
-                                </div>
-                                <div class="swiper-button-next">
-                                    <span class="ion-android-arrow-forward"></span>
-                                </div>
-                            </div>
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Graphic Corner</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Scanpan Classic Covered Saute Pan 26cm</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Scanpan Classic Covered Saute Pan</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM160 Stand Mixer</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixer</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM153 Stand Mixer</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                </div>
-
-                            </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -1004,33 +353,27 @@
 <!-- Product tab End -->
 
 <!-- Banner Section Start -->
+@php
+$bann = array_chunk($banner, 3);
+@endphp
+
+@if(isset($bann[0]))
 <div class="banner-section section-pt">
     <div class="container">
         <div class="row mb-n7">
+            @foreach($bann[0] as $item)
             <!-- banner box start -->
             <div class="col-md-4 mb-7">
-                <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
-                    <img src="{{asset('frontend')}}/assets/images/banner/3.jpg" alt="img">
+                <a class="zoom-in text-center" href="shop-grid-left-sidebar.html" title="{{$item->title}}">
+                    <img src="{{asset($item->image != null ? $item->image : 'no-image.jpg')}}" alt="img">
                 </a>
             </div>
             <!-- banner box end -->
-            <!-- banner box start -->
-            <div class="col-md-4 mb-7">
-                <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
-                    <img src="{{asset('frontend')}}/assets/images/banner/4.jpg" alt="img">
-                </a>
-            </div>
-            <!-- banner box end -->
-            <!-- banner box start -->
-            <div class="col-md-4 mb-7">
-                <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
-                    <img src="{{asset('frontend')}}/assets/images/banner/5.jpg" alt="img">
-                </a>
-            </div>
-            <!-- banner box end -->
+            @endforeach
         </div>
     </div>
 </div>
+@endif
 <!-- Banner Section End -->
 
 <!-- Product tab Start -->
@@ -1050,17 +393,24 @@
 
         <div class="tab-content">
             <div class="tab-pane fade show active" id="newarrival">
+                @if(count($newarrival_product) != 0)
                 <div class="row mb-n7">
                     <div class="col-lg-5 col-xl-4 mb-7">
                         <div class="product-card-large">
-                            <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset('frontend')}}/assets/images/products/product-lg1.jpg" alt="img" />
+                            <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset($newarrival_product[0]->image != null ? $newarrival_product[0]->image : 'no-product-image.jpg')}}" alt="img" />
                             </a>
                             <div class="product-content">
-                                <a class="product-category" href="#?">Studio Design</a>
+                                <a class="product-category" href="#?">{{$newarrival_product[0]->category_name}}</a>
                                 <h3 class="product-title">
-                                    <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                    <a href="single-product.html">{{$newarrival_product[0]->name}}</a>
                                 </h3>
-                                <span class="price-lg onsale-price d-block mb-7">$68.30</span>
+                                <span class="price-lg onsale-price d-block mb-7">
+                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                    {{$newarrival_product[0]->wholesale_rate}}
+                                    @else
+                                    {{$newarrival_product[0]->selling_rate}}
+                                    @endif
+                                </span>
                                 <button class="product-btn-lg btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                     Add to cart
                                 </button>
@@ -1085,21 +435,29 @@
                             </div>
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
+                                    @foreach(array_chunk($newarrival_product, 2) as $newarrival)
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
                                         <div class="product-list">
+                                            @foreach($newarrival as $item)
                                             <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
+                                                <a class="thumb" href="single-product.html"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
                                                     <div class="onsales-badges">
                                                         <span class="badge bg-dark">new</span>
                                                     </div>
                                                 </a>
                                                 <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <a class="product-category" href="#?">{{$item->category_name}}</a>
                                                     <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixer</a>
+                                                        <a href="single-product.html">{{$item->name}}</a>
                                                     </h3>
-                                                    <span class="price regular-price">$68.30</span>
+                                                    <span class="price regular-price">
+                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                                        {{$item->wholesale_rate}}
+                                                        @else
+                                                        {{$item->selling_rate}}
+                                                        @endif
+                                                    </span>
                                                     <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
@@ -1111,289 +469,10 @@
                                                 </ul>
                                                 <!-- actions links end -->
                                             </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Graphic Corner</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM100 Stand Mixer</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product10.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product11.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixe</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                        <div class="product-card">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
+                                    @endforeach
                                     <!-- single slide End -->
                                 </div>
                             </div>
@@ -1401,19 +480,32 @@
 
                     </div>
                 </div>
+                @else
+                <div class="text-center">
+                    <img src="{{asset('no-product.png')}}" width="300">
+                </div>
+                @endif
             </div>
+
             <div class="tab-pane fade" id="bestseller">
+                @if(count($topsold_product) != 0)
                 <div class="row mb-n7">
                     <div class="col-lg-5 col-xl-4 mb-7">
                         <div class="product-card-large">
-                            <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset('frontend')}}/assets/images/products/product-lg1.jpg" alt="img" />
+                            <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset($topsold_product[0]->image != null ? $topsold_product[0]->image : 'no-product-image.jpg')}}" alt="img" />
                             </a>
                             <div class="product-content">
-                                <a class="product-category" href="#?">Studio Design</a>
+                                <a class="product-category" href="#?">{{$topsold_product[0]->category_name}}</a>
                                 <h3 class="product-title">
-                                    <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                    <a href="single-product.html">{{$topsold_product[0]->name}}</a>
                                 </h3>
-                                <span class="price-lg onsale-price d-block mb-7">$68.30</span>
+                                <span class="price-lg onsale-price d-block mb-7">
+                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                    {{$topsold_product[0]->wholesale_rate}}
+                                    @else
+                                    {{$topsold_product[0]->selling_rate}}
+                                    @endif
+                                </span>
                                 <button class="product-btn-lg btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                     Add to cart
                                 </button>
@@ -1438,21 +530,29 @@
                             </div>
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
+                                    @foreach(array_chunk($topsold_product, 2) as $topsold)
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
                                         <div class="product-list">
+                                            @foreach($topsold as $item)
                                             <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
+                                                <a class="thumb" href="single-product.html"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
                                                     <div class="onsales-badges">
                                                         <span class="badge bg-dark">new</span>
                                                     </div>
                                                 </a>
                                                 <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <a class="product-category" href="#?">{{$item->category_name}}</a>
                                                     <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixer</a>
+                                                        <a href="single-product.html">{{$item->name}}</a>
                                                     </h3>
-                                                    <span class="price regular-price">$68.30</span>
+                                                    <span class="price regular-price">
+                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                                        {{$item->wholesale_rate}}
+                                                        @else
+                                                        {{$item->selling_rate}}
+                                                        @endif
+                                                    </span>
                                                     <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
@@ -1464,309 +564,41 @@
                                                 </ul>
                                                 <!-- actions links end -->
                                             </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Graphic Corner</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM100 Stand Mixer</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product10.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product11.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixe</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                        <div class="product-card">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
+                @else
+                <div class="text-center">
+                    <img src="{{asset('no-product.png')}}" width="300">
+                </div>
+                @endif
             </div>
             <div class="tab-pane fade" id="featuredproducts">
+                @if(count($feature_product) != 0)
                 <div class="row mb-n7">
                     <div class="col-lg-5 col-xl-4 mb-7">
                         <div class="product-card-large">
-                            <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset('frontend')}}/assets/images/products/product-lg1.jpg" alt="img" />
+                            <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset($feature_product[0]->image != null ? $feature_product[0]->image : 'no-product-image.jpg')}}" alt="img" />
                             </a>
                             <div class="product-content">
-                                <a class="product-category" href="#?">Studio Design</a>
+                                <a class="product-category" href="#?">{{$feature_product[0]->category_name}}</a>
                                 <h3 class="product-title">
-                                    <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
+                                    <a href="single-product.html">{{$feature_product[0]->name}}</a>
                                 </h3>
-                                <span class="price-lg onsale-price d-block mb-7">$68.30</span>
+                                <span class="price-lg onsale-price d-block mb-7">
+                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                    {{$feature_product[0]->wholesale_rate}}
+                                    @else
+                                    {{$feature_product[0]->selling_rate}}
+                                    @endif
+                                </span>
                                 <button class="product-btn-lg btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                     Add to cart
                                 </button>
@@ -1791,21 +623,29 @@
                             </div>
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
+                                    @foreach(array_chunk($feature_product, 2) as $feature)
                                     <!-- single slide Start -->
                                     <div class="swiper-slide">
                                         <div class="product-list">
+                                            @foreach($feature as $item)
                                             <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product1.jpg" alt="img" />
+                                                <a class="thumb" href="single-product.html"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
                                                     <div class="onsales-badges">
                                                         <span class="badge bg-dark">new</span>
                                                     </div>
                                                 </a>
                                                 <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
+                                                    <a class="product-category" href="#?">{{$item->category_name}}</a>
                                                     <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixer</a>
+                                                        <a href="single-product.html">{{$item->name}}</a>
                                                     </h3>
-                                                    <span class="price regular-price">$68.30</span>
+                                                    <span class="price regular-price">
+                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                                        {{$item->wholesale_rate}}
+                                                        @else
+                                                        {{$item->selling_rate}}
+                                                        @endif
+                                                    </span>
                                                     <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
                                                         Add to cart
                                                     </button>
@@ -1817,296 +657,21 @@
                                                 </ul>
                                                 <!-- actions links end -->
                                             </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Graphic Corner</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM100 Stand Mixer</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>
                                     <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Leaf & Bean Electric Milk Frother &...</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Royal Doulton 1915 Tableware Pasta Bowl</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Le Creuset Signature Cast Iron Round...</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product5.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Essteele Australis 4pc Set w/ Saucepans</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product10.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">Creuset Signature Cast Iron Round...</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product11.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM150 Stand Mixe</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-list">
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product6.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                            <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product7.jpg" alt="img" />
-                                                    <div class="onsales-badges">
-                                                        <span class="badge bg-dark">new</span>
-                                                    </div>
-                                                </a>
-                                                <div class="product-content">
-                                                    <a class="product-category" href="#?">Studio Design</a>
-                                                    <h3 class="product-title">
-                                                        <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                    </h3>
-                                                    <span class="price regular-price">$68.30</span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                        Add to cart
-                                                    </button>
-                                                </div>
-                                                <!-- actions links start -->
-                                                <ul class="actions">
-                                                    <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                                </ul>
-                                                <!-- actions links end -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
-                                    <!-- single slide Start -->
-                                    <div class="swiper-slide">
-                                        <div class="product-card">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product8.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                        <div class="product-card">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset('frontend')}}/assets/images/products/product12.jpg" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">Studio Design</a>
-                                                <h3 class="product-title">
-                                                    <a href="single-product.html">KitchenAid Artisan KSM130 Stand Mixe</a>
-                                                </h3>
-                                                <span class="price regular-price">$68.30</span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
-                                        </div>
-                                    </div>
-                                    <!-- single slide End -->
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
+                @else
+                <div class="text-center">
+                    <img src="{{asset('no-product.png')}}" width="300">
+                </div>
+                @endif
             </div>
         </div>
 
@@ -2115,33 +680,23 @@
 <!-- Product tab End -->
 
 <!-- Banner Section Start -->
+@if(isset($bann[1]))
 <div class="banner-section section-pt">
     <div class="container">
         <div class="row mb-n7">
+            @foreach($bann[1] as $item)
             <!-- banner box start -->
             <div class="col-md-4 mb-7">
-                <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
-                    <img src="{{asset('frontend')}}/assets/images/banner/6.jpg" alt="img">
+                <a class="zoom-in text-center" href="shop-grid-left-sidebar.html" title="{{$item->title}}">
+                    <img src="{{asset($item->image != null ? $item->image : 'no-image.jpg')}}" alt="img">
                 </a>
             </div>
             <!-- banner box end -->
-            <!-- banner box start -->
-            <div class="col-md-4 mb-7">
-                <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
-                    <img src="{{asset('frontend')}}/assets/images/banner/7.jpg" alt="img">
-                </a>
-            </div>
-            <!-- banner box end -->
-            <!-- banner box start -->
-            <div class="col-md-4 mb-7">
-                <a class="zoom-in text-center" href="shop-grid-left-sidebar.html">
-                    <img src="{{asset('frontend')}}/assets/images/banner/8.jpg" alt="img">
-                </a>
-            </div>
-            <!-- banner box end -->
+            @endforeach
         </div>
     </div>
 </div>
+@endif
 <!-- Banner Section End -->
 
 

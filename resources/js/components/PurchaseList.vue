@@ -143,7 +143,7 @@ export default {
         InvoiceDelete(id, sl){
             if(confirm("Are you sure want to delete")){
                 axios.post("/admin/purchase/delete", {id: id}).then((res) => {
-                    alert(res.data);
+                    $.notify(res.data, "success");
                     var index = this.purchases.indexOf(sl);
                     this.purchases.splice(index, 1);
                 });

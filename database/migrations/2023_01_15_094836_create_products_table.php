@@ -29,6 +29,7 @@ class CreateProductsTable extends Migration
             $table->boolean("is_arrival")->default(0);
             $table->boolean("is_feature")->default(0);
             $table->boolean("is_popular")->default(0);
+            $table->boolean("is_topsold")->default(0);
             $table->longText("description")->nullable();
             $table->string("image")->nullable();
             $table->char("status", 5)->default("a");

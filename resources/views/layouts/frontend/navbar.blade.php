@@ -14,9 +14,8 @@
 
                                 <!-- dropdown-menu start -->
                                 <ul class="dropdown-menu" aria-labelledby="account">
-                                    <li><a class="dropdown-item" href="account.html">My account</a></li>
-                                    <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
-                                    <li><a class="dropdown-item" href="login.html">Sign in</a></li>
+                                    <li><a class="dropdown-item" href="{{route('customer.dashboard')}}">My account</a></li>
+                                    <li><a class="dropdown-item" href="{{route('customer.logout')}}">Sign Out</a></li>
                                 </ul>
                                 <!-- dropdown-menu start -->
                             </li>

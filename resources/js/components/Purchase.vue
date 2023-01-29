@@ -503,7 +503,7 @@ export default {
             }
             axios.post("/admin/purchase", data)
                 .then(res => {
-                    alert(res.data.msg)
+                    $.notify(res.data.msg, "success");
                     // if (confirm("Are you sure want print")) {
                     //     this.$router.push({ path: '/purchase-invoice/' + res.data.invoice })
                     // }

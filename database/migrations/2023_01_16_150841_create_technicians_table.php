@@ -20,9 +20,9 @@ class CreateTechniciansTable extends Migration
             $table->string("email")->unique();
             $table->string("password");
             $table->string("mobile", 15);
-            $table->integer("thana_id");
-            $table->string("address");
-            $table->string("gender", 20);
+            $table->integer("thana_id")->nullable();
+            $table->string("address")->nullable();
+            $table->string("gender", 20)->nullable();
             $table->char("status", 5)->default("p");
             $table->string("image")->nullable();
             $table->timestamps();

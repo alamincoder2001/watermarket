@@ -84,7 +84,7 @@
                         $("form").find("#old_password").val("")
                         $("form").find("#new_password").val("")
                         $("form").find("#confirm_password").val("")
-                        alert(res)
+                        $.notify(res, "success");
                     }
                 } else {
                     $.each(res.error, (index, value) => {
@@ -113,7 +113,7 @@
                 if (!res.error) {
                     document.querySelector('.imageShow').src = window.URL.createObjectURL(event.target.files[0])
                     $("#image").val("")
-                    alert(res)
+                    $.notify(res, "success");
                 } else {
                     $.each(res.error, (index, value) => {
                         $(".error-" + index).text(value)

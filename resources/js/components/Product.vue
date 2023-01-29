@@ -274,7 +274,7 @@ export default {
             axios
                 .post(location.origin + "/admin/product", formdata)
                 .then((res) => {
-                    alert(res.data);
+                    $.notify(res.data, "success");
                     this.clearData();
                     this.getProduct();
                 });
@@ -317,7 +317,7 @@ export default {
         deleteRow(id) {
             if (confirm("Are you sure want to delete this!")) {
                 axios.post(location.origin + "/admin/product/delete", { id: id }).then((res) => {
-                    alert(res.data);
+                    $.notify(res.data, "success");
                     this.getProduct();
                 });
             }
