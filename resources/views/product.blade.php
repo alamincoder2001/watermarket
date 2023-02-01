@@ -71,7 +71,7 @@
                                             <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                         </h3>
                                         <span class="price regular-price">
-                                            @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                            @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
                                             ৳ {{$item->wholesale_rate}}
                                             @else
                                             ৳ {{$item->selling_rate}}
@@ -84,7 +84,7 @@
                                     <!-- actions links start -->
                                     <ul class="actions">
                                         <li class="action-item"><button type="button" class="action quick-view"><span class="lnr lnr-magnifier"></span></button></li>
-                                        <li class="action-item"><button type="button" class="action wishlist"><span class="lnr lnr-heart"></span></button></li>
+                                        <li class="action-item"><button type="button" class="action wishlist" onclick="addWishlist({{$item->id}})"><span class="lnr lnr-heart"></span></button></li>
                                     </ul>
                                     <!-- actions links end -->
                                 </div>
@@ -125,7 +125,7 @@
                                         <div class="col-lg-3 mb-7">
                                             <div class="product-content-list">
                                                 <span class="price-list regular-price">
-                                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
                                                     ৳ {{$item->wholesale_rate}}
                                                     @else
                                                     ৳ {{$item->selling_rate}}
@@ -138,7 +138,7 @@
                                             <!-- actions links start -->
                                             <ul class="actions-list">
                                                 <li class="action-item-list"><button type="button" class="action quick-view"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item-list"><button type="button" class="action wishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                <li class="action-item-list"><button type="button" class="action wishlist" onclick="addWishlist({{$item->id}})"><span class="lnr lnr-heart"></span></button></li>
                                             </ul>
                                             <!-- actions links end -->
                                         </div>

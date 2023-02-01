@@ -315,7 +315,7 @@
                                                     <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                 </h3>
                                                 <span class="price regular-price">
-                                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
                                                     ৳ {{$item->wholesale_rate}}
                                                     @else
                                                     ৳ {{$item->selling_rate}}
@@ -328,7 +328,7 @@
                                             <!-- actions links start -->
                                             <ul class="actions">
                                                 <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                <li class="action-item"><button class="action wishlist" onclick="addWishlist({{$item->id}})"><span class="lnr lnr-heart"></span></button></li>
                                             </ul>
                                             <!-- actions links end -->
                                         </div>
@@ -405,7 +405,7 @@ $bann = array_chunk($banner, 3);
                                     <a href="{{route('single.product', $newarrival_product[0]->slug)}}">{{$newarrival_product[0]->name}}</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">
-                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
                                     ৳ {{$newarrival_product[0]->wholesale_rate}}
                                     @else
                                     ৳ {{$newarrival_product[0]->selling_rate}}
@@ -418,7 +418,7 @@ $bann = array_chunk($banner, 3);
                             <!-- actions links start -->
                             <ul class="actions">
                                 <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                <li class="action-item"><button class="action wishlist" onclick="addWishlist({{$newarrival_product[0]->id}})"><span class="lnr lnr-heart"></span></button></li>
                             </ul>
                             <!-- actions links end -->
                         </div>
@@ -452,7 +452,7 @@ $bann = array_chunk($banner, 3);
                                                         <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                     </h3>
                                                     <span class="price regular-price">
-                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
                                                         ৳ {{$item->wholesale_rate}}
                                                         @else
                                                         ৳ {{$item->selling_rate}}
@@ -465,7 +465,7 @@ $bann = array_chunk($banner, 3);
                                                 <!-- actions links start -->
                                                 <ul class="actions">
                                                     <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" onclick="addWishlist({{$item->id}})"><span class="lnr lnr-heart"></span></button></li>
                                                 </ul>
                                                 <!-- actions links end -->
                                             </div>
@@ -500,7 +500,7 @@ $bann = array_chunk($banner, 3);
                                     <a href="{{route('single.product', $topsold_product[0]->slug)}}">{{$topsold_product[0]->name}}</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">
-                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
                                     ৳ {{$topsold_product[0]->wholesale_rate}}
                                     @else
                                     ৳ {{$topsold_product[0]->selling_rate}}
@@ -513,7 +513,7 @@ $bann = array_chunk($banner, 3);
                             <!-- actions links start -->
                             <ul class="actions">
                                 <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                <li class="action-item"><button class="action wishlist" onclick="addWishlist({{$topsold_product[0]->id}})"><span class="lnr lnr-heart"></span></button></li>
                             </ul>
                             <!-- actions links end -->
                         </div>
@@ -547,7 +547,7 @@ $bann = array_chunk($banner, 3);
                                                         <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                     </h3>
                                                     <span class="price regular-price">
-                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
                                                         ৳ {{$item->wholesale_rate}}
                                                         @else
                                                         ৳ {{$item->selling_rate}}
@@ -560,7 +560,7 @@ $bann = array_chunk($banner, 3);
                                                 <!-- actions links start -->
                                                 <ul class="actions">
                                                     <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" onclick="addWishlist({{$item->id}})"><span class="lnr lnr-heart"></span></button></li>
                                                 </ul>
                                                 <!-- actions links end -->
                                             </div>
@@ -593,7 +593,7 @@ $bann = array_chunk($banner, 3);
                                     <a href="{{route('single.product', $feature_product[0]->slug)}}">{{$feature_product[0]->name}}</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">
-                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
                                     ৳ {{$feature_product[0]->wholesale_rate}}
                                     @else
                                     ৳ {{$feature_product[0]->selling_rate}}
@@ -606,7 +606,7 @@ $bann = array_chunk($banner, 3);
                             <!-- actions links start -->
                             <ul class="actions">
                                 <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                <li class="action-item"><button class="action wishlist" onclick="addWishlist({{$feature_product[0]->id}})"><span class="lnr lnr-heart"></span></button></li>
                             </ul>
                             <!-- actions links end -->
                         </div>
@@ -640,7 +640,7 @@ $bann = array_chunk($banner, 3);
                                                         <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                     </h3>
                                                     <span class="price regular-price">
-                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
                                                         ৳ {{$item->wholesale_rate}}
                                                         @else
                                                         ৳ {{$item->selling_rate}}
@@ -653,7 +653,7 @@ $bann = array_chunk($banner, 3);
                                                 <!-- actions links start -->
                                                 <ul class="actions">
                                                     <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                    <li class="action-item"><button class="action wishlist" data-bs-toggle="modal" data-bs-target="#addtowishlist"><span class="lnr lnr-heart"></span></button></li>
+                                                    <li class="action-item"><button class="action wishlist" onclick="addWishlist({{$item->id}})"><span class="lnr lnr-heart"></span></button></li>
                                                 </ul>
                                                 <!-- actions links end -->
                                             </div>

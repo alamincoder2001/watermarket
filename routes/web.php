@@ -19,8 +19,10 @@ use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Auth\CustomerLoginController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('website');
@@ -28,11 +30,18 @@ Route::get('/product', [HomeController::class, 'ProductShow'])->name('product');
 Route::get('/product-single/{slug}', [HomeController::class, 'singleProductShow'])->name('single.product');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
-// cart add
-Route::get("/cart", [CartController::class, "index"])->name("cart");
-Route::post('/addcart', [CartController::class, 'addCart'])->name("addcart");
-Route::post('/updatecart', [CartController::class, 'updateCart'])->name("updatecart");
-Route::post('/removecart', [CartController::class, 'removeCart'])->name("removecart");
+// cart add route
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/addcart', [CartController::class, 'addCart'])->name('addcart');
+Route::post('/updatecart', [CartController::class, 'updateCart'])->name('updatecart');
+Route::post('/removecart', [CartController::class, 'removeCart'])->name('removecart');
+
+// wishlist add route
+Route::post('/addwishlist', [WishlistController::class, 'addWishlist'])->name('addwishlist');
+Route::post('/deletewishlist', [WishlistController::class, 'deleteWishlist'])->name('deletewishlist');
+
+//
+Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 
 // Technician and customer login
 Route::get('/login', [CustomerLoginController::class, 'showSignUpForm'])->name('showSignUpForm')->middleware('checkAuth');

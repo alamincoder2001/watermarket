@@ -189,7 +189,7 @@
 
                                     <!-- checkout-action button start -->
                                     <div class="checkout-action d-flex justify-content-center gap-3">
-                                        <a href="checkout.html"  class="btn btn-warning btn-hover-primary btn-lg px-5">Checkout</a>
+                                        <a href="{{route('checkout')}}"  class="btn btn-warning btn-hover-primary btn-lg px-5">Checkout</a>
                                         <a href="{{route('cart')}}"  class="btn btn-primary btn-hover-warning btn-lg px-5">Cart</a>
                                     </div>
                                     <!-- checkout-action button end -->

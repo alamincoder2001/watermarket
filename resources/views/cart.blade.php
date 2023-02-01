@@ -11,15 +11,16 @@
     </div>
 </nav>
 
-<section class="whish-list-section section-py" style="padding: 20px 0 !important;">
+<section class="whish-list-section section-py" style="padding: 15px 0 !important;">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="title mb-5 pb-3 text-capitalize">Your cart items</h3>
+                <h3 class="title pb-3 text-capitalize">Your cart items</h3>
                 <div class="table-responsive cartTable">
                     <table class="table">
                         <thead class="thead-light">
                             <tr>
+                                <th scope="col"></th>
                                 <th class="text-center" scope="col">Product Image</th>
                                 <th class="text-center" scope="col">Product Name</th>
                                 <th class="text-center" scope="col">Qty</th>
@@ -29,9 +30,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $i = 1;
+                            @endphp
                             @if(\Cart::content()->count() > 0)
                             @foreach(\Cart::content() as $item)
                             <tr class="{{$item->rowId}}">
+                                <td>{{$i++}}</td>
                                 <th class="text-center" scope="row">
                                     <img src="{{asset($item->options->image != null ? $item->options->image : '/no-product-image.jpg')}}" width="55" alt="img">
                                 </th>
@@ -106,7 +111,7 @@
                         </div>
                     </div>
                     <div class="Place-order mt-2 text-end">
-                        <a class="btn btn-primary btn-hover-warning text-capitalize my-2 my-sm-0" href="#">checkout</a>
+                        <a class="btn btn-primary btn-hover-warning text-capitalize my-2 my-sm-0" href="{{route('checkout')}}">Checkout</a>
                     </div>
                 </div>
             </div>

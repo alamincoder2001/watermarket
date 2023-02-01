@@ -230,18 +230,45 @@
                                         <th>Sl</th>
                                         <th></th>
                                         <th>Product</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Image</td>
-                                        <td>Potato</td>
-                                        <td class="text-danger">Pending</td>
-                                        <td>Action</td>
+                                    @if(count($wishlists) > 0)
+                                    @foreach($wishlists as $key => $item)
+                                    <tr class="wishlist-{{$item->product->id}}">
+                                        <td>{{$key + 1}}</td>
+                                        <td>
+                                            <a class="m-0" href="{{asset($item->product->image != null ? $item->product->image : '/no-product-image.jpg')}}">
+                                                <img src="{{asset($item->product->image != null ? $item->product->image : '/no-product-image.jpg')}}" width="30" alt="img" />
+                                            </a>
+                                        </td>
+                                        <td>{{$item->product->name}}</td>
+                                        <td>
+                                            <input type="number" step="1" min="1" value="1" style="width: 60px;text-align: center;border: 1px solid lightgrey;">
+                                        </td>
+                                        <td>
+                                            @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
+                                            ৳ {{$item->product->wholesale_rate}}
+                                            @else
+                                            ৳ {{$item->product->selling_rate}}
+                                            @endif
+                                        </td>
+                                        <td class="text-center">
+                                            <a style="cursor: pointer;" onclick="addCart({{$item->product->id}}, 'wishlist')" class="text-warning"><i class="bi bi-cart-plus"></i></a>
+                                            <a style="cursor: pointer;" onclick="deleteWishlist(event)" data-id="{{$item->product->id}}" class="text-danger"><i data-id="{{$item->product->id}}" class="bi bi-trash3"></i></a>
+                                        </td>
                                     </tr>
+                                    @endforeach
+                                    @else
+                                    <tr>
+                                        <td colspan="6" class="text-center">
+                                            Product Not Found
+                                        </td>
+                                    </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
@@ -304,7 +331,7 @@
                                                 <div class="form-gorup">
                                                     <label for="thana_id">Upazila</label>
                                                     <select name="thana_id" id="thana_id" class="form-select shadow-none">
-                                                        
+
                                                     </select>
                                                 </div>
                                             </div>
@@ -353,15 +380,41 @@
 
 @push("webjs")
 <script>
-    function imageUpdate(event){
-        if(event.target.files[0]){
+    function deleteWishlist(event) {
+        $.ajax({
+            url: location.origin + "/deletewishlist",
+            method: "POST",
+            data: {
+                product_id: event.target.getAttribute("data-id")
+            },
+            success: res => {
+                $(".wishlist-" + event.target.getAttribute("data-id")).remove();
+                $.notify(res.msg, "success")
+                if (res.content == 0) {
+                    let row = `
+                            <tr>
+                                <td colspan="6" class="text-center">
+                                    Product Not Found
+                                </td>
+                            </tr>
+                            `;
+                    $("#wishlistTable").find("table tbody").html(row)
+                }
+
+            }
+        })
+    }
+</script>
+<script>
+    function imageUpdate(event) {
+        if (event.target.files[0]) {
             document.querySelector(".imageShow").setAttribute('src', window.URL.createObjectURL(event.target.files[0]))
         }
     }
-    function getUpazila(event){
-        if(event.target.value){
+    function getUpazila(event) {
+        if (event.target.value) {
             $.ajax({
-                url: location.origin+"/getUpazila/"+event.target.value,
+                url: location.origin + "/getUpazila/" + event.target.value,
                 method: "GET",
                 beforeSend: () => {
                     $("#thana_id").html(`<option value="">Select Upazila</option>`)
@@ -372,17 +425,16 @@
                     })
                 }
             })
-        }else{
+        } else {
             $("#thana_id").html(`<option value="">Select Upazila</option>`)
         }
     }
 
     // save profile
-    function saveProfileCustomer(event){
+    function saveProfileCustomer(event) {
         event.preventDefault();
         console.log(event);
     }
-
 
     function Dashboard(event) {
         event.preventDefault();
@@ -434,6 +486,6 @@
         event.preventDefault();
         $('.login-register-area').find(".item-section").addClass("d-none")
         $('.login-register-area').find("#completed").removeClass("d-none")
-    }    
+    }
 </script>
 @endpush

@@ -2840,9 +2840,9 @@ progress {
     -webkit-overflow-scrolling: touch;
   }
 }
-.form-label {
+/* .form-label {
   margin-bottom: 0.5rem;
-}
+} */
 
 .col-form-label {
   padding-top: calc(0.9375rem + 1px);
@@ -17502,38 +17502,38 @@ p:last-child {
 }
 
 .section-py {
-  padding: 40px 0px !important;
+  padding: 20px 0px !important;
 }
 @media screen and (min-width: 1200px) {
   .section-py {
-    padding: 50px 0px !important;
+    padding: 20px 0px !important;
   }
 }
 
 .section-pt {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 @media screen and (min-width: 1200px) {
   .section-pt {
-    padding-top: 50px;
+    padding-top: 20px;
   }
 }
 
 .section-pb {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 @media screen and (min-width: 1200px) {
   .section-pb {
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
 }
 
 .section-mt {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 @media screen and (min-width: 1200px) {
   .section-mt {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 }
 
@@ -18073,7 +18073,7 @@ p:last-child {
           transform: translateZ(0) !important;
   margin: 0;
   border: 0;
-  border-top: 2px solid #fe6022;
+  border-top: 2px solid #0046e3;
   display: block;
   opacity: 0;
   visibility: hidden;
@@ -22126,7 +22126,8 @@ textarea.form-control {
   padding-right: 10px;
   width: 100%;
   outline: none;
-  height: 45px;
+  height: 30px;
+  border-radius: 0.2rem;
 }
 
 .billing-info-wrap .checkout-account-toggle input {
@@ -22155,7 +22156,7 @@ textarea.form-control {
 
 .billing-info-wrap .title {
   text-transform: capitalize;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: #32383e;
   font-size: 24px;
   font-weight: 500;
@@ -22165,16 +22166,15 @@ textarea.form-control {
   font-size: 24px;
   font-weight: 500;
   text-transform: capitalize;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .billing-info {
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
 .billing-info label {
   font-size: 14px;
-  margin-bottom: 10px;
 }
 
 .form-select {
@@ -22228,8 +22228,7 @@ textarea.form-control {
 .your-order-area .your-order-wrap .your-order-product-info .your-order-middle {
   border-bottom: 1px solid #dee0e4;
   border-top: 1px solid #dee0e4;
-  margin: 29px 0;
-  padding: 19px 0 18px;
+  margin: 10px 0;
 }
 
 .your-order-area .your-order-wrap .your-order-product-info .your-order-bottom ul li.your-order-shipping {
@@ -22245,7 +22244,7 @@ textarea.form-control {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0 0 10px;
+  margin: 5px 0 5px 0;
 }
 
 .your-order-area .your-order-wrap .your-order-product-info .your-order-bottom ul {
@@ -22278,11 +22277,12 @@ textarea.form-control {
   border: 1px solid #e6e6e6;
   color: #666;
   font-size: 14px;
-  padding-left: 20px;
+  padding-left: 10px;
   padding-right: 10px;
   width: 100%;
   outline: none;
-  height: 45px;
+  height: 33px;
+  border-radius: 0.2rem;
 }
 
 .billing-info-wrap .nice-select {
@@ -22302,7 +22302,7 @@ textarea.form-control {
 
 .billing-info-wrap .billing-info input.billing-address,
 .billing-info-wrap .billing-select input.billing-address {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .billing-info-wrap .checkout-account label {
@@ -22317,7 +22317,7 @@ textarea.form-control {
   float: left;
   height: 12px;
   width: 12px;
-  margin-top: 7px;
+  margin-top: 3px;
   cursor: pointer;
 }
 
@@ -22353,11 +22353,11 @@ textarea.form-control {
 }
 
 .additional-info-wrap {
-  margin: 30px 0;
+  margin: 10px 0;
 }
 
 .your-order-area .your-order-wrap {
-  padding: 38px 45px 44px;
+  padding: 25px 40px 40px;
   background: #f6f6f6;
 }
 @media screen and (max-width: 767px) {
@@ -22385,8 +22385,7 @@ textarea.form-control {
 .your-order-area .your-order-wrap .your-order-product-info .your-order-middle {
   border-bottom: 1px solid #dee0e4;
   border-top: 1px solid #dee0e4;
-  margin: 29px 0;
-  padding: 19px 0 18px;
+  margin: 10px 0;
 }
 
 .your-order-area .your-order-wrap .your-order-product-info .your-order-middle ul li {
@@ -22396,7 +22395,7 @@ textarea.form-control {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin: 0 0 10px;
+  margin: 5px 0 5px 0;
 }
 
 .your-order-area .your-order-wrap .your-order-product-info .your-order-bottom ul {
@@ -22420,8 +22419,8 @@ textarea.form-control {
 .your-order-area .your-order-wrap .your-order-product-info .your-order-total {
   border-bottom: 1px solid #dee0e4;
   border-top: 1px solid #dee0e4;
-  margin: 18px 0 33px;
-  padding: 17px 0 19px;
+  margin: 10px 0 15px;
+  padding: 10px 0 10px;
 }
 
 .your-order-area .your-order-wrap .your-order-product-info .your-order-total ul {

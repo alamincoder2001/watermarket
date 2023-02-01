@@ -9,7 +9,7 @@
         }
     });
 
-    function addCart(id) {
+    function addCart(id, wishlist = null) {
         $.ajax({
             url: location.origin + "/addcart",
             method: "POST",
@@ -46,6 +46,30 @@
                 $(".subTotal label").text(res.subtotal)
                 $(".Total label").text(res.subtotal)
                 $(".cartTotalCount").text(res.cartCount)
+
+                if (wishlist != null) {
+                    $.ajax({
+                        url: location.origin + "/deletewishlist",
+                        method: "POST",
+                        data: {
+                            product_id: id
+                        },
+                        success: res => {
+                            $(".wishlist-" + id).remove();
+                            if (res.content == 0) {
+                                let row = `
+                            <tr>
+                                <td colspan="6" class="text-center">
+                                    Product Not Found
+                                </td>
+                            </tr>
+                            `;
+                                $("#wishlistTable").find("table tbody").html(row)
+                            }
+
+                        }
+                    })
+                }
             }
         })
     }
@@ -92,6 +116,27 @@
                         `;
 
                     $(".cartTable tbody").html(row1)
+                }
+            }
+        })
+    }
+
+    // add wishlist
+    function addWishlist(id) {
+        $.ajax({
+            url: location.origin + "/addwishlist",
+            method: "POST",
+            data: {
+                id: id
+            },
+            success: res => {
+                if (res.login) {
+                    $.notify(res.login, "success")
+                    setTimeout(() => {
+                        location.href = "/login"
+                    }, 500)
+                } else {
+                    $.notify(res.msg, res.status)
                 }
             }
         })
