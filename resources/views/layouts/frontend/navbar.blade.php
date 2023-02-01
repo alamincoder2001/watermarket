@@ -22,14 +22,6 @@
                             @else
                             <li class="dropdown top-nav-item"><a class="top-nav-link" href="{{route('showSignUpForm')}}" role="button" id="account">Sign In</a></li>
                             @endif
-                            <li class="dropdown top-nav-item"><img class="me-1" src="{{asset('frontend')}}/assets/images/flag/1.jpg" alt="img"> <span></span><a class="top-nav-link" role="button" id="language" data-bs-toggle="dropdown" href="#">English<i class="ion-ios-arrow-down"></i></a>
-                                <!-- dropdown-menu start -->
-                                <ul class="dropdown-menu" aria-labelledby="language">
-                                    <li><a class="dropdown-item" href="#"><img src="{{asset('frontend')}}/assets/images/flag/1.jpg" alt="flags"> English</a></li>
-                                    <li><a class="dropdown-item" href="#"><img src="{{asset('frontend')}}/assets/images/flag/2.jpg" alt="flags"> Français</a></li>
-                                </ul>
-                                <!-- dropdown-menu start -->
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -49,7 +41,7 @@
                 <!-- Header Logo End -->
 
                 <!-- Header Menu Start -->
-                <div class="col-md-6 col-lg-5 d-none d-lg-block">
+                <div class="col-md-6 col-lg-4 p-lg-0 p-md-0 d-none d-lg-block">
                     <form action="#">
                         <div class="input-group border">
                             <div class="input-group-text">
@@ -129,7 +121,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-6 col-md-9 col-lg-4">
+                <div class="col-6 col-md-9 col-lg-5">
                     <div class="d-flex align-items-center justify-content-end">
                         <nav class="main-menu d-none d-lg-inline-block">
                             <ul class="d-flex">
@@ -137,7 +129,7 @@
                                     <a class="main-menu-link {{Route::is('website')?'text-warning':''}}" href="{{route('website')}}">Home</a>
                                 </li>
                                 <li class="position-static main-menu-item">
-                                    <a class="main-menu-link" href="#">Shop</a>
+                                    <a class="main-menu-link {{Route::is('product')?'text-warning':''}}" href="{{route('product')}}">Shop</a>
                                 </li>
                                 <li class="position-static main-menu-item">
                                     <a class="main-menu-link" href="#">Technician</a>
@@ -146,7 +138,7 @@
                                     <a class="main-menu-link" href="#">Blog</a>
                                 </li>
                                 <li class="main-menu-item">
-                                    <a class="main-menu-link" href="{{route('contact')}}">Contact</a>
+                                    <a class="main-menu-link {{Route::is('contact')?'text-warning':''}}" href="{{route('contact')}}">Contact</a>
                                 </li>
                             </ul>
                         </nav>
@@ -154,67 +146,51 @@
                             <div class="block-cart-btn-wrapp">
                                 <button class="cart-action bg-primary">
                                     <span class="lnr lnr-cart"></span>
-                                    <span class="badge bg-dark">2</span>
+                                    <span class="badge bg-dark cartTotalCount">{{\Cart::content()->count()}}</span>
                                 </button>
 
                                 <div class="checkout-cart">
                                     <ul class="checkout-scroll">
-                                        <li class="checkout-cart-list">
+                                        @if(\Cart::content()->count() > 0)
+                                        @foreach(\Cart::content() as $item)
+                                        <li class="checkout-cart-list product-cart-remove-{{$item->rowId}}">
                                             <div class="checkout-img">
-                                                <img class="product-image" src="{{asset('frontend')}}/assets/images/mini-cart/1.jpg" alt="img" />
-                                                <span class="product-quantity">1x</span>
+                                                <img class="product-image" src="{{asset($item->options->image != null ? $item->options->image : '/no-product-image.jpg')}}" alt="img" />
+                                                <span class="product-quantity"><label>{{$item->qty}}</label>x</span>
                                             </div>
                                             <div class="checkout-block">
-                                                <a class="product-name" href="#">Leaf & Bean Electric Milk Frother & Warmets</a>
-                                                <span class="product-price">$75.10</span>
-                                                <a class="remove-cart" href="#">
-                                                    <i class="fa fa-remove pull-xs-left"></i>
+                                                <a class="product-name" href="{{route('product')}}">{{$item->name}}</a>
+                                                <span class="product-price">৳ {{ $item->price }}</span>
+                                                <a class="remove-cart" row-id="{{$item->rowId}}" onclick="removeCart(event)">
+                                                    x
                                                 </a>
-                                                <div class="product-size">
-                                                    <span>Size: S</span>
-                                                </div>
                                             </div>
                                         </li>
+                                        @endforeach
+                                        @else
                                         <li class="checkout-cart-list">
-                                            <div class="checkout-img">
-                                                <img class="product-image" src="{{asset('frontend')}}/assets/images/mini-cart/2.jpg" alt="img" />
-                                                <span class="product-quantity">1x</span>
-                                            </div>
-                                            <div class="checkout-block">
-                                                <a href="#" class="product-name">Le Creuset Signature Cast Iron Round Casserole</a>
-                                                <span class="product-price">$70.90</span>
-                                                <a class="remove-cart" href="#">
-                                                    <i class="fa fa-remove pull-xs-left"></i>
-                                                </a>
-                                                <div class="product-size">
-                                                    <span>Size: S</span>
-                                                </div>
+                                            <div class="p-4 w-100 text-center">
+                                                <img src="{{asset('emptycart.png')}}" width="150">
                                             </div>
                                         </li>
+                                        @endif
                                     </ul>
 
                                     <ul class="list-group checkout-sub-total">
                                         <li class="list-group-item">
                                             <span>Subtotal</span>
-                                            <span>$146.00</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span>shipping</span>
-                                            <span>$7.00</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span>Taxes</span>
-                                            <span>$0.00</span>
+                                            <span class="subTotal">৳ <label>{{\Cart::subtotal()}}</label></span>
                                         </li>
                                         <li class="list-group-item">
                                             <span>Total</span>
-                                            <span>$153.00</span>
+                                            <span class="Total">৳ <label>{{\Cart::subtotal()}}</label></span>
                                         </li>
                                     </ul>
 
                                     <!-- checkout-action button start -->
-                                    <div class="checkout-action">
-                                        <a href="checkout.html"  class="btn btn-primary btn-hover-warning btn-lg d-block">Checkout</a>
+                                    <div class="checkout-action d-flex justify-content-center gap-3">
+                                        <a href="checkout.html"  class="btn btn-warning btn-hover-primary btn-lg px-5">Checkout</a>
+                                        <a href="{{route('cart')}}"  class="btn btn-primary btn-hover-warning btn-lg px-5">Cart</a>
                                     </div>
                                     <!-- checkout-action button end -->
                                 </div>

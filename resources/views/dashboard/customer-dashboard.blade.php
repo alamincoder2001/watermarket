@@ -9,8 +9,8 @@
             <div class="col-12 col-lg-3">
                 <div class="d-flex flex-column flex-shrink-0 p-3 bg-light">
                     <div class="text-center">
-                        <img src="https://github.com/mdo.png" width="100" class="img rounded">
-                        <h5 class="mt-2 mb-0">Md. Anowar Hossain</h5>
+                        <img src="{{asset(Auth::guard('web')->user()->image != null ? Auth::guard('web')->user()->image : 'noImage.jpg')}}" width="100" class="img rounded">
+                        <h5 class="mt-2 mb-0">{{Auth::guard('web')->user()->name}}</h5>
                     </div>
                     <hr style="margin: 5px 0 !important;">
                     <ul class="nav nav-pills flex-column mb-auto">
@@ -257,7 +257,7 @@
                                 <div class="row">
                                     <div class="col-12 col-lg-2">
                                         <div class="form-group ImageBackground">
-                                            <img src="{{asset('noImage.jpg')}}" class="imageShow" />
+                                            <img src="{{asset(Auth::guard('web')->user()->image != null ? Auth::guard('web')->user()->image : 'noImage.jpg')}}" class="imageShow" />
                                             <label for="image">Image</label>
                                             <input type="file" id="image" class="form-control shadow-none" onchange="imageUpdate(event)" />
                                         </div>
@@ -353,6 +353,11 @@
 
 @push("webjs")
 <script>
+    function imageUpdate(event){
+        if(event.target.files[0]){
+            document.querySelector(".imageShow").setAttribute('src', window.URL.createObjectURL(event.target.files[0]))
+        }
+    }
     function getUpazila(event){
         if(event.target.value){
             $.ajax({

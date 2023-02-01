@@ -20,7 +20,7 @@
                     <div class="tab-content">
                         <div id="lg1" class="tab-pane show active">
                             <div class="login-form-container" style="position: relative;">
-                                <div class="d-flex gap-1" style="position: absolute;top: 15px;right: 80px;background: #42d5c1;padding: 5px;">
+                                <div class="d-flex gap-1" style="position: absolute;top: 15px;right: 80px;background: #13319f;padding: 5px;">
                                     <input type="checkbox" value="technician" id="technician" style="height: 15px;margin: 0;position: relative;top: 1px;width: 17px;" />
                                     <label for="technician" style="cursor:pointer;margin: 0;color:white;">
                                         Technician
@@ -48,7 +48,7 @@
                         </div>
                         <div id="lg2" class="tab-pane">
                             <div class="login-form-container" style="position: relative;">
-                                <div class="d-flex gap-1" style="position: absolute;top: 15px;right: 80px;background: #42d5c1;padding: 5px;">
+                                <div class="d-flex gap-1" style="position: absolute;top: 15px;right: 80px;background: #13319f;padding: 5px;">
                                     <input type="checkbox" value="technician" id="technician1" style="height: 15px;margin: 0;position: relative;top: 1px;width: 17px;" />
                                     <label for="technician1" style="cursor:pointer;margin: 0;color:white;">
                                         Technician
@@ -68,7 +68,10 @@
                                         <span class="text-danger error-password error"></span>
                                         <input type="password" name="confirm_password" placeholder="Confirm Password" autocomplete="off" />
                                         <span class="text-danger error-confirm_password error"></span>
-                                        <div class="button-box">
+                                        <br/>
+                                        <label for="retail" class="hideCustomerField"><input type="radio" name="customer_type" value="Retail" id="retail" style="height: 17px;width: 30px;" checked /> <span>Retail</span></label>
+                                        <label for="wholesale" class="hideCustomerField"><input type="radio" name="customer_type" value="Wholesale" id="wholesale" style="height: 17px;width: 30px;" /> <span>Wholesale</span></label>
+                                        <div class="button-box" style="margin-top: 10px;">
                                             <button type="submit" class="btn btn-primary text-white btn-hover-warning w-100">
                                                 <span>Register</span>
                                             </button>
@@ -88,9 +91,12 @@
 
 @push("webjs")
 <script>
-    const showTechnician = document.getElementById('technician1');
-    showTechnician.addEventListener("change", event => {
-        $()
+    $("#technician1").on("change", event => {
+        if (event.target.checked) {
+            $(".hideCustomerField").addClass("d-none")
+        }else{
+            $(".hideCustomerField").removeClass("d-none")
+        }
     })
     function Register(event) {
         event.preventDefault();
@@ -118,6 +124,7 @@
                 } else {
                     $.notify(res, "success");
                     $("form").trigger("reset")
+                    location.href = "/customer-dashboard";
                 }
             }
         })

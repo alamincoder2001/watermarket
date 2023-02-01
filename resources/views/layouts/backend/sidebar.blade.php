@@ -34,30 +34,33 @@
                         <li class="sidebar-item">
                             <a href="{{route('admin.partner.index')}}" class="sidebar-link {{Request::is('admin.partner.index') ? 'active':''}}"><i class="fas fa-handshake"></i><span class="hide-menu"> Partner </span></a>
                         </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.blog.index')}}" class="sidebar-link {{Request::is('admin.blog.index') ? 'active':''}}"><i class="fas fa-handshake"></i><span class="hide-menu"> Blog </span></a>
+                        </li>
                     </ul>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-settings-variant"></i><span class="hide-menu"> Administration </span></a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="{{route('admin.district.index')}}" class="sidebar-link {{Request::is('admin.district.index') ? 'active':''}}"><i class="fas fa-sliders-h"></i><span class="hide-menu"> District </span></a>
+                            <a href="{{route('admin.district.index')}}" class="sidebar-link {{Request::is('admin.district.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> District </span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{route('admin.thana.index')}}" class="sidebar-link {{Request::is('admin.thana.index') ? 'active':''}}"><i class="fas fa-sliders-h"></i><span class="hide-menu"> Upazila </span></a>
+                            <a href="{{route('admin.thana.index')}}" class="sidebar-link {{Request::is('admin.thana.index') ? 'active':''}}"><i class="fas fa-list"></i><span class="hide-menu"> Upazila </span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{route('admin.supplier.index')}}" class="sidebar-link {{Request::is('admin.supplier.index') ? 'active':''}}"><i class="fas fa-user"></i><span class="hide-menu"> Supplier </span></a>
+                            <a href="{{route('admin.customer.index')}}" class="sidebar-link {{Request::is('admin.customer.index') ? 'active':''}}"><i class="fas fa-user-circle"></i><span class="hide-menu"> Customer </span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="{{route('admin.technician.index')}}" class="sidebar-link {{Request::is('admin.technician.index') ? 'active':''}}"><i class="fas fa-wrench"></i><span class="hide-menu"> Technician </span></a>
                         </li>
                     </ul>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cart-plus"></i><span class="hide-menu"> Purchase Module </span></a>
+                    <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-cart-plus"></i><span class="hide-menu"> Order Module </span></a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
-                            <a href="{{route('admin.purchase.index')}}" class="sidebar-link {{Route::is('admin.purchase.index') || Route::is('admin.purchase.edit') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Purchase </span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="{{route('admin.purchase.purchaseList')}}" class="sidebar-link {{Request::is('admin.purchase.purchaseList') ? 'active':''}}"><i class="fas fa-clipboard-list"></i><span class="hide-menu"> Purchase List </span></a>
+                            <a href="#" class="sidebar-link"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Order </span></a>
                         </li>
                     </ul>
                 </li>

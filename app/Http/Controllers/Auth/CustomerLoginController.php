@@ -58,6 +58,7 @@ class CustomerLoginController extends Controller
                 "email" => "required",
                 "mobile" => "required",
                 "password" => "required",
+                "customer_type" => "required",
                 "confirm_password" => "required_with:password|same:password",
             ]);
 
@@ -65,12 +66,14 @@ class CustomerLoginController extends Controller
                 return response()->json(["error" => $validator->errors()]);
             }
 
-            $data = new User();
-            $data->name = $request->name;
-            $data->username = $request->username;
-            $data->email = $request->email;
-            $data->mobile = $request->mobile;
-            $data->password = Hash::make($request->password);
+            $data                = new User();
+            $data->customer_code = $this->generateCode("User", "C");
+            $data->name          = $request->name;
+            $data->username      = $request->username;
+            $data->email         = $request->email;
+            $data->mobile        = $request->mobile;
+            $data->customer_type = $request->customer_type;
+            $data->password      = Hash::make($request->password);
             $data->save();
 
             if (Auth::guard('web')->attempt($this->credentials($request->username, $request->password))) {
@@ -99,12 +102,13 @@ class CustomerLoginController extends Controller
                 return response()->json(["error" => $validator->errors()]);
             }
 
-            $data = new Technician();
-            $data->name = $request->name;
-            $data->username = $request->username;
-            $data->email = $request->email;
-            $data->mobile = $request->mobile;
-            $data->password = Hash::make($request->password);
+            $data                  = new Technician();
+            $data->technician_code = $this->generateCode("Technician", "T");
+            $data->name            = $request->name;
+            $data->username        = $request->username;
+            $data->email           = $request->email;
+            $data->mobile          = $request->mobile;
+            $data->password        = Hash::make($request->password);
             $data->save();
             return "Technician save";
         } catch (\Throwable $e) {

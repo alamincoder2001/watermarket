@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\BannerController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DistrictController;
 use App\Http\Controllers\Admin\PartnerController;
@@ -11,16 +13,27 @@ use App\Http\Controllers\Admin\PurchaseController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\SupplierController;
+use App\Http\Controllers\Admin\TechnicianController;
 use App\Http\Controllers\Admin\ThanaContoller;
 use App\Http\Controllers\Admin\UnitController;
 use App\Http\Controllers\Auth\CustomerLoginController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('website');
+Route::get('/product', [HomeController::class, 'ProductShow'])->name('product');
+Route::get('/product-single/{slug}', [HomeController::class, 'singleProductShow'])->name('single.product');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+
+// cart add
+Route::get("/cart", [CartController::class, "index"])->name("cart");
+Route::post('/addcart', [CartController::class, 'addCart'])->name("addcart");
+Route::post('/updatecart', [CartController::class, 'updateCart'])->name("updatecart");
+Route::post('/removecart', [CartController::class, 'removeCart'])->name("removecart");
+
 // Technician and customer login
 Route::get('/login', [CustomerLoginController::class, 'showSignUpForm'])->name('showSignUpForm')->middleware('checkAuth');
 Route::post('/customer-register', [CustomerLoginController::class, 'CustomerRegister'])->name('customer.register')->middleware('checkAuth');
@@ -53,7 +66,7 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/setting', [SettingController::class, 'updateSetting'])->name('admin.setting.store');
     Route::post('/logoUpdate', [SettingController::class, 'logoUpdate'])->name('admin.setting.logoUpdate');
     Route::post('/naviconUpdate', [SettingController::class, 'naviconUpdate'])->name('admin.setting.naviconUpdate');
-    
+
     // Website content route
     // Banner Route
     Route::get('/banner', [BannerController::class, 'index'])->name('admin.banner.index');
@@ -105,17 +118,31 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/thana', [ThanaContoller::class, 'store'])->name('admin.thana.store');
     Route::post('/thana/delete', [ThanaContoller::class, 'destroy'])->name('admin.thana.destroy');
     // supplier Route
-    Route::get('/supplier', [SupplierController::class, 'index'])->name('admin.supplier.index');
-    Route::get('/supplier/fetch/{id?}', [SupplierController::class, 'fetch'])->name('admin.supplier.fetch');
-    Route::post('/supplier', [SupplierController::class, 'store'])->name('admin.supplier.store');
-    Route::post('/supplier/delete', [SupplierController::class, 'destroy'])->name('admin.supplier.destroy');
+    // Route::get('/supplier', [SupplierController::class, 'index'])->name('admin.supplier.index');
+    // Route::get('/supplier/fetch/{id?}', [SupplierController::class, 'fetch'])->name('admin.supplier.fetch');
+    // Route::post('/supplier', [SupplierController::class, 'store'])->name('admin.supplier.store');
+    // Route::post('/supplier/delete', [SupplierController::class, 'destroy'])->name('admin.supplier.destroy');
 
     // Purchase module route
     // purchase route
-    Route::get('/purchase', [PurchaseController::class, 'index'])->name('admin.purchase.index');
-    Route::get('/purchase/edit/{invoice?}', [PurchaseController::class, 'edit'])->name('admin.purchase.edit');
-    Route::post('/purchase/fetch', [PurchaseController::class, 'fetch'])->name('admin.purchase.fetch');
-    Route::post('/purchase', [PurchaseController::class, 'store'])->name('admin.purchase.store');
-    Route::post('/purchase/delete', [PurchaseController::class, 'destroy'])->name('admin.purchase.destroy');
-    Route::get("/purchaseList", [PurchaseController::class, 'purchaseList'])->name("admin.purchase.purchaseList");
+    // Route::get('/purchase', [PurchaseController::class, 'index'])->name('admin.purchase.index');
+    // Route::get('/purchase/edit/{invoice?}', [PurchaseController::class, 'edit'])->name('admin.purchase.edit');
+    // Route::post('/purchase/fetch', [PurchaseController::class, 'fetch'])->name('admin.purchase.fetch');
+    // Route::post('/purchase', [PurchaseController::class, 'store'])->name('admin.purchase.store');
+    // Route::post('/purchase/delete', [PurchaseController::class, 'destroy'])->name('admin.purchase.destroy');
+    // Route::get("/purchaseList", [PurchaseController::class, 'purchaseList'])->name("admin.purchase.purchaseList");
+
+    // blog route
+    Route::get('/blog', [BlogController::class, 'index'])->name('admin.blog.index');
+    Route::get('/blog/fetch/{id?}', [BlogController::class, 'fetch'])->name('admin.blog.fetch');
+    Route::post('/blog', [BlogController::class, 'store'])->name('admin.blog.store');
+    Route::post('/blog/delete', [BlogController::class, 'destroy'])->name('admin.blog.destroy');
+
+    // customer route
+    Route::get('/customer', [AdminCustomerController::class, 'index'])->name("admin.customer.index");
+    Route::get('/customer/fetch/{id?}', [AdminCustomerController::class, 'fetch'])->name("admin.customer.fetch");
+    
+    // technician route
+    Route::get('/technician', [TechnicianController::class, 'index'])->name("admin.technician.index");
+    Route::get('/technician/fetch/{id?}', [TechnicianController::class, 'fetch'])->name("admin.technician.fetch");
 });

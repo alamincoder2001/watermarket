@@ -37,15 +37,17 @@ class BrandController extends Controller
         try {
             if (!empty($request->id)) {
                 $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:brands,name," . $request->id
-                ]);
+                    "name" => "required|unique:brands,name," . $request->id,
+                    "image" => "dimensions:width=200,height=75'"
+                ], ["image.dimensions" => "Image dimension must be 200 X 75"]);
                 $data = Brand::find($request->id);
                 $old = $data->image;
                 $data->updated_at = Carbon::now();
             } else {
                 $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:brands"
-                ]);
+                    "name" => "required|unique:brands",
+                    "image" => "dimensions:width=200,height=75'"
+                ], ["image.dimensions" => "Image dimension must be 200 X 75"]);
                 $data = new Brand();
                 $data->created_at = Carbon::now();
             }

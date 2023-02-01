@@ -21,6 +21,7 @@
                     <span class="text-danger error error-image"></span>
                     <div class="text-left">
                         <img src="{{asset('noImage.jpg')}}" class="img" style="width: 30%;height: 85px;border: 1px solid #c1c1c1;margin-top: 5px;">
+                        <span class="text-danger">(150 X 150)</span>
                     </div>
                 </div>
 

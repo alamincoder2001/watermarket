@@ -304,7 +304,7 @@
                                     @foreach($feature_product as $item)
                                     <div class="swiper-slide">
                                         <div class="product-card" style="height:380px;">
-                                            <a class="thumb" href="single-product.html"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
+                                            <a class="thumb" href="{{route('single.product', $item->slug)}}"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
                                                 </div>
@@ -312,17 +312,17 @@
                                             <div class="product-content">
                                                 <a class="product-category" href="#?">{{$item->category_name}}</a>
                                                 <h3 class="product-title">
-                                                    <a href="single-product.html">{{$item->name}}</a>
+                                                    <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                 </h3>
                                                 <span class="price regular-price">
                                                     @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
-                                                    {{$item->wholesale_rate}}
+                                                    ৳ {{$item->wholesale_rate}}
                                                     @else
-                                                    {{$item->selling_rate}}
+                                                    ৳ {{$item->selling_rate}}
                                                     @endif
                                                 </span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
-                                                    Add to cart
+                                                <button class="product-btn btn btn-primary btn-hover-warning" onclick="addCart({{$item->id}})">
+                                                    Add to Cart
                                                 </button>
                                             </div>
                                             <!-- actions links start -->
@@ -397,21 +397,21 @@ $bann = array_chunk($banner, 3);
                 <div class="row mb-n7">
                     <div class="col-lg-5 col-xl-4 mb-7">
                         <div class="product-card-large">
-                            <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset($newarrival_product[0]->image != null ? $newarrival_product[0]->image : 'no-product-image.jpg')}}" alt="img" />
+                            <a class="thumb" href="{{route('single.product', $newarrival_product[0]->slug)}}"><img class="d-block mx-auto" src="{{asset($newarrival_product[0]->image != null ? $newarrival_product[0]->image : 'no-product-image.jpg')}}" alt="img" />
                             </a>
                             <div class="product-content">
                                 <a class="product-category" href="#?">{{$newarrival_product[0]->category_name}}</a>
                                 <h3 class="product-title">
-                                    <a href="single-product.html">{{$newarrival_product[0]->name}}</a>
+                                    <a href="{{route('single.product', $newarrival_product[0]->slug)}}">{{$newarrival_product[0]->name}}</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">
                                     @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
-                                    {{$newarrival_product[0]->wholesale_rate}}
+                                    ৳ {{$newarrival_product[0]->wholesale_rate}}
                                     @else
-                                    {{$newarrival_product[0]->selling_rate}}
+                                    ৳ {{$newarrival_product[0]->selling_rate}}
                                     @endif
                                 </span>
-                                <button class="product-btn-lg btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                <button class="product-btn-lg btn btn-primary btn-hover-warning" onclick="addCart({{$newarrival_product[0]->id}})">
                                     Add to cart
                                 </button>
                             </div>
@@ -441,7 +441,7 @@ $bann = array_chunk($banner, 3);
                                         <div class="product-list">
                                             @foreach($newarrival as $item)
                                             <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
+                                                <a class="thumb" href="{{route('single.product', $item->slug)}}"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
                                                     <div class="onsales-badges">
                                                         <span class="badge bg-dark">new</span>
                                                     </div>
@@ -449,16 +449,16 @@ $bann = array_chunk($banner, 3);
                                                 <div class="product-content">
                                                     <a class="product-category" href="#?">{{$item->category_name}}</a>
                                                     <h3 class="product-title">
-                                                        <a href="single-product.html">{{$item->name}}</a>
+                                                        <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                     </h3>
                                                     <span class="price regular-price">
                                                         @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
-                                                        {{$item->wholesale_rate}}
+                                                        ৳ {{$item->wholesale_rate}}
                                                         @else
-                                                        {{$item->selling_rate}}
+                                                        ৳ {{$item->selling_rate}}
                                                         @endif
                                                     </span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" onclick="addCart({{$item->id}})">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -492,21 +492,21 @@ $bann = array_chunk($banner, 3);
                 <div class="row mb-n7">
                     <div class="col-lg-5 col-xl-4 mb-7">
                         <div class="product-card-large">
-                            <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset($topsold_product[0]->image != null ? $topsold_product[0]->image : 'no-product-image.jpg')}}" alt="img" />
+                            <a class="thumb" href="{{route('single.product', $topsold_product[0]->slug)}}"><img class="d-block mx-auto" src="{{asset($topsold_product[0]->image != null ? $topsold_product[0]->image : 'no-product-image.jpg')}}" alt="img" />
                             </a>
                             <div class="product-content">
                                 <a class="product-category" href="#?">{{$topsold_product[0]->category_name}}</a>
                                 <h3 class="product-title">
-                                    <a href="single-product.html">{{$topsold_product[0]->name}}</a>
+                                    <a href="{{route('single.product', $topsold_product[0]->slug)}}">{{$topsold_product[0]->name}}</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">
                                     @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
-                                    {{$topsold_product[0]->wholesale_rate}}
+                                    ৳ {{$topsold_product[0]->wholesale_rate}}
                                     @else
-                                    {{$topsold_product[0]->selling_rate}}
+                                    ৳ {{$topsold_product[0]->selling_rate}}
                                     @endif
                                 </span>
-                                <button class="product-btn-lg btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                <button class="product-btn-lg btn btn-primary btn-hover-warning" onclick="addCart({{$topsold_product[0]->id}})">
                                     Add to cart
                                 </button>
                             </div>
@@ -536,7 +536,7 @@ $bann = array_chunk($banner, 3);
                                         <div class="product-list">
                                             @foreach($topsold as $item)
                                             <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
+                                                <a class="thumb" href="{{route('single.product', $item->slug)}}"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
                                                     <div class="onsales-badges">
                                                         <span class="badge bg-dark">new</span>
                                                     </div>
@@ -544,16 +544,16 @@ $bann = array_chunk($banner, 3);
                                                 <div class="product-content">
                                                     <a class="product-category" href="#?">{{$item->category_name}}</a>
                                                     <h3 class="product-title">
-                                                        <a href="single-product.html">{{$item->name}}</a>
+                                                        <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                     </h3>
                                                     <span class="price regular-price">
                                                         @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
-                                                        {{$item->wholesale_rate}}
+                                                        ৳ {{$item->wholesale_rate}}
                                                         @else
-                                                        {{$item->selling_rate}}
+                                                        ৳ {{$item->selling_rate}}
                                                         @endif
                                                     </span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" onclick="addCart({{$item->id}})">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -585,21 +585,21 @@ $bann = array_chunk($banner, 3);
                 <div class="row mb-n7">
                     <div class="col-lg-5 col-xl-4 mb-7">
                         <div class="product-card-large">
-                            <a class="thumb" href="single-product.html"><img class="d-block mx-auto" src="{{asset($feature_product[0]->image != null ? $feature_product[0]->image : 'no-product-image.jpg')}}" alt="img" />
+                            <a class="thumb" href="{{route('single.product', $feature_product[0]->slug)}}"><img class="d-block mx-auto" src="{{asset($feature_product[0]->image != null ? $feature_product[0]->image : 'no-product-image.jpg')}}" alt="img" />
                             </a>
                             <div class="product-content">
                                 <a class="product-category" href="#?">{{$feature_product[0]->category_name}}</a>
                                 <h3 class="product-title">
-                                    <a href="single-product.html">{{$feature_product[0]->name}}</a>
+                                    <a href="{{route('single.product', $feature_product[0]->slug)}}">{{$feature_product[0]->name}}</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">
                                     @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
-                                    {{$feature_product[0]->wholesale_rate}}
+                                    ৳ {{$feature_product[0]->wholesale_rate}}
                                     @else
-                                    {{$feature_product[0]->selling_rate}}
+                                    ৳ {{$feature_product[0]->selling_rate}}
                                     @endif
                                 </span>
-                                <button class="product-btn-lg btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                <button class="product-btn-lg btn btn-primary btn-hover-warning" onclick="addCart({{$feature_product[0]->id}})">
                                     Add to cart
                                 </button>
                             </div>
@@ -629,7 +629,7 @@ $bann = array_chunk($banner, 3);
                                         <div class="product-list">
                                             @foreach($feature as $item)
                                             <div class="product-card">
-                                                <a class="thumb" href="single-product.html"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
+                                                <a class="thumb" href="{{route('single.product', $item->slug)}}"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
                                                     <div class="onsales-badges">
                                                         <span class="badge bg-dark">new</span>
                                                     </div>
@@ -637,16 +637,16 @@ $bann = array_chunk($banner, 3);
                                                 <div class="product-content">
                                                     <a class="product-category" href="#?">{{$item->category_name}}</a>
                                                     <h3 class="product-title">
-                                                        <a href="single-product.html">{{$item->name}}</a>
+                                                        <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                     </h3>
                                                     <span class="price regular-price">
                                                         @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
-                                                        {{$item->wholesale_rate}}
+                                                        ৳ {{$item->wholesale_rate}}
                                                         @else
-                                                        {{$item->selling_rate}}
+                                                        ৳ {{$item->selling_rate}}
                                                         @endif
                                                     </span>
-                                                    <button class="product-btn btn btn-primary btn-hover-warning" data-bs-toggle="modal" data-bs-target="#add-to-cart">
+                                                    <button class="product-btn btn btn-primary btn-hover-warning" onclick="addCart({{$item->id}})">
                                                         Add to cart
                                                     </button>
                                                 </div>
@@ -2069,125 +2069,25 @@ $bann = array_chunk($banner, 3);
                     </div>
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
+                            @foreach($blog as $item)
                             <!-- single-blog Start -->
                             <div class="swiper-slide">
                                 <div class="blog-card">
                                     <div class="thumb">
                                         <a href="blog-details.html">
-                                            <img src="{{asset('frontend')}}/assets/images/blog/1.jpg" alt="img" />
+                                            <img src="{{asset($item->image != null ? $item->image : 'noImage.jpg')}}" alt="img" />
                                         </a>
                                     </div>
                                     <div class="blog-content">
                                         <h3 class="title">
-                                            <a href="blog-details.html">Top 5 Insanely Popular (& Affordable) Bluetooth1</a>
+                                            <a href="blog-details.html">{{$item->title}}</a>
                                         </h3>
-                                        <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
+                                        <a href="#"><span class="blog-meta">{{date("M d, Y", strtotime($item->date))}}</span></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- single-blog End -->
-                            <!-- single-blog Start -->
-                            <div class="swiper-slide">
-                                <div class="blog-card">
-                                    <div class="thumb">
-                                        <a href="blog-details.html">
-                                            <img src="{{asset('frontend')}}/assets/images/blog/2.jpg" alt="img" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3 class="title">
-                                            <a href="blog-details.html">8 Insanely Popular Must-Haves for the Traveller</a>
-                                        </h3>
-                                        <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-blog End -->
-                            <!-- single-blog Start -->
-                            <div class="swiper-slide">
-                                <div class="blog-card">
-                                    <div class="thumb">
-                                        <a href="blog-details.html">
-                                            <img src="{{asset('frontend')}}/assets/images/blog/3.jpg" alt="img" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3 class="title">
-                                            <a href="blog-details.html">Last 6 months have been phenomenal for me</a>
-                                        </h3>
-                                        <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-blog End -->
-                            <!-- single-blog Start -->
-                            <div class="swiper-slide">
-                                <div class="blog-card">
-                                    <div class="thumb">
-                                        <a href="blog-details.html">
-                                            <img src="{{asset('frontend')}}/assets/images/blog/4.jpg" alt="img" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3 class="title">
-                                            <a href="blog-details.html">A candid face-time session with the.</a>
-                                        </h3>
-                                        <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-blog End -->
-                            <!-- single-blog Start -->
-                            <div class="swiper-slide">
-                                <div class="blog-card">
-                                    <div class="thumb">
-                                        <a href="blog-details.html">
-                                            <img src="{{asset('frontend')}}/assets/images/blog/5.jpg" alt="img" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3 class="title">
-                                            <a href="blog-details.html">Top 5 Incredibly Popular (& Affordable) Massagers</a>
-                                        </h3>
-                                        <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-blog End -->
-                            <!-- single-blog Start -->
-                            <div class="swiper-slide">
-                                <div class="blog-card">
-                                    <div class="thumb">
-                                        <a href="blog-details.html">
-                                            <img src="{{asset('frontend')}}/assets/images/blog/6.jpg" alt="img" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3 class="title">
-                                            <a href="blog-details.html">7 Insanely Popular Must-Have Massagers</a>
-                                        </h3>
-                                        <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-blog End -->
-                            <!-- single-blog Start -->
-                            <div class="swiper-slide">
-                                <div class="blog-card">
-                                    <div class="thumb">
-                                        <a href="blog-details.html">
-                                            <img src="{{asset('frontend')}}/assets/images/blog/1.jpg" alt="img" />
-                                        </a>
-                                    </div>
-                                    <div class="blog-content">
-                                        <h3 class="title">
-                                            <a href="blog-details.html">Top 5 Insanely Popular (& Affordable) Bluetooth</a>
-                                        </h3>
-                                        <a href="#"><span class="blog-meta">Jan 10, 2022</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- single-blog End -->
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -2230,171 +2130,4 @@ $bann = array_chunk($banner, 3);
     </div>
 </section>
 <!-- News letter Section End -->
-
-
-<!-- Modals -->
-<!-- quick view modal -->
-<!-- Button trigger modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="quickview" tabindex="-1" aria-labelledby="quickview">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header border-bottom-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body my-6">
-                <div class="row mb-n10">
-                    <div class="col-xl-6 col-lg-6 mb-10">
-                        <div class="product-detail_img vertical-slider_wrap">
-                            <div class="swiper-container pd-vertical_slider lightgallery">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="single-img">
-                                            <img src="{{asset('frontend')}}/assets/images/products/product2.jpg" alt="Product Image" />
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="single-img">
-                                            <img src="{{asset('frontend')}}/assets/images/products/product3.jpg" alt="Product Image" />
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="single-img">
-                                            <img src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="Product Image" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="vertical-slider_nav">
-                                <div class="swiper-navination-vertical d-none d-md-inline-block">
-                                    <div class="swiper-button-prev">
-                                        <span class="lnr lnr-chevron-up"></span>
-                                    </div>
-                                    <div class="swiper-button-next">
-                                        <span class="lnr lnr-chevron-down"></span>
-                                    </div>
-                                </div>
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <a href="#?">
-                                            <img src="{{asset('frontend')}}/assets/images/products/small/2.jpg" alt="Product Thumnail" /></a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="#?">
-                                            <img src="{{asset('frontend')}}/assets/images/products/small/3.jpg" alt="Product Thumnail" /></a>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <a href="#?"><img src="{{asset('frontend')}}/assets/images/products/small/4.jpg" alt="Product Thumnail" /></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mb-10">
-                        <div class="content">
-                            <h3 class="title">Leaf & Bean Electric Milk Frother & Warmer</h3>
-                            <span class="price-lg regular-price mb-2 d-block">$83.90</span>
-                            <p>
-                                The Crown Summit Backpack is equally at home in a gym locker, study cube
-                                or a pup tent, so be sure yours is packed with books, a bag lunch, water
-                                bottles, yoga block, laptop, or whatever else you want in hand. Rugged
-                                enough for day hikes and camping trips, it has two large zippered
-                                compartments and padded, adjustable shoulder straps.
-                            </p>
-                            <h4 class="modal-quantity">Quantity</h4>
-                            <div class="product-count style d-flex my-4">
-                                <div class="count d-flex">
-                                    <input type="number" min="1" max="100" step="1" value="1" />
-                                    <div class="button-group">
-                                        <button class="count-btn increment">
-                                            <span class="lnr lnr-chevron-up"></span>
-                                        </button>
-                                        <button class="count-btn decrement">
-                                            <span class="lnr lnr-chevron-down"></span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div>
-                                    <button class="btn btn-primary btn-hover-warning text-uppercase">
-                                        Add to cart
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-hover-warning text-uppercase">Add to my wishlist</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- add to wishlist -->
-<!-- Button trigger modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="addtowishlist" tabindex="-1" aria-labelledby="addtowishlist">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header border-bottom-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="wishlist-modal">
-                    <p>You must be logged in to manage your wishlist.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- adto cart -->
-<!-- Modal -->
-<div class="modal fade" id="add-to-cart" tabindex="-1" aria-labelledby="add-to-cart">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header bg-warning border-bottom-0 justify-content-center">
-                <span class="ion-android-done me-5"></span>
-                <h4 class="modal-title text-center">Product successfully added to your shopping cart</h4>
-                <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close">×</button>
-            </div>
-            <div class="modal-body p-5">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img class="product-image" src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
-                            </div>
-                            <div class="col-md-6">
-                                <h6 class="product-name">Leaf & Bean Electric Milk Frother & Warmets</h6>
-                                <ul class="quntity-list">
-                                    <li>$83.90</li>
-                                    <li>Quantity:2</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="cart-content">
-                            <p class="title">There are 3 items in your cart.</p>
-                            <p><span>Total products:</span> $218.70</p>
-                            <p><span>Total shipping:</span>Free</p>
-                            <p><span>Taxes:</span> $0.00</p>
-                            <p><span>Total:</span> $218.70 (tax excl.)</p>
-                            <div class="cart-content-btn">
-                                <button class="btn btn-dark btn-hover-warning text-uppercase me-1" data-bs-dismiss="modal" aria-label="Close">Continue shopping</button>
-                                <button class="btn btn-dark btn-hover-warning text-uppercase mt-3 mt-sm-0">Proceed to checkout</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

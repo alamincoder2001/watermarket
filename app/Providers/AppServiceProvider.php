@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\District;
 use App\Models\Setting;
 use App\Thana;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -28,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Paginator::useBootstrap();
         View::share("profile", Setting::first());
         View::share("districts", District::orderBy("name", "ASC")->get());
         Schema::defaultStringLength(191);

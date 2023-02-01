@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
 use App\Models\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
@@ -78,6 +79,7 @@ class ProductController extends Controller
 
             $data->product_code   = $request->product_code;
             $data->name           = $request->name;
+            $data->slug           = Str::slug($request->name);
             $data->brand_id       = $request->brand_id;
             $data->category_id    = $request->category_id;
             $data->subcategory_id = $request->subcategory_id;

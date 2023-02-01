@@ -15,6 +15,7 @@ class CreateTechniciansTable extends Migration
     {
         Schema::create('technicians', function (Blueprint $table) {
             $table->id();
+            $table->string("technician_code", 100);
             $table->string("name");
             $table->string("username")->unique();
             $table->string("email")->unique();

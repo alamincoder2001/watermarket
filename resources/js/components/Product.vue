@@ -63,24 +63,6 @@
                                     </div>
                                 </div>
                                 <div class="row mt-2">
-                                    <label for="re_order" class="col-5 col-lg-4 d-flex align-items-center">Re-Order
-                                        Level:</label>
-                                    <div class="col-7 col-lg-8">
-                                        <input type="number" min="0" step="0.01" id="re_order" name="re_order"
-                                            class="form-control shadow-none" v-model="product.re_order"
-                                            autocomplete="off" />
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <label for="purchase_rate" class="col-5 col-lg-4 d-flex align-items-center">Purchase
-                                        Rate:</label>
-                                    <div class="col-7 col-lg-8">
-                                        <input type="number" min="0" step="0.01" id="purchase_rate" name="purchase_rate"
-                                            class="form-control shadow-none" v-model="product.purchase_rate"
-                                            autocomplete="off" />
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
                                     <label for="selling_rate" class="col-5 col-lg-4 d-flex align-items-center">Sale
                                         Rate:</label>
                                     <div class="col-7 col-lg-8">
@@ -118,7 +100,8 @@
                                 </div>
                             </div>
                             <div class="col-12 col-lg-2 d-flex justify-content-center align-items-center">
-                                <div class="form-group ImageBackground">
+                                <div class="form-group ImageBackground text-center">
+                                    <span class="text-danger">(350 X 350)</span>
                                     <img :src="imageSrc" class="imageShow" />
                                     <label for="image">Image</label>
                                     <input type="file" id="image" class="form-control shadow-none" @change="imageUrl" />
@@ -175,10 +158,6 @@ export default {
                 {
                     label: "Vat",
                     field: "vat",
-                },
-                {
-                    label: "Purchase Rate",
-                    field: "purchase_rate",
                 },
                 {
                     label: "Sale Rate",
@@ -328,11 +307,11 @@ export default {
                 let img = new Image()
                 img.src = window.URL.createObjectURL(event.target.files[0]);
                 img.onload = () => {
-                    if (img.width === 200 && img.height === 200) {
+                    if (img.width === 350 && img.height === 350) {
                         this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
                         this.product.image = event.target.files[0];
                     } else {
-                        alert(`This image ${img.width} X ${img.width} but require image 200 X 200`);
+                        alert(`This image ${img.width} X ${img.height} but require image 350 X 350`);
                     }
                 }
             }
@@ -350,6 +329,7 @@ export default {
                 purchase_rate: 0,
                 selling_rate: 0,
                 wholesale_rate: 0,
+                description: "",
             };
             this.selectedBrand = null
             this.selectedCategory = null

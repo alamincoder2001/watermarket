@@ -19343,7 +19343,7 @@ textarea.form-control {
 /*   [ 05.13 Component blog CSS ] 
 ----------------------------------------*/
 .blog-card {
-  background: #f5f5f5;
+  background: #00075a78;
 }
 .blog-card .thumb a {
   display: block;
@@ -19353,11 +19353,11 @@ textarea.form-control {
 }
 
 .blog-content {
-  padding: 20px;
+  padding: 15px;
 }
 @media screen and (min-width: 576px) and (max-width: 767px) {
   .blog-content {
-    padding: 15px;
+    padding: 8px;
   }
 }
 .blog-content .blog-meta {
@@ -19373,8 +19373,8 @@ textarea.form-control {
   line-height: 1.428;
   color: #32383e;
   text-transform: capitalize;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  padding-bottom: 8px;
+  margin-bottom: 5px;
 }
 .blog-content .title:hover {
   color: #fe6022;
@@ -20496,7 +20496,7 @@ textarea.form-control {
   width: 355px;
   opacity: 0;
   visibility: hidden;
-  border-top: 2px solid #fe6022;
+  border-top: 2px solid #223b97;
   -webkit-box-shadow: 0px 2px 7.44px 0.56px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 2px 7.44px 0.56px rgba(0, 0, 0, 0.1);
   -webkit-transition: ease-in-out 0.3s;
@@ -20520,7 +20520,7 @@ textarea.form-control {
 }
 
 .checkout-cart-list {
-  padding: 20px;
+  padding: 10px;
   border-bottom: 1px solid #e5e5e5;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20536,6 +20536,7 @@ textarea.form-control {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  width: 55px !important;
 }
 
 .product-quantity {
@@ -20545,7 +20546,7 @@ textarea.form-control {
   min-width: 25px;
   padding: 0;
   text-align: center;
-  background: #fe6022;
+  background: #223b97;
   color: #fff;
   font-size: 14px;
   line-height: 1.785;
@@ -20570,7 +20571,7 @@ textarea.form-control {
 
 .product-price {
   display: block;
-  margin: 10px 0 0;
+  margin: 5px 0 0;
   font-weight: 600;
   line-height: 1.666;
   font-size: 18px;
@@ -20585,13 +20586,14 @@ textarea.form-control {
   color: #fff;
   padding: 3px;
   border-radius: 100%;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   text-align: center;
-  background: #fe6022;
+  background: #fb0000;
   font-weight: 300;
-  font-size: 12px;
-  line-height: 1.166;
+  font-size: 16px;
+  line-height: 1.12;
+  cursor: pointer;
 }
 .remove-cart:hover {
   color: #fff;
@@ -22713,8 +22715,8 @@ textarea.form-control {
 
 .login-register-wrapper .login-form-container {
   background: transparent none repeat scroll 0 0;
-  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 1px 5px rgb(110 110 110 / 19%);
+  box-shadow: 0px 0px 1px 5px rgb(110 110 110 / 19%);
   padding: 80px;
   text-align: left;
 }
@@ -23230,8 +23232,8 @@ textarea.form-control {
 .shop-grid-nav .nav .nav-link.active,
 .shop-grid-nav .nav .nav-link:hover {
   color: #fff;
-  background: #fe6022;
-  border: 1px solid #fe6022;
+  background: #223b97;
+  border: 1px solid #223b97;
 }
 
 .shop-grid-button select {

@@ -37,15 +37,17 @@ class CategoryController extends Controller
         try {
             if (!empty($request->id)) {
                 $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:categories,name," . $request->id
-                ]);
+                    "name" => "required|unique:categories,name," . $request->id,
+                    "image" => "dimensions:width=150,height=150'"
+                ], ["image.dimensions" => "Image dimension must be 150 X 150"]);
                 $data = Category::find($request->id);
                 $old = $data->image;
                 $data->updated_at = Carbon::now();
             } else {
                 $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:categories"
-                ]);
+                    "name" => "required|unique:categories",
+                    "image" => "dimensions:width=150,height=150'"
+                ], ["image.dimensions" => "Image dimension must be 150 X 150"]);
                 $data = new Category();
                 $data->created_at = Carbon::now();
             }

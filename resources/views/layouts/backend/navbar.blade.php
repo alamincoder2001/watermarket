@@ -4,11 +4,11 @@
         <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
             <a class="navbar-brand" href="{{url('admin')}}">
                 <!-- Logo icon -->
-                <b class="logo-icon ps-2">
+                <!-- <b class="logo-icon ps-2">
                     <img src="{{asset('backend')}}/assets/images/logo-icon.png" alt="homepage" class="light-logo" width="25" />
-                </b>
+                </b> -->
                 <!-- Logo text -->
-                <span class="logo-text ms-2">
+                <span style="width:100%;">
                     <img src="{{asset('backend')}}/assets/images/logo-text.png" alt="homepage" class="light-logo" />
                 </span>
             </a>
