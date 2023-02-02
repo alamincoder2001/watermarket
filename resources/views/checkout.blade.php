@@ -262,6 +262,9 @@
                     })
                 }else if(res.errors){
                     $.notify(res.errors, "error");
+                    setTimeout(() => {
+                        location.href = "/product";
+                    }, 1000)
                 }else{
                     $.notify(res.msg, "success");
                     setTimeout(() => {

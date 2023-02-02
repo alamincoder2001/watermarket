@@ -54,7 +54,7 @@
                         <span class="lnr lnr-text-align-left"></span>Browse categories
                     </button>
                     <ul class="vmenu-content">
-                        <li class="menu-item">
+                        <!-- <li class="menu-item">
                             <a href="#">Cookware<i class="ion-ios-arrow-right"></i></a>
                             <ul class="verticale-mega-menu flex-wrap">
                                 <li>
@@ -83,118 +83,10 @@
                                     </ul>
                                 </li>
                             </ul>
-                            <!-- sub menu -->
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">Appliances<i class="ion-ios-arrow-right"></i></a>
-                            <ul class="verticale-mega-menu flex-wrap">
-                                <li>
-                                    <a href="#">
-                                        <strong> Baking & Pastry Mats</strong>
-                                    </a>
-                                    <ul class="submenu-item">
-                                        <li><a href="#">Baking Cups</a></li>
-                                        <li><a href="#">Baking Dishes</a></li>
-                                        <li><a href="#">Baking Mats</a></li>
-                                        <li><a href="#">Pastry Boards</a></li>
-                                        <li><a href="#">Pastry Mats</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span><strong>Chocolate Moulds</strong></span>
-                                    </a>
-                                    <ul class="submenu-item">
-                                        <li><a href="#">Decorating Pens</a></li>
-                                        <li><a href="#">Decorating Sets</a></li>
-                                        <li><a href="#">Decorating Tips</a></li>
-                                        <li><a href="#">Sweetly Does It</a></li>
-                                        <li><a href="#">Aprons</a></li>
-                                        <li><a href="#">Electric Mixers</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">Kitchenair<i class="ion-ios-arrow-right"></i></a>
-                            <ul class="verticale-mega-menu flex-wrap">
-                                <li>
-                                    <a href="#">
-                                        <strong> Baking & Pastry Mats</strong>
-                                    </a>
-                                    <ul class="submenu-item">
-                                        <li><a href="#">Baking Cups</a></li>
-                                        <li><a href="#">Baking Dishes</a></li>
-                                        <li><a href="#">Baking Mats</a></li>
-                                        <li><a href="#">Pastry Boards</a></li>
-                                        <li><a href="#">Pastry Mats</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span><strong>Chocolate Moulds</strong></span>
-                                    </a>
-                                    <ul class="submenu-item">
-                                        <li><a href="#">Decorating Pens</a></li>
-                                        <li><a href="#">Decorating Sets</a></li>
-                                        <li><a href="#">Decorating Tips</a></li>
-                                        <li><a href="#">Sweetly Does It</a></li>
-                                        <li><a href="#">Aprons</a></li>
-                                        <li><a href="#">Electric Mixers</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">KitchenAid Artisan<i class="ion-ios-arrow-right"></i></a>
-                            <ul class="verticale-mega-menu flex-wrap">
-                                <li>
-                                    <a href="#">
-                                        <strong> Baking & Pastry Mats</strong>
-                                    </a>
-                                    <ul class="submenu-item">
-                                        <li><a href="#">Baking Cups</a></li>
-                                        <li><a href="#">Baking Dishes</a></li>
-                                        <li><a href="#">Baking Mats</a></li>
-                                        <li><a href="#">Pastry Boards</a></li>
-                                        <li><a href="#">Pastry Mats</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span><strong>Chocolate Moulds</strong></span>
-                                    </a>
-                                    <ul class="submenu-item">
-                                        <li><a href="#">Decorating Pens</a></li>
-                                        <li><a href="#">Decorating Sets</a></li>
-                                        <li><a href="#">Decorating Tips</a></li>
-                                        <li><a href="#">Sweetly Does It</a></li>
-                                        <li><a href="#">Aprons</a></li>
-                                        <li><a href="#">Electric Mixers</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">Ceramic Artisan<i class="ion-ios-arrow-right"></i></a>
-                            <ul class="verticale-sub-menu">
-                                <li>
-                                    <ul class="submenu-item">
-                                        <li><a href="#">Pots</a></li>
-                                        <li><a href="#">Pans</a></li>
-                                        <li><a href="#">Living</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="menu-item"><a href="#">Appliances1</a></li>
-                        <li class="menu-item"><a href="#">Bakeware</a></li>
-                        <li class="menu-item"><a href="#">Knives</a></li>
-                        <li class="menu-item"><a href="#">Tableware</a></li>
-                        <li class="menu-item"><a href="#">DIY</a></li>
-                        <li class="menu-item"><a href="#">Baking Cups</a></li>
-                        <li class="menu-item"><a href="#">Decorating Pens</a></li>
-                        <li class="menu-item"><a href="#">Sweetly Does It</a></li>
+                        </li> -->
+                        @foreach($categories as $item)
+                        <li class="menu-item"><a href="#">{{$item->name}}</a></li>
+                        @endforeach
                     </ul>
                     <!-- menu content -->
                 </div>
@@ -315,7 +207,7 @@
                                                     <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                 </h3>
                                                 <span class="price regular-price">
-                                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
+                                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
                                                     ৳ {{$item->wholesale_rate}}
                                                     @else
                                                     ৳ {{$item->selling_rate}}
@@ -405,7 +297,7 @@ $bann = array_chunk($banner, 3);
                                     <a href="{{route('single.product', $newarrival_product[0]->slug)}}">{{$newarrival_product[0]->name}}</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">
-                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
+                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
                                     ৳ {{$newarrival_product[0]->wholesale_rate}}
                                     @else
                                     ৳ {{$newarrival_product[0]->selling_rate}}
@@ -452,7 +344,7 @@ $bann = array_chunk($banner, 3);
                                                         <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                     </h3>
                                                     <span class="price regular-price">
-                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
+                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
                                                         ৳ {{$item->wholesale_rate}}
                                                         @else
                                                         ৳ {{$item->selling_rate}}
@@ -500,7 +392,7 @@ $bann = array_chunk($banner, 3);
                                     <a href="{{route('single.product', $topsold_product[0]->slug)}}">{{$topsold_product[0]->name}}</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">
-                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
+                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
                                     ৳ {{$topsold_product[0]->wholesale_rate}}
                                     @else
                                     ৳ {{$topsold_product[0]->selling_rate}}
@@ -547,7 +439,7 @@ $bann = array_chunk($banner, 3);
                                                         <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                     </h3>
                                                     <span class="price regular-price">
-                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
+                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
                                                         ৳ {{$item->wholesale_rate}}
                                                         @else
                                                         ৳ {{$item->selling_rate}}
@@ -593,7 +485,7 @@ $bann = array_chunk($banner, 3);
                                     <a href="{{route('single.product', $feature_product[0]->slug)}}">{{$feature_product[0]->name}}</a>
                                 </h3>
                                 <span class="price-lg onsale-price d-block mb-7">
-                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
+                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
                                     ৳ {{$feature_product[0]->wholesale_rate}}
                                     @else
                                     ৳ {{$feature_product[0]->selling_rate}}
@@ -640,7 +532,7 @@ $bann = array_chunk($banner, 3);
                                                         <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                     </h3>
                                                     <span class="price regular-price">
-                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'wholesale')
+                                                        @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
                                                         ৳ {{$item->wholesale_rate}}
                                                         @else
                                                         ৳ {{$item->selling_rate}}

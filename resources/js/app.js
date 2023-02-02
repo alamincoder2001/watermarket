@@ -13,7 +13,7 @@ Vue.component('v-select', vSelect)
 
 // ck editor
 import CKEditor from '@ckeditor/ckeditor5-vue2';
-Vue.use( CKEditor);
+Vue.use( CKEditor );
 
 Vue.component("Supplier", require("./components/Supplier.vue").default);
 Vue.component("Product", require("./components/Product.vue").default);

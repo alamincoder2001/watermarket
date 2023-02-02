@@ -85,8 +85,8 @@ class ProductController extends Controller
             $data->subcategory_id = $request->subcategory_id;
             $data->unit_id        = $request->unit_id;
             $data->vat            = $request->vat;
-            $data->re_order       = $request->re_order;
-            $data->purchase_rate  = $request->purchase_rate;
+            $data->re_order       = 0;
+            $data->purchase_rate  = 0;
             $data->selling_rate   = $request->selling_rate;
             $data->wholesale_rate = $request->wholesale_rate;
             $data->description    = $request->description;

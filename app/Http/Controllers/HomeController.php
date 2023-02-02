@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Brand;
+use App\Models\Category;
 use App\Models\Product;
 use App\Thana;
 use Illuminate\Support\Facades\DB;
@@ -12,12 +14,14 @@ class HomeController extends Controller
     public function index()
     {
         $newarrival_product = DB::select("SELECT p.*, c.name as category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id where p.is_arrival = 1");
-        $feature_product = DB::select("SELECT p.*, c.name as category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id where p.is_feature = 1");
-        $popular_product = DB::select("SELECT p.*, c.name as category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id where p.is_popular = 1");
-        $topsold_product = DB::select("SELECT p.*, c.name as category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id where p.is_topsold = 1");
-        $banner = DB::select("SELECT b.* FROM banners b ORDER BY b.id DESC");
-        $blog = Blog::all();
-        return view('website', compact("blog", "newarrival_product", "feature_product", "popular_product", "topsold_product", "banner"));
+        $feature_product    = DB::select("SELECT p.*, c.name as category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id where p.is_feature = 1");
+        $popular_product    = DB::select("SELECT p.*, c.name as category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id where p.is_popular = 1");
+        $topsold_product    = DB::select("SELECT p.*, c.name as category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id where p.is_topsold = 1");
+        $banner             = DB::select("SELECT b.* FROM banners b ORDER BY b.id DESC");
+        $blog               = Blog::all();
+        $categories         = Category::with('product')->orderBy("name", "ASC")->get();
+        $brands             = Brand::with('product')->orderBy("name", "ASC")->get();
+        return view('website', compact("brands", "categories", "blog", "newarrival_product", "feature_product", "popular_product", "topsold_product", "banner"));
     }
 
     // Product
@@ -34,7 +38,10 @@ class HomeController extends Controller
         }else{
             $product = Product::paginate(25); 
         }
-        return view("product", compact('product'));
+
+        $categories = Category::with('product')->get();
+        $brands     = Brand::with('product')->get();
+        return view("product", compact('product', 'brands', 'categories'));
     }
 
     // single product

@@ -71,14 +71,14 @@
                     <a href="#" class="open-comment-form">Write a review</a>
                     <div class="mb-4">
                         <span class="old-price text-decoration-line-through">
-                            @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                            @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
                             ৳ {{$product->wholesale_rate}}
                             @else
                             ৳ {{$product->selling_rate}}
                             @endif
                         </span>
                         <span class="price-lg regular-price d-inline-block mx-1">
-                            @if(Auth::guard('web')->check() && Auth::guard('web')->user()->user_type == 'wholesale')
+                            @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
                             ৳ {{$product->wholesale_rate}}
                             @else
                             ৳ {{$product->selling_rate}}

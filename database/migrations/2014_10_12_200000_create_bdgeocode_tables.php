@@ -31,7 +31,7 @@ class CreateBdgeocodeTables extends Migration
             $table->unsignedInteger('district_id');
             $table->string('name');
             $table->string('bn_name')->nullable();
-            $table->decimal('charge')->nullable();
+            $table->decimal('charge')->default(0)->nullable();
 
             $table->foreign('district_id')->references('id')->on('districts') ->onUpdate('cascade')->onDelete('cascade');
         });
