@@ -24,6 +24,7 @@ Vue.component("purchase_edit", require("./components/PurchaseEdit.vue").default)
 Vue.component("Customer", require("./components/Customer.vue").default);
 Vue.component("Technician", require("./components/Technician.vue").default);
 Vue.component("Blog", require("./components/Blog.vue").default);
+Vue.component("Orderlist", require("./components/OrderList.vue").default);
 
 const app = new Vue({
     el: "#app",

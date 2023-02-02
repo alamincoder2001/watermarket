@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DistrictController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PurchaseController;
@@ -142,6 +143,9 @@ Route::group(["prefix" => "admin"], function () {
     // Route::post('/purchase/delete', [PurchaseController::class, 'destroy'])->name('admin.purchase.destroy');
     // Route::get("/purchaseList", [PurchaseController::class, 'purchaseList'])->name("admin.purchase.purchaseList");
 
+    //order route
+    Route::get('/order', [OrderController::class, 'index'])->name('admin.order.index');
+    Route::post('/order/fetch', [OrderController::class, 'fetch'])->name('admin.order.fetch');
     // blog route
     Route::get('/blog', [BlogController::class, 'index'])->name('admin.blog.index');
     Route::get('/blog/fetch/{id?}', [BlogController::class, 'fetch'])->name('admin.blog.fetch');
