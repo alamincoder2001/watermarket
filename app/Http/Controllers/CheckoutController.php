@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Validator;
 
 class CheckoutController extends Controller
 {
@@ -26,12 +29,61 @@ class CheckoutController extends Controller
     {
         try{
             DB::beginTransaction();
+            if (Cart::content()->count() > 0) {
+                if(isset($request->is_shipping) && $request->is_shipping == 1){
+                    $validator = Validator::make($request->all(), [
+                        "shipping_district" => "required",
+                        "shipping_thana" => "required",
+                        "shipping_address" => "required",
+                        "shipping_mobile" => "required",
+                    ]);
+                }else{
+                    $validator = Validator::make($request->all(), [
+                        "address" => "required",
+                    ]);
+                }
+    
+                if($validator->fails()){
+                    return response()->json(["error" => $validator->errors()]);
+                }
+                
+    
+                $data                    = new Order();
+                $data->invoice           = $this->invoiceGenerate("Order", "OI");
+                $data->date              = date("Y-m-d");
+                $data->customer_id       = Auth::guard('web')->user()->id;
+                $data->is_shipping       = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->is_shipping : 0;
+                $data->shipping_thana    = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_thana : Auth::guard('web')->user()->id;
+                $data->shipping_mobile   = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_mobile : Auth::guard('web')->user()->mobile;
+                $data->shipping_address  = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_address : $request->address;
+                $data->shipping_postcode = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_postcode : $request->postcode;
+                $data->subtotal          = str_replace(",", "",Cart::subtotal());
+                $data->shipping_charge   = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_charge : Auth::guard('web')->user()->thana->charge;
+                $data->total             = $data->subtotal + $data->shipping_charge;
+                $data->payment_type      = $request->payment_type;
+                $data->note              = $request->note;
+                $data->save();
 
+                // order Details
+                foreach(Cart::content() as $item){
+                    $detail             = new OrderDetail();
+                    $detail->order_id   = $data->id;
+                    $detail->product_id = $item->id;
+                    $detail->quantity   = $item->qty;
+                    $detail->unit_price = $item->price;
+                    $detail->total      = $item->price * $item->qty;
+                    $detail->save();
+                }
+                DB::commit();
+                Cart::destroy();
+                return response()->json(["msg" => "Order place successfully"]);
+            }else{
+                return response()->json(["errors" => "Cart is empty"]);
+            }
 
-            DB::commit();
         }catch(\Throwable $e){
             DB::rollBack();
-            return "Opps! something went wrong";
+            return "Opps! something went wrong ". $e->getMessage();
         }
     }
 }

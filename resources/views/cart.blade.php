@@ -67,7 +67,7 @@
                                 </td>
 
                                 <td class="text-center">
-                                    <a onclick="cartDelete('{{$item->rowId}}')" style="cursor: pointer;"><span class="trash text-warning"><i class="ion-android-delete"></i> </span></a>
+                                    <a onclick="cartDelete('{{$item->rowId}}')" style="cursor: pointer;background: red;padding: 4px 7px;border-radius: 50%;color: white;font-weight: 600;"><span>X</span></a>
                                 </td>
                             </tr>
                             @endforeach

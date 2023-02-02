@@ -32,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         View::share("profile", Setting::first());
         View::share("districts", District::orderBy("name", "ASC")->get());
+        View::share("upazilas", Thana::orderBy("name", "ASC")->get());
         Schema::defaultStringLength(191);
     }
 }

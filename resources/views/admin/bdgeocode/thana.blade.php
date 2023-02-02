@@ -16,6 +16,11 @@
                     <span class="text-danger error error-name"></span>
                 </div>
                 <div class="form-group">
+                    <label for="charge">Shipping Charge</label>
+                    <input type="number" step="1" min="0" name="charge" id="charge" autocomplete="off" class="form-control shadow-none">
+                    <span class="text-danger error error-charge"></span>
+                </div>
+                <div class="form-group">
                     <label for="district_id">District Name</label>
                     <select name="district_id" id="district_id" autocomplete="off" class="form-select shadow-none">
                         <option value="">Select District</option>
@@ -47,6 +52,7 @@
                             <th>Sl</th>
                             <th>Upazila Name</th>
                             <th>District</th>
+                            <th>Charge</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -80,11 +86,14 @@
                 }
             },
             {
+                data: 'charge',
+            },
+            {
                 data: null,
                 render: data => {
                     return `
-                            ${'<button type="button" onclick="Edit('+data.id+')" class="btn btn-primary shadow-none btn-sm">Edit</button>'}            
-                            ${'<button type="button" onclick="Delete('+data.id+')" class="btn btn-danger shadow-none btn-sm">Delete</button>'}
+                            ${'<button type="button" onclick="Edit('+data.id+')" class="btn btn-primary shadow-none btn-sm"><i class="fas fa-edit"></i></button>'}            
+                            ${'<button type="button" onclick="Delete('+data.id+')" class="btn btn-danger shadow-none btn-sm"><i class="fas fa-trash"></i></button>'}
                         `;
                 }
             }

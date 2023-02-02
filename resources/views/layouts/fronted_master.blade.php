@@ -58,7 +58,13 @@
 
 </head>
 
-<body>
+<body style="position: relative;">
+    <div class="cartImage d-none" style="position: fixed;left: 0;top: 0;z-index: 999999;width: 100%;height:100%;background:#1f74f336;display: flex;justify-content: center;align-items: center;">
+        <img src="{{asset('shopping-cart.gif')}}">
+    </div>
+    <div class="checkoutImage d-none" style="position: fixed;left: 0;top: 0;z-index: 999999;width: 100%;height:100%;background:#e7e7e740;display: flex;justify-content: center;align-items: center;">
+        <img src="{{asset('loading.gif')}}" width="150">
+    </div>
     <!-- Modal -->
     <div class="modal fade offcanvas-modal" id="exampleModal">
         <div class="modal-dialog offcanvas-dialog">

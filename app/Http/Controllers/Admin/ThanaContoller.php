@@ -47,6 +47,7 @@ class ThanaContoller extends Controller
                 $data = new Thana();
             }
             $data->name        = $request->name;
+            $data->charge      = $request->charge;
             $data->district_id = $request->district_id;
 
             $data->save();

@@ -20,6 +20,7 @@
             },
             beforeSend: () => {
                 $(".checkout-scroll").html("")
+                $(".cartImage").removeClass("d-none")
             },
             success: res => {
                 $.notify(res.msg, "success");
@@ -70,6 +71,11 @@
                         }
                     })
                 }
+            },
+            complete: () => {
+                setTimeout(() => {
+                    $(".cartImage").addClass("d-none")
+                }, 500)
             }
         })
     }

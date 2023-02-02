@@ -42,6 +42,7 @@ Route::post('/deletewishlist', [WishlistController::class, 'deleteWishlist'])->n
 
 //
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
+Route::post('/place-order', [CheckoutController::class, 'CheckOut'])->name('place.order');
 
 // Technician and customer login
 Route::get('/login', [CustomerLoginController::class, 'showSignUpForm'])->name('showSignUpForm')->middleware('checkAuth');
