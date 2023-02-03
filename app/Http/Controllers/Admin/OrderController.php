@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 
 class OrderController extends Controller
 {
@@ -61,15 +62,9 @@ class OrderController extends Controller
         return response()->json(['invoice' => $invoice, 'orders' => $orders]);
     }
 
-    // public function destroy(Request $request)
-    // {
-    //     $details = PurchaseDetail::where("purchase_id", $request->id)->get();
-    //     foreach ($details as $item) {
-    //         $inventory = ProductInventory::where("product_id", $item->product_id)->first();
-    //         $inventory->purchase_qty = $inventory->purchase_qty - $item->quantity;
-    //         $inventory->save();
-    //     }
-    //     Purchase::find($request->id)->delete();
-    //     return "Purchae Delete Successfully";
-    // }
+    public function destroy(Request $request)
+    {
+        Order::find($request->id)->delete();
+        return "Order Delete Successfully";
+    }
 } 

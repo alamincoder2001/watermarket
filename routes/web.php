@@ -146,6 +146,7 @@ Route::group(["prefix" => "admin"], function () {
     //order route
     Route::get('/order', [OrderController::class, 'index'])->name('admin.order.index');
     Route::post('/order/fetch', [OrderController::class, 'fetch'])->name('admin.order.fetch');
+    Route::post('/order/delete', [OrderController::class, 'destroy'])->name('admin.order.destroy');
     // blog route
     Route::get('/blog', [BlogController::class, 'index'])->name('admin.blog.index');
     Route::get('/blog/fetch/{id?}', [BlogController::class, 'fetch'])->name('admin.blog.fetch');

@@ -7260,7 +7260,7 @@ var render = function render() {
   }, [_vm._m(1), _vm._v(" "), _c("tbody", [_vm._l(_vm.orders, function (item, index) {
     return [_c("tr", {
       style: {
-        background: item.status == "p" ? "#ffcf87a6" : "0"
+        background: item.status == "p" ? "#ffcf87a6" : ""
       }
     }, [_c("td", {
       staticClass: "text-center"
@@ -7268,15 +7268,19 @@ var render = function render() {
       staticClass: "text-center"
     }, [_vm._v(_vm._s(item.invoice))]), _vm._v(" "), _c("td", {
       staticClass: "text-center"
-    }, [_vm._v(_vm._s(_vm.formatDate(item.date)))]), _vm._v(" "), _c("td", [_c("span", [_vm._v("Customer Name: " + _vm._s(item.name))]), _c("br"), _vm._v(" "), _c("span", [_vm._v("Mobile: " + _vm._s(item.mobile))]), _c("br"), _vm._v(" "), _c("span", [_vm._v("Address: " + _vm._s(item.address))])]), _vm._v(" "), _c("td", [_c("span", [_vm._v("SubTotal: " + _vm._s(item.subtotal))]), _c("br"), _vm._v(" "), _c("span", [_vm._v("Total: " + _vm._s(item.total))]), _c("br"), _vm._v(" "), _c("span", [_vm._v("Shipping Cost: " + _vm._s(item.shipping_charge))])]), _vm._v(" "), _c("td", [_c("div", {
+    }, [_vm._v(_vm._s(_vm.formatDate(item.date)))]), _vm._v(" "), _c("td", [_c("span", [_vm._v("Customer Name: " + _vm._s(item.name))]), _c("br"), _vm._v(" "), _c("span", [_vm._v("Mobile: " + _vm._s(item.mobile))]), _c("br"), _vm._v(" "), _c("span", [_vm._v("Address: " + _vm._s(item.shipping_address))])]), _vm._v(" "), _c("td", [_c("span", [_vm._v("SubTotal: " + _vm._s(item.subtotal))]), _c("br"), _vm._v(" "), _c("span", [_vm._v("Total: " + _vm._s(item.total))]), _c("br"), _vm._v(" "), _c("span", [_vm._v("Shipping Cost: " + _vm._s(item.shipping_charge))])]), _vm._v(" "), _c("td", {
+      staticStyle: {
+        width: "15%"
+      }
+    }, [_c("div", {
       staticClass: "input-group gap-2"
-    }, [_vm._m(2, true), _vm._v(" "), _c("button", {
+    }, [_c("button", {
       staticClass: "shadow-none outline-none border-0",
       staticStyle: {
         background: "none"
       },
       attrs: {
-        title: "Purchase Delete",
+        title: "Order Delete",
         type: "button"
       },
       on: {
@@ -7286,7 +7290,14 @@ var render = function render() {
       }
     }, [_c("i", {
       staticClass: "fas fa-trash text-danger"
-    })])])])])];
+    })]), _vm._v(" "), _vm._m(2, true), _vm._v(" "), _c("button", {
+      staticClass: "text-white shadow-none outline-none border-0",
+      "class": item.status == "p" ? "bg-danger" : "",
+      attrs: {
+        title: "Order Status",
+        type: "button"
+      }
+    }, [_vm._v("Pending")])])])])];
   })], 2)])]), _vm._v(" "), _c("div", {
     staticClass: "card-body",
     style: {
@@ -7354,7 +7365,7 @@ var staticRenderFns = [function () {
       background: "none"
     },
     attrs: {
-      title: "Purchase Invoice",
+      title: "Order Invoice",
       type: "button"
     }
   }, [_c("i", {

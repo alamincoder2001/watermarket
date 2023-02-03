@@ -50,24 +50,25 @@
                         </thead>
                         <tbody>
                             <template v-for="(item,index) in orders">
-                                <tr :style="{background: item.status == 'p'? '#ffcf87a6':'0'}">
+                                <tr :style="{background: item.status == 'p'? '#ffcf87a6':''}">
                                     <td class="text-center">{{ index + 1 }}</td>
                                     <td class="text-center">{{ item.invoice }}</td>
                                     <td class="text-center">{{ formatDate(item.date) }}</td>
                                     <td>
                                         <span>Customer Name: {{ item.name }}</span><br />
                                         <span>Mobile: {{ item.mobile }}</span><br />
-                                        <span>Address: {{ item.address }}</span>
+                                        <span>Address: {{ item.shipping_address }}</span>
                                     </td>
                                     <td>
                                         <span>SubTotal: {{ item.subtotal }}</span><br />
                                         <span>Total: {{ item.total }}</span><br />
                                         <span>Shipping Cost: {{ item.shipping_charge }}</span>
                                     </td>
-                                    <td>
+                                    <td style="width:15%;">
                                         <div class="input-group gap-2">
-                                            <button title="Purchase Invoice" type="button" style="background: none;" class="shadow-none outline-none border-0"><i class="fas fa-file text-info"></i></button>
-                                            <button title="Purchase Delete" @click="InvoiceDelete(item.id, index)" type="button" style="background: none;" class="shadow-none outline-none border-0"><i class="fas fa-trash text-danger"></i></button>
+                                            <button title="Order Delete" @click="InvoiceDelete(item.id, index)" type="button" style="background: none;" class="shadow-none outline-none border-0"><i class="fas fa-trash text-danger"></i></button>
+                                            <button title="Order Invoice" type="button" style="background: none;" class="shadow-none outline-none border-0"><i class="fas fa-file text-info"></i></button>
+                                            <button title="Order Status" type="button" :class="item.status == 'p'? 'bg-danger':''" class="text-white shadow-none outline-none border-0">Pending</button>
                                         </div>
                                     </td>
                                 </tr>
