@@ -58,7 +58,7 @@ class CheckoutController extends Controller
                 $data->shipping_address  = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_address : $request->address;
                 $data->shipping_postcode = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_postcode : $request->postcode;
                 $data->subtotal          = str_replace(",", "",Cart::subtotal());
-                $data->shipping_charge   = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_charge : Auth::guard('web')->user()->thana->charge;
+                $data->shipping_charge   = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_charge : $request->shipping_charge;
                 $data->total             = $data->subtotal + $data->shipping_charge;
                 $data->payment_type      = $request->payment_type;
                 $data->note              = $request->note;
@@ -74,8 +74,8 @@ class CheckoutController extends Controller
                     $detail->total      = $item->price * $item->qty;
                     $detail->save();
                 }
-                DB::commit();
                 Cart::destroy();
+                DB::commit();
                 return response()->json(["msg" => "Order place successfully"]);
             }else{
                 return response()->json(["errors" => "Cart is empty"]);

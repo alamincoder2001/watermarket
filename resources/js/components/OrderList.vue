@@ -3,7 +3,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <form @submit.prevent="getPurchase">
+                    <form @submit.prevent="getOrder">
                         <div class="row">
                             <div class="col-lg-2">
                                 <div class="form-group m-0">
@@ -36,43 +36,37 @@
                         </div>
                     </form>
                 </div>
-                <div class="card-body" :style="{display: purchases.length > 0 ? '':'none'}">
+                <div class="card-body" :style="{display: orders.length > 0 ? '':'none'}">
                     <table class="table table-bordered m-0">
                         <thead style="background: #59d9ff;">
                             <tr>
                                 <th style="text-align:center;width:8%;">Sl</th>
                                 <th style="text-align:center;width:10%;">#Invoice</th>
                                 <th style="text-align:center;width:10%;">Date</th>
-                                <th style="text-align:center">Supplier Details</th>
+                                <th style="text-align:center">Customer Details</th>
                                 <th style="text-align:center">Amount Details</th>
                                 <th style="text-align:center;width: 12%;">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <template v-for="(item,index) in purchases">
-                                <tr>
+                            <template v-for="(item,index) in orders">
+                                <tr :style="{background: item.status == 'p'? '#ffcf87a6':'0'}">
                                     <td class="text-center">{{ index + 1 }}</td>
                                     <td class="text-center">{{ item.invoice }}</td>
                                     <td class="text-center">{{ formatDate(item.date) }}</td>
                                     <td>
-                                        <span>Supplier Name: {{ item.name }}</span><br />
+                                        <span>Customer Name: {{ item.name }}</span><br />
                                         <span>Mobile: {{ item.mobile }}</span><br />
-                                        <span>Address: {{ item.address }}</span><br />
-                                        <span v-if="item.supplier_type != 'G'">Previous Due: {{ item.previous_due }}</span>
-                                        <span v-else>General Supplier</span>
+                                        <span>Address: {{ item.address }}</span>
                                     </td>
                                     <td>
                                         <span>SubTotal: {{ item.subtotal }}</span><br />
                                         <span>Total: {{ item.total }}</span><br />
-                                        <span>Due: {{ item.due }}</span><br />
-                                        <span v-if="item.discount != 0">Discount ({{ item.discount }}%): {{ item.discount_amount }}</span><br />
-                                        <span v-if="item.vat != 0">Vat ({{ item.vat }}%): {{ item.vat_amount }}</span><br />
-                                        <span v-if="item.transport_cost != 0">Transport Cost: {{ item.transport_cost }}</span>
+                                        <span>Shipping Cost: {{ item.shipping_charge }}</span>
                                     </td>
                                     <td>
                                         <div class="input-group gap-2">
                                             <button title="Purchase Invoice" type="button" style="background: none;" class="shadow-none outline-none border-0"><i class="fas fa-file text-info"></i></button>
-                                            <a :href="`${'/admin/purchase/edit/'+item.invoice}`" title="Purchase Edit" class="m-0 shadow-none outline-none border-0"><i class="fas fa-edit text-primary"></i></a>
                                             <button title="Purchase Delete" @click="InvoiceDelete(item.id, index)" type="button" style="background: none;" class="shadow-none outline-none border-0"><i class="fas fa-trash text-danger"></i></button>
                                         </div>
                                     </td>
@@ -81,7 +75,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="card-body" :style="{display: purchases.length > 0 ?'none':'' }">
+                <div class="card-body" :style="{display: orders.length > 0 ?'none':'' }">
                     <p class="m-0 text-center">Not Found Data in Table</p>
                 </div>
             </div>
@@ -99,12 +93,13 @@ export default {
             dateTo: moment().format("YYYY-MM-DD"),
             invoices: [],
             selectedInvoice: null,
-            purchases: []
+            orders: []
         }
     },
 
     created() {
         this.getInvoice();
+        this.getOrder();
     },
 
     watch: {
@@ -117,12 +112,12 @@ export default {
 
     methods: {
         getInvoice() {
-            axios.post("/admin/purchase/fetch", { invoice: "" })
+            axios.post("/admin/order/fetch", { invoice: "" })
                 .then(res => {
-                    this.invoices = res.data.purchases
+                    this.invoices = res.data.orders
                 })
         },
-        getPurchase() {
+        getOrder() {
             if(this.searchBy == "invoice" && this.selectedInvoice == null){
                 alert("Select first Invoice")
                 document.querySelector("#invoice [type='search']").focus()
@@ -135,17 +130,17 @@ export default {
                 dateTo: this.searchBy != "" ? "" : this.dateTo
             }
 
-            axios.post("/admin/purchase/fetch", data)
+            axios.post("/admin/order/fetch", data)
                 .then(res => {
-                    this.purchases = res.data.purchases
+                    this.orders = res.data.orders
                 })
         },
         InvoiceDelete(id, sl){
             if(confirm("Are you sure want to delete")){
-                axios.post("/admin/purchase/delete", {id: id}).then((res) => {
+                axios.post("/admin/order/delete", {id: id}).then((res) => {
                     $.notify(res.data, "success");
-                    var index = this.purchases.indexOf(sl);
-                    this.purchases.splice(index, 1);
+                    var index = this.orders.indexOf(sl);
+                    this.orders.splice(index, 1);
                 });
             }
         },

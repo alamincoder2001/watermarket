@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->integer("shipping_thana");
             $table->string("shipping_mobile");
             $table->text("shipping_address");
-            $table->string("shippiong_postcode")->nullable();
+            $table->string("shipping_postcode")->nullable();
             $table->decimal("subtotal");
             $table->decimal("shipping_charge");
             $table->decimal("total");

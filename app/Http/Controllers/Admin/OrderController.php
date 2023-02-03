@@ -22,59 +22,54 @@ class OrderController extends Controller
     {
         $clauses = '';
         if (isset($request->dateFrom) && !empty($request->dateFrom)) {
-            $clauses .= " AND p.date BETWEEN '$request->dateFrom' AND '$request->dateTo'";
+            $clauses .= " AND o.date BETWEEN '$request->dateFrom' AND '$request->dateTo'";
         }
         if (isset($request->invoice) && !empty($request->invoice)) {
-            $clauses .= " AND p.invoice = '$request->invoice'";
+            $clauses .= " AND o.invoice = '$request->invoice'";
         }
-        if (isset($request->supplier_id) && !empty($request->supplier_id)) {
-            $clauses .= " AND p.supplier_id = '$request->supplier_id'";
+        if (isset($request->customer_id) && !empty($request->customer_id)) {
+            $clauses .= " AND o.customer_id = '$request->customer_id'";
         }
         $orders = DB::select("SELECT
                             o.*,
-                            s.id as supplier_id,
-                            s.name,
-                            s.supplier_code as code,
-                            CONCAT(s.supplier_code, ' - ', s.name) as display_name,
-                            s.address,
-                            s.mobile,
-                            s.supplier_type,
-                            u.name AS user_name
+                            c.id as customer_id,
+                            c.name,
+                            c.customer_code as code,
+                            c.address,
+                            c.mobile
                         FROM
                             orders AS o
-                        LEFT JOIN suppliers AS s
-                        ON s.id = p.supplier_id
-                        LEFT JOIN users AS u
-                        ON u.id = p.added_by
+                        LEFT JOIN users AS c
+                        ON c.id = o.customer_id
                         WHERE 1=1
                         $clauses ORDER BY o.invoice DESC                            
                         ");
 
-        foreach ($orders as $purchase) {
-            $purchase->purchaseDetails = DB::select("SELECT
-                                    pd.*,
+        foreach ($orders as $order) {
+            $order->orderDetails = DB::select("SELECT
+                                    od.*,
                                     p.name,
                                     un.name as unit_name
                                 FROM
-                                    purchase_details AS pd
-                                LEFT JOIN products AS p ON p.id = pd.product_id
+                                    order_details AS od
+                                LEFT JOIN products AS p ON p.id = od.product_id
                                 LEFT JOIN units AS un ON un.id = p.unit_id
-                                WHERE pd.purchase_id = ?", [$purchase->id]);
+                                WHERE od.order_id = ?", [$order->id]);
         }
 
-        $invoice = $this->invoiceGenerate("Purchase", "PI");
-        return response()->json(['invoice' => $invoice, 'purchases' => $purchases]);
+        $invoice = $this->invoiceGenerate("Order", "PI");
+        return response()->json(['invoice' => $invoice, 'orders' => $orders]);
     }
 
-    public function destroy(Request $request)
-    {
-        $details = PurchaseDetail::where("purchase_id", $request->id)->get();
-        foreach ($details as $item) {
-            $inventory = ProductInventory::where("product_id", $item->product_id)->first();
-            $inventory->purchase_qty = $inventory->purchase_qty - $item->quantity;
-            $inventory->save();
-        }
-        Purchase::find($request->id)->delete();
-        return "Purchae Delete Successfully";
-    }
+    // public function destroy(Request $request)
+    // {
+    //     $details = PurchaseDetail::where("purchase_id", $request->id)->get();
+    //     foreach ($details as $item) {
+    //         $inventory = ProductInventory::where("product_id", $item->product_id)->first();
+    //         $inventory->purchase_qty = $inventory->purchase_qty - $item->quantity;
+    //         $inventory->save();
+    //     }
+    //     Purchase::find($request->id)->delete();
+    //     return "Purchae Delete Successfully";
+    // }
 } 
