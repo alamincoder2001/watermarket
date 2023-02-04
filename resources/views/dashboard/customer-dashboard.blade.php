@@ -131,27 +131,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @if($orders->count() > 0)
+                                    @foreach($orders as $key => $item)
                                     <tr>
-                                        <td>1</td>
-                                        <td>OI0000002</td>
-                                        <td>18-01-2023</td>
-                                        <td class="text-danger">Pending</td>
-                                        <td>Action</td>
+                                        <td>{{$key + 1}}</td>
+                                        <td>{{$item->invoice}}</td>
+                                        <td>{{date("d-m-Y", strtotime($item->date))}}</td>
+                                        <td class="{{$item->status == 'pending' ? 'text-danger': 'text-success'}} text-capitalize">{{$item->status}}</td>
+                                        <td>
+                                            <button class="shadow-none text-white" style="background: #00000038;width:25px;height:22px;"><i class="bi bi-file-earmark"></i></button>
+                                            @if($item->status == 'pending')
+                                            <button class="shadow-none text-white" style="background: red;width:25px;height:22px;">X</button>
+                                            @else
+                                            @endif
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>OI0000001</td>
-                                        <td>18-01-2023</td>
-                                        <td class="text-success">Completed</td>
-                                        <td>Action</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-hover">
-                                <tbody>
+                                    @endforeach
+                                    @else
                                     <tr class="text-center">
-                                        <td colspan="5">Not found data in Table</td>
+                                        <td colspan="5">Order Not found in Table</td>
                                     </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
@@ -175,13 +175,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @if($pending->count() > 0)
+                                    @foreach($pending as $key => $item)
                                     <tr>
-                                        <td>1</td>
-                                        <td>OI0000002</td>
-                                        <td>18-01-2023</td>
-                                        <td class="text-danger">Pending</td>
-                                        <td>Action</td>
+                                    <td>{{$key + 1}}</td>
+                                        <td>{{$item->invoice}}</td>
+                                        <td>{{date("d-m-Y", strtotime($item->date))}}</td>
+                                        <td class="text-danger text-capitalize">{{$item->status}}</td>
+                                        <td>
+                                            <button class="shadow-none text-white" style="background: #00000038;width:25px;height:22px;"><i class="bi bi-file-earmark"></i></button>
+                                            <button class="shadow-none text-white" style="background: red;width:25px;height:22px;">X</button>
+                                        </td>
                                     </tr>
+                                    @endforeach
+                                    @else
+                                    <tr class="text-center">
+                                        <td colspan="5">Order Not Found in Table</td>
+                                    </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>
@@ -205,13 +216,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @if($complete->count() > 0)
+                                    @foreach($complete as $key => $item)
                                     <tr>
-                                        <td>1</td>
-                                        <td>OI0000001</td>
-                                        <td>18-01-2023</td>
-                                        <td class="text-success">Completed</td>
-                                        <td>Action</td>
+                                        <td>{{$key + 1}}</td>
+                                        <td>{{$item->invoice}}</td>
+                                        <td>{{date("d-m-Y", strtotime($item->date))}}</td>
+                                        <td class="text-success text-capitalize">{{$item->status}}</td>
+                                        <td>
+                                            <button class="shadow-none text-white" style="background: #00000038;width:25px;height:22px;"><i class="bi bi-file-earmark"></i></button>
+                                        </td>
                                     </tr>
+                                    @endforeach
+                                    @else
+                                    <tr class="text-center">
+                                        <td colspan="5">Order Not found in Table</td>
+                                    </tr>
+                                    @endif
                                 </tbody>
                             </table>
                         </div>

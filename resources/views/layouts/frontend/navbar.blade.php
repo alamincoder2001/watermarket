@@ -135,7 +135,7 @@
                                     <a class="main-menu-link" href="#">Technician</a>
                                 </li>
                                 <li class="main-menu-item">
-                                    <a class="main-menu-link" href="#">Blog</a>
+                                    <a class="main-menu-link" href="{{route('blog')}}">Blog</a>
                                 </li>
                                 <li class="main-menu-item">
                                     <a class="main-menu-link {{Route::is('contact')?'text-warning':''}}" href="{{route('contact')}}">Contact</a>

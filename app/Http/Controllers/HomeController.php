@@ -51,6 +51,12 @@ class HomeController extends Controller
         return view("single-product", compact('product'));
     }
 
+    public function blog()
+    {
+        $blog = Blog::paginate(24)->orderBy("id", "DESC");
+        return view('blog', compact("blog"));
+    }
+
     public function contact()
     {
         return view('contact');

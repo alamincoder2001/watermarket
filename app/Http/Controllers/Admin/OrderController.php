@@ -25,11 +25,8 @@ class OrderController extends Controller
         if (isset($request->dateFrom) && !empty($request->dateFrom)) {
             $clauses .= " AND o.date BETWEEN '$request->dateFrom' AND '$request->dateTo'";
         }
-        if (isset($request->invoice) && !empty($request->invoice)) {
-            $clauses .= " AND o.invoice = '$request->invoice'";
-        }
-        if (isset($request->customer_id) && !empty($request->customer_id)) {
-            $clauses .= " AND o.customer_id = '$request->customer_id'";
+        if (isset($request->searchBy) && !empty($request->searchBy)) {
+            $clauses .= " AND o.status = '$request->searchBy'";
         }
         $orders = DB::select("SELECT
                             o.*,
@@ -64,7 +61,22 @@ class OrderController extends Controller
 
     public function destroy(Request $request)
     {
-        Order::find($request->id)->delete();
-        return "Order Delete Successfully";
+        $data = Order::find($request->id);
+        $data->status = "cancel";
+        $data->save();
+        return "Order Cancel Successfully";
+    }
+
+    // status change
+    public function changeStatus(Request $request)
+    {
+        try{
+            $data = Order::where("id", $request->id)->first();
+            $data->status = $request->Status;
+            $data->save();
+            return "Order ".$request->Status." successfully";
+        }catch(\Throwable $e){
+            return "Opps! something went wrong";
+        }
     }
 } 

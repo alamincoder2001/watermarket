@@ -11,6 +11,9 @@ import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css';
 Vue.component('v-select', vSelect)
 
+// jquery
+window.$ = require('jquery')
+
 // ck editor
 import CKEditor from '@ckeditor/ckeditor5-vue2';
 Vue.use( CKEditor );
@@ -25,6 +28,9 @@ Vue.component("Customer", require("./components/Customer.vue").default);
 Vue.component("Technician", require("./components/Technician.vue").default);
 Vue.component("Blog", require("./components/Blog.vue").default);
 Vue.component("Orderlist", require("./components/OrderList.vue").default);
+Vue.component("proccessOrder", require("./components/proccessOrder.vue").default);
+Vue.component("deliveredOrder", require("./components/deliveredOrder.vue").default);
+Vue.component("cancelOrder", require("./components/cancelOrder.vue").default);
 
 const app = new Vue({
     el: "#app",

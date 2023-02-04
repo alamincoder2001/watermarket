@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('website');
 Route::get('/product', [HomeController::class, 'ProductShow'])->name('product');
 Route::get('/product-single/{slug}', [HomeController::class, 'singleProductShow'])->name('single.product');
+Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 // cart add route
@@ -146,6 +147,7 @@ Route::group(["prefix" => "admin"], function () {
     //order route
     Route::get('/order', [OrderController::class, 'index'])->name('admin.order.index');
     Route::post('/order/fetch', [OrderController::class, 'fetch'])->name('admin.order.fetch');
+    Route::post('/order/status', [OrderController::class, 'changeStatus'])->name('admin.order.status');
     Route::post('/order/delete', [OrderController::class, 'destroy'])->name('admin.order.destroy');
     // blog route
     Route::get('/blog', [BlogController::class, 'index'])->name('admin.blog.index');

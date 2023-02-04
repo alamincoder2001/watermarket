@@ -3,10 +3,6 @@
         <div class="navbar-header" data-logobg="skin5">
         <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
             <a class="navbar-brand" href="{{url('admin')}}">
-                <!-- Logo icon -->
-                <!-- <b class="logo-icon ps-2">
-                    <img src="{{asset('backend')}}/assets/images/logo-icon.png" alt="homepage" class="light-logo" width="25" />
-                </b> -->
                 <!-- Logo text -->
                 <span style="width:100%;">
                     <img src="{{asset('backend')}}/assets/images/logo-text.png" alt="homepage" class="light-logo" />
@@ -19,16 +15,6 @@
             <ul class="navbar-nav float-start me-auto">
                 <li class="nav-item d-none d-lg-block">
                     <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
-                        <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                    </ul>
                 </li>
                 <li class="nav-item search-box">
                     <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-magnify fs-4"></i></a>

@@ -1941,7 +1941,7 @@ $bann = array_chunk($banner, 3);
                     <div class="row">
                         <!-- title section Start -->
                         <div class="col-12">
-                            <h3 class="title">Latest Blogs</h3>
+                            <h3 class="title">News and Events</h3>
                         </div>
                         <!-- title section End -->
                     </div>

@@ -28,7 +28,7 @@ class CreateOrdersTable extends Migration
             $table->decimal("total");
             $table->string("payment_type");
             $table->text("note")->nullable();
-            $table->char("status")->default("p");
+            $table->char("status")->default("pending");
             $table->timestamps();
         });
     }

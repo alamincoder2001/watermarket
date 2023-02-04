@@ -144,7 +144,7 @@ export default {
     components: {'invoice': invoice},
     data() {
         return {
-            searchBy: "pending",
+            searchBy: "proccessing",
             dateFrom: "",
             dateTo: "",
             orders: [],
