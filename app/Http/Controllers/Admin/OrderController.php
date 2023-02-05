@@ -18,6 +18,24 @@ class OrderController extends Controller
     {
         return view("admin.order.index");
     }
+    public function proccessing()
+    {
+        return view("admin.order.proccess");
+    }
+    public function delivery()
+    {
+        return view("admin.order.delivery");
+    }
+    public function canceled()
+    {
+        return view("admin.order.canceled");
+    }
+
+    public function invoice($invoice)
+    {
+        $data = Order::where("invoice", $invoice)->first();
+        return view("admin.order.invoice", compact("data"));
+    }
 
     public function fetch(Request $request)
     {
@@ -28,17 +46,26 @@ class OrderController extends Controller
         if (isset($request->searchBy) && !empty($request->searchBy)) {
             $clauses .= " AND o.status = '$request->searchBy'";
         }
+        if (isset($request->id) && !empty($request->id)) {
+            $clauses .= " AND o.id = '$request->id'";
+        }
         $orders = DB::select("SELECT
                             o.*,
                             c.id as customer_id,
                             c.name,
                             c.customer_code as code,
                             c.address,
-                            c.mobile
-                        FROM
-                            orders AS o
-                        LEFT JOIN users AS c
-                        ON c.id = o.customer_id
+                            c.mobile,
+                            cd.name as customer_district_name,
+                            cth.name as customer_thana_name,
+                            sd.name as shipping_district_name,
+                            sth.name as shipping_thana_name
+                        FROM orders AS o
+                        LEFT JOIN users AS c ON c.id = o.customer_id
+                        LEFT JOIN thanas cth ON cth.id = c.id
+                        LEFT JOIN districts cd ON cd.id = cth.id
+                        LEFT JOIN thanas sth ON sth.id = o.shipping_thana
+                        LEFT JOIN districts sd ON sd.id = sth.id
                         WHERE 1=1
                         $clauses ORDER BY o.invoice DESC                            
                         ");

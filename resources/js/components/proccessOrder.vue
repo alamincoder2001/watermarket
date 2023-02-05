@@ -8,10 +8,8 @@
                             <div class="col-lg-3">
                                 <div class="form-group m-0">
                                     <select class="form-select shadow-none" v-model="searchBy">
-                                        <option value="pending">Pending</option>
                                         <option value="proccessing">On Proccessing </option>
-                                        <option value="delivery">Delivery</option>
-                                        <option value="cancel">Cancel</option>
+                                        <option value="delivery">Delivered</option>
                                     </select>
                                 </div>
                             </div>
@@ -101,18 +99,14 @@
                                             <button title="Order Details" @click="showDetails(item)" type="button" style="background: gainsboro;border-radius: 15%; " class="shadow-none outline-none border-0">
                                                 <i class="fas fa-info-circle text-primary"></i>
                                             </button>
-                                            <button title="Order Cancel" v-if="item.status != 'cancel' && item.status != 'delivery' " @click="InvoiceDelete(item.id)" type="button" style="background: none" class="shadow-none outline-none border-0">
+                                            <button type="button"  title="Order Cancel" v-if="item.status != 'cancel' && item.status != 'delivery' " @click="InvoiceDelete(item.id)" style="background: none" class="shadow-none outline-none border-0">
                                                 <i class="fas fa-trash text-danger"></i>
                                             </button>
-                                            <button title="Order Invoice" type="button" style="background: none" class="shadow-none outline-none border-0">
+                                            <a :href="`${'/admin/order/invoice/'+item.invoice}`" target="_blank" title="Order Invoice" style="background: none" class="shadow-none outline-none border-0">
                                                 <i class="fas fa-file text-info"></i>
-                                            </button>
-                                            <button @click="changeStatus(item, 'proccessing') " v-if=" item.status == 'pending' " type="button" :style="{background: item.status == 'pending' ? 'red' : '' }" class="text-white shadow-none outline-none border-0">Proccessing</button>
-                                            <button @click="changeStatus( item, 'delivery' ) " v-else-if="item.status == 'shiped' " type="button" :style="{background: item.status == 'shiped' ? 'green' : '' }" class="text-white shadow-none outline-none border-0">Delivery</button>
+                                            </a>
+                                            <button @click="changeStatus( item, 'delivery' ) " type="button" v-if="searchBy != 'delivery'" :style="{background: item.status == 'proccessing' ? 'green' : '' }" class="text-white shadow-none outline-none border-0">Delivery</button>
                                         </div>
-                                    </td>
-                                    <td colspan="6" v-if="showTd == true">
-                                        Hello
                                     </td>
                                 </tr>
                             </template>
@@ -129,7 +123,7 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-body p-5">
-                        <invoice :modal-data="modalData"></invoice>
+                        <Invoicemodal :title="'Order Details'" :invoice-data="modalData"></Invoicemodal>
                     </div>
                 </div>
             </div>
@@ -139,9 +133,9 @@
 
 <script>
 import moment from "moment";
-import invoice from "../components/Invoice.vue";
+import Invoicemodal from "../components/Invoicemodal.vue";
 export default {
-    components: {'invoice': invoice},
+    components: {'Invoicemodal': Invoicemodal},
     data() {
         return {
             searchBy: "proccessing",
@@ -190,8 +184,7 @@ export default {
 
         showDetails(rowData) {
             $("#myModal").modal("show");
-            $("#myModal .modal-title span").text(invoice);
-            this.modalData = rowData.orderDetails;
+            this.modalData = rowData;
         },
 
         formatDate(date) {

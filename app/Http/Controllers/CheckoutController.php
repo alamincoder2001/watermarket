@@ -49,7 +49,7 @@ class CheckoutController extends Controller
                 
     
                 $data                    = new Order();
-                $data->invoice           = $this->invoiceGenerate("Order", "OI");
+                $data->invoice           = $this->invoiceGenerate("Order", "WI");
                 $data->date              = date("Y-m-d");
                 $data->customer_id       = Auth::guard('web')->user()->id;
                 $data->is_shipping       = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->is_shipping : 0;

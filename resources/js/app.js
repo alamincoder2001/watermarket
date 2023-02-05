@@ -28,9 +28,10 @@ Vue.component("Customer", require("./components/Customer.vue").default);
 Vue.component("Technician", require("./components/Technician.vue").default);
 Vue.component("Blog", require("./components/Blog.vue").default);
 Vue.component("Orderlist", require("./components/OrderList.vue").default);
-Vue.component("proccessOrder", require("./components/proccessOrder.vue").default);
-Vue.component("deliveredOrder", require("./components/deliveredOrder.vue").default);
-Vue.component("cancelOrder", require("./components/cancelOrder.vue").default);
+Vue.component("proccess-order", require("./components/proccessOrder.vue").default);
+Vue.component("delivered-order", require("./components/deliveredOrder.vue").default);
+Vue.component("cancel-order", require("./components/cancelOrder.vue").default);
+Vue.component("invoice", require("./components/Invoice.vue").default);
 
 const app = new Vue({
     el: "#app",

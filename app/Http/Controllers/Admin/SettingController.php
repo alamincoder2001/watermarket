@@ -20,7 +20,7 @@ class SettingController extends Controller
         $data = Setting::first();
         return view("admin.setting", compact("data"));
     }
-
+    
     public function updateSetting(Request $request)
     {
         try {

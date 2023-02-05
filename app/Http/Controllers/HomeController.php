@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Thana;
 use App\Models\Blog;
 use App\Models\Brand;
-use App\Models\Category;
 use App\Models\Product;
-use App\Thana;
+use App\Models\Setting;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -29,14 +30,14 @@ class HomeController extends Controller
     {
         if (isset($_GET['sortBy']) && $_GET['sortBy'] == "ascending") {
             $product = Product::orderBy('name', 'ASC')->paginate(25);
-        }else if(isset($_GET['sortBy']) && $_GET['sortBy'] == "descending"){
+        } else if (isset($_GET['sortBy']) && $_GET['sortBy'] == "descending") {
             $product = Product::orderBy('name', 'DESC')->paginate(25);
-        }else if(isset($_GET['sortBy']) && $_GET['sortBy'] == "low-high"){
+        } else if (isset($_GET['sortBy']) && $_GET['sortBy'] == "low-high") {
             $product = Product::orderBy('selling_rate', 'ASC')->paginate(25);
-        }else if(isset($_GET['sortBy']) && $_GET['sortBy'] == "high-low"){
+        } else if (isset($_GET['sortBy']) && $_GET['sortBy'] == "high-low") {
             $product = Product::orderBy('selling_rate', 'DESC')->paginate(25);
-        }else{
-            $product = Product::paginate(25); 
+        } else {
+            $product = Product::paginate(25);
         }
 
         $categories = Category::with('product')->get();
@@ -66,5 +67,10 @@ class HomeController extends Controller
     public function getUpazila($id)
     {
         return Thana::where("district_id", $id)->orderBy("name", "ASC")->get();
+    }
+
+    public function fetch()
+    {
+        return Setting::first();
     }
 }

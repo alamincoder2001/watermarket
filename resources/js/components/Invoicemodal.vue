@@ -6,23 +6,23 @@
         </div>
         <div class="col-12 mt-3 text-end">
             <p class="m-0" style="border-bottom: 1px solid #ccc;">
-                <span style="text-transform: uppercase;font-style: italic;">Invoice no: </span>{{ modalData.invoice }} <br />
-                <span style="text-transform: uppercase;font-style: italic;">Date: </span> {{ dateFormat(modalData.date) }}
+                <span style="text-transform: uppercase;font-style: italic;">Invoice no: </span>{{ invoiceData.invoice }} <br />
+                <span style="text-transform: uppercase;font-style: italic;">Date: </span> {{ dateFormat(invoiceData.date) }}
             </p>
         </div>
         <div class="col-6 mb-2">
             <p class="m-0">
                 <span style="font-weight:700;border-bottom: 1px dashed darkgray;">Billing Address</span> <br />
-                <span style="font-weight:700;">Customer Name: </span>{{ modalData.name }} <br />
-                <span style="font-weight:700;">Mobile: </span>{{ modalData.mobile }} <br />
-                <span style="font-weight:700;">Address: </span>{{ modalData.address }} , {{modalData.customer_thana_name}}, {{ modalData.customer_district_name }} 
+                <span style="font-weight:700;">Customer Name: </span>{{ invoiceData.name }} <br />
+                <span style="font-weight:700;">Mobile: </span>{{ invoiceData.mobile }} <br />
+                <span style="font-weight:700;">Address: </span>{{ invoiceData.address }} , {{invoiceData.customer_thana_name}}, {{ invoiceData.customer_district_name }} 
             </p>
         </div>
         <div class="col-6 mb-2 text-end">
             <p class="m-0">
                 <span style="font-weight:700;border-bottom: 1px dashed darkgray;">Shipping Address</span> <br />
-                <span style="font-weight:700;">Mobile: </span>{{ modalData.shipping_mobile }} <br />
-                <span style="font-weight:700;">Address: </span>{{ modalData.shipping_address }} , {{ modalData.shipping_thana_name }} , {{ modalData.shipping_district_name }}
+                <span style="font-weight:700;">Mobile: </span>{{ invoiceData.shipping_mobile }} <br />
+                <span style="font-weight:700;">Address: </span>{{ invoiceData.shipping_address }} , {{ invoiceData.shipping_thana_name }} , {{ invoiceData.shipping_district_name }}
             </p>
         </div>
         <div class="col-12">
@@ -45,7 +45,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(item, index) in modalData.orderDetails">
+                    <tr v-for="(item, index) in invoiceData.orderDetails">
                         <td>{{ ++index }}</td>
                         <td>{{ item.name }}</td>
                         <td class="text-center">
@@ -65,12 +65,12 @@
                 <tr>
                     <td style="width: 47%;">SubTotal</td>
                     <td>:</td>
-                    <td class="text-end">{{ modalData.subtotal }}</td>
+                    <td class="text-end">{{ invoiceData.subtotal }}</td>
                 </tr>
                 <tr>
                     <td style="width: 47%;">Shipping Charge</td>
                     <td>:</td>
-                    <td class="text-end">{{ modalData.shipping_charge }}</td>
+                    <td class="text-end">{{ invoiceData.shipping_charge }}</td>
                 </tr>
                 <tr>
                     <td colspan="3" style="border-bottom: 1px dashed gray;"></td>
@@ -78,7 +78,7 @@
                 <tr>
                     <td style="width: 47%;">Total</td>
                     <td>:</td>
-                    <td class="text-end">{{ modalData.total }}</td>
+                    <td class="text-end">{{ invoiceData.total }}</td>
                 </tr>
             </table>
         </div>
@@ -87,29 +87,14 @@
 
 <script >
 import moment from 'moment';
-
 export default {
     props: {
         title: String,
-        invoiceData: String,
-    },
-    data() {
-        return {
-            id: this.invoiceData,
-            modalData: {},
-            image: null,
-        }
-    },
-    created() {
-        this.getOrder();
+        invoiceData: {
+            item: Object
+        },
     },
     methods: {
-        getOrder(){
-            axios.post("/admin/order/fetch", {id:this.id})
-                .then(res => {
-                    this.modalData = res.data.orders[0]
-                })
-        },
         dateFormat(data){
             return moment(data).format("DD-MM-YYYY");
         }

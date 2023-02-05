@@ -59,6 +59,7 @@ Route::get("/customer-logout", [CustomerController::class, 'logout'])->name('cus
 
 // get data from database
 Route::get("/getUpazila/{id}", [HomeController::class, "getUpazila"]);
+Route::get('/setting/fetch', [HomeController::class, 'fetch'])->name('setting.fetch');
 
 // Admin Login Route
 Route::group(["prefix" => "admin"], function () {
@@ -146,9 +147,13 @@ Route::group(["prefix" => "admin"], function () {
 
     //order route
     Route::get('/order', [OrderController::class, 'index'])->name('admin.order.index');
+    Route::get('/order-proccessing', [OrderController::class, 'proccessing'])->name('admin.order.proccessing');
+    Route::get('/order-delivery', [OrderController::class, 'delivery'])->name('admin.order.delivery');
+    Route::get('/order-canceled', [OrderController::class, 'canceled'])->name('admin.order.canceled');
     Route::post('/order/fetch', [OrderController::class, 'fetch'])->name('admin.order.fetch');
     Route::post('/order/status', [OrderController::class, 'changeStatus'])->name('admin.order.status');
     Route::post('/order/delete', [OrderController::class, 'destroy'])->name('admin.order.destroy');
+    Route::get('/order/invoice/{invoice}', [OrderController::class, 'invoice'])->name('admin.order.invoice');
     // blog route
     Route::get('/blog', [BlogController::class, 'index'])->name('admin.blog.index');
     Route::get('/blog/fetch/{id?}', [BlogController::class, 'fetch'])->name('admin.blog.fetch');

@@ -61,9 +61,9 @@
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
                             <a href="{{route('admin.order.index')}}" class="sidebar-link {{Request::is('admin.order.index') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Pending Order</span></a>
-                            <a href="{{route('admin.order.index')}}" class="sidebar-link {{Request::is('admin.order.index') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> On Proccessing Order </span></a>
-                            <a href="{{route('admin.order.index')}}" class="sidebar-link {{Request::is('admin.order.index') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Order Archive </span></a>
-                            <a href="{{route('admin.order.index')}}" class="sidebar-link {{Request::is('admin.order.index') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Order Canceled </span></a>
+                            <a href="{{route('admin.order.proccessing')}}" class="sidebar-link {{Request::is('admin.order.proccessing') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> On Proccessing Order </span></a>
+                            <a href="{{route('admin.order.delivery')}}" class="sidebar-link {{Request::is('admin.order.delivery') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Order Archive </span></a>
+                            <a href="{{route('admin.order.canceled')}}" class="sidebar-link {{Request::is('admin.order.canceled') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Order Canceled </span></a>
                         </li>
                     </ul>
                 </li>
@@ -73,7 +73,7 @@
                 </li>
 
                 <li class="sidebar-item {{Request::is('admin.setting') ? 'selected':''}}">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.logout')}}" aria-expanded="false"><i class="fas fa-sign-out-alt"></i><span class="hide-menu">Logout</span></a>
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin.logout')}}" aria-expanded="false"><i class="mdi mdi-logout-variant"></i><span class="hide-menu">Logout</span></a>
                 </li>
             </ul>
         </nav>
