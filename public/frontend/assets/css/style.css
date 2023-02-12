@@ -18538,16 +18538,16 @@ p:last-child {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 500px;
+  height: 300px;
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .hero-slider .hero-slide-item {
-    height: 400px;
+    height: 300px;
   }
 }
 @media screen and (max-width: 767px) {
   .hero-slider .hero-slide-item {
-    height: 400px;
+    height: 300px;
   }
 }
 .hero-slider .hero-slide-item.swiper-slide-active .title.delay1 {
@@ -18582,7 +18582,7 @@ p:last-child {
   }
 }
 .hero-slide-content .title {
-  font-size: 45px;
+  font-size: 25px;
   line-height: 1;
   color: #32383e;
   font-weight: 600;
@@ -18590,20 +18590,19 @@ p:last-child {
 }
 @media screen and (max-width: 767px) {
   .hero-slide-content .title {
-    font-size: 35px;
+    font-size: 25px;
     line-height: 1.3;
   }
 }
 @media screen and (max-width: 480px) {
   .hero-slide-content .title {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 .hero-slide-content .text {
   color: #666;
   font-size: 20px;
   line-height: 1.2;
-  margin: 20px 0 30px;
   text-transform: capitalize;
   font-weight: 300;
 }
@@ -19022,8 +19021,8 @@ textarea.form-control {
 ----------------------------------------*/
 .title-section {
   border-bottom: 2px solid #f1f1f1;
-  padding-bottom: 20px;
-  margin-bottom: 15px;
+  margin: 15px 0;
+  padding-bottom: 3px;
 }
 .title-section .title {
   color: #32383e;
@@ -19041,7 +19040,7 @@ textarea.form-control {
   left: 0;
   right: 0;
   height: 2px;
-  bottom: -23px;
+  bottom: -5px;
   background: #fe6022;
 }
 .title-section .sub-title {
@@ -19493,9 +19492,9 @@ textarea.form-control {
 .social-link {
   text-align: center;
   display: inline-block;
-  width: 45px;
-  height: 45px;
-  line-height: 45px;
+  width: 43px;
+  height: 43px;
+  line-height: 43px;
   background: #fff;
   font-size: 21px;
   color: #32383e;
@@ -19503,9 +19502,9 @@ textarea.form-control {
 }
 @media screen and (min-width: 1200px) {
   .social-link {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
+    width: 43px;
+    height: 43px;
+    line-height: 43px;
   }
 }
 
@@ -19523,9 +19522,9 @@ textarea.form-control {
 }
 
 .social2 .social-link {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 43px;
+  height: 43px;
+  line-height: 43px;
   font-size: 14px;
   border: 1px solid #e9e9e9;
 }
@@ -20172,7 +20171,7 @@ textarea.form-control {
   font-size: 15px;
   text-transform: uppercase;
   line-height: 1.333;
-  padding: 18px 20px;
+  padding: 12px 15px;
 }
 .vertical-menu .menu-btn span {
   display: inline-block;
@@ -20963,7 +20962,7 @@ textarea.form-control {
   left: 0;
   right: 0;
   background: #fe6022;
-  bottom: -22px;
+  bottom: -4px;
   opacity: 0;
   width: 0;
   content: "";

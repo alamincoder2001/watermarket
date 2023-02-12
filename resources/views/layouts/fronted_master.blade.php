@@ -186,63 +186,71 @@
     </main>
 
 
-    <footer class="footer-section" style="background:#ffda93">
+    <footer class="footer-section" style="background: #bec6ff99;padding-top: 10px;">
         <div class="footer-top position-relative">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-12">
                         <div class="border-bottom section-py">
                             <div class="row mb-n7">
-                                <div class="col-lg-4 col-sm-6 mb-7">
-                                    <div class="footer-widget">
-                                        <a class="footer-logo mb-8" href="index.html">
-                                            <img src="{{asset('backend/assets/images/logo-text.png')}}" alt="footer-logo" />
+                                <div class="col-lg-3 col-sm-6 mb-7">
+                                    <div class="footer-widget d-flex align-items-center flex-column">
+                                        <a class="footer-logo" href="#" style="width: 50%;height: 140px;border: 1px solid #919191;padding: 2px;">
+                                            <img style="width:100%;height: 100%;" src="{{asset($profile->ownerimage != null ? $profile->ownerimage : '/noImage.jpg' )}}" alt="footer-logo" />
                                         </a>
-                                        <p>
-                                            We are a team of designers and developers that create high quality
-                                            Magento, Prestashop, Opencart.
-                                        </p>
-                                        <ul class="adress">
-                                            <li><span class="text-dark fw-500">Address:</span> {{$profile->address}}</li>
-                                            <li><span class="text-dark fw-500">Email:</span> <a href="mailto:support@hasthemes.com">{{$profile->email}}</a></li>
-                                            <li><span class="text-dark fw-500">Call us:</span><a href="tel:110012345678"><span class="phone-call">{{$profile->mobile}}</span></a></li>
+                                        <ul class="address mt-3">
+                                            <li>{{$profile->ownername}}, {{$profile->ownerdesignation}}</li>
                                         </ul>
                                     </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6 mb-7">
+                                    <div class="footer-widget" style="padding: 0 15px 15px 15px;border: 1px solid gray;">
+                                        <h4 class="title text-decoration-underline">Contact Information</h4>
+                                        <table style="width:50%">
+                                            <tr>
+                                                <td><span href="#">Phone</td>
+                                                <td>:</td>
+                                                <td>{{$profile->mobile}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span href="#">Email</td>
+                                                <td>:</td>
+                                                <td>{{$profile->email}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><span href="#">Address</td>
+                                                <td>:</td>
+                                                <td>{{$profile->address}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <ul class="footer-menu mt-3">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <form id="mc-form" action="#" style="width: 76%;">
+                                                <div class="input-group">
+                                                    <input id="mc-email" type="email" class="form-control border-0" required="" placeholder="Enter your email address" />
+                                                    <div class="input-group-text">
+                                                        <button class="btn-primary btn btn-hover-warning" type="submit">Subscribe</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div style="width: 35%;">
+                                                <a class="social-link" href="{{$profile->facebook}}" target="_blank"><span class="ion-social-facebook"></span></a>
+                                                <a class="social-link" href="{{$profile->instagram}}" target="_blank"><span class="ion-social-instagram"></span></a>
+                                                <a class="social-link" href="{{$profile->linkedin}}" target="_blank"><span class="ion-social-linkedin"></span></a>
+                                                <a class="social-link" href="{{$profile->twitter}}" target="_blank"><span class="ion-social-twitter"></span></a>
+                                            </div>
+                                        </div>
+                                    </ul>
                                 </div>
                                 <div class="col-lg-3 col-sm-6 mb-7">
-                                    <div class="footer-widget">
-                                        <h4 class="title">Products</h4>
-                                        <ul class="footer-menu">
-                                            <li><a class="footer-link" href="#">Prices drop</a></li>
-                                            <li><a class="footer-link" href="#">New products</a></li>
-                                            <li><a class="footer-link" href="#">Best sales</a></li>
-                                            <li><a class="footer-link" href="#">Blog Post</a></li>
-                                            <li><a class="footer-link" href="#">Contact us</a></li>
-                                            <li><a class="footer-link" href="#">Sitemap</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-sm-6 mb-7">
-                                    <div class="footer-widget">
-                                        <h4 class="title">Our company</h4>
-                                        <ul class="footer-menu">
-                                            <li><a class="footer-link" href="#">Delivery</a></li>
-                                            <li><a class="footer-link" href="#">Legal Notice</a></li>
-                                            <li><a class="footer-link" href="#">About us</a></li>
-                                            <li><a class="footer-link" href="#">Secure payment</a></li>
-                                            <li><a class="footer-link" href="#">Prices drop</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-sm-6 mb-7">
-                                    <div class="footer-widget">
-                                        <h4 class="title">Your account</h4>
-                                        <ul class="footer-menu">
-                                            <li><a class="footer-link" href="#">Personal info</a></li>
-                                            <li><a class="footer-link" href="#">Orders</a></li>
-                                            <li><a class="footer-link" href="#">Credit slips</a></li>
-                                            <li><a class="footer-link" href="#">Addresses</a></li>
-                                            <li><a class="footer-link" href="#">My wishlists</a></li>
+                                    <div class="footer-widget d-flex align-items-center flex-column">
+                                        <a class="footer-logo" href="#" style="width: 50%;height: 140px;border: 1px solid #919191;padding: 2px;">
+                                            <img style="width:100%;height: 100%;" src="{{asset($profile->ownerimagetwo != null ? $profile->ownerimagetwo : '/noImage.jpg' )}}" alt="footer-logo" />
+                                        </a>
+                                        <ul class="address mt-3">
+                                            <li>{{$profile->ownername_two}}, {{$profile->ownerdesignation_two}}</li>
+                                            <!-- <li><span style="font-weight: 500;color:#fff;">Designation:</span> {{$profile->ownerdesignation_two}}</li> -->
                                         </ul>
                                     </div>
                                 </div>

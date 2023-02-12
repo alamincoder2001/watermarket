@@ -23,16 +23,16 @@
                             <a href="{{route('admin.subcategory.index')}}" class="sidebar-link {{Request::is('admin.subcategory.index') ? 'active':''}}"><i class="fas fa-list-alt"></i><span class="hide-menu"> Sub-Category Entry</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{route('admin.unit.index')}}" class="sidebar-link {{Request::is('admin.unit.index') ? 'active':''}}"><i class="fas fa-list-alt"></i><span class="hide-menu"> Unit </span></a>
+                            <a href="{{route('admin.unit.index')}}" class="sidebar-link {{Request::is('admin.unit.index') ? 'active':''}}"><i class="fas fa-list-alt"></i><span class="hide-menu"> Unit Entry </span></a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{route('admin.product.index')}}" class="sidebar-link {{Request::is('admin.product.index') ? 'active':''}}"><i class="fab fa-product-hunt"></i><span class="hide-menu"> Product Entry </span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{route('admin.product.published')}}" class="sidebar-link {{Request::is('admin.product.published') ? 'active':''}}"><i class="fas fa-upload"></i><span class="hide-menu"> Product Published </span></a>
+                            <a href="{{route('admin.product.published')}}" class="sidebar-link {{Request::is('admin.product.published') ? 'active':''}}"><i class="fas fa-upload"></i><span class="hide-menu"> Product Published Entry </span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="{{route('admin.partner.index')}}" class="sidebar-link {{Request::is('admin.partner.index') ? 'active':''}}"><i class="fas fa-handshake"></i><span class="hide-menu"> Partner </span></a>
+                            <a href="{{route('admin.partner.index')}}" class="sidebar-link {{Request::is('admin.partner.index') ? 'active':''}}"><i class="fas fa-handshake"></i><span class="hide-menu"> Partner Entry </span></a>
                         </li>
                         <li class="sidebar-item">
                             <a href="{{route('admin.blog.index')}}" class="sidebar-link {{Request::is('admin.blog.index') ? 'active':''}}"><i class="fas fa-handshake"></i><span class="hide-menu"> News & Events Entry</span></a>

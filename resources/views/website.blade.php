@@ -69,19 +69,6 @@
                                         <li><a href="#">Pastry Mats</a></li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                        <span><strong>Chocolate Moulds</strong></span>
-                                    </a>
-                                    <ul class="submenu-item">
-                                        <li><a href="#">Decorating Pens</a></li>
-                                        <li><a href="#">Decorating Sets</a></li>
-                                        <li><a href="#">Decorating Tips</a></li>
-                                        <li><a href="#">Sweetly Does It</a></li>
-                                        <li><a href="#">Aprons</a></li>
-                                        <li><a href="#">Electric Mixers</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                         </li> -->
                         @foreach($categories as $item)
@@ -1933,7 +1920,7 @@ $bann = array_chunk($banner, 3);
 <!-- Brand Slider End -->
 
 <!-- Blog Section Start-->
-<section class="blog-section section-py bg-light">
+<section class="blog-section section-py">
     <div class="container">
         <div class="row g-0">
             <div class="col-12">
@@ -1950,6 +1937,7 @@ $bann = array_chunk($banner, 3);
         </div>
         <div class="row">
             <div class="col-12">
+                @if($blog->count() > 0)
                 <div class="blog-carousel">
                     <div class="d-none d-sm-block swiper-navination-arrows">
                         <div class="swiper-button-prev">
@@ -1983,43 +1971,13 @@ $bann = array_chunk($banner, 3);
                         </div>
                     </div>
                 </div>
+                @else
+                <div class="text-center">Not Found Data</div>
+                @endif
 
             </div>
         </div>
     </div>
 </section>
 <!-- Blog Section End-->
-
-<!-- News letter Section Start -->
-<section class="section-py bg-primary">
-    <div class="container">
-        <div class="row align-items-center mb-n7">
-            <div class="col-xl-3 col-lg-5 col-md-6 mb-7 order-first">
-                <div class="text-center text-md-start">
-                    <h3 class="news-title">Sign Up For Newsletters</h3>
-                    <p class="text">Be the First to Know. Sign up for newsletter today</p>
-                </div>
-            </div>
-            <div class="col-xl-5 col-lg-4 mb-7 order-last order-lg-0">
-                <form id="mc-form" action="#">
-                    <div class="input-group">
-                        <input id="mc-email" type="email" class="form-control border-0" required="" placeholder="Enter your email address" />
-                        <div class="input-group-text">
-                            <button class="btn-search btn btn-hover-dark" type="submit">Subscribe</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="col-xl-4 col-lg-3 col-md-6 mb-7">
-                <ul class="social d-flex flex-wrap align-items-center justify-content-center justify-content-md-end">
-                    <li class="social-link-item"><a class="social-link" href="{{$profile->facebook}}" target="_blank"><span class="ion-social-facebook"></span></a></li>
-                    <li class="social-link-item"><a class="social-link" href="{{$profile->instagram}}" target="_blank"><span class="ion-social-instagram"></span></a></li>
-                    <li class="social-link-item"><a class="social-link" href="{{$profile->linkedin}}" target="_blank"><span class="ion-social-linkedin"></span></a></li>
-                    <li class="social-link-item"><a class="social-link" href="{{$profile->twitter}}" target="_blank"><span class="ion-social-twitter"></span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- News letter Section End -->
 @endsection

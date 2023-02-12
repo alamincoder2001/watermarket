@@ -79,6 +79,8 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/setting', [SettingController::class, 'updateSetting'])->name('admin.setting.store');
     Route::post('/logoUpdate', [SettingController::class, 'logoUpdate'])->name('admin.setting.logoUpdate');
     Route::post('/naviconUpdate', [SettingController::class, 'naviconUpdate'])->name('admin.setting.naviconUpdate');
+    Route::post('/ownerimageUpdate', [SettingController::class, 'ownerimageUpdate'])->name('admin.setting.ownerimageUpdate');
+    Route::post('/ownerimagetwoUpdate', [SettingController::class, 'ownerimagetwoUpdate'])->name('admin.setting.ownerimagetwoUpdate');
 
     // Website content route
     // Banner Route
@@ -130,20 +132,6 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/thana/fetch/{id?}', [ThanaContoller::class, 'fetch'])->name('admin.thana.fetch');
     Route::post('/thana', [ThanaContoller::class, 'store'])->name('admin.thana.store');
     Route::post('/thana/delete', [ThanaContoller::class, 'destroy'])->name('admin.thana.destroy');
-    // supplier Route
-    // Route::get('/supplier', [SupplierController::class, 'index'])->name('admin.supplier.index');
-    // Route::get('/supplier/fetch/{id?}', [SupplierController::class, 'fetch'])->name('admin.supplier.fetch');
-    // Route::post('/supplier', [SupplierController::class, 'store'])->name('admin.supplier.store');
-    // Route::post('/supplier/delete', [SupplierController::class, 'destroy'])->name('admin.supplier.destroy');
-
-    // Purchase module route
-    // purchase route
-    // Route::get('/purchase', [PurchaseController::class, 'index'])->name('admin.purchase.index');
-    // Route::get('/purchase/edit/{invoice?}', [PurchaseController::class, 'edit'])->name('admin.purchase.edit');
-    // Route::post('/purchase/fetch', [PurchaseController::class, 'fetch'])->name('admin.purchase.fetch');
-    // Route::post('/purchase', [PurchaseController::class, 'store'])->name('admin.purchase.store');
-    // Route::post('/purchase/delete', [PurchaseController::class, 'destroy'])->name('admin.purchase.destroy');
-    // Route::get("/purchaseList", [PurchaseController::class, 'purchaseList'])->name("admin.purchase.purchaseList");
 
     //order route
     Route::get('/order', [OrderController::class, 'index'])->name('admin.order.index');

@@ -17,37 +17,36 @@ class CheckoutController extends Controller
         if (Auth::guard("web")->check()) {
             if (Cart::content()->count() > 0) {
                 return view("checkout");
-            }else{
+            } else {
                 return redirect("/product");
             }
-        }else{
+        } else {
             return redirect("/login");
         }
     }
 
     public function CheckOut(Request $request)
     {
-        try{
+        try {
             DB::beginTransaction();
             if (Cart::content()->count() > 0) {
-                if(isset($request->is_shipping) && $request->is_shipping == 1){
+                if (isset($request->is_shipping) && $request->is_shipping == 1) {
                     $validator = Validator::make($request->all(), [
                         "shipping_district" => "required",
                         "shipping_thana" => "required",
                         "shipping_address" => "required",
                         "shipping_mobile" => "required",
                     ]);
-                }else{
+                } else {
                     $validator = Validator::make($request->all(), [
                         "address" => "required",
                     ]);
                 }
-    
-                if($validator->fails()){
+
+                if ($validator->fails()) {
                     return response()->json(["error" => $validator->errors()]);
                 }
-                
-    
+
                 $data                    = new Order();
                 $data->invoice           = $this->invoiceGenerate("Order", "WI");
                 $data->date              = date("Y-m-d");
@@ -57,7 +56,7 @@ class CheckoutController extends Controller
                 $data->shipping_mobile   = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_mobile : Auth::guard('web')->user()->mobile;
                 $data->shipping_address  = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_address : $request->address;
                 $data->shipping_postcode = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_postcode : $request->postcode;
-                $data->subtotal          = str_replace(",", "",Cart::subtotal());
+                $data->subtotal          = str_replace(",", "", Cart::subtotal());
                 $data->shipping_charge   = isset($request->is_shipping) && $request->is_shipping == 1 ? $request->shipping_charge : $request->shipping_charge;
                 $data->total             = $data->subtotal + $data->shipping_charge;
                 $data->payment_type      = $request->payment_type;
@@ -65,7 +64,7 @@ class CheckoutController extends Controller
                 $data->save();
 
                 // order Details
-                foreach(Cart::content() as $item){
+                foreach (Cart::content() as $item) {
                     $detail             = new OrderDetail();
                     $detail->order_id   = $data->id;
                     $detail->product_id = $item->id;
@@ -77,13 +76,12 @@ class CheckoutController extends Controller
                 Cart::destroy();
                 DB::commit();
                 return response()->json(["msg" => "Order place successfully"]);
-            }else{
+            } else {
                 return response()->json(["errors" => "Cart is empty"]);
             }
-
-        }catch(\Throwable $e){
+        } catch (\Throwable $e) {
             DB::rollBack();
-            return "Opps! something went wrong ". $e->getMessage();
+            return "Opps! something went wrong " . $e->getMessage();
         }
     }
 }
