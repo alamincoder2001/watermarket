@@ -56,7 +56,7 @@ class HomeController extends Controller
 
     public function blog()
     {
-        $blog = Blog::paginate(24)->orderBy("id", "DESC");
+        $blog = Blog::orderBy('id', "DESC")->paginate(24);
         return view('blog', compact("blog"));
     }
 

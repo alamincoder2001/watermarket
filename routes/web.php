@@ -48,7 +48,8 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::post('/place-order', [CheckoutController::class, 'CheckOut'])->name('place.order');
 
 // Technician and customer login
-Route::get('/login', [CustomerLoginController::class, 'showSignUpForm'])->name('showSignUpForm')->middleware('checkAuth');
+Route::get('/login', [CustomerLoginController::class, 'showSignInForm'])->name('showSignInForm')->middleware('checkAuth');
+Route::get('/register', [CustomerLoginController::class, 'showSignUpForm'])->name('showSignUpForm')->middleware('checkAuth');
 Route::post('/customer-register', [CustomerLoginController::class, 'CustomerRegister'])->name('customer.register')->middleware('checkAuth');
 Route::post('/customer-login', [CustomerLoginController::class, 'CustomerLogin'])->name('customer.login')->middleware('checkAuth');
 Route::post('/technician-register', [CustomerLoginController::class, 'TechnicianRegister'])->name('technician.register')->middleware('checkAuth');

@@ -20471,7 +20471,7 @@ textarea.form-control {
 }
 
 .copy-right-section {
-  padding: 20px 0px;
+  padding: 10px 0px;
 }
 
 .copyright-info p {
@@ -22715,7 +22715,7 @@ textarea.form-control {
   background: transparent none repeat scroll 0 0;
   -webkit-box-shadow: 0px 0px 1px 5px rgb(110 110 110 / 19%);
   box-shadow: 0px 0px 1px 5px rgb(110 110 110 / 19%);
-  padding: 80px;
+  padding: 40px 50px;
   text-align: left;
 }
 @media screen and (max-width: 768px) {
@@ -22729,7 +22729,7 @@ textarea.form-control {
   border: 1px solid #ebebeb;
   color: #666;
   font-size: 14px;
-  height: 45px;
+  height: 35px;
   margin-bottom: 10px;
   padding: 0 15px;
   width: 100%;

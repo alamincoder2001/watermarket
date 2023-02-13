@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12 col-sm-6">
                     <p>Email: <a class="header-top-link" href="https://gmail.com/">{{$profile->email}}</a></p>
-                    <p>Free Shipping for all Order of $99</p>
+                    <p>Free Shipping for all Order</p>
                 </div>
                 <div class="col-12 col-sm-6">
                     <div class="header-top-nav">
@@ -20,7 +20,11 @@
                                 <!-- dropdown-menu start -->
                             </li>
                             @else
-                            <li class="dropdown top-nav-item"><a class="top-nav-link" href="{{route('showSignUpForm')}}" role="button" id="account">Sign In</a></li>
+                            <li class="dropdown top-nav-item">
+                                <a class="top-nav-link" href="{{route('showSignUpForm')}}" role="button" id="account">Sign Up</a>
+                                |
+                                <a class="top-nav-link" href="{{route('showSignInForm')}}" role="button" id="account">Sign In</a>
+                            </li>
                             @endif
                         </ul>
                     </div>

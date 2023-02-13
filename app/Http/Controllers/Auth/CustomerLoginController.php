@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Validator;
 class CustomerLoginController extends Controller
 {
 
+    public function showSignInForm()
+    {
+        return view("auth.frontend.signin");
+    }
+
     public function showSignUpForm()
     {
         return view("auth.frontend.signup");
