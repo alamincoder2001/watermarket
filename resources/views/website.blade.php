@@ -136,7 +136,7 @@
 </section>
 <!-- Hero Slider End -->
 
-<!-- Product tab Start -->
+<!-- Feature Product tab Start -->
 <section class="section">
     <div class="container">
         <div class="row g-0">
@@ -168,7 +168,7 @@
                                     <!-- single slide Start -->
                                     @foreach($feature_product as $item)
                                     <div class="swiper-slide">
-                                        <div class="product-card" style="height:380px;">
+                                        <div class="product-card" style="height:350px;">
                                             <a class="thumb" href="{{route('single.product', $item->slug)}}"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
                                                 <div class="onsales-badges">
                                                     <span class="badge bg-dark">new</span>
@@ -215,7 +215,88 @@
         </div>
     </div>
 </section>
-<!-- Product tab End -->
+<!-- Feature Product tab End -->
+
+<!-- Technician tab Start -->
+<section class="section  section-py">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-12">
+                <div class="title-section text-center text-lg-start">
+                    <div class="row">
+                        <!-- title section Start -->
+                        <div class="col-12 col-lg-4">
+                            <h3 class="title">Latest Technician</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="baking">
+                        <div class="product-carousel1">
+                            <div class="d-none d-sm-block swiper-navination-arrows">
+                                <div class="swiper-button-prev">
+                                    <span class="ion-android-arrow-back"></span>
+                                </div>
+                                <div class="swiper-button-next">
+                                    <span class="ion-android-arrow-forward"></span>
+                                </div>
+                            </div>
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <!-- single slide Start -->
+                                    @foreach($feature_product as $item)
+                                    <div class="swiper-slide">
+                                        <div class="product-card" style="height:350px;">
+                                            <a class="thumb" href="{{route('single.product', $item->slug)}}"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
+                                                <div class="onsales-badges">
+                                                    <span class="badge bg-dark">new</span>
+                                                </div>
+                                            </a>
+                                            <div class="product-content">
+                                                <a class="product-category" href="#?">{{$item->category_name}}</a>
+                                                <h3 class="product-title">
+                                                    <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
+                                                </h3>
+                                                <span class="price regular-price">
+                                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
+                                                    ৳ {{$item->wholesale_rate}}
+                                                    @else
+                                                    ৳ {{$item->selling_rate}}
+                                                    @endif
+                                                </span>
+                                                <button class="product-btn btn btn-primary btn-hover-warning" onclick="addCart({{$item->id}})">
+                                                    Add to Cart
+                                                </button>
+                                            </div>
+                                            <!-- actions links start -->
+                                            <ul class="actions">
+                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
+                                                <li class="action-item"><button class="action wishlist" onclick="addWishlist({{$item->id}})"><span class="lnr lnr-heart"></span></button></li>
+                                            </ul>
+                                            <!-- actions links end -->
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                    <!-- single slide End -->
+                                </div>
+                            </div>
+                            @if(count($feature_product) == 0)
+                            <div class="text-center">
+                                <img src="{{asset('no-product.png')}}" width="300">
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Technician tab End -->
 
 <!-- Banner Section Start -->
 @php

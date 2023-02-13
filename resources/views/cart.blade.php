@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="title pb-3 text-capitalize">Your cart items</h3>
+                <h3 class="title text-capitalize">Your cart items</h3>
                 <div class="table-responsive cartTable">
                     <table class="table">
                         <thead class="thead-light">
@@ -73,7 +73,7 @@
                             @endforeach
                             @else
                             <tr>
-                                <td colspan="6" class="text-center">
+                                <td colspan="7" class="text-center">
                                     <img src="{{asset('emptycart.png')}}" width="150">
                                 </td>
                             </tr>
@@ -190,7 +190,7 @@
 
                     let row1 = `
                             <tr>
-                                <td colspan="6" class="text-center">
+                                <td colspan="7" class="text-center">
                                     <img src="${location.origin+"/emptycart.png"}" width="150">
                                 </td>
                             </tr>                          
