@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\District;
+use App\Models\Brand;
 use App\Models\Setting;
 use App\Thana;
 use Illuminate\Pagination\Paginator;
@@ -31,6 +32,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
         View::share("profile", Setting::first());
+        View::share("brand", Brand::latest()->get());
+        View::share("category", Setting::latest()->get());
         View::share("districts", District::orderBy("name", "ASC")->get());
         View::share("upazilas", Thana::orderBy("name", "ASC")->get());
         Schema::defaultStringLength(191);

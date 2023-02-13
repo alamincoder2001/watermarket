@@ -45,13 +45,13 @@
                         <form onsubmit="AdminLogin(event)">
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <input type="text" name="username" id="form2Example1" class="form-control" />
+                                <input type="text" name="username" id="form2Example1" class="form-control" autocomplete="off"/>
                                 <label class="form-label error-username" for="form2Example1">Username or Email Address</label>
                             </div>
 
                             <!-- Password input -->
                             <div class="form-outline mb-4">
-                                <input type="password" name="password" id="form2Example2" class="form-control" />
+                                <input type="password" name="password" id="form2Example2" class="form-control" autocomplete="off"/>
                                 <label class="form-label error-password" for="form2Example2">Password</label>
                             </div>
 

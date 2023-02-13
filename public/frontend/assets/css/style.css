@@ -18574,11 +18574,11 @@ p:last-child {
 }
 
 .hero-slide-content {
-  padding-left: 15px;
+  padding-left: 80px;
 }
 @media screen and (min-width: 992px) {
   .hero-slide-content {
-    padding-left: 50px;
+    padding-left: 80px;
   }
 }
 .hero-slide-content .title {
@@ -19041,7 +19041,7 @@ textarea.form-control {
   right: 0;
   height: 2px;
   bottom: -5px;
-  background: #fe6022;
+  background: #2b46a8;
 }
 .title-section .sub-title {
   color: #a9a9a9;
@@ -20961,7 +20961,7 @@ textarea.form-control {
   height: 2px;
   left: 0;
   right: 0;
-  background: #fe6022;
+  background: #2b46a8;
   bottom: -4px;
   opacity: 0;
   width: 0;

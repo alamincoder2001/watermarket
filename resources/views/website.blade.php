@@ -84,43 +84,29 @@
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <!-- swiper-slide start -->
-                            <div class="hero-slide-item swiper-slide" style="background-image: url('{{asset('frontend/assets/images/slider/slider1.jpg')}}');background-repeat: no-repeat;background-size: cover;background-position: 0% center;">
+                            @foreach($slider as $item)
+                            @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
+                            @if($item->using_by == 'wholesale')
+                            <div class="hero-slide-item swiper-slide" style="background-image: url('{{asset($item->image != null ? $item->image : 'noImage.jpg')}}');background-repeat: no-repeat;background-size: cover;background-position: 0% center;">
                                 <div class="hero-slide-content">
-                                    <h2 class="title delay1 animated">Cookware Set</h2>
-                                    <h2 class="title delay2 animated">New Vidre Digital</h2>
-                                    <p class="text animated">
-                                        When you buy a selected westinghouse
-                                    </p>
-                                    <p class="price animated">Only $479.95</p>
-                                    <a href="shop-grid-3-column.html" class="btn animated btn-primary text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    <h2 class="title delay2 animated">{{$item->title}}</h2>
+                                    <p class="text animated">When you buy a selected westinghouse</p>
+                                    <a href="#" class="btn animated btn-primary text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
                                 </div>
                             </div>
-                            <!-- swiper-slide end-->
-                            <!-- swiper-slide start -->
-                            <div class="hero-slide-item swiper-slide slide-bg2">
+                            @endif
+                            @else
+                            @if($item->using_by == 'retail')
+                            <div class="hero-slide-item swiper-slide" style="background-image: url('{{asset($item->image != null ? $item->image : 'noImage.jpg')}}');background-repeat: no-repeat;background-size: cover;background-position: 0% center;">
                                 <div class="hero-slide-content">
-                                    <h2 class="title delay1 animated">New Vidre Digital</h2>
-                                    <h2 class="title delay2 animated">Electric Kettle</h2>
-                                    <p class="text animated">
-                                        Big anti-scald handle match up to human</p>
-                                    <p class="price animated">Only $479.95</p>
-                                    <a href="shop-grid-3-column.html" class="btn animated btn-primary text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
+                                    <h2 class="title delay2 animated">{{$item->title}}</h2>
+                                    <p class="text animated">{!! $item->description !!}</p>
+                                    <a href="#" class="btn animated btn-primary text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
                                 </div>
                             </div>
-                            <!-- swiper-slide end-->
-                            <!-- swiper-slide start -->
-                            <div class="hero-slide-item swiper-slide slide-bg3">
-                                <div class="hero-slide-content">
-                                    <h2 class="title delay1 animated">Bonus 3 Piece</h2>
-                                    <h2 class="title delay2 animated">Cookware Set</h2>
-                                    <p class="text animated">
-                                        When you buy a selected
-                                    </p>
-                                    <p class="price animated">Only $479.95</p>
-                                    <a href="shop-grid-3-column.html" class="btn animated btn-primary text-white btn-hover-warning mb-3 mb-sm-0 text-uppercase">shopping Now</a>
-                                </div>
-                            </div>
-                            <!-- swiper-slide end-->
+                            @endif
+                            @endif
+                            @endforeach
                         </div>
                     </div>
 
@@ -237,7 +223,7 @@ $bann = array_chunk($banner, 3);
 @endphp
 
 @if(isset($bann[0]))
-<div class="banner-section section-pt">
+<div class="banner-section section-py">
     <div class="container">
         <div class="row mb-n7">
             @foreach($bann[0] as $item)
@@ -256,7 +242,7 @@ $bann = array_chunk($banner, 3);
 <!-- Banner Section End -->
 
 <!-- Product tab Start -->
-<section class="section-pt">
+<section class="section-py">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -560,7 +546,7 @@ $bann = array_chunk($banner, 3);
 
 <!-- Banner Section Start -->
 @if(isset($bann[1]))
-<div class="banner-section section-pt">
+<div class="banner-section section-py">
     <div class="container">
         <div class="row mb-n7">
             @foreach($bann[1] as $item)
@@ -580,7 +566,7 @@ $bann = array_chunk($banner, 3);
 
 
 <!-- Product tab Start -->
-<section class="section-pt">
+<section class="section-py">
     <div class="container">
         <div class="row g-0">
             <div class="col-12">
@@ -1203,7 +1189,7 @@ $bann = array_chunk($banner, 3);
 
 
 <!-- Product tab Start -->
-<section class="section-pt">
+<section class="section-py">
     <div class="container">
         <div class="row g-0">
             <div class="col-12">
@@ -1848,63 +1834,13 @@ $bann = array_chunk($banner, 3);
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <!-- single-brand Start -->
+                            @foreach($brand as $item)
                             <div class="swiper-slide">
                                 <div class="single-brand">
-                                    <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/1.png" alt="brand logo"></a>
+                                    <a class="thumb" href="#"><img src="{{asset($item->image != null ? $item->image : 'noImage.jpg')}}" alt="brand logo"></a>
                                 </div>
                             </div>
-                            <!-- single-brand End -->
-
-                            <!-- single-brand Start -->
-                            <div class="swiper-slide">
-                                <div class="single-brand">
-                                    <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/2.png" alt="brand logo"></a>
-                                </div>
-                            </div>
-                            <!-- single-brand End -->
-
-                            <!-- single-brand Start -->
-                            <div class="swiper-slide">
-                                <div class="single-brand">
-                                    <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/3.png" alt="brand logo"></a>
-                                </div>
-                            </div>
-                            <!-- single-brand End -->
-
-                            <!-- single-brand Start -->
-                            <div class="swiper-slide">
-                                <div class="single-brand">
-                                    <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/4.png" alt="brand logo"></a>
-                                </div>
-                            </div>
-                            <!-- single-brand End -->
-                            <!-- single-brand Start -->
-                            <div class="swiper-slide">
-                                <div class="single-brand">
-                                    <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/5.png" alt="brand logo"></a>
-                                </div>
-                            </div>
-                            <!-- single-brand End -->
-                            <!-- single-brand Start -->
-                            <div class="swiper-slide">
-                                <div class="single-brand">
-                                    <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/6.png" alt="brand logo"></a>
-                                </div>
-                            </div>
-                            <!-- single-brand End -->
-                            <!-- single-brand Start -->
-                            <div class="swiper-slide">
-                                <div class="single-brand">
-                                    <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/7.png" alt="brand logo"></a>
-                                </div>
-                            </div>
-                            <!-- single-brand End -->
-                            <!-- single-brand Start -->
-                            <div class="swiper-slide">
-                                <div class="single-brand">
-                                    <a class="thumb" href="#"><img src="{{asset('frontend')}}/assets/images/brand-logo/4.png" alt="brand logo"></a>
-                                </div>
-                            </div>
+                            @endforeach
                             <!-- single-brand End -->
                         </div>
                     </div>

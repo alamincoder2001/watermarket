@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\PurchaseController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use App\Http\Controllers\Admin\SupplierController;
 use App\Http\Controllers\Admin\TechnicianController;
@@ -147,6 +148,12 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/blog/fetch/{id?}', [BlogController::class, 'fetch'])->name('admin.blog.fetch');
     Route::post('/blog', [BlogController::class, 'store'])->name('admin.blog.store');
     Route::post('/blog/delete', [BlogController::class, 'destroy'])->name('admin.blog.destroy');
+    
+    // slider route
+    Route::get('/slider', [SliderController::class, 'index'])->name('admin.slider.index');
+    Route::get('/slider/fetch/{id?}', [SliderController::class, 'fetch'])->name('admin.slider.fetch');
+    Route::post('/slider', [SliderController::class, 'store'])->name('admin.slider.store');
+    Route::post('/slider/delete', [SliderController::class, 'destroy'])->name('admin.slider.destroy');
 
     // customer route
     Route::get('/customer', [AdminCustomerController::class, 'index'])->name("admin.customer.index");

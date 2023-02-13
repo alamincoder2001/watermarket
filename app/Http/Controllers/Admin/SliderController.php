@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use Carbon\Carbon;
-use App\Models\Brand;
-use Illuminate\Support\Str;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 
-class BrandController extends Controller
+class SliderController extends Controller
 {
     public function __construct()
     {
@@ -19,15 +18,15 @@ class BrandController extends Controller
 
     public function index()
     {
-        return view("admin.brand.index");
+        return view("admin.slider.index");
     }
 
     public function fetch($id = null)
     {
         if ($id != null) {
-            $data = Brand::find($id);
+            $data = Slider::find($id);
         } else {
-            $data = Brand::get();
+            $data = Slider::get();
         }
         return response()->json(["data" => $data]);
     }
@@ -35,43 +34,40 @@ class BrandController extends Controller
     public function store(Request $request)
     {
         try {
-            if (!empty($request->id)) {
-                $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:brands,name," . $request->id,
-                    "image" => "dimensions:width=188,height=74"
-                ], ["image.dimensions" => "Image dimension must be 188 X 74"]);
-                $data = Brand::find($request->id);
-                $old = $data->image;
-                $data->updated_at = Carbon::now();
-            } else {
-                $validator = Validator::make($request->all(), [
-                    "name" => "required|unique:brands",
-                    "image" => "dimensions:width=188,height=74"
-                ], ["image.dimensions" => "Image dimension must be 188 X 74"]);
-                $data = new Brand();
-                $data->created_at = Carbon::now();
-            }
+            $validator = Validator::make($request->all(), [
+                "title" => "required",
+            ]);
 
             if ($validator->fails()) {
                 return response()->json(["error" => $validator->errors()]);
             }
 
-            $data->name = $request->name;
-            $data->slug = Str::slug($request->name);
+            if (!empty($request->id)) {
+                $data             = Slider::find($request->id);
+                $old              = $data->image;
+                $data->updated_at = Carbon::now();
+            } else {
+                $data = new Slider();
+                $data->created_at = Carbon::now();
+            }
+
+            $data->title       = $request->title;
+            $data->description = $request->description;
+            $data->using_by    = $request->using_by;
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
                     if (File::exists($old)) {
                         File::delete($old);
                     }
                 }
-                $data->image = $this->imageUpload($request, 'image', 'uploads/brands') ?? '';
+                $data->image = $this->imageUpload($request, 'image', 'uploads/sliders') ?? '';
             }
             $data->save();
 
             if (!empty($request->id)) {
-                return "Brand updated successfully";
+                return "Slider updated successfully";
             } else {
-                return "Brand insert successfully";
+                return "Slider insert successfully";
             }
         } catch (\Throwable $e) {
             return "Something went wrong";
@@ -81,13 +77,13 @@ class BrandController extends Controller
     public function destroy(Request $request)
     {
         try {
-            $data = Brand::find($request->id);
-            $old = $data->image;
+            $data = Slider::find($request->id);
+            $old  = $data->image;
             if (File::exists($old)) {
                 File::delete($old);
             }
             $data->delete();
-            return "Brand Delete successfully";
+            return "Slider Delete successfully";
         } catch (\Throwable $e) {
             return "Something went wrong";
         }

@@ -204,7 +204,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-sm-6 mb-7">
-                                    <div class="footer-widget" style="padding: 0 15px 15px 15px;border: 1px solid gray;">
+                                    <div class="footer-widget" style="padding: 0 15px 15px 15px;border: 1px solid #cdcdcd;">
                                         <h4 class="title text-decoration-underline">Contact Information</h4>
                                         <table style="width:50%">
                                             <tr>
@@ -286,7 +286,6 @@
 
     <!-- Modals -->
     <!-- quick view modal -->
-    <!-- Button trigger modal -->
 
     <!-- Modal -->
     <div class="modal fade" id="quickview" tabindex="-1" aria-labelledby="quickview">
@@ -385,70 +384,8 @@
             </div>
         </div>
     </div>
-
     <!-- add to wishlist -->
-    <!-- Button trigger modal -->
 
-    <!-- Modal -->
-    <div class="modal fade" id="addtowishlist" tabindex="-1" aria-labelledby="addtowishlist">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-bottom-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="wishlist-modal">
-                        <p>You must be logged in to manage your wishlist.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- adto cart -->
-    <!-- Modal -->
-    <div class="modal fade" id="add-to-cart" tabindex="-1" aria-labelledby="add-to-cart">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header bg-warning border-bottom-0 justify-content-center">
-                    <span class="ion-android-done me-5"></span>
-                    <h4 class="modal-title text-center">Product successfully added to your shopping cart</h4>
-                    <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close">×</button>
-                </div>
-                <div class="modal-body p-5">
-                    <div class="row">
-                        <div class="col-lg-5">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img class="product-image" src="{{asset('frontend')}}/assets/images/products/product4.jpg" alt="img" />
-                                </div>
-                                <div class="col-md-6">
-                                    <h6 class="product-name">Leaf & Bean Electric Milk Frother & Warmets</h6>
-                                    <ul class="quntity-list">
-                                        <li>$83.90</li>
-                                        <li>Quantity:2</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
-                            <div class="cart-content">
-                                <p class="title">There are 3 items in your cart.</p>
-                                <p><span>Total products:</span> $218.70</p>
-                                <p><span>Total shipping:</span>Free</p>
-                                <p><span>Taxes:</span> $0.00</p>
-                                <p><span>Total:</span> $218.70 (tax excl.)</p>
-                                <div class="cart-content-btn">
-                                    <button class="btn btn-dark btn-hover-warning text-uppercase me-1" data-bs-dismiss="modal" aria-label="Close">Continue shopping</button>
-                                    <button class="btn btn-dark btn-hover-warning text-uppercase mt-3 mt-sm-0">Proceed to checkout</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </body>
 

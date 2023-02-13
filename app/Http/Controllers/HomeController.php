@@ -8,6 +8,7 @@ use App\Models\Brand;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Category;
+use App\Models\Slider;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -20,9 +21,10 @@ class HomeController extends Controller
         $topsold_product    = DB::select("SELECT p.*, c.name as category_name FROM products p LEFT JOIN categories c ON c.id = p.category_id where p.is_topsold = 1");
         $banner             = DB::select("SELECT b.* FROM banners b ORDER BY b.id DESC");
         $blog               = Blog::all();
+        $slider             = Slider::latest()->get();
         $categories         = Category::with('product')->orderBy("name", "ASC")->get();
         $brands             = Brand::with('product')->orderBy("name", "ASC")->get();
-        return view('website', compact("brands", "categories", "blog", "newarrival_product", "feature_product", "popular_product", "topsold_product", "banner"));
+        return view('website', compact("brands", "categories", "blog", "newarrival_product", "feature_product", "popular_product", "topsold_product", "banner", "slider"));
     }
 
     // Product

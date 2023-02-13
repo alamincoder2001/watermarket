@@ -26,6 +26,7 @@ Vue.component("purchase_list", require("./components/PurchaseList.vue").default)
 Vue.component("purchase_edit", require("./components/PurchaseEdit.vue").default);
 Vue.component("Customer", require("./components/Customer.vue").default);
 Vue.component("Technician", require("./components/Technician.vue").default);
+Vue.component("Slider", require("./components/Slider.vue").default);
 Vue.component("Blog", require("./components/Blog.vue").default);
 Vue.component("Orderlist", require("./components/OrderList.vue").default);
 Vue.component("proccess-order", require("./components/proccessOrder.vue").default);

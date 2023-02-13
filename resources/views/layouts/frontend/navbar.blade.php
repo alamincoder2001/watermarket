@@ -47,67 +47,12 @@
                             <div class="input-group-text">
                                 <select class="form-select d-none d-xl-block" aria-label="Default select example">
                                     <option value="0">All categories</option>
-                                    <option value="10">Cookware</option>
-                                    <option value="19">- - Baking &amp; Pastry Mats</option>
-                                    <option value="21">- - - - Baking Cups</option>
-                                    <option value="22">- - - - Baking Dishes</option>
-                                    <option value="23">- - - - Baking Mats</option>
-                                    <option value="24">- - - - Pastry Boards</option>
-                                    <option value="25">- - - - Pastry Mats</option>
-                                    <option value="20">- - Chocolate Moulds</option>
-                                    <option value="26">- - - - Decorating Pens</option>
-                                    <option value="27">- - - - Decorating Sets</option>
-                                    <option value="28">- - - - Decorating Tips</option>
-                                    <option value="29">- - - - Sweetly Does It</option>
-                                    <option value="30">- - - - Aprons</option>
-                                    <option value="72">- - - - Electric Mixers</option>
-                                    <option value="11">Appliances</option>
-                                    <option value="31">- - Chopping Boards</option>
-                                    <option value="33">- - - - Aprons</option>
-                                    <option value="34">- - - - Baking Cups</option>
-                                    <option value="35">- - - - Baking Dishes</option>
-                                    <option value="36">- - - - Coffee</option>
-                                    <option value="37">- - - - Coffee</option>
-                                    <option value="38">- - - - Tea Accessories</option>
-                                    <option value="32">- - Tea Towels</option>
-                                    <option value="39">- - - - Baking Cups</option>
-                                    <option value="40">- - - - Baking Moulds</option>
-                                    <option value="41">- - - - Bundt Pans</option>
-                                    <option value="42">- - - - Cake Moulds</option>
-                                    <option value="43">- - - - Cake Pans</option>
                                     <option value="12">Kitchenair</option>
                                     <option value="44">- - Knives</option>
                                     <option value="46">- - - - Baking Dishes</option>
                                     <option value="47">- - - - Ice Cream</option>
                                     <option value="48">- - - - Mandoline Slicers</option>
                                     <option value="49">- - - - Slushy Makers</option>
-                                    <option value="45">- - Pans</option>
-                                    <option value="50">- - - - Decorating Tips</option>
-                                    <option value="51">- - - - DecoSpoon</option>
-                                    <option value="52">- - - - Rasps</option>
-                                    <option value="53">- - - - Shavers</option>
-                                    <option value="54">- - - - Sweetly Does It</option>
-                                    <option value="13">KitchenAid Artisan</option>
-                                    <option value="55">- - Appliances</option>
-                                    <option value="57">- - - - DecoSpoon</option>
-                                    <option value="58">- - - - Scales1</option>
-                                    <option value="59">- - - - Sweetly Does It</option>
-                                    <option value="60">- - - - Timers</option>
-                                    <option value="56">- - Tea Towels</option>
-                                    <option value="61">- - - - Cleaning Supplies</option>
-                                    <option value="62">- - - - Cutting</option>
-                                    <option value="63">- - - - Cutting1</option>
-                                    <option value="64">- - - - Decorating Sets</option>
-                                    <option value="14">Ceramic Artisan</option>
-                                    <option value="68">- - Pots</option>
-                                    <option value="69">- - Pans</option>
-                                    <option value="70">- - Living</option>
-                                    <option value="15">Appliances1</option>
-                                    <option value="16">Bakeware</option>
-                                    <option value="17">Knives</option>
-                                    <option value="18">Tableware</option>
-                                    <option value="71">DIY</option>
-                                    <option value="74">Baking Cups</option>
                                     <option value="75">Decorating Pens</option>
                                 </select>
 
@@ -129,7 +74,7 @@
                                     <a class="main-menu-link {{Route::is('website')?'text-warning':''}}" href="{{route('website')}}">Home</a>
                                 </li>
                                 <li class="position-static main-menu-item">
-                                    <a class="main-menu-link {{Route::is('product')?'text-warning':''}}" href="{{route('product')}}">Shop</a>
+                                    <a class="main-menu-link {{Route::is('product')?'text-warning':''}}" href="{{route('product')}}">Product</a>
                                 </li>
                                 <li class="position-static main-menu-item">
                                     <a class="main-menu-link" href="#">Technician</a>
