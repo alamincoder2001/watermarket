@@ -115,7 +115,7 @@
 
                     let row1 = `
                             <tr>
-                                <td colspan="6" class="text-center">
+                                <td colspan="7" class="text-center">
                                     <img src="${location.origin+"/emptycart.png"}" width="150">
                                 </td>
                             </tr>                          
