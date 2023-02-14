@@ -2873,7 +2873,7 @@ progress {
 .form-control {
   display: block;
   width: 100%;
-  padding: 7px 10px;
+  padding: 5px 10px;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.428;
@@ -3801,7 +3801,6 @@ textarea.form-control-lg {
   }
 }
 .btn:hover {
-  color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
 }
@@ -21791,7 +21790,7 @@ textarea.form-control {
   background-color: #fff;
   height: 40px;
   padding: 10px 30px 10px 10px;
-  width: 70px;
+  width: 85px;
   border: 1px solid #ebebeb;
   display: block;
   text-align: center;
@@ -22730,9 +22729,10 @@ textarea.form-control {
   font-size: 14px;
   height: 35px;
   margin-bottom: 10px;
-  padding: 0 15px;
+  padding: 0 8px;
   width: 100%;
   outline: none;
+  line-height: 27px;
 }
 
 .login-register-wrapper .login-form-container .login-register-form form .button-box .login-toggle-btn {

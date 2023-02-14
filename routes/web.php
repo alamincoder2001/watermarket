@@ -158,6 +158,8 @@ Route::group(["prefix" => "admin"], function () {
 
     // customer route
     Route::get('/customer', [AdminCustomerController::class, 'index'])->name("admin.customer.index");
+    Route::get('/customer/delete/{id}', [AdminCustomerController::class, 'destroy'])->name("admin.customer.destroy");
+    Route::post('/customer/status', [AdminCustomerController::class, 'status'])->name("admin.customer.status");
     Route::get('/customer/fetch/{id?}', [AdminCustomerController::class, 'fetch'])->name("admin.customer.fetch");
     
     // technician route

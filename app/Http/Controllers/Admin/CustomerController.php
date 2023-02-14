@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class CustomerController extends Controller
 {
@@ -22,5 +23,36 @@ class CustomerController extends Controller
     public function fetch($id = null)
     {
         return DB::select("SELECT c.* FROM users c ORDER BY c.id DESC");
+    }
+
+    public function destroy($id)
+    {
+        $data = User::find($id);
+        $nid = $data->nid_card;
+        $license = $data->trade_license;
+        $visiting = $data->visiting_card;
+        if (File::exists($nid)) {
+            File::delete($nid);
+        }
+        if (File::exists($license)) {
+            File::delete($license);
+        }
+        if (File::exists($visiting)) {
+            File::delete($visiting);
+        }
+        $data->delete();
+        return response()->json("Delete user successfully");
+    }
+
+    public function status(Request $request)
+    {
+        try{
+            $data = User::find($request->id);
+            $data->status = $request->setStatus;
+            $data->save();
+            return "Status change successfully";
+        }catch(\Throwable $e){
+            return "Opps! something went wrong";
+        }
     }
 }

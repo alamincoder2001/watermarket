@@ -226,7 +226,7 @@
                     <div class="row">
                         <!-- title section Start -->
                         <div class="col-12 col-lg-4">
-                            <h3 class="title">Latest Technician</h3>
+                            <h3 class="title">Recent Technician</h3>
                         </div>
                     </div>
                 </div>

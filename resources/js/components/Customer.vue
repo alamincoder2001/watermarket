@@ -96,7 +96,7 @@
             }" :search-options="{ enabled: true }" :line-numbers="true" styleClass="vgt-table" max-height="550px">
                 <template slot="table-row" slot-scope="props">
                     <span v-if="props.column.field == 'before'">
-                        <button class="btn btn-sm text-white shadow-none" :class="props.row.status == 'p'? 'btn-warning' : 'btn-success'" @click="editRow(props.row)">
+                        <button v-if="props.row.customer_type == 'Wholesale'" class="btn btn-sm text-white shadow-none" :class="props.row.status == 'p'? 'btn-warning' : 'btn-success'" @click="editRow(props.row)">
                             {{ props.row.status == 'p' ? 'Pending' : 'Approved' }}
                         </button>
                         <button class="btn btn-sm btn-outline-danger shadow-none" @click="deleteRow(props.row.id)">
@@ -157,7 +157,28 @@ export default {
                 .then(res => {
                     this.customers = res.data
                 })
-        }
+        },
+
+        editRow(rowData){
+            rowData.setStatus = rowData.status == 'p' ? 'a' : 'p'
+            if (confirm("Are you sure want to approved this")) {
+                axios.post(location.origin+"/admin/customer/status", rowData)
+                    .then(res => {
+                        $.notify(res.data, "success");
+                        this.getCustomer();
+                    })
+            }
+        },
+        
+        deleteRow(rowId){
+            if (confirm("Are you sure want to delete this")) {
+                axios.get(location.origin+"/admin/customer/delete/"+rowId)
+                    .then(res => {
+                        $.notify(res.data, "success");
+                        this.getCustomer();
+                    })
+            }
+        },
     },
 };
 </script>

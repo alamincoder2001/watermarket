@@ -58,13 +58,16 @@ class CustomerLoginController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                "name" => "required",
-                "username" => "required",
-                "email" => "required",
-                "mobile" => "required",
-                "password" => "required",
-                "customer_type" => "required",
+                "name"             => "required",
+                "username"         => "required",
+                "email"            => "required",
+                "mobile"           => "required",
+                "password"         => "required",
+                "customer_type"    => "required",
                 "confirm_password" => "required_with:password|same:password",
+                "nid_card"         => "nullable|mimes:jpg,png",
+                "trade_license"    => "nullable|mimes:jpg,png",
+                "visiting_card"    => "nullable|mimes:jpg,png",
             ]);
 
             if ($validator->fails()) {
@@ -79,13 +82,23 @@ class CustomerLoginController extends Controller
             $data->mobile        = $request->mobile;
             $data->customer_type = $request->customer_type;
             $data->password      = Hash::make($request->password);
+            if ($request->hasFile('nid_card')) {
+                $data->nid_card = $this->imageUpload($request, 'nid_card', "uploads/nidCard");    
+            }
+            if ($request->hasFile('trade_license')) {
+                $data->trade_license = $this->imageUpload($request, 'trade_license', "uploads/tradeLicense");
+            }
+            if ($request->hasFile('visiting_card')) {
+                $data->visiting_card = $this->imageUpload($request, 'visiting_card', "uploads/visitingCard");
+            }
             $data->save();
 
-            if (Auth::guard('web')->attempt($this->credentials($request->username, $request->password))) {
-                return response()->json("Successfully Register");
-            } else {
-                return response()->json(["errors" => "Password or Email Not Match"]);
-            }
+            // if($request->customer_type == 'Retail'){
+            //     if (Auth::guard('web')->attempt($this->credentials($request->username, $request->password))) {
+            //         return response()->json(["msg" => "Successfully Register", "customer_type" => $request->customer_type]);
+            //     }
+            // }
+            return response()->json(["msg" => "Successfully Register", "customer_type" => $request->customer_type]);
         } catch (\Throwable $e) {
             return "Opps something went wrong";
         }

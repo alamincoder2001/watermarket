@@ -5507,6 +5507,25 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_1___default().get(location.origin + "/admin/customer/fetch").then(function (res) {
         _this.customers = res.data;
       });
+    },
+    editRow: function editRow(rowData) {
+      var _this2 = this;
+      rowData.setStatus = rowData.status == 'p' ? 'a' : 'p';
+      if (confirm("Are you sure want to approved this")) {
+        axios__WEBPACK_IMPORTED_MODULE_1___default().post(location.origin + "/admin/customer/status", rowData).then(function (res) {
+          $.notify(res.data, "success");
+          _this2.getCustomer();
+        });
+      }
+    },
+    deleteRow: function deleteRow(rowId) {
+      var _this3 = this;
+      if (confirm("Are you sure want to delete this")) {
+        axios__WEBPACK_IMPORTED_MODULE_1___default().get(location.origin + "/admin/customer/delete/" + rowId).then(function (res) {
+          $.notify(res.data, "success");
+          _this3.getCustomer();
+        });
+      }
     }
   }
 });
@@ -7516,7 +7535,7 @@ var render = function render() {
     scopedSlots: _vm._u([{
       key: "table-row",
       fn: function fn(props) {
-        return [props.column.field == "before" ? _c("span", [_c("button", {
+        return [props.column.field == "before" ? _c("span", [props.row.customer_type == "Wholesale" ? _c("button", {
           staticClass: "btn btn-sm text-white shadow-none",
           "class": props.row.status == "p" ? "btn-warning" : "btn-success",
           on: {
@@ -7524,7 +7543,7 @@ var render = function render() {
               return _vm.editRow(props.row);
             }
           }
-        }, [_vm._v("\n                        " + _vm._s(props.row.status == "p" ? "Pending" : "Approved") + "\n                    ")]), _vm._v(" "), _c("button", {
+        }, [_vm._v("\n                        " + _vm._s(props.row.status == "p" ? "Pending" : "Approved") + "\n                    ")]) : _vm._e(), _vm._v(" "), _c("button", {
           staticClass: "btn btn-sm btn-outline-danger shadow-none",
           on: {
             click: function click($event) {
