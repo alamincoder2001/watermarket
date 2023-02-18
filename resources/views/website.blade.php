@@ -247,13 +247,13 @@
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
                                     <!-- single slide Start -->
-                                    @foreach($feature_product as $item)
+                                    @foreach($technician as $item)
                                     <div class="swiper-slide">
-                                        <div class="product-card" style="height:200px;">
-                                            <a class="thumb text-center" href="{{route('single.product', $item->slug)}}"><img style="width: 100px;border:1px solid #e5e5e5;padding:2px;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" alt="img" /></a>
+                                        <div class="product-card" style="height:200px;border: 1px solid #cdcdcd;">
+                                            <a class="thumb text-center" href=""><img style="width: 100px;border:1px solid #e5e5e5;padding:2px;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" alt="img" /></a>
                                             <div class="product-content text-center">
                                                 <h3 class="product-title mt-3">
-                                                    <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
+                                                    <a href="">{{$item->name}}</a>
                                                 </h3>
                                                 <span>Location: Dhaka</span>
                                             </div>
@@ -263,7 +263,7 @@
                                     <!-- single slide End -->
                                 </div>
                             </div>
-                            @if(count($feature_product) == 0)
+                            @if(count($technician) == 0)
                             <div class="text-center">
                                 <img src="{{asset('no-product.png')}}" width="300">
                             </div>

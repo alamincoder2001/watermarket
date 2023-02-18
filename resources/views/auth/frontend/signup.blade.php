@@ -108,6 +108,36 @@
                             <button type="submit" style="width: 100%;" class="btn btn-primary">Register</button>
                         </form>
                     </div>
+                    <div class="card-body d-none TechnicianRegister">
+                        <form onsubmit="TechnicianRegister(event)">
+                            <h3 class="text-center">Technician</h3>
+                            <div class="form-group mb-3">
+                                <input type="text" name="name" class="form-control" placeholder="Name" autocomplete="off">
+                                <span class="text-danger error-name error"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="text" name="username" class="form-control" placeholder="Username" autocomplete="off">
+                                <span class="text-danger error-username error"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="email" name="email" class="form-control" placeholder="Email" autocomplete="off">
+                                <span class="text-danger error-email error"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="text" name="mobile" class="form-control" placeholder="Mobile" autocomplete="off">
+                                <span class="text-danger error-mobile error"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
+                                <span class="text-danger error-password error"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" autocomplete="off">
+                                <span class="text-danger error-confirm_password error"></span>
+                            </div>
+                            <button type="submit" style="width: 100%;" class="btn btn-primary">Register</button>
+                        </form>
+                    </div>
                     <div class="card-body d-none WholesaleRegister">
                         <form onsubmit="WholesaleRegister(event)">
                             <h3 class="text-center">Whole Sale</h3>
@@ -181,8 +211,9 @@
                     <div class="card-body d-flex align-items-center justify-content-center">
                         <div class="text-center">
                             <h2 class="text-white">Sign up</h2>
-                            <button type="button" onclick="toggleRegisterBody(event)" value="Wholesale" class="btn btn-info mt-3 Wholesale">Create Wholesale Account Now!</button>
-                            <button type="button" onclick="toggleRegisterBody(event)" value="Retail" class="btn btn-info mt-3 Retail d-none">Create Retail Account Now!</button>
+                            <button type="button" onclick="toggleRegisterBody(event)" value="Wholesale" class="btn btn-info mt-3 Wholesale">Sign Up as a Wholesale Customer</button>
+                            <button type="button" onclick="toggleRegisterBody(event)" value="Retail" class="btn btn-info mt-3 Retail d-none">Sign Up as a Retail Customer</button>
+                            <button type="button" onclick="toggleRegisterBody(event)" value="Technician" class="btn btn-info mt-3 Technician">Sign Up as a Technician</button>
                         </div>
                     </div>
                 </div>
@@ -197,6 +228,7 @@
     function WholesaleRegister(event) {
         event.preventDefault();
         let formdata = new FormData(event.target)
+        formdata.append("customer_type", "Wholesale")
         $.ajax({
             url: "/customer-register",
             method: "POST",
@@ -214,9 +246,6 @@
                 } else {
                     $.notify(res.msg, "success");
                     $("form").trigger("reset")
-                    if (res.customer_type == 'Retail') {
-                        location.href = "/customer-dashboard";
-                    }
                     $(".nidImage img").prop("src", location.origin + "/noImage.jpg")
                     $(".tradeImage img").prop("src", location.origin + "/noImage.jpg")
                     $(".visitingImage img").prop("src", location.origin + "/noImage.jpg")
@@ -228,6 +257,7 @@
     function RetailRegister(event) {
         event.preventDefault();
         let formdata = new FormData(event.target)
+        formdata.append("customer_type", "Retail")
         $.ajax({
             url: "/customer-register",
             method: "POST",
@@ -252,20 +282,51 @@
             }
         })
     }
+    function TechnicianRegister(event) {
+        event.preventDefault();
+        let formdata = new FormData(event.target)
+        $.ajax({
+            url: "/technician-register",
+            method: "POST",
+            data: formdata,
+            processData: false,
+            contentType: false,
+            beforeSend: () => {
+                $(".TechnicianRegister .error").text("")
+            },
+            success: res => {
+                if (res.error) {
+                    $.each(res.error, (index, value) => {
+                        $(".TechnicianRegister .error-" + index).text(value)
+                    })
+                } else {
+                    $.notify(res.msg, "success");
+                    $("form").trigger("reset")
+                }
+            }
+        })
+    }
 
     function toggleRegisterBody(event) {
         $(".RetailRegister .error").text("")
+        $(".TechnicianRegister .error").text("")
         $(".WholesaleRegister .error").text("")
         if (event.target.value == 'Retail') {
             $(".WholesaleRegister").addClass("d-none")
             $(".RetailRegister").removeClass("d-none")
+            $(".TechnicianRegister").addClass("d-none")
             $(".Retail").addClass("d-none")
             $(".Wholesale").removeClass("d-none")
-        } else {
+        } else if(event.target.value == 'Wholesale') {
             $(".WholesaleRegister").removeClass("d-none")
             $(".RetailRegister").addClass("d-none")
+            $(".TechnicianRegister").addClass("d-none")
             $(".Retail").removeClass("d-none")
             $(".Wholesale").addClass("d-none")
+        }else {
+            $(".WholesaleRegister").addClass("d-none")
+            $(".RetailRegister").addClass("d-none")
+            $(".TechnicianRegister").removeClass("d-none")
         }
     }
 </script>

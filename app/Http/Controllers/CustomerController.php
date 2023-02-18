@@ -15,7 +15,7 @@ class CustomerController extends Controller
             $orders = Order::with("orderDetails")->where("customer_id", Auth::guard("web")->user()->id)->orderBy("invoice", "DESC")->get();
             $pending = Order::with("orderDetails")->where("customer_id", Auth::guard("web")->user()->id)->where("status", "pending")->orderBy("invoice", "DESC")->get();
             $complete = Order::with("orderDetails")->where("customer_id", Auth::guard("web")->user()->id)->where("status", "delivery")->orderBy("invoice", "DESC")->get();
-            $wishlists = Wishlist::with("product")->where("ipAddress", request()->ip())->get();
+            $wishlists = Wishlist::with("product")->where('customer_id', Auth::guard('web')->user()->id)->where("ipAddress", request()->ip())->get();
             return view("dashboard.customer-dashboard", compact("wishlists", "orders", "pending", "complete"));
         } else {
             return redirect("/login");

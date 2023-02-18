@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Category;
 use App\Models\Slider;
+use App\Models\Technician;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -24,7 +25,8 @@ class HomeController extends Controller
         $slider             = Slider::latest()->get();
         $categories         = Category::with('product')->orderBy("name", "ASC")->get();
         $brands             = Brand::with('product')->orderBy("name", "ASC")->get();
-        return view('website', compact("brands", "categories", "blog", "newarrival_product", "feature_product", "popular_product", "topsold_product", "banner", "slider"));
+        $technician = Technician::orderBy('id', "DESC")->paginate(24);
+        return view('website', compact("brands", "technician", "categories", "blog", "newarrival_product", "feature_product", "popular_product", "topsold_product", "banner", "slider"));
     }
 
     // Product
@@ -58,6 +60,12 @@ class HomeController extends Controller
     {
         $blog = Blog::orderBy('id', "DESC")->paginate(24);
         return view('blog', compact("blog"));
+    }
+
+    public function technician()
+    {
+        $technician = Technician::orderBy('id', "DESC")->paginate(24);
+        return view('technician', compact("technician"));
     }
 
     public function contact()

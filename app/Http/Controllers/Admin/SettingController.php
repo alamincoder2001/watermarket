@@ -46,6 +46,7 @@ class SettingController extends Controller
             $data->instagram            = $request->instagram;
             $data->twitter              = $request->twitter;
             $data->linkedin             = $request->linkedin;
+            $data->bg_color             = $request->bg_color;
 
             $data->save();
             return "Setting updated successfully";

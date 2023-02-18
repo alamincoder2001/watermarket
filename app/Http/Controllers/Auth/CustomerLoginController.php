@@ -44,6 +44,12 @@ class CustomerLoginController extends Controller
             if ($validator->fails()) {
                 return response()->json(["error" => $validator->errors()]);
             }
+            // check status
+            $check = User::where("username", $request->username)->first();
+            if (!empty($check) && $check->status == 'p') {
+                return response()->json(["errors" => "Authorized does not approved you!"]);
+            }
+            // login successfull
             if (Auth::guard('web')->attempt($this->credentials($request->username, $request->password))) {
                 return response()->json("Successfully Login");
             } else {
@@ -81,6 +87,9 @@ class CustomerLoginController extends Controller
             $data->email         = $request->email;
             $data->mobile        = $request->mobile;
             $data->customer_type = $request->customer_type;
+            if($request->customer_type == 'Retail'){
+                $data->status = 'a';
+            }
             $data->password      = Hash::make($request->password);
             if ($request->hasFile('nid_card')) {
                 $data->nid_card = $this->imageUpload($request, 'nid_card', "uploads/nidCard");    
@@ -93,11 +102,11 @@ class CustomerLoginController extends Controller
             }
             $data->save();
 
-            // if($request->customer_type == 'Retail'){
-            //     if (Auth::guard('web')->attempt($this->credentials($request->username, $request->password))) {
-            //         return response()->json(["msg" => "Successfully Register", "customer_type" => $request->customer_type]);
-            //     }
-            // }
+            if($request->customer_type == 'Retail'){
+                if (Auth::guard('web')->attempt($this->credentials($request->username, $request->password))) {
+                    return response()->json(["msg" => "Successfully Register", "customer_type" => $request->customer_type]);
+                }
+            }
             return response()->json(["msg" => "Successfully Register", "customer_type" => $request->customer_type]);
         } catch (\Throwable $e) {
             return "Opps something went wrong";
@@ -128,7 +137,7 @@ class CustomerLoginController extends Controller
             $data->mobile          = $request->mobile;
             $data->password        = Hash::make($request->password);
             $data->save();
-            return "Technician save";
+            return response()->json(["msg" => "Successfully Register"]);
         } catch (\Throwable $e) {
             return "Opps something went wrong";
         }

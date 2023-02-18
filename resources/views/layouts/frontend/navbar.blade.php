@@ -21,9 +21,9 @@
                             </li>
                             @else
                             <li class="dropdown top-nav-item">
-                                <a class="top-nav-link" href="{{route('showSignUpForm')}}" role="button" id="account">Sign Up</a>
+                                <a class="top-nav-link" href="{{route('showSignUpForm')}}" role="button" id="account">SignUp</a>
                                 |
-                                <a class="top-nav-link" href="{{route('showSignInForm')}}" role="button" id="account">Sign In</a>
+                                <a class="top-nav-link" href="{{route('showSignInForm')}}" role="button" id="account">SignIn</a>
                             </li>
                             @endif
                         </ul>
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    <div id="active-sticky" class="header-section">
+    <div id="active-sticky" class="header-section" style="background-color:{{Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale' ? $profile->bg_color : ''}};">
         <div class="container position-relative">
             <div class="row align-items-center">
                 <!-- Header Logo Start -->
@@ -81,10 +81,10 @@
                                     <a class="main-menu-link {{Route::is('product')?'text-warning':''}}" href="{{route('product')}}">Product</a>
                                 </li>
                                 <li class="position-static main-menu-item">
-                                    <a class="main-menu-link" href="#">Technician</a>
+                                    <a class="main-menu-link {{Route::is('technician')?'text-warning':''}}" href="{{route('technician')}}">Technician</a>
                                 </li>
                                 <li class="main-menu-item">
-                                    <a class="main-menu-link" href="{{route('blog')}}">Blog</a>
+                                    <a class="main-menu-link {{Route::is('blog')?'text-warning':''}}" href="{{route('blog')}}">Blog</a>
                                 </li>
                                 <li class="main-menu-item">
                                     <a class="main-menu-link {{Route::is('contact')?'text-warning':''}}" href="{{route('contact')}}">Contact</a>

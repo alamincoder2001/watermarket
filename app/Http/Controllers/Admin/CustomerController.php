@@ -22,7 +22,14 @@ class CustomerController extends Controller
 
     public function fetch($id = null)
     {
-        return DB::select("SELECT c.* FROM users c ORDER BY c.id DESC");
+        return DB::select("SELECT
+                        c.*,
+                        up.name as thana_name,
+                        d.name as district_name
+                    FROM users c
+                    LEFT JOIN thanas up ON up.id = c.thana_id
+                    LEFT JOIN districts d ON d.id = up.district_id
+                    ORDER BY c.id DESC");
     }
 
     public function destroy($id)

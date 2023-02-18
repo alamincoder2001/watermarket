@@ -131,6 +131,13 @@
                                     <span class="text-danger error error-linkedin"></span>
                                 </div>
                             </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="bg_color">Bg Color For Whole Seller</label>
+                                    <input type="color" name="bg_color" id="bg_color" value="{{$data->bg_color}}" autocomplete="off" class="form-control shadow-none">
+                                    <span class="text-danger error error-bg_color"></span>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group text-center">
                             <button class="btn btn-primary btn-sm px-3 shadow-none">Update</button>

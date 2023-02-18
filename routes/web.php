@@ -31,6 +31,7 @@ Route::get('/', [HomeController::class, 'index'])->name('website');
 Route::get('/product', [HomeController::class, 'ProductShow'])->name('product');
 Route::get('/product-single/{slug}', [HomeController::class, 'singleProductShow'])->name('single.product');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+Route::get('/technician', [HomeController::class, 'technician'])->name('technician');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 // cart add route

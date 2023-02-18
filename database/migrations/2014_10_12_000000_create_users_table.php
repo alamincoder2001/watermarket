@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('username')->unique();
             $table->string('email')->unique();
-            $table->string('customer_type', 50)->default("retail");
+            $table->string('customer_type', 50)->default("Retail");
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('mobile')->nullable();
@@ -27,6 +27,10 @@ class CreateUsersTable extends Migration
             $table->integer('thana_id')->nullable();
             $table->string('postcode')->nullable();
             $table->string('address')->nullable();
+            $table->string("image")->nullable();
+            $table->string("nid_card")->nullable();
+            $table->string("trade_license")->nullable();
+            $table->string("visiting_card")->nullable();
             $table->char("status", 5)->default("p");
             $table->rememberToken();
             $table->timestamps();
