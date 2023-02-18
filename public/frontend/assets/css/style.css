@@ -18769,9 +18769,11 @@ p:last-child {
 }
 .hero-slider:hover .swiper-button-next {
   right: 30px;
+  top:43%;
 }
 .hero-slider:hover .swiper-button-prev {
   left: 30px;
+  top:43%;
 }
 .hero-slider .swiper-button-next::after,
 .hero-slider .swiper-button-prev::after {

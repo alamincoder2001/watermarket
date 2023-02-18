@@ -249,34 +249,14 @@
                                     <!-- single slide Start -->
                                     @foreach($feature_product as $item)
                                     <div class="swiper-slide">
-                                        <div class="product-card" style="height:350px;">
-                                            <a class="thumb" href="{{route('single.product', $item->slug)}}"><img src="{{asset($item->image != null ? $item->image : 'no-product-image.jpg')}}" alt="img" />
-                                                <div class="onsales-badges">
-                                                    <span class="badge bg-dark">new</span>
-                                                </div>
-                                            </a>
-                                            <div class="product-content">
-                                                <a class="product-category" href="#?">{{$item->category_name}}</a>
-                                                <h3 class="product-title">
+                                        <div class="product-card" style="height:200px;">
+                                            <a class="thumb text-center" href="{{route('single.product', $item->slug)}}"><img style="width: 100px;border:1px solid #e5e5e5;padding:2px;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" alt="img" /></a>
+                                            <div class="product-content text-center">
+                                                <h3 class="product-title mt-3">
                                                     <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                 </h3>
-                                                <span class="price regular-price">
-                                                    @if(Auth::guard('web')->check() && Auth::guard('web')->user()->customer_type == 'Wholesale')
-                                                    ৳ {{$item->wholesale_rate}}
-                                                    @else
-                                                    ৳ {{$item->selling_rate}}
-                                                    @endif
-                                                </span>
-                                                <button class="product-btn btn btn-primary btn-hover-warning" onclick="addCart({{$item->id}})">
-                                                    Add to Cart
-                                                </button>
+                                                <span>Location: Dhaka</span>
                                             </div>
-                                            <!-- actions links start -->
-                                            <ul class="actions">
-                                                <li class="action-item"><button class="action quick-view" data-bs-toggle="modal" data-bs-target="#quickview"><span class="lnr lnr-magnifier"></span></button></li>
-                                                <li class="action-item"><button class="action wishlist" onclick="addWishlist({{$item->id}})"><span class="lnr lnr-heart"></span></button></li>
-                                            </ul>
-                                            <!-- actions links end -->
                                         </div>
                                     </div>
                                     @endforeach

@@ -41,13 +41,13 @@
             @endif
         </div>
     </div>
+    <!-- pagination start -->
+    <div class="section-py">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                {{$blog->links('vendor.pagination.bootstrap-4')}}
+            </ul>
+        </nav>
+    </div>
 </section>
-<!-- pagination start -->
-<div class="section-py">
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {{$blog->links('vendor.pagination.bootstrap-4')}}
-        </ul>
-    </nav>
-</div>
 @endsection

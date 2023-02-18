@@ -113,7 +113,7 @@
 
                                             <div class="col-lg-6 mb-7">
                                                 <div class="product-content-list">
-                                                    <a class="product-category" href="#?">{{$item->category_name}}</a>
+                                                    <a class="product-category" href="#">{{$item->category_name}}</a>
                                                     <h3 class="product-title">
                                                         <a href="{{route('single.product', $item->slug)}}">{{$item->name}}</a>
                                                     </h3>
@@ -176,7 +176,7 @@
                                     <div class="widget-inner">
                                         @foreach($categories as $item)
                                         <div class="widget-check-box">
-                                            <input type="checkbox" id="{{$item->id}}" />
+                                            <input type="radio" name="category" id="{{$item->id}}" />
                                             <label for="{{$item->id}}">{{$item->name}} ({{$item->product->count()}})</label>
                                         </div>
                                         @endforeach
@@ -187,7 +187,7 @@
                                     <div class="widget-inner">
                                         @foreach($brands as $item)
                                         <div class="widget-check-box">
-                                            <input type="checkbox" id="{{$item->name}}-{{$item->id}}" />
+                                            <input type="radio" name="brand" id="{{$item->name}}-{{$item->id}}" />
                                             <label for="{{$item->name}}-{{$item->id}}">{{$item->name}} ({{$item->product->count()}})</label>
                                         </div>
                                         @endforeach
