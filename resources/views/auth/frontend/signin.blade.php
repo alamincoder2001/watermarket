@@ -38,7 +38,7 @@
                         </form>
                     </div>
                 </div>
-                <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+                <div class="card text-white bg-primary py-5 d-md-down-none">
                     <div class="card-body d-flex align-items-center justify-content-center">
                         <div class="text-center">
                             <h2 class="text-white">SignIn</h2>

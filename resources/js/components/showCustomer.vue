@@ -12,7 +12,7 @@
                                     class="rounded-circle" style="width: 150px;height:130px;">
                                 <div class="mt-3">
                                     <h4>{{ customerRow.name }}</h4>
-                                    <p class="text-secondary mb-1">{{customerRow.custoemr_code}}</p>
+                                    <p class="text-secondary mb-1">{{customerRow.customer_code}}</p>
                                     <p class="text-muted font-size-sm">{{ customerRow.thana_name }}, {{ customerRow.district_name }}</p>
                                     <button class="btn btn-primary">Follow</button>
                                     <button class="btn btn-outline-primary">Message</button>

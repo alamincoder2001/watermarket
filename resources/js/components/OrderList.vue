@@ -104,7 +104,7 @@
                                             <button title="Order Cancel" v-if="item.status != 'cancel' && item.status != 'delivery' " @click="InvoiceDelete(item.id)" type="button" style="background: none" class="shadow-none outline-none border-0">
                                                 <i class="fas fa-trash text-danger"></i>
                                             </button>
-                                            <a :href="`${'/admin/order/invoice'+item.invoice}`" target="_blank" title="Order Invoice" style="background: none" class="shadow-none outline-none border-0">
+                                            <a :href="`${'/admin/order/invoice/'+item.invoice}`" target="_blank" title="Order Invoice" style="background: none" class="shadow-none outline-none border-0">
                                                 <i class="fas fa-file text-info"></i>
                                             </a>
                                             <button @click="changeStatus(item, 'proccessing') " v-if=" item.status == 'pending' " type="button" :style="{background: item.status == 'pending' ? 'red' : '' }" class="text-white shadow-none outline-none border-0">Proccessing</button>

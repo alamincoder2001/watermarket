@@ -50,7 +50,7 @@
                                 <div class="col-lg-6">
                                     <div class="billing-info">
                                         <label>Billing Address</label>
-                                        <input class="billing-address" name="address" placeholder="House number and street name" type="text" autocomplete="off" />
+                                        <input class="billing-address" value="{{Auth::guard('web')->user()->address}}" name="address" placeholder="House number and street name" type="text" autocomplete="off" />
                                         <span class="text-danger error error-address"></span>
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <div class="billing-info">
-                                        <label>Street Address</label>
+                                        <label>Shipping Address</label>
                                         <input class="billing-address" name="shipping_address" placeholder="House number and street name" type="text" />
                                         <span class="text-danger error error-shipping_address"></span>
                                     </div>

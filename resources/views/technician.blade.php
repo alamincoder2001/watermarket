@@ -20,7 +20,7 @@
             @if(count($technician) > 0)
             @foreach($technician as $item)
                 <div class="col-lg-2">
-                    <a href="#">
+                    <a href="#" title="{{$item->name}}">
                         <div class="card">
                             <img class="card-img-top" style="height: 150px;" src="{{asset('nouser.png')}}" />
                             <div class="card-body">

@@ -100,13 +100,13 @@
                             <a href="{{route('website')}}">Home</a>
                         </li>
                         <li>
-                            <a href="{{route('product')}}">Shop</a>
+                            <a href="{{route('product')}}">Product</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">Technician</a>
+                            <a href="{{route('technician')}}">Technician</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">Blog</a>
+                            <a href="{{route('blog')}}">Blog</a>
                         </li>
                         <li>
                             <a href="{{route('contact')}}">Contact</a>
@@ -119,16 +119,13 @@
                                 <a href="#"><i class="ion-social-facebook"></i></a>
                             </li>
                             <li>
+                                <a href="#"><i class="ion-social-instagram"></i></a>
+                            </li>
+                            <li>
                                 <a href="#"><i class="ion-social-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="#"><i class="ion-social-instagram"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="ion-social-google"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="ion-social-instagram"></i></a>
+                                <a href="#"><i class="ion-social-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -139,40 +136,43 @@
                         Email:
                         <a class="header-top-link" href="https://www.gmail.com">{{$profile->email}}</a>
                     </p>
-                    <p>Free Shipping for all Order of $99</p>
+                    <p>Free Shipping for all Order</p>
 
                     <ul id="offcanvas-menu2" class="blog-ctry-menu blog-ctry-menu2">
-                        @if(Auth::check())
+                        @if(Auth::guard('web')->check() || Auth::guard('technician')->check())
+                        @if(Auth::guard('web')->check())
                         <li>
                             <a href="javascript:void(0)">My Account</a>
                             <ul class="category-sub-menu">
                                 <li>
-                                    <a href="account.html">account</a>
+                                    <a href="{{route('customer.dashboard')}}">Account</a>
                                 </li>
                                 <li>
-                                    <a href="login.html">Sign in</a>
+                                    <a href="{{route('customer.logout')}}">Sign Out</a>
                                 </li>
                             </ul>
                         </li>
                         @else
                         <li>
-                            <a href="{{route('showSignUpForm')}}">Sign In</a>
-                        </li>
-
-                        @endif
-                        <li>
-                            <a href="javascript:void(0)"><img class="me-1" src="{{asset('frontend')}}/assets/images/flag/1.jpg" alt="img" />English</a>
+                            <a href="javascript:void(0)">My Account</a>
                             <ul class="category-sub-menu">
                                 <li>
-                                    <a href="#"><img src="{{asset('frontend')}}/assets/images/flag/1.jpg" alt="flags" />language:
-                                        English</a>
+                                    <a href="{{route('technician.dashboard')}}">Account</a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="{{asset('frontend')}}/assets/images/flag/2.jpg" alt="flags" />
-                                        Français</a>
+                                    <a href="{{route('technician.logout')}}">Sign Out</a>
                                 </li>
                             </ul>
                         </li>
+                        @endif
+                        @else
+                        <li>
+                            <a href="{{route('showSignUpForm')}}">Sign Up</a>
+                        </li>
+                        <li>
+                            <a href="{{route('showSignInForm')}}">Sign In</a>
+                        </li>
+                        @endif
                     </ul>
                 </div>
             </div>
