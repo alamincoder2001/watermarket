@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BrandController;
