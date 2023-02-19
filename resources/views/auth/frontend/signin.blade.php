@@ -88,7 +88,7 @@
         event.preventDefault();
         let formdata = new FormData(event.target)
         $.ajax({
-            url: "/customer-login",
+            url: "/technician-login",
             method: "POST",
             data: formdata,
             processData: false,
@@ -106,7 +106,7 @@
                 } else {
                     $.notify(res, "success");
                     $("form").trigger("reset")
-                    location.href = "{{route('customer.dashboard')}}"
+                    location.href = "/technician-dashboard"
                 }
             }
         })

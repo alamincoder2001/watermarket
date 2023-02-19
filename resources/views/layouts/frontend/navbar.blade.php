@@ -9,16 +9,28 @@
                 <div class="col-12 col-sm-6">
                     <div class="header-top-nav">
                         <ul class="d-flex flex-wrap justify-content-center align-items-center justify-content-sm-end">
-                            @if(Auth::check())
-                            <li class="dropdown top-nav-item"><a class="top-nav-link" href="#" role="button" id="account" data-bs-toggle="dropdown">My Account <i class="ion-ios-arrow-down"></i></a>
-
+                            @if(Auth::guard('web')->check() || Auth::guard('technician')->check())
+                            @if(Auth::guard('web')->check())
+                            <li class="dropdown top-nav-item">
+                                <a class="top-nav-link" href="#" role="button" id="account" data-bs-toggle="dropdown">My Account <i class="ion-ios-arrow-down"></i></a>
                                 <!-- dropdown-menu start -->
                                 <ul class="dropdown-menu" aria-labelledby="account">
-                                    <li><a class="dropdown-item" href="{{route('customer.dashboard')}}">My account</a></li>
+                                    <li><a class="dropdown-item" href="{{route('customer.dashboard')}}">My Account</a></li>
                                     <li><a class="dropdown-item" href="{{route('customer.logout')}}">Sign Out</a></li>
                                 </ul>
                                 <!-- dropdown-menu start -->
                             </li>
+                            @else
+                            <li class="dropdown top-nav-item">
+                                <a class="top-nav-link" href="#" role="button" id="account" data-bs-toggle="dropdown">My Account <i class="ion-ios-arrow-down"></i></a>
+                                <!-- dropdown-menu start -->
+                                <ul class="dropdown-menu" aria-labelledby="account">
+                                    <li><a class="dropdown-item" href="{{route('technician.dashboard')}}">My Account</a></li>
+                                    <li><a class="dropdown-item" href="{{route('technician.logout')}}">Sign Out</a></li>
+                                </ul>
+                                <!-- dropdown-menu start -->
+                            </li>
+                            @endif
                             @else
                             <li class="dropdown top-nav-item">
                                 <a class="top-nav-link" href="{{route('showSignUpForm')}}" role="button" id="account">SignUp</a>
@@ -139,7 +151,7 @@
                                     <!-- checkout-action button start -->
                                     <div class="checkout-action d-flex justify-content-center gap-3">
                                         <a href="{{route('checkout')}}"  class="btn btn-warning btn-hover-primary btn-lg px-5">Checkout</a>
-                                        <a href="{{route('cart')}}"  class="btn btn-primary btn-hover-warning btn-lg px-5">Cart</a>
+                                        <a href="{{route('cart')}}"  class="btn btn-primary btn-hover-warning btn-lg px-5">View Cart</a>
                                     </div>
                                     <!-- checkout-action button end -->
                                 </div>

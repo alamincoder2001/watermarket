@@ -10,15 +10,14 @@ use App\Http\Controllers\Admin\DistrictController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\PurchaseController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\SubcategoryController;
-use App\Http\Controllers\Admin\SupplierController;
-use App\Http\Controllers\Admin\TechnicianController;
+use App\Http\Controllers\Admin\TechnicianController as AdminTechnicianController;
+use App\Http\Controllers\TechnicianController;
 use App\Http\Controllers\Admin\ThanaContoller;
 use App\Http\Controllers\Admin\UnitController;
-use App\Http\Controllers\Auth\CustomerLoginController;
+use App\Http\Controllers\Auth\FrontendLoginController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
@@ -49,16 +48,24 @@ Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout');
 Route::post('/place-order', [CheckoutController::class, 'CheckOut'])->name('place.order');
 
 // Technician and customer login
-Route::get('/login', [CustomerLoginController::class, 'showSignInForm'])->name('showSignInForm')->middleware('checkAuth');
-Route::get('/register', [CustomerLoginController::class, 'showSignUpForm'])->name('showSignUpForm')->middleware('checkAuth');
-Route::post('/customer-register', [CustomerLoginController::class, 'CustomerRegister'])->name('customer.register')->middleware('checkAuth');
-Route::post('/customer-login', [CustomerLoginController::class, 'CustomerLogin'])->name('customer.login')->middleware('checkAuth');
-Route::post('/technician-register', [CustomerLoginController::class, 'TechnicianRegister'])->name('technician.register')->middleware('checkAuth');
-Route::post('/technician-login', [CustomerLoginController::class, 'TechnicianLogin'])->name('technician.login')->middleware('checkAuth');
+Route::get('/login', [FrontendLoginController::class, 'showSignInForm'])->name('showSignInForm')->middleware('checkAuth');
+Route::get('/register', [FrontendLoginController::class, 'showSignUpForm'])->name('showSignUpForm')->middleware('checkAuth');
+Route::post('/customer-register', [FrontendLoginController::class, 'CustomerRegister'])->name('customer.register')->middleware('checkAuth');
+Route::post('/customer-login', [FrontendLoginController::class, 'CustomerLogin'])->name('customer.login')->middleware('checkAuth');
+Route::post('/technician-register', [FrontendLoginController::class, 'TechnicianRegister'])->name('technician.register')->middleware('checkAuth');
+Route::post('/technician-login', [FrontendLoginController::class, 'TechnicianLogin'])->name('technician.login')->middleware('checkAuth');
 
+// customer dashboard
 Route::get("/customer-dashboard", [CustomerController::class, 'index'])->name('customer.dashboard');
+Route::post("/customer-update", [CustomerController::class, 'update'])->name('customer.update');
+Route::post("/customer-imageUpdate", [CustomerController::class, 'imageUpdate'])->name('customer.imageUpdate');
 Route::get("/customer-logout", [CustomerController::class, 'logout'])->name('customer.logout');
 
+// technician dashboard
+Route::get("/technician-dashboard", [TechnicianController::class, 'index'])->name('technician.dashboard');
+Route::post("/technician-update", [TechnicianController::class, 'update'])->name('technician.update');
+Route::post("/technician-imageUpdate", [TechnicianController::class, 'imageUpdate'])->name('technician.imageUpdate');
+Route::get("/technician-logout", [TechnicianController::class, 'logout'])->name('technician.logout');
 
 // get data from database
 Route::get("/getUpazila/{id}", [HomeController::class, "getUpazila"]);
@@ -164,6 +171,8 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/customer/fetch/{id?}', [AdminCustomerController::class, 'fetch'])->name("admin.customer.fetch");
     
     // technician route
-    Route::get('/technician', [TechnicianController::class, 'index'])->name("admin.technician.index");
-    Route::get('/technician/fetch/{id?}', [TechnicianController::class, 'fetch'])->name("admin.technician.fetch");
+    Route::get('/technician', [AdminTechnicianController::class, 'index'])->name("admin.technician.index");
+    Route::get('/technician/delete/{id}', [AdminTechnicianController::class, 'destroy'])->name("admin.technician.destroy");
+    Route::post('/technician/status', [AdminTechnicianController::class, 'status'])->name("admin.technician.status");
+    Route::get('/technician/fetch/{id?}', [AdminTechnicianController::class, 'fetch'])->name("admin.technician.fetch");
 });

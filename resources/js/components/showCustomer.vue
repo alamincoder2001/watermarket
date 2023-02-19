@@ -12,7 +12,7 @@
                                     class="rounded-circle" style="width: 150px;height:130px;">
                                 <div class="mt-3">
                                     <h4>{{ customerRow.name }}</h4>
-                                    <!-- <p class="text-secondary mb-1">Full Stack Developer</p> -->
+                                    <p class="text-secondary mb-1">{{customerRow.custoemr_code}}</p>
                                     <p class="text-muted font-size-sm">{{ customerRow.thana_name }}, {{ customerRow.district_name }}</p>
                                     <button class="btn btn-primary">Follow</button>
                                     <button class="btn btn-outline-primary">Message</button>
@@ -38,7 +38,7 @@
                                     <h6 class="mb-0">Username</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    {{customerRow.name}}
+                                    {{customerRow.username}}
                                 </div>
                             </div>
                             <hr>

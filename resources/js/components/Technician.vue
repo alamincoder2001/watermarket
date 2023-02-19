@@ -21,11 +21,24 @@
                 </template>
             </vue-good-table>
         </div>
+
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body" style="padding: 45px;">
+                        <showTechnician :technician-row="technicianData"></showTechnician>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+import showTechnician from "../components/showTechnician.vue"
 export default {
+    components: { 'showTechnician': showTechnician },
     data() {
         return {
             columns: [
@@ -55,6 +68,7 @@ export default {
                 },
             ],
             technicians: [],
+            technicianData: {},
         };
     },
 
@@ -69,12 +83,31 @@ export default {
                     this.technicians = res.data
                 })
         },
-        Show(row){
-            console.log(row);
+
+        editRow(rowData) {
+            rowData.setStatus = rowData.status == 'p' ? 'a' : 'p'
+            if (confirm("Are you sure want to approved this")) {
+                axios.post(location.origin + "/admin/technician/status", rowData)
+                    .then(res => {
+                        $.notify(res.data, "success");
+                        this.getTechnician();
+                    })
+            }
         },
 
         deleteRow(rowId){
-            console.log(rowId);
+            if (confirm("Are you sure want to delete this")) {
+                axios.get(location.origin + "/admin/technician/delete/" + rowId)
+                    .then(res => {
+                        $.notify(res.data, "success");
+                        this.getTechnician();
+                    })
+            }
+        },
+
+        Show(row) {
+            this.technicianData = row
+            $("#staticBackdrop").modal("show");
         },
 
     },

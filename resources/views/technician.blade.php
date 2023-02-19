@@ -22,7 +22,7 @@
                 <div class="col-lg-2">
                     <a href="#">
                         <div class="card">
-                            <img class="card-img-top" style="height: 130px;" src="{{asset('nouser.png')}}" />
+                            <img class="card-img-top" style="height: 150px;" src="{{asset('nouser.png')}}" />
                             <div class="card-body">
                                 <p class="m-0">{{$item->name}}</p>
                             </div>

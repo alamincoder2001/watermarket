@@ -301,7 +301,7 @@
                 <div class="mt-1">
                     <div class="card border-0" style="box-shadow: 3px 5px 10px #838383a3;">
                         <div class="card-body">
-                            <form onsubmit="saveProfileCustomer(event)">
+                            <form onsubmit="updateCustomer(event)">
                                 <div class="row">
                                     <div class="col-12 col-lg-2">
                                         <div class="form-group ImageBackground">
@@ -317,67 +317,80 @@
                                                 <div class="form-gorup">
                                                     <label for="name">Customer Name</label>
                                                     <input type="text" name="name" id="name" value="{{Auth::guard('web')->user()->name}}" class="form-control shadow-none" autocomplete="off">
+                                                    <span class="text-danger error error-name"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-gorup">
                                                     <label for="username">User Name</label>
                                                     <input type="text" name="username" id="username" value="{{Auth::guard('web')->user()->username}}" class="form-control shadow-none" autocomplete="off">
+                                                    <span class="text-danger error error-username"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="email">Email</label>
                                                     <input type="text" name="email" id="email" value="{{Auth::guard('web')->user()->email}}" class="form-control shadow-none" autocomplete="off">
+                                                    <span class="text-danger error error-email"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="mobile">Phone</label>
                                                     <input type="text" name="mobile" id="mobile" value="{{Auth::guard('web')->user()->mobile}}" class="form-control shadow-none" autocomplete="off">
+                                                    <span class="text-danger error error-mobile"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 mt-2">
                                                 <div class="form-gorup">
-                                                    <label for="district">District</label>
-                                                    <select name="district" onchange="getUpazila(event)" id="district" class="form-select shadow-none">
+                                                    <label for="district_id">District</label>
+                                                    <select name="district_id" onchange="getUpazila(event)" id="district_id" class="form-select shadow-none">
                                                         <option value="">Select District</option>
-                                                        @foreach($districts as $district)
-                                                        <option value="{{$district->id}}" {{Auth::guard('web')->user()->district_id ? 'selected':''}}>{{$district->name}}</option>
+                                                        @foreach($districts as $item)
+                                                        <option value="{{$item->id}}" {{Auth::guard('web')->user()->district_id ? 'selected':''}}>{{$item->name}}</option>
                                                         @endforeach
                                                     </select>
+                                                    <span class="text-danger error error-district_id"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="thana_id">Upazila</label>
                                                     <select name="thana_id" id="thana_id" class="form-select shadow-none">
-
+                                                    <option value="">Select Upazila</option>
+                                                        @foreach($upazilas as $item)
+                                                        <option value="{{$item->id}}" {{Auth::guard('web')->user()->thana_id ? 'selected':''}}>{{$item->name}}</option>
+                                                        @endforeach
                                                     </select>
+                                                    <span class="text-danger error error-thana_id"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="address">Address</label>
                                                     <textarea name="address" id="address" class="form-control shadow-none">{{Auth::guard('web')->user()->address}}</textarea>
+                                                    <span class="text-danger error error-address"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="password">Password</label>
-                                                    <input type="password" name="password" id="password" class="form-control shadow-none" autocomplete="off">
+                                                    <input type="password" name="old_password" id="old_password" class="form-control shadow-none" autocomplete="off">
+                                                    <span class="text-danger error error-old_password"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="new_password">New Password</label>
                                                     <input type="password" name="new_password" id="new_password" class="form-control shadow-none" autocomplete="off">
+                                                    <span class="text-danger error error-new_password"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-4 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="confirm_password">Confirm Password</label>
                                                     <input type="password" name="confirm_password" id="confirm_password" class="form-control shadow-none" autocomplete="off">
+                                                    <span class="text-danger error error-confirm_password"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 mt-2">
@@ -401,6 +414,75 @@
 
 @push("webjs")
 <script>
+    function imageUpdate(event) {
+        if (event.target.files[0]) {
+            let formdata = new FormData();
+            formdata.append("image", event.target.files[0])
+            $.ajax({
+                url: location.origin+"/customer-imageUpdate",
+                method: "POST",
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: res => {
+                    if (res.error) {
+                        $(".error-image").text(res.error.image);
+                    }else{
+                        $.notify(res, "success");
+                        document.querySelector(".imageShow").setAttribute('src', window.URL.createObjectURL(event.target.files[0]))
+                        event.target.value = "";
+                    }
+                }
+            })
+        }
+    }
+
+    // save profile
+    function updateCustomer(event) {
+        event.preventDefault();
+        let formdata = new FormData(event.target)
+        $.ajax({
+            url: location.origin+"/customer-update",
+            method: "POST",
+            data: formdata,
+            contentType: false,
+            processData: false,
+            beforeSend: () => {
+                $("#setting").find(".error").text("")
+            },
+            success: res => {
+                if(res.error){
+                    $.each(res.error, (index, value) => {
+                        $("#setting").find(".error-"+index).text(value)
+                    })
+                }else if(res.errors){
+                    $("#setting").find(".error-old_password").text(res.errors)
+                }else{
+                    $.notify(res, "success")
+                }
+            }
+        })
+    }
+
+    function getUpazila(event) {
+        if (event.target.value) {
+            $.ajax({
+                url: location.origin + "/getUpazila/" + event.target.value,
+                method: "GET",
+                beforeSend: () => {
+                    $("#thana_id").html(`<option value="">Select Upazila</option>`)
+                },
+                success: res => {
+                    $.each(res, (index, value) => {
+                        $("#thana_id").append(`<option value="${value.id}">${value.name}</option>`)
+                    })
+                }
+            })
+        } else {
+            $("#thana_id").html(`<option value="">Select Upazila</option>`)
+        }
+    }
+
     function deleteWishlist(event) {
         $.ajax({
             url: location.origin + "/deletewishlist",
@@ -424,37 +506,6 @@
 
             }
         })
-    }
-</script>
-<script>
-    function imageUpdate(event) {
-        if (event.target.files[0]) {
-            document.querySelector(".imageShow").setAttribute('src', window.URL.createObjectURL(event.target.files[0]))
-        }
-    }
-    function getUpazila(event) {
-        if (event.target.value) {
-            $.ajax({
-                url: location.origin + "/getUpazila/" + event.target.value,
-                method: "GET",
-                beforeSend: () => {
-                    $("#thana_id").html(`<option value="">Select Upazila</option>`)
-                },
-                success: res => {
-                    $.each(res, (index, value) => {
-                        $("#thana_id").append(`<option value="${value.id}">${value.name}</option>`)
-                    })
-                }
-            })
-        } else {
-            $("#thana_id").html(`<option value="">Select Upazila</option>`)
-        }
-    }
-
-    // save profile
-    function saveProfileCustomer(event) {
-        event.preventDefault();
-        console.log(event);
     }
 
     function Dashboard(event) {

@@ -121,16 +121,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-xl-3 offset-lg-4 col-lg-8 offset-xl-0 custom-padding">
-                <div class="d-flex custom-flex-column">
-                    <a class="zoom-in d-block mb-7 me-sm-7 me-0" href="shop-grid-left-sidebar.html">
-                        <img src="{{asset('frontend')}}/assets/images/banner/1.jpg" alt="img">
-                    </a>
-                    <a class="zoom-in d-block mb-7" href="shop-grid-left-sidebar.html">
-                        <img src="{{asset('frontend')}}/assets/images/banner/2.jpg" alt="img">
-                    </a>
-                </div>
-            </div> -->
         </div>
     </div>
 </section>

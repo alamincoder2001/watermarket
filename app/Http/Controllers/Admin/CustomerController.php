@@ -35,9 +35,13 @@ class CustomerController extends Controller
     public function destroy($id)
     {
         $data = User::find($id);
+        $old = $data->image;
         $nid = $data->nid_card;
         $license = $data->trade_license;
         $visiting = $data->visiting_card;
+        if (File::exists($old)) {
+            File::delete($old);
+        }
         if (File::exists($nid)) {
             File::delete($nid);
         }

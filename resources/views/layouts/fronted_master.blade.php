@@ -196,7 +196,7 @@
                                 <div class="col-lg-3 col-sm-6 mb-7">
                                     <div class="footer-widget d-flex align-items-center flex-column">
                                         <a class="footer-logo" href="#" style="width: 50%;height: 140px;border: 1px solid #919191;padding: 2px;">
-                                            <img title="{{$profile->ownername}}" style="width:100%;height: 100%;" src="{{asset($profile->ownerimage != null ? $profile->ownerimage : '/noImage.jpg' )}}" alt="footer-logo" />
+                                            <img title="{{$profile->ownername}}" style="width:100%;height: 100%;" src="{{asset($profile->ownerimage != null ? $profile->ownerimage : 'nouser.png' )}}" alt="footer-logo" />
                                         </a>
                                         <ul class="address mt-3">
                                             <li>{{$profile->ownername}}, {{$profile->ownerdesignation}}</li>
@@ -246,7 +246,7 @@
                                 <div class="col-lg-3 col-sm-6 mb-7">
                                     <div class="footer-widget d-flex align-items-center flex-column">
                                         <a class="footer-logo" href="#" style="width: 50%;height: 140px;border: 1px solid #919191;padding: 2px;">
-                                            <img title="{{$profile->ownername_two}}" style="width:100%;height: 100%;" src="{{asset($profile->ownerimagetwo != null ? $profile->ownerimagetwo : '/noImage.jpg' )}}" alt="footer-logo" />
+                                            <img title="{{$profile->ownername_two}}" style="width:100%;height: 100%;" src="{{asset($profile->ownerimagetwo != null ? $profile->ownerimagetwo : 'nouser.png' )}}" alt="footer-logo" />
                                         </a>
                                         <ul class="address mt-3">
                                             <li>{{$profile->ownername_two}}, {{$profile->ownerdesignation_two}}</li>
