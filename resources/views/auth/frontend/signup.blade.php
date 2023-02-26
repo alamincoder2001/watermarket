@@ -1,77 +1,5 @@
 @extends("layouts.fronted_master")
 @section("title", " - SignUp")
-@push("webstyle")
-<!-- <style>
-    .container {
-        margin-right: auto;
-        margin-left: auto;
-        padding-right: 15px;
-        padding-left: 15px;
-        width: 100%;
-    }
-
-    @media (min-width: 576px) {
-        .container {
-            max-width: 540px;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .container {
-            max-width: 720px;
-        }
-    }
-
-    @media (min-width: 992px) {
-        .container {
-            max-width: 960px;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .container {
-            max-width: 1140px;
-        }
-    }
-
-
-
-    .card-columns .card {
-        margin-bottom: 0.75rem;
-    }
-
-    @media (min-width: 576px) {
-        .card-columns {
-            column-count: 3;
-            column-gap: 1.25rem;
-        }
-
-        .card-columns .card {
-            display: inline-block;
-            width: 100%;
-        }
-    }
-
-    .text-muted {
-        color: #9faecb !important;
-    }
-
-    p {
-        margin-top: 0;
-        margin-bottom: 1rem;
-    }
-
-    .mb-3 {
-        margin-bottom: 1rem !important;
-    }
-
-    .input-group {
-        position: relative;
-        display: flex;
-        width: 100%;
-    }
-</style> -->
-@endpush
 @section("content")
 <div class="container">
     <div class="row justify-content-center" style="margin: 40px 0;">
@@ -96,6 +24,27 @@
                             <div class="form-group mb-3">
                                 <input type="text" name="mobile" class="form-control" placeholder="Mobile" autocomplete="off">
                                 <span class="text-danger error-mobile error"></span>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <select onchange="getUpazila(event)" name="district_id" class="form-select">
+                                            <option value="">Select District</option>
+                                            @foreach($districts as $item)
+                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span class="text-danger error-district_id error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <select name="thana_id" class="thana_id form-select">
+                                            <option value="">Select Upazila</option>
+                                        </select>
+                                        <span class="text-danger error-thana_id error"></span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group mb-3">
                                 <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
@@ -127,6 +76,27 @@
                                 <input type="text" name="mobile" class="form-control" placeholder="Mobile" autocomplete="off">
                                 <span class="text-danger error-mobile error"></span>
                             </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <select onchange="getUpazila(event)" name="district_id" class="form-select">
+                                            <option value="">Select District</option>
+                                            @foreach($districts as $item)
+                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span class="text-danger error-district_id error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <select name="thana_id" class="thana_id form-select">
+                                            <option value="">Select Upazila</option>
+                                        </select>
+                                        <span class="text-danger error-thana_id error"></span>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group mb-3">
                                 <input type="password" name="password" class="form-control" placeholder="Password" autocomplete="off">
                                 <span class="text-danger error-password error"></span>
@@ -156,6 +126,27 @@
                             <div class="form-group mb-3">
                                 <input type="text" name="mobile" class="form-control" placeholder="Mobile" autocomplete="off">
                                 <span class="text-danger error-mobile error"></span>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <select onchange="getUpazila(event)" name="district_id" class="form-select">
+                                            <option value="">Select District</option>
+                                            @foreach($districts as $item)
+                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endforeach
+                                        </select>
+                                        <span class="text-danger error-district_id error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <select name="thana_id" class="thana_id form-select">
+                                            <option value="">Select Upazila</option>
+                                        </select>
+                                        <span class="text-danger error-thana_id error"></span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
@@ -225,6 +216,25 @@
 
 @push("webjs")
 <script>
+    function getUpazila(event) {
+        if (event.target.value) {
+            $.ajax({
+                url: location.origin + "/getUpazila/" + event.target.value,
+                method: "GET",
+                beforeSend: () => {
+                    $(".thana_id").html(`<option value="">Select Upazila</option>`)
+                },
+                success: res => {
+                    $.each(res, (index, value) => {
+                        $(".thana_id").append(`<option value="${value.id}">${value.name}</option>`)
+                    })
+                }
+            })
+        } else {
+            $(".thana_id").html(`<option value="">Select Upazila</option>`)
+        }
+    }
+
     function WholesaleRegister(event) {
         event.preventDefault();
         let formdata = new FormData(event.target)
@@ -282,6 +292,7 @@
             }
         })
     }
+
     function TechnicianRegister(event) {
         event.preventDefault();
         let formdata = new FormData(event.target)
@@ -317,13 +328,13 @@
             $(".TechnicianRegister").addClass("d-none")
             $(".Retail").addClass("d-none")
             $(".Wholesale").removeClass("d-none")
-        } else if(event.target.value == 'Wholesale') {
+        } else if (event.target.value == 'Wholesale') {
             $(".WholesaleRegister").removeClass("d-none")
             $(".RetailRegister").addClass("d-none")
             $(".TechnicianRegister").addClass("d-none")
             $(".Retail").removeClass("d-none")
             $(".Wholesale").addClass("d-none")
-        }else {
+        } else {
             $(".WholesaleRegister").addClass("d-none")
             $(".RetailRegister").addClass("d-none")
             $(".TechnicianRegister").removeClass("d-none")

@@ -68,6 +68,8 @@ class FrontendLoginController extends Controller
                 "username"         => "required",
                 "email"            => "required",
                 "mobile"           => "required",
+                "district_id"      => "required",
+                "thana_id"         => "required",
                 "password"         => "required",
                 "customer_type"    => "required",
                 "confirm_password" => "required_with:password|same:password",
@@ -86,6 +88,8 @@ class FrontendLoginController extends Controller
             $data->username      = $request->username;
             $data->email         = $request->email;
             $data->mobile        = $request->mobile;
+            $data->district_id   = $request->district_id;
+            $data->thana_id      = $request->thana_id;
             $data->customer_type = $request->customer_type;
             if ($request->customer_type == 'Retail') {
                 $data->status = 'a';
@@ -117,11 +121,13 @@ class FrontendLoginController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                "name" => "required",
-                "username" => "required",
-                "email" => "required",
-                "mobile" => "required",
-                "password" => "required",
+                "name"             => "required",
+                "username"         => "required",
+                "email"            => "required",
+                "mobile"           => "required",
+                "district_id"      => "required",
+                "thana_id"         => "required",
+                "password"         => "required",
                 "confirm_password" => "required_with:password|same:password",
             ]);
 
@@ -135,6 +141,8 @@ class FrontendLoginController extends Controller
             $data->username        = $request->username;
             $data->email           = $request->email;
             $data->mobile          = $request->mobile;
+            $data->district_id     = $request->district_id;
+            $data->thana_id        = $request->thana_id;
             $data->password        = Hash::make($request->password);
             $data->save();
             return response()->json(["msg" => "Successfully Register"]);

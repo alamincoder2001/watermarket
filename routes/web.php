@@ -65,7 +65,7 @@ Route::get("/technician-dashboard", [TechnicianController::class, 'index'])->nam
 Route::post("/technician-update", [TechnicianController::class, 'update'])->name('technician.update');
 Route::post("/technician-imageUpdate", [TechnicianController::class, 'imageUpdate'])->name('technician.imageUpdate');
 Route::get("/technician-logout", [TechnicianController::class, 'logout'])->name('technician.logout');
-
+Route::post("/filter-technician", [TechnicianController::class, 'filterTechnician'])->name('filter.technician');
 // get data from database
 Route::get("/getUpazila/{id}", [HomeController::class, "getUpazila"]);
 Route::get('/setting/fetch', [HomeController::class, 'fetch'])->name('setting.fetch');
@@ -151,6 +151,7 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/order/status', [OrderController::class, 'changeStatus'])->name('admin.order.status');
     Route::post('/order/delete', [OrderController::class, 'destroy'])->name('admin.order.destroy');
     Route::get('/order/invoice/{invoice}', [OrderController::class, 'invoice'])->name('admin.order.invoice');
+    Route::post('/order/update', [OrderController::class, 'update'])->name("admin.order.update");
     // blog route
     Route::get('/blog', [BlogController::class, 'index'])->name('admin.blog.index');
     Route::get('/blog/fetch/{id?}', [BlogController::class, 'fetch'])->name('admin.blog.fetch');

@@ -84,7 +84,7 @@ class CustomerController extends Controller
     {
         try {
             $validator = Validator::make($request->all(), [
-                "image" => "mimes:jpg,png,jpeg,PNG,JPEG"
+                "image" => "mimes:jpg,png,jpeg"
             ]);
             if ($validator->fails()) {
                 return response()->json(["error" => $validator->errors()]);

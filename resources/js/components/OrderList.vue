@@ -9,7 +9,7 @@
                                 <div class="form-group m-0">
                                     <select class="form-select shadow-none" v-model="searchBy">
                                         <option value="pending">Pending</option>
-                                        <option value="proccessing">On Proccessing </option>
+                                        <option value="processing">On Processing </option>
                                         <option value="delivery">Delivery</option>
                                         <option value="cancel">Cancel</option>
                                     </select>
@@ -96,7 +96,7 @@
                                             item.status
                                         }}</span>
                                     </td>
-                                    <td style="width: 22%">
+                                    <td style="width: 25%">
                                         <div class="input-group gap-2">
                                             <button title="Order Details" @click="showDetails(item)" type="button" style="background: gainsboro;border-radius: 15%; " class="shadow-none outline-none border-0">
                                                 <i class="fas fa-info-circle text-primary"></i>
@@ -104,10 +104,13 @@
                                             <button title="Order Cancel" v-if="item.status != 'cancel' && item.status != 'delivery' " @click="InvoiceDelete(item.id)" type="button" style="background: none" class="shadow-none outline-none border-0">
                                                 <i class="fas fa-trash text-danger"></i>
                                             </button>
+                                            <button title="Order Cancel" v-if="item.status != 'cancel' && item.status != 'delivery' " @click="OrderEdit(item)" type="button" style="background: none" class="shadow-none outline-none border-0">
+                                                <i class="fas fa-edit text-info"></i>
+                                            </button>
                                             <a :href="`${'/admin/order/invoice/'+item.invoice}`" target="_blank" title="Order Invoice" style="background: none" class="shadow-none outline-none border-0">
                                                 <i class="fas fa-file text-info"></i>
                                             </a>
-                                            <button @click="changeStatus(item, 'proccessing') " v-if=" item.status == 'pending' " type="button" :style="{background: item.status == 'pending' ? 'red' : '' }" class="text-white shadow-none outline-none border-0">Proccessing</button>
+                                            <button @click="changeStatus(item, 'processing') " v-if=" item.status == 'pending' " type="button" :style="{background: item.status == 'pending' ? 'red' : '' }" class="text-white shadow-none outline-none border-0">Proccessing</button>
                                             <button @click="changeStatus( item, 'delivery' ) " v-else-if="item.status == 'shiped' " type="button" :style="{background: item.status == 'shiped' ? 'green' : '' }" class="text-white shadow-none outline-none border-0">Delivery</button>
                                         </div>
                                     </td>
@@ -131,21 +134,31 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="EditOrder" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body p-5">
+                        <Orderedit :title="'Order Edit Invoice'" :invoice-data="modalData"></Orderedit>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import moment from "moment";
 import Invoicemodal from "../components/Invoicemodal.vue";
+import OrderEdit from "./OrderEdit.vue";
 export default {
-    components: {'Invoicemodal': Invoicemodal},
+    components: {'Invoicemodal': Invoicemodal, 'Orderedit': OrderEdit},
     data() {
         return {
             searchBy: "pending",
             dateFrom: "",
             dateTo: "",
             orders: [],
-            modalData: [],
+            modalData: {},
             showTd: false,
         };
     },
@@ -176,6 +189,12 @@ export default {
                 });
             }
         },
+
+        OrderEdit(rowData){
+            $("#EditOrder").modal("show");
+            this.modalData = rowData;
+        },
+
         InvoiceDelete(id) {
             if (confirm("Are you sure want to delete")) {
                 axios.post("/admin/order/delete", { id: id }).then((res) => {

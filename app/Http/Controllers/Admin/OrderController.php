@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\OrderDetail;
 
 class OrderController extends Controller
 {
@@ -100,8 +101,42 @@ class OrderController extends Controller
         try{
             $data = Order::where("id", $request->id)->first();
             $data->status = $request->Status;
+            $data->updated_at = date("Y-m-d");
             $data->save();
             return "Order ".$request->Status." successfully";
+        }catch(\Throwable $e){
+            return "Opps! something went wrong";
+        }
+    }
+
+    //update order
+
+    public function update(Request $request)
+    {
+        try{
+            if (count($request->orderDetails) > 0) {
+                
+                $data = Order::find($request->id);
+                $data->subtotal = $request->subtotal;
+                $data->total = $request->total;
+                $data->save();
+    
+                OrderDetail::where("order_id", $request->id)->delete();
+                foreach($request->orderDetails as $item){
+                    $detail             = new OrderDetail();
+                    $detail->order_id   = $request->id;
+                    $detail->product_id = $item['product_id'];
+                    $detail->quantity   = $item['quantity'];
+                    $detail->unit_price = $item['unit_price'];
+                    $detail->total      = $item['total'];
+                    $detail->save();
+    
+                }
+    
+                return "Order Update successfully";
+            }else{
+                return "Cart is empty";
+            }
         }catch(\Throwable $e){
             return "Opps! something went wrong";
         }

@@ -191,11 +191,12 @@
             <div class="container">
                 <div class="row g-0">
                     <div class="col-12">
-                        <div class="border-bottom section-py">
+                        <div class="section-py">
                             <div class="row mb-n7">
-                                <div class="col-lg-3 col-sm-6 mb-7">
+                                <div class="col-lg-2">
+                                    <div style="height:50px;"></div>
                                     <div class="footer-widget d-flex align-items-center flex-column">
-                                        <a class="footer-logo" href="#" style="width: 50%;height: 140px;border: 1px solid #919191;padding: 2px;">
+                                        <a class="footer-logo" href="#" style="width: 50%;height: 100px;border: 1px solid #919191;padding: 2px;">
                                             <img title="{{$profile->ownername}}" style="width:100%;height: 100%;" src="{{asset($profile->ownerimage != null ? $profile->ownerimage : 'nouser.png' )}}" alt="footer-logo" />
                                         </a>
                                         <ul class="address mt-3">
@@ -203,56 +204,119 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-sm-6 mb-7">
-                                    <div class="footer-widget" style="padding: 0 15px 15px 15px;border: 1px solid #cdcdcd;">
-                                        <h4 class="title text-decoration-underline">Contact Information</h4>
-                                        <table style="width:50%">
-                                            <tr>
-                                                <td><span href="#">Phone</td>
-                                                <td>:</td>
-                                                <td>{{$profile->mobile}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span href="#">Email</td>
-                                                <td>:</td>
-                                                <td>{{$profile->email}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td><span href="#">Address</td>
-                                                <td>:</td>
-                                                <td>{{$profile->address}}</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <ul class="footer-menu mt-3">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <form id="mc-form" action="#" style="width: 76%;">
-                                                <div class="input-group">
-                                                    <input id="mc-email" type="email" class="form-control border-0" required="" placeholder="Enter your email address" />
-                                                    <div class="input-group-text">
-                                                        <button class="btn-primary btn btn-hover-warning" type="submit">Subscribe</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <div style="width: 35%;">
-                                                <a class="social-link" href="{{$profile->facebook}}" target="_blank"><span class="ion-social-facebook"></span></a>
-                                                <a class="social-link" href="{{$profile->instagram}}" target="_blank"><span class="ion-social-instagram"></span></a>
-                                                <a class="social-link" href="{{$profile->linkedin}}" target="_blank"><span class="ion-social-linkedin"></span></a>
-                                                <a class="social-link" href="{{$profile->twitter}}" target="_blank"><span class="ion-social-twitter"></span></a>
-                                            </div>
-                                        </div>
+                                <div class="col-lg-3">
+                                    <h4>Address-1</h4>
+                                    <ul class="footer-address">
+                                        <li>
+                                            <span class="sign fa fa-globe"></span>
+                                            <span>Water Market BD</span>
+                                        </li>
+                                        <li>
+                                            <span style="left: -19px;font-size:16px;" class="sign fa fa-map-marker"></span>
+                                            <span>Road -3, Plot -16 (Bilal Uddin Mansion), 4th & 5th Floor, Mirpur 10 (Behind Shah Ali Plaza), Dhaka-1216</span>
+                                        </li>
+                                        <li>
+                                            <span class="sign fa fa-phone"></span>
+                                            <span>
+                                                <a href="tel:/{{$profile->mobile}}">+880 {{$profile->mobile}}</a>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span style="font-size: 13px;" class="sign fa fa-envelope-o"></span>
+                                            <span>
+                                                <a href="mailto:/{{$profile->email}}">{{$profile->email}}</a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <h4>Address-2</h4>
+                                    <ul class="footer-address">
+                                        <li>
+                                            <span class="sign fa fa-globe"></span>
+                                            <span>Water Market BD</span>
+                                        </li>
+                                        <li>
+                                            <span style="left: -19px;font-size:16px;" class="sign fa fa-map-marker"></span>
+                                            <span>Road -3, Plot -16 (Bilal Uddin Mansion), 4th & 5th Floor, Mirpur 10 (Behind Shah Ali Plaza), Dhaka-1216</span>
+                                        </li>
+                                        <li>
+                                            <span class="sign fa fa-phone"></span>
+                                            <span>
+                                                <a href="tel:/{{$profile->mobile}}">+880 {{$profile->mobile}}</a>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span style="font-size: 13px;" class="sign fa fa-envelope-o"></span>
+                                            <span>
+                                                <a href="mailto:/{{$profile->email}}">{{$profile->email}}</a>
+                                            </span>
+                                        </li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-3 col-sm-6 mb-7">
-                                    <div class="footer-widget d-flex align-items-center flex-column">
-                                        <a class="footer-logo" href="#" style="width: 50%;height: 140px;border: 1px solid #919191;padding: 2px;">
-                                            <img title="{{$profile->ownername_two}}" style="width:100%;height: 100%;" src="{{asset($profile->ownerimagetwo != null ? $profile->ownerimagetwo : 'nouser.png' )}}" alt="footer-logo" />
-                                        </a>
-                                        <ul class="address mt-3">
-                                            <li>{{$profile->ownername_two}}, {{$profile->ownerdesignation_two}}</li>
-                                            <!-- <li><span style="font-weight: 500;color:#fff;">Designation:</span> {{$profile->ownerdesignation_two}}</li> -->
-                                        </ul>
+                                <div class="col-lg-5">
+                                    <div style="height:30px;"></div>
+                                    <div class="card" style="background: none;">
+                                        <div class="card-header">
+                                            <h5 class="m-0 text-center">Our Bank Account</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <h5>Bank Name</h5>
+                                                    <ul>
+                                                        <li>
+                                                            <span>Account Name: </span>
+                                                            <span>Water Market BD</span>
+                                                        </li>
+                                                        <li>
+                                                            <span>Account No: </span>
+                                                            <span>164.110.25011</span>
+                                                        </li>
+                                                        <li>
+                                                            <span>Branch: </span>
+                                                            <span>Mirpur-10</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-6" style="border-left:1px solid darkgrey;">
+                                                    <h5>Bank Name</h5>
+                                                    <ul>
+                                                        <li>
+                                                            <span>Account Name: </span>
+                                                            <span>Water Market BD</span>
+                                                        </li>
+                                                        <li>
+                                                            <span>Account No: </span>
+                                                            <span>164.110.25011</span>
+                                                        </li>
+                                                        <li>
+                                                            <span>Branch: </span>
+                                                            <span>Mirpur-10</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <h4>Hot Line</h4>
+                                    <ul>
+                                        <li>
+                                            <span>Image</span>
+                                        </li>
+                                        <li>
+                                            <span>Image</span>
+                                        </li>
+                                    </ul>
+                                    <h4>Social Link</h4>
+                                    <ul>
+                                        <li>
+                                            <span>Image</span>
+                                        </li>
+                                        <li>
+                                            <span>Image</span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -261,7 +325,7 @@
             </div>
         </div>
         <!-- coppy right satrt -->
-        <div class="copy-right-section">
+        <div class="copy-right-section border-top" style="margin-top: 25px;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 order-last order-md-first">

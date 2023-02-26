@@ -139,10 +139,10 @@
                                         <td>{{date("d-m-Y", strtotime($item->date))}}</td>
                                         <td class="{{$item->status == 'pending' ? 'text-danger': 'text-success'}} text-capitalize">{{$item->status}}</td>
                                         <td>
-                                            <button class="shadow-none text-white" style="background: #00000038;width:25px;height:22px;"><i class="bi bi-file-earmark"></i></button>
+                                            <button title="Order Invoice" class="shadow-none text-white" style="background: #00000038;width:25px;height:22px;"><i class="bi bi-file-earmark"></i></button>
                                             @if($item->status == 'pending')
-                                            <button class="shadow-none text-white" style="background: red;width:25px;height:22px;">X</button>
-                                            @else
+                                            <button onclick="showModal({{$item}})" title="Order Edit" class="shadow-none text-white" style="background: #180174;width:25px;height:22px;"><i class="bi bi-pencil-square"></i></button>
+                                            <button title="Order Delete" class="shadow-none text-white" style="background: red;width:25px;height:22px;">X</button>
                                             @endif
                                         </td>
                                     </tr>
@@ -183,8 +183,8 @@
                                         <td>{{date("d-m-Y", strtotime($item->date))}}</td>
                                         <td class="text-danger text-capitalize">{{$item->status}}</td>
                                         <td>
-                                            <button class="shadow-none text-white" style="background: #00000038;width:25px;height:22px;"><i class="bi bi-file-earmark"></i></button>
-                                            <button class="shadow-none text-white" style="background: red;width:25px;height:22px;">X</button>
+                                            <button title="Order Invoice" class="shadow-none text-white" style="background: #00000038;width:25px;height:22px;"><i class="bi bi-file-earmark"></i></button>
+                                            <button title="Order Delete" class="shadow-none text-white" style="background: red;width:25px;height:22px;">X</button>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -347,7 +347,7 @@
                                                     <select name="district_id" onchange="getUpazila(event)" id="district_id" class="form-select shadow-none">
                                                         <option value="">Select District</option>
                                                         @foreach($districts as $item)
-                                                        <option value="{{$item->id}}" {{Auth::guard('web')->user()->district_id ? 'selected':''}}>{{$item->name}}</option>
+                                                        <option value="{{$item->id}}" {{Auth::guard('web')->user()->district_id == $item->id ? 'selected':''}}>{{$item->name}}</option>
                                                         @endforeach
                                                     </select>
                                                     <span class="text-danger error error-district_id"></span>
@@ -359,7 +359,7 @@
                                                     <select name="thana_id" id="thana_id" class="form-select shadow-none">
                                                     <option value="">Select Upazila</option>
                                                         @foreach($upazilas as $item)
-                                                        <option value="{{$item->id}}" {{Auth::guard('web')->user()->thana_id ? 'selected':''}}>{{$item->name}}</option>
+                                                        <option value="{{$item->id}}" {{Auth::guard('web')->user()->thana_id == $item->id ? 'selected':''}}>{{$item->name}}</option>
                                                         @endforeach
                                                     </select>
                                                     <span class="text-danger error error-thana_id"></span>
@@ -368,7 +368,7 @@
                                             <div class="col-lg-12 mt-2">
                                                 <div class="form-gorup">
                                                     <label for="address">Address</label>
-                                                    <textarea name="address" id="address" class="form-control shadow-none">{{Auth::guard('web')->user()->address}}</textarea>
+                                                    <textarea name="address" id="address" autocomplete="off" class="form-control shadow-none">{{Auth::guard('web')->user()->address}}</textarea>
                                                     <span class="text-danger error error-address"></span>
                                                 </div>
                                             </div>
@@ -408,6 +408,35 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade myModal" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Order Invoice: <span></span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sl</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 @endsection
@@ -558,6 +587,28 @@
         event.preventDefault();
         $('.login-register-area').find(".item-section").addClass("d-none")
         $('.login-register-area').find("#completed").removeClass("d-none")
+    }
+
+    // show Modal
+    function showModal(rowData){
+        console.log(rowData);
+        $(".myModal .modal-body .table tbody").html("")
+        $(".myModal").modal("show")
+        $(".myModal .modal-title span").text(rowData.invoice)
+
+        $.each(rowData.order_details, (index, value) => {
+            let row = `
+                <tr>
+                    <td>${++index}</td>
+                    <td>${value.product.name}</td>
+                    <td>${value.quantity}</td>
+                    <td>${value.unit_price}</td>
+                    <td>${value.total}</td>
+                </tr>
+            `;
+
+            $(".myModal .modal-body .table tbody").append(row)
+        })
     }
 </script>
 @endpush

@@ -6,6 +6,7 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -19,7 +20,35 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view("admin.dashboard");
+        $date = date("Y-m-d");
+        $total = [];
+        $total['today_order'] = DB::select("SELECT
+                                        o.*
+                                    FROM orders o
+                                    WHERE o.status != 'cancel' AND o.date = '$date'");
+        $total['monthly_order'] = DB::select("SELECT
+                                        o.*
+                                    FROM orders o
+                                    WHERE o.status != 'cancel' AND month(o.date) = date('m-d')");
+        $total['yearly_order'] = DB::select("SELECT
+                                        o.*
+                                    FROM orders o
+                                    WHERE o.status != 'cancel' AND year(o.date) = date('Y')");
+
+        $total['today_sold'] = DB::select("SELECT
+                                    IFNULL(SUM(o.total), 0) as total_amount
+                                    FROM orders o
+                                    WHERE o.status = 'delivery' AND o.updated_at = '$date'");
+        $total['monthly_sold'] = DB::select("SELECT
+                                    IFNULL(SUM(o.total), 0) as total_amount
+                                    FROM orders o
+                                    WHERE o.status = 'delivery' AND month(o.updated_at) = date('m-d')");
+        $total['yearly_sold'] = DB::select("SELECT
+                                    IFNULL(SUM(o.total), 0) as total_amount
+                                    FROM orders o
+                                    WHERE o.status = 'delivery' AND year(o.updated_at) = date('Y')");
+
+        return view("admin.dashboard", compact('total'));
     }
 
 
@@ -68,7 +97,6 @@ class DashboardController extends Controller
             $data->email = $request->email;
             $data->save();
             return "Admin Profile Updated";
-
         } catch (\Throwable $e) {
             return "Something went wrong";
         }
@@ -76,7 +104,7 @@ class DashboardController extends Controller
 
     public function imageUpdate(Request $request)
     {
-        try{
+        try {
 
             $admin = Auth::guard('admin')->user();
 
@@ -84,14 +112,14 @@ class DashboardController extends Controller
                 "image" => "mimes:jpg,png,jpeg|dimensions:width=200,height=200"
             ], ["image.dimensions" => "Image dimension must be (200 x 200)"]);
 
-            if($validator->fails()){
+            if ($validator->fails()) {
                 return response()->json(["error" => $validator->errors()]);
             }
             $data = Admin::find($admin->id);
             $old = $data->image;
 
-            if(!empty($old) && isset($old)){
-                if(File::exists($old)){
+            if (!empty($old) && isset($old)) {
+                if (File::exists($old)) {
                     File::delete($old);
                 }
             }
@@ -99,7 +127,7 @@ class DashboardController extends Controller
 
             $data->save();
             return "Image Upload successfully";
-        }catch(\Throwable $e){
+        } catch (\Throwable $e) {
             return "Something went wrong";
         }
     }

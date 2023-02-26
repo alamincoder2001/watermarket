@@ -29,7 +29,7 @@ Vue.component("Technician", require("./components/Technician.vue").default);
 Vue.component("Slider", require("./components/Slider.vue").default);
 Vue.component("Blog", require("./components/Blog.vue").default);
 Vue.component("Orderlist", require("./components/OrderList.vue").default);
-Vue.component("proccess-order", require("./components/proccessOrder.vue").default);
+Vue.component("proccess-order", require("./components/processOrder.vue").default);
 Vue.component("delivered-order", require("./components/deliveredOrder.vue").default);
 Vue.component("cancel-order", require("./components/cancelOrder.vue").default);
 Vue.component("invoice", require("./components/Invoice.vue").default);

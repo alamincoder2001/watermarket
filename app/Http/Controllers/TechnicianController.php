@@ -108,4 +108,14 @@ class TechnicianController extends Controller
             return redirect("/");
         }
     }
+
+    public function filterTechnician(Request $request)
+    {
+        try{
+            $data = Technician::with('district', 'upazila')->where("thana_id", $request->thana_id)->get();
+            return $data;
+        }catch(\Throwable $e){
+            return "Opps! something went wrong";
+        }
+    }
 }

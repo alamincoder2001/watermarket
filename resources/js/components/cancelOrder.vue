@@ -104,8 +104,7 @@
                                             <a :href="`${'/admin/order/invoice/'+item.invoice}`" target="_blank" title="Order Invoice" style="background: none" class="shadow-none outline-none border-0">
                                                 <i class="fas fa-file text-info"></i>
                                             </a>
-                                            <button @click="changeStatus(item, 'proccessing') " v-if=" item.status == 'pending' " type="button" :style="{background: item.status == 'pending' ? 'red' : '' }" class="text-white shadow-none outline-none border-0">Proccessing</button>
-                                            <button @click="changeStatus( item, 'delivery' ) " v-else-if="item.status == 'shiped' " type="button" :style="{background: item.status == 'shiped' ? 'green' : '' }" class="text-white shadow-none outline-none border-0">Delivery</button>
+                                            <button @click="changeStatus( item, 'processing' ) "  type="button" :style="{background: item.status == 'cancel' ? 'green' : '' }" class="text-white shadow-none outline-none border-0">Processing</button>
                                         </div>
                                     </td>
                                 </tr>
