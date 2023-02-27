@@ -1,7 +1,7 @@
 @extends("layouts.backend_master")
 
-@section("title", "Admin Setting Page")
-@section("breadcrumb_title", "Setting")
+@section("title", "Admin Settings Page")
+@section("breadcrumb_title", "Settings")
 @section("breadcrumb_item", "Admin Setting Page")
 
 @section("content")
@@ -27,59 +27,47 @@
                         </div>
                         <span class="text-danger error error-navicon"></span>
                     </div>
-                    <div class="form-group">
-                        <p style="margin: 0;">Owner Image</p>
-                        <div class="d-flex align-items-center gap-2" style="margin-bottom: 10px;">
-                            <img src="{{asset($data->ownerimage != null ? $data->ownerimage : 'noImage.jpg')}}" class="imgowner" style="width: 50%;height: 85px;border: 1px solid #c1c1c1;margin-top: 5px;">
-                            <input type="file" id="ownerimage" name="ownerimage" autocomplete="off" class="form-control shadow-none" onchange="ownerimageUpdate(event)">
-                        </div>
-                        <span class="text-danger error error-ownerimage"></span>
-                    </div>
-                    <div class="form-group">
-                        <p style="margin: 0;">Owner Image 2</p>
-                        <div class="d-flex align-items-center gap-2" style="margin-bottom: 10px;">
-                            <img src="{{asset($data->ownerimagetwo != null ? $data->ownerimagetwo : 'noImage.jpg')}}" class="imgownertwo" style="width: 50%;height: 85px;border: 1px solid #c1c1c1;margin-top: 5px;">
-                            <input type="file" id="ownerimagetwo" name="ownerimagetwo" autocomplete="off" class="form-control shadow-none" onchange="ownerimagetwoUpdate(event)">
-                        </div>
-                        <span class="text-danger error error-ownerimagetwo"></span>
-                    </div>
                 </div>
                 <div class="col-lg-8">
                     <form onsubmit="Update(event)">
                         <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-lg-12 col-12">
+                                        <div class="form-group">
+                                            <p style="margin: 0;">Owner Image</p>
+                                            <div class="d-flex align-items-center gap-2" style="margin-bottom: 10px;">
+                                                <img src="{{asset($data->ownerimage != null ? $data->ownerimage : 'noImage.jpg')}}" class="imgowner" style="width: 20%;height: 85px;border: 1px solid #c1c1c1;margin-top: 5px;">
+                                                <input type="file" id="ownerimage" name="ownerimage" autocomplete="off" class="form-control shadow-none" onchange="ownerimageUpdate(event)">
+                                            </div>
+                                            <span class="text-danger error error-ownerimage"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="ownername">Owner Name</label>
+                                            <input type="text" name="ownername" id="ownername" value="{{$data->ownername}}" autocomplete="off" class="form-control shadow-none">
+                                            <span class="text-danger error error-ownername"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <div class="form-group">
+                                            <label for="ownerdesignation">Owner Designation</label>
+                                            <input type="text" name="ownerdesignation" id="owner_designation" value="{{$data->ownerdesignation}}" autocomplete="off" class="form-control shadow-none">
+                                            <span class="text-danger error error-ownerdesignation"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr style="margin: 8px 0;">
+                            <div class="col-lg-12">
+                                <h3 class="text-center m-0">Company Profile</h3>
+                            </div>
                             <div class="col-12 col-lg-12">
                                 <div class="form-group">
                                     <label for="company_name">Company Name</label>
                                     <input type="text" name="company_name" id="company_name" value="{{$data->company_name}}" autocomplete="off" class="form-control shadow-none">
                                     <span class="text-danger error error-company_name"></span>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="form-group">
-                                    <label for="ownername">Owner Name</label>
-                                    <input type="text" name="ownername" id="ownername" value="{{$data->ownername}}" autocomplete="off" class="form-control shadow-none">
-                                    <span class="text-danger error error-ownername"></span>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="form-group">
-                                    <label for="ownerdesignation">Owner Designation</label>
-                                    <input type="text" name="ownerdesignation" id="owner_designation" value="{{$data->ownerdesignation}}" autocomplete="off" class="form-control shadow-none">
-                                    <span class="text-danger error error-ownerdesignation"></span>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="form-group">
-                                    <label for="ownername_two">Owner Name2</label>
-                                    <input type="text" name="ownername_two" id="ownername_two" value="{{$data->ownername_two}}" autocomplete="off" class="form-control shadow-none">
-                                    <span class="text-danger error error-ownername_two"></span>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <div class="form-group">
-                                    <label for="ownerdesignation_two">Owner Designation2</label>
-                                    <input type="text" name="ownerdesignation_two" id="ownerdesignation_two" value="{{$data->ownerdesignation_two}}" autocomplete="off" class="form-control shadow-none">
-                                    <span class="text-danger error error-ownerdesignation_two"></span>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
@@ -99,8 +87,29 @@
                             <div class="col-12 col-lg-12">
                                 <div class="form-group">
                                     <label for="address">Address</label>
-                                    <textarea name="address" autocomplete="off" class="form-control shadow-none">{{$data->address}}</textarea>
+                                    <textarea name="address" autocomplete="off" style="display: inherit;width: 100%; border: 1px solid #d5d5d5;" class="shadow-none">{{$data->address}}</textarea>
                                     <span class="text-danger error error-address"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="mobile_second">Mobile Second</label>
+                                    <input type="text" name="mobile_second" id="mobile_second" value="{{$data->mobile_second}}" autocomplete="off" class="form-control shadow-none">
+                                    <span class="text-danger error error-mobile_second"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="email_second">Email Second</label>
+                                    <input type="email" name="email_second" id="email_second" value="{{$data->email_second}}" autocomplete="off" class="form-control shadow-none">
+                                    <span class="text-danger error error-email_second"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-12">
+                                <div class="form-group">
+                                    <label for="address_second">Address Second</label>
+                                    <textarea name="address_second" autocomplete="off" style="display: inherit;width: 100%; border: 1px solid #d5d5d5;" class="shadow-none">{{$data->address_second}}</textarea>
+                                    <span class="text-danger error error-address_second"></span>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
@@ -133,9 +142,16 @@
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="form-group">
-                                    <label for="bg_color">Bg Color For Whole Seller</label>
-                                    <input type="color" name="bg_color" id="bg_color" value="{{$data->bg_color}}" autocomplete="off" class="form-control shadow-none">
-                                    <span class="text-danger error error-bg_color"></span>
+                                    <label for="youtube">Youtube</label>
+                                    <input type="url" name="youtube" id="youtube" value="{{$data->youtube}}" autocomplete="off" class="form-control shadow-none">
+                                    <span class="text-danger error error-youtube"></span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="minimum_qty">Minimum Quantity</label>
+                                    <input type="number" min="0" step="1" name="minimum_qty" id="minimum_qty" value="{{$data->minimum_qty}}" autocomplete="off" class="form-control shadow-none">
+                                    <span class="text-danger error error-minimum_qty"></span>
                                 </div>
                             </div>
                         </div>
@@ -231,6 +247,7 @@
             }
         })
     }
+
     function ownerimageUpdate(event) {
         event.preventDefault();
 
@@ -248,32 +265,6 @@
             success: res => {
                 if (!res.error) {
                     document.querySelector('.imgowner').src = window.URL.createObjectURL(event.target.files[0])
-                    $("#ownerimage").val("")
-                    $.notify(res, "success");
-                } else {
-                    $.each(res.error, (index, value) => {
-                        $(".error-" + index).text(value)
-                    })
-                }
-            }
-        })
-    }
-    function ownerimagetwoUpdate(event) {
-        event.preventDefault();
-        var formdata = new FormData()
-        formdata.append("ownerimagetwo", event.target.files[0]);
-        $.ajax({
-            url: location.origin + "/admin/ownerimagetwoUpdate",
-            method: "POST",
-            data: formdata,
-            contentType: false,
-            processData: false,
-            beforeSend: () => {
-                $(".error").text("")
-            },
-            success: res => {
-                if (!res.error) {
-                    document.querySelector('.imgownertwo').src = window.URL.createObjectURL(event.target.files[0])
                     $("#ownerimage").val("")
                     $.notify(res, "success");
                 } else {

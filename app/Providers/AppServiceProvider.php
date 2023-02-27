@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\District;
+use App\Models\BankAccount;
 use App\Models\Brand;
 use App\Models\Setting;
 use App\Thana;
@@ -36,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
         View::share("category", Setting::latest()->get());
         View::share("districts", District::orderBy("name", "ASC")->get());
         View::share("upazilas", Thana::orderBy("name", "ASC")->get());
+        View::share("bank", BankAccount::where("status", "a")->take(2)->get());
         Schema::defaultStringLength(191);
     }
 }

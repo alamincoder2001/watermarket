@@ -33,20 +33,22 @@ class SettingController extends Controller
                 return response()->json(["error" => $validator->errors()]);
             }
 
-            $data                       = Setting::first();
-            $data->company_name         = $request->company_name;
-            $data->ownername            = $request->ownername;
-            $data->ownerdesignation     = $request->ownerdesignation;
-            $data->ownername_two        = $request->ownername_two;
-            $data->ownerdesignation_two = $request->ownerdesignation_two;
-            $data->mobile               = $request->mobile;
-            $data->email                = $request->email;
-            $data->address              = $request->address;
-            $data->facebook             = $request->facebook;
-            $data->instagram            = $request->instagram;
-            $data->twitter              = $request->twitter;
-            $data->linkedin             = $request->linkedin;
-            $data->bg_color             = $request->bg_color;
+            $data                   = Setting::first();
+            $data->company_name     = $request->company_name;
+            $data->ownername        = $request->ownername;
+            $data->ownerdesignation = $request->ownerdesignation;
+            $data->mobile           = $request->mobile;
+            $data->email            = $request->email;
+            $data->address          = $request->address;
+            $data->mobile_second    = $request->mobile_second;
+            $data->email_second     = $request->email_second;
+            $data->address_second   = $request->address_second;
+            $data->facebook         = $request->facebook;
+            $data->instagram        = $request->instagram;
+            $data->twitter          = $request->twitter;
+            $data->linkedin         = $request->linkedin;
+            $data->youtube          = $request->youtube;
+            $data->minimum_qty      = $request->minimum_qty;
 
             $data->save();
             return "Setting updated successfully";
@@ -60,7 +62,7 @@ class SettingController extends Controller
         try {
             $validator = Validator::make($request->all(), [
                 "logo" => "mimes:jpg,png,jpeg|dimensions:width=150,height=55"
-            ], ["logo.dimensions" => "Image dimension must be (150 x 55)"]);
+            ], ["logo.dimensions" => "Image dimension must be (150px x 55px)"]);
 
             if ($validator->fails()) {
                 return response()->json(["error" => $validator->errors()]);
@@ -87,7 +89,7 @@ class SettingController extends Controller
         try {
             $validator = Validator::make($request->all(), [
                 "navicon" => "mimes:jpg,png,jpeg|dimensions:width=80,height=80"
-            ], ["navicon.dimensions" => "Image dimension must be (80 x 80)"]);
+            ], ["navicon.dimensions" => "Image dimension must be (80px x 80px)"]);
 
             if ($validator->fails()) {
                 return response()->json(["error" => $validator->errors()]);
@@ -114,7 +116,7 @@ class SettingController extends Controller
         try {
             $validator = Validator::make($request->all(), [
                 "ownerimage" => "mimes:jpg,png,jpeg|dimensions:width=200,height=200"
-            ], ["ownerimage.dimensions" => "Image dimension must be (200 x 200)"]);
+            ], ["ownerimage.dimensions" => "Image dimension must be (200px x 200px)"]);
 
             if ($validator->fails()) {
                 return response()->json(["error" => $validator->errors()]);
@@ -132,33 +134,6 @@ class SettingController extends Controller
 
             $data->save();
             return "Navicon Image Upload successfully";
-        } catch (\Throwable $e) {
-            return "Something went wrong ";
-        }
-    }
-    public function ownerimagetwoUpdate(Request $request)
-    {
-        try {
-            $validator = Validator::make($request->all(), [
-                "ownerimagetwo" => "mimes:jpg,png,jpeg|dimensions:width=200,height=200"
-            ], ["ownerimagetwo.dimensions" => "Image dimension must be (200 x 200)"]);
-
-            if ($validator->fails()) {
-                return response()->json(["error" => $validator->errors()]);
-            }
-            $data              = Setting::first();
-            $old_ownerimagetwo = $data->ownerimagetwo;
-
-            if (!empty($old_ownerimagetwo) && isset($old_ownerimagetwo)) {
-                if (File::exists($old_ownerimagetwo)) {
-                    File::delete($old_ownerimagetwo);
-                }
-            }
-
-            $data->ownerimagetwo    = $this->imageUpload($request, 'ownerimagetwo', 'uploads/ownerimagetwo') ?? '';
-
-            $data->save();
-            return "Owner Image Upload successfully";
         } catch (\Throwable $e) {
             return "Something went wrong ";
         }

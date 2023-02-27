@@ -8,8 +8,12 @@
                 <template slot="table-row" slot-scope="props">
                     <span v-if="props.column.field == 'before'">
                         <button class="btn btn-sm text-white shadow-none"
-                            :class="props.row.status == 'p' ? 'btn-warning' : 'btn-success'" @click="editRow(props.row)">
+                            :class="props.row.status == 'p' ? 'btn-warning' : 'btn-success'" @click="editRow(props.row, 'a')">
                             {{ props.row.status == 'p' ? 'Pending' : 'Approved' }}
+                        </button>
+                        <button class="btn btn-sm text-white shadow-none"
+                            :class="props.row.status == 'p' || props.row.status == 'a' ? 'btn-warning' : 'btn-success'" @click="editRow(props.row, props.row.status == 'v' ? 'a':'v')">
+                            {{ props.row.status == 'p' || props.row.status == 'a' ? 'Verify' : 'Verified' }}
                         </button>
                         <button class="btn btn-sm btn-outline-success shadow-none" @click="Show(props.row)">
                             <i class="fas fa-eye"></i>
@@ -84,8 +88,8 @@ export default {
                 })
         },
 
-        editRow(rowData) {
-            rowData.setStatus = rowData.status == 'p' ? 'a' : 'p'
+        editRow(rowData, status) {
+            rowData.setStatus = status
             if (confirm("Are you sure want to approved this")) {
                 axios.post(location.origin + "/admin/technician/status", rowData)
                     .then(res => {

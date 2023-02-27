@@ -2,15 +2,12 @@
 <html lang="en">
 
 <head>
-    @php
-    $setting = App\Models\Setting::first();
-    @endphp
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{$setting->company_name}}@yield("title")</title>
+    <title>{{$profile->company_name}}@yield("title")</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset('backend/assets/images/logo-text.png')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset($profile->navicon != null ? $profile->navicon : 'noImage.jpg')}}" />
     @include("layouts.frontend.style")
 
     <style>
@@ -209,11 +206,11 @@
                                     <ul class="footer-address">
                                         <li>
                                             <span class="sign fa fa-globe"></span>
-                                            <span>Water Market BD</span>
+                                            <span>{{$profile->company_name}}</span>
                                         </li>
                                         <li>
                                             <span style="left: -19px;font-size:16px;" class="sign fa fa-map-marker"></span>
-                                            <span>Road -3, Plot -16 (Bilal Uddin Mansion), 4th & 5th Floor, Mirpur 10 (Behind Shah Ali Plaza), Dhaka-1216</span>
+                                            <span>{{$profile->address}}</span>
                                         </li>
                                         <li>
                                             <span class="sign fa fa-phone"></span>
@@ -232,22 +229,22 @@
                                     <ul class="footer-address">
                                         <li>
                                             <span class="sign fa fa-globe"></span>
-                                            <span>Water Market BD</span>
+                                            <span>{{$profile->company_name}}</span>
                                         </li>
                                         <li>
                                             <span style="left: -19px;font-size:16px;" class="sign fa fa-map-marker"></span>
-                                            <span>Road -3, Plot -16 (Bilal Uddin Mansion), 4th & 5th Floor, Mirpur 10 (Behind Shah Ali Plaza), Dhaka-1216</span>
+                                            <span>{{$profile->address_second}}</span>
                                         </li>
                                         <li>
                                             <span class="sign fa fa-phone"></span>
                                             <span>
-                                                <a href="tel:/{{$profile->mobile}}">+880 {{$profile->mobile}}</a>
+                                                <a href="tel:/{{$profile->mobile}}">+880 {{$profile->mobile_second}}</a>
                                             </span>
                                         </li>
                                         <li>
                                             <span style="font-size: 13px;" class="sign fa fa-envelope-o"></span>
                                             <span>
-                                                <a href="mailto:/{{$profile->email}}">{{$profile->email}}</a>
+                                                <a href="mailto:/{{$profile->email}}">{{$profile->email_second}}</a>
                                             </span>
                                         </li>
                                     </ul>
@@ -260,40 +257,25 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="row">
+                                                @foreach($bank as $item)
                                                 <div class="col-lg-6">
-                                                    <h5>Bank Name</h5>
+                                                    <h5>{{$item->bank_name}}</h5>
                                                     <ul>
                                                         <li>
                                                             <span>Account Name: </span>
-                                                            <span>Water Market BD</span>
+                                                            <span>{{$item->account_name}}</span>
                                                         </li>
                                                         <li>
                                                             <span>Account No: </span>
-                                                            <span>164.110.25011</span>
+                                                            <span>{{$item->account_number}}</span>
                                                         </li>
                                                         <li>
                                                             <span>Branch: </span>
-                                                            <span>Mirpur-10</span>
+                                                            <span>{{$item->branch_name}}</span>
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <div class="col-lg-6" style="border-left:1px solid darkgrey;">
-                                                    <h5>Bank Name</h5>
-                                                    <ul>
-                                                        <li>
-                                                            <span>Account Name: </span>
-                                                            <span>Water Market BD</span>
-                                                        </li>
-                                                        <li>
-                                                            <span>Account No: </span>
-                                                            <span>164.110.25011</span>
-                                                        </li>
-                                                        <li>
-                                                            <span>Branch: </span>
-                                                            <span>Mirpur-10</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -301,20 +283,43 @@
                                 <div class="col-lg-2">
                                     <h4>Hot Line</h4>
                                     <ul>
-                                        <li>
-                                            <span>Image</span>
+                                        <li style="margin-bottom: 10px;">
+                                            <a href="#">
+                                                <img style="height: 45px;width:100%;" src="{{asset($profile->image != null ? $profile->image: 'noImage.jpg')}}" alt="">
+                                            </a>
                                         </li>
-                                        <li>
-                                            <span>Image</span>
+                                        <li style="margin-bottom: 10px;">
+                                            <a href="#">
+                                                <img style="height: 45px;width:100%;" src="{{asset($profile->image != null ? $profile->image: 'noImage.jpg')}}" alt="">
+                                            </a>
                                         </li>
                                     </ul>
+                                    <hr style="margin:15px 0px 10px 0">
                                     <h4>Social Link</h4>
                                     <ul>
-                                        <li>
-                                            <span>Image</span>
+                                        <li style="margin-bottom: 5px;">
+                                            <a href="{{$profile->facebook}}" target="_blank" style="padding: 7px 5px;">
+                                                <span style="width: 25px;text-align: center;background: gray;padding: 5px;border-radius:5%;" class="fa fa-facebook"></span>
+                                                <span>Facebook</span>
+                                            </a>
                                         </li>
-                                        <li>
-                                            <span>Image</span>
+                                        <li style="margin-bottom: 5px;">
+                                            <a href="{{$profile->youtube}}" target="_blank" style="padding: 7px 5px;">
+                                                <span style="width: 25px;text-align: center;background: gray;padding: 5px;border-radius:5%;" class="fa fa-youtube"></span>
+                                                <span>Youtube</span>
+                                            </a>
+                                        </li>
+                                        <li style="margin-bottom: 5px;">
+                                            <a href="{{$profile->linkedin}}" target="_blank" style="padding: 7px 5px;">
+                                                <span style="width: 25px;text-align: center;background: gray;padding: 5px;border-radius:5%;" class="fa fa-linkedin"></span>
+                                                <span>Linkedin</span>
+                                            </a>
+                                        </li>
+                                        <li style="margin-bottom: 5px;">
+                                            <a href="{{$profile->twitter}}" target="_blank" style="padding: 7px 5px;">
+                                                <span style="width: 25px;text-align: center;background: gray;padding: 5px;border-radius:5%;" class="fa fa-twitter"></span>
+                                                <span>Twitter</span>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -332,7 +337,7 @@
                         <div class="copyright-info text-center text-md-start">
                             <p>
                                 Copyright &copy; {{date("Y")}}
-                                <a href="https://linktechbd.com/">Linkup Technology</a>
+                                <a href="https://linktechbd.com/" target="_blank">Link-Up Technology Ltd.</a>
                             </p>
                         </div>
                     </div>

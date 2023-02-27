@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Thana;
 use App\Models\Blog;
 use App\Models\Brand;
+use App\Models\Slider;
 use App\Models\Product;
 use App\Models\Setting;
 use App\Models\Category;
-use App\Models\Slider;
 use App\Models\Technician;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,7 @@ class HomeController extends Controller
         $slider             = Slider::latest()->get();
         $categories         = Category::with('product')->orderBy("name", "ASC")->get();
         $brands             = Brand::with('product')->orderBy("name", "ASC")->get();
-        $technician = Technician::orderBy('id', "DESC")->paginate(24);
+        $technician         = Technician::where('status', '!=' ,'p')->orderBy('id', "DESC")->get();
         return view('website', compact("brands", "technician", "categories", "blog", "newarrival_product", "feature_product", "popular_product", "topsold_product", "banner", "slider"));
     }
 
@@ -64,7 +65,7 @@ class HomeController extends Controller
 
     public function technician()
     {
-        $technician = Technician::orderBy('id', "DESC")->paginate(24);
+        $technician = Technician::where('status', '!=' ,'p')->orderBy('id', "DESC")->paginate(24);
         return view('technician', compact("technician"));
     }
 

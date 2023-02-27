@@ -83,7 +83,7 @@
                                             Reset
                                         </button>
                                         <button type="submit" class="btn btn-sm btn-outline-success shadow-none">
-                                            Save Supplier
+                                            Save Product
                                         </button>
                                     </div>
                                 </div>

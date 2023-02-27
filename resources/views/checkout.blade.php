@@ -162,13 +162,22 @@
                                 <div class="your-order-bottom">
                                     @php
                                         $charge = Auth::guard('web')->check() ? Auth::guard('web')->user()->thana_id ? Auth::guard('web')->user()->thana->charge : 0.00 : 0;
+                                        $charge_second = $profile->minimum_qty <= \Cart::count() ? 0: $charge;
                                         $cartTotal = str_replace(",", "", \Cart::subtotal());
-                                        $total = ($charge + (float)$cartTotal);
+                                        $total = ($charge_second + (float)$cartTotal);
                                     @endphp
                                     <ul>
                                         <li class="your-order-shipping">Shipping Charge</li>
-                                        <input type="hidden" class="shipping_charge" name="shipping_charge" value="{{$charge}}">
-                                        <li>৳ <span class="shippingCharge">{{Auth::guard('web')->user()->thana_id ? Auth::guard('web')->user()->thana->charge : 0.00 }}</span></li>
+                                        <input type="hidden" class="shipping_charge" name="shipping_charge" value="{{$profile->minimum_qty <= \Cart::count() ? 0 : $charge}}">
+                                        <li>৳ 
+                                            <span class="shippingCharge">
+                                                @if($profile->minimum_qty <= \Cart::count())
+                                                    0.00
+                                                @else
+                                                    {{Auth::guard('web')->user()->thana_id ? Auth::guard('web')->user()->thana->charge : 0.00 }}
+                                                @endif
+                                            </span>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="your-order-total">
@@ -234,11 +243,19 @@
 
     function shippingCharge(event) {
         let charge = event.target.selectedOptions[0].getAttribute("data-charge");
+        let minimum_qty = "{{$profile->minimum_qty}}"; 
+        let cartQty = "{{\Cart::count()}}";
         let subtotal = $(".checkoutsubTotal").text()
         let total = +parseFloat(charge) + parseFloat(subtotal);
-        $(".shippingCharge").text(charge)
-        $(".shipping_charge").val(charge)
-        $(".checkoutcartTotal").text(total.toFixed(2))
+        if (Number(minimum_qty) <= Number(cartQty)) {
+            $(".shippingCharge").text("0.00")
+            $(".shipping_charge").val(0)
+            $(".checkoutcartTotal").text(parseFloat(subtotal).toFixed(2))
+        }else{
+            $(".shippingCharge").text(charge)
+            $(".shipping_charge").val(charge)
+            $(".checkoutcartTotal").text(total.toFixed(2))
+        }
     }
 
     // order place

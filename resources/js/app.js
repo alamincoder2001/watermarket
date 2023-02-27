@@ -18,7 +18,7 @@ window.$ = require('jquery')
 import CKEditor from '@ckeditor/ckeditor5-vue2';
 Vue.use( CKEditor );
 
-Vue.component("Supplier", require("./components/Supplier.vue").default);
+Vue.component("Bank", require("./components/Bank.vue").default);
 Vue.component("Product", require("./components/Product.vue").default);
 Vue.component("published_product", require("./components/publishedProduct.vue").default);
 Vue.component("Purchase", require("./components/Purchase.vue").default);

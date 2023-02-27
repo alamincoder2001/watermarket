@@ -237,19 +237,61 @@
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
                                     <!-- single slide Start -->
+                                    @if(Auth::guard('web')->check())
                                     @foreach($technician as $item)
-                                    <div class="swiper-slide">
-                                        <div class="product-card" style="height:200px;border: 1px solid #cdcdcd;">
-                                            <a class="thumb text-center" href=""><img style="width: 100px;border:1px solid #e5e5e5;padding:2px;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" alt="img" /></a>
-                                            <div class="product-content text-center">
-                                                <h3 class="product-title mt-3">
-                                                    <a href="">{{$item->name}}</a>
-                                                </h3>
-                                                <span>Location: Dhaka</span>
+                                    @if(Auth::guard('web')->user()->district_id == $item->district_id)
+                                        <div class="swiper-slide">
+                                            <div class="product-card" style="position:relative;height:200px;border: 1px solid #cdcdcd;">
+                                                @if($item->status == 'v')
+                                                <span style="position: absolute;right:0;top:0;background: green;color: white;padding: 0px 5px;border-bottom-left-radius: 10px;">{{$item->status == 'v' ? 'Verified' : ''}}</span>
+                                                @endif
+                                                <a class="thumb text-center" href=""><img style="width: 100px;border:1px solid #e5e5e5;padding:2px;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" alt="img" /></a>
+                                                <div class="product-content text-center">
+                                                    <h3 class="product-title mt-3">
+                                                        <a href="">{{$item->name}}</a>
+                                                    </h3>
+                                                    <span>Location: {{$item->upazila->name}}, {{$item->district->name}}</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endif
                                     @endforeach
+                                    @foreach($technician as $item)
+                                    @if(Auth::guard('web')->user()->district_id != $item->district_id)
+                                        <div class="swiper-slide">
+                                            <div class="product-card" style="position:relative;height:200px;border: 1px solid #cdcdcd;">
+                                                @if($item->status == 'v')
+                                                <span style="position: absolute;right:0;top:0;background: green;color: white;padding: 0px 5px;border-bottom-left-radius: 10px;">{{$item->status == 'v' ? 'Verified' : ''}}</span>
+                                                @endif
+                                                <a class="thumb text-center" href=""><img style="width: 100px;border:1px solid #e5e5e5;padding:2px;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" alt="img" /></a>
+                                                <div class="product-content text-center">
+                                                    <h3 class="product-title mt-3">
+                                                        <a href="">{{$item->name}}</a>
+                                                    </h3>
+                                                    <span>Location: {{$item->upazila->name}}, {{$item->district->name}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                    @endforeach
+                                    @else
+                                        @foreach($technician as $item)
+                                            <div class="swiper-slide">
+                                                <div class="product-card" style="position:relative;height:200px;border: 1px solid #cdcdcd;">
+                                                    @if($item->status == 'v')
+                                                    <span style="position: absolute;right:0;top:0;background: green;color: white;padding: 0px 5px;border-bottom-left-radius: 10px;">{{$item->status == 'v' ? 'Verified' : ''}}</span>
+                                                    @endif
+                                                    <a class="thumb text-center" href=""><img style="width: 100px;border:1px solid #e5e5e5;padding:2px;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" alt="img" /></a>
+                                                    <div class="product-content text-center">
+                                                        <h3 class="product-title mt-3">
+                                                            <a href="">{{$item->name}}</a>
+                                                        </h3>
+                                                        <span>Location: {{$item->upazila->name}}, {{$item->district->name}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                     <!-- single slide End -->
                                 </div>
                             </div>

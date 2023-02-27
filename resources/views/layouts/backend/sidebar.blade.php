@@ -14,6 +14,9 @@
                             <a href="{{route('admin.slider.index')}}" class="sidebar-link {{Request::is('admin.slider.index') ? 'active':''}}"><i class="fas fa-sliders-h"></i><span class="hide-menu"> Slider Entry</span></a>
                         </li>
                         <li class="sidebar-item">
+                            <a href="{{route('admin.bank.index')}}" class="sidebar-link {{Request::is('admin.bank.index') ? 'active':''}}"><i class="fas fa-sliders-h"></i><span class="hide-menu"> Bank Account Entry</span></a>
+                        </li>
+                        <li class="sidebar-item">
                             <a href="{{route('admin.banner.index')}}" class="sidebar-link {{Request::is('admin.banner.index') ? 'active':''}}"><i class="fas fa-sliders-h"></i><span class="hide-menu"> Banner Entry</span></a>
                         </li>
                         <li class="sidebar-item">
@@ -70,8 +73,8 @@
                         <li class="sidebar-item">
                             <a href="{{route('admin.order.index')}}" class="sidebar-link {{Request::is('admin.order.index') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Pending Order</span></a>
                             <a href="{{route('admin.order.proccessing')}}" class="sidebar-link {{Request::is('admin.order.proccessing') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> On Proccessing Order </span></a>
-                            <a href="{{route('admin.order.delivery')}}" class="sidebar-link {{Request::is('admin.order.delivery') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Order Archive </span></a>
-                            <a href="{{route('admin.order.canceled')}}" class="sidebar-link {{Request::is('admin.order.canceled') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Order Canceled </span></a>
+                            <a href="{{route('admin.order.delivery')}}" class="sidebar-link {{Request::is('admin.order.delivery') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Delivered Order </span></a>
+                            <a href="{{route('admin.order.canceled')}}" class="sidebar-link {{Request::is('admin.order.canceled') ? 'active':''}}"><i class="fas fa-cart-plus"></i><span class="hide-menu"> Canceled Order </span></a>
                         </li>
                     </ul>
                 </li>

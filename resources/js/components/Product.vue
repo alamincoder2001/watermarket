@@ -311,7 +311,7 @@ export default {
                         this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
                         this.product.image = event.target.files[0];
                     } else {
-                        alert(`This image ${img.width} X ${img.height} but require image 350 X 350`);
+                        alert(`This image ${img.width}px X ${img.height}px but require image 350px X 350px`);
                     }
                 }
             }

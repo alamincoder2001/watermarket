@@ -39,7 +39,7 @@ class BrandController extends Controller
                 $validator = Validator::make($request->all(), [
                     "name" => "required|unique:brands,name," . $request->id,
                     "image" => "dimensions:width=188,height=74"
-                ], ["image.dimensions" => "Image dimension must be 188 X 74"]);
+                ], ["image.dimensions" => "Image dimension must be 188px X 74px"]);
                 $data = Brand::find($request->id);
                 $old = $data->image;
                 $data->updated_at = Carbon::now();
@@ -47,7 +47,7 @@ class BrandController extends Controller
                 $validator = Validator::make($request->all(), [
                     "name" => "required|unique:brands",
                     "image" => "dimensions:width=188,height=74"
-                ], ["image.dimensions" => "Image dimension must be 188 X 74"]);
+                ], ["image.dimensions" => "Image dimension must be 188px X 74px"]);
                 $data = new Brand();
                 $data->created_at = Carbon::now();
             }

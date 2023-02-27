@@ -51,7 +51,7 @@
 
                     <footer class="footer text-center">
                         Developed by
-                        <a href="https://linktechbd.com/" target="_blank">linktechbd.com</a>
+                        <a href="https://linktechbd.com/" target="_blank">Link-Up Technology Ltd.</a>
                     </footer>
                 </div>
             </div>

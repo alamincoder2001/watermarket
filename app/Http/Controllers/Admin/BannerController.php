@@ -36,7 +36,7 @@ class BannerController extends Controller
         try {
             $validator = Validator::make($request->all(), [
                 "image" => "required|mimes:jpg,png,jpeg|dimensions:width=400,height=150'"
-            ], ["image.dimensions" => "Image dimension must be 400 X 150"]);
+            ], ["image.dimensions" => "Image dimension must be 400px X 150px"]);
 
             if (!empty($request->id)) {
                 $data = Banner::find($request->id);

@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\Admin\BankController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BrandController;
@@ -89,7 +91,6 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/logoUpdate', [SettingController::class, 'logoUpdate'])->name('admin.setting.logoUpdate');
     Route::post('/naviconUpdate', [SettingController::class, 'naviconUpdate'])->name('admin.setting.naviconUpdate');
     Route::post('/ownerimageUpdate', [SettingController::class, 'ownerimageUpdate'])->name('admin.setting.ownerimageUpdate');
-    Route::post('/ownerimagetwoUpdate', [SettingController::class, 'ownerimagetwoUpdate'])->name('admin.setting.ownerimagetwoUpdate');
 
     // Website content route
     // Banner Route
@@ -157,7 +158,13 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/blog/fetch/{id?}', [BlogController::class, 'fetch'])->name('admin.blog.fetch');
     Route::post('/blog', [BlogController::class, 'store'])->name('admin.blog.store');
     Route::post('/blog/delete', [BlogController::class, 'destroy'])->name('admin.blog.destroy');
-    
+
+    // bank route
+    Route::get('/bank', [BankController::class, 'index'])->name('admin.bank.index');
+    Route::get('/bank/fetch/{id?}', [BankController::class, 'fetch'])->name('admin.bank.fetch');
+    Route::post('/bank', [BankController::class, 'store'])->name('admin.bank.store');
+    Route::post('/bank/delete', [BankController::class, 'destroy'])->name('admin.bank.destroy');
+
     // slider route
     Route::get('/slider', [SliderController::class, 'index'])->name('admin.slider.index');
     Route::get('/slider/fetch/{id?}', [SliderController::class, 'fetch'])->name('admin.slider.fetch');
@@ -169,7 +176,7 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/customer/delete/{id}', [AdminCustomerController::class, 'destroy'])->name("admin.customer.destroy");
     Route::post('/customer/status', [AdminCustomerController::class, 'status'])->name("admin.customer.status");
     Route::get('/customer/fetch/{id?}', [AdminCustomerController::class, 'fetch'])->name("admin.customer.fetch");
-    
+
     // technician route
     Route::get('/technician', [AdminTechnicianController::class, 'index'])->name("admin.technician.index");
     Route::get('/technician/delete/{id}', [AdminTechnicianController::class, 'destroy'])->name("admin.technician.destroy");

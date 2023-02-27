@@ -168,7 +168,7 @@ export default {
                         this.imageSrc = window.URL.createObjectURL(event.target.files[0]);
                         this.slider.image = event.target.files[0];
                     } else {
-                        alert(`This image ${img.width} X ${img.width} but require image 955 X 300`);
+                        alert(`This image ${img.width}px X ${img.width}px but require image 955px X 300px`);
                     }
                 }
             }

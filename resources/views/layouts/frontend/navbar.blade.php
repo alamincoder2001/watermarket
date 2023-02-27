@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-12 col-sm-6">
                     <p>Email: <a class="header-top-link" href="https://gmail.com/">{{$profile->email}}</a></p>
-                    <p>Free Shipping for all Order</p>
+                    <p>Free Shipping for Minimum Quantity {{$profile->minimum_qty}}</p>
                 </div>
                 <div class="col-12 col-sm-6">
                     <div class="header-top-nav">

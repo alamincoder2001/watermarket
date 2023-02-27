@@ -112,7 +112,7 @@ class TechnicianController extends Controller
     public function filterTechnician(Request $request)
     {
         try{
-            $data = Technician::with('district', 'upazila')->where("thana_id", $request->thana_id)->get();
+            $data = Technician::with('district', 'upazila')->where("thana_id", $request->thana_id)->where('status', '!=' ,'p')->get();
             return $data;
         }catch(\Throwable $e){
             return "Opps! something went wrong";
