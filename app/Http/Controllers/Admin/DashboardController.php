@@ -20,35 +20,90 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $date = date("Y-m-d");
-        $total = [];
-        $total['today_order'] = DB::select("SELECT
-                                        o.*
-                                    FROM orders o
-                                    WHERE o.status != 'cancel' AND o.date = '$date'");
-        $total['monthly_order'] = DB::select("SELECT
-                                        o.*
-                                    FROM orders o
-                                    WHERE o.status != 'cancel' AND month(o.date) = date('m-d')");
-        $total['yearly_order'] = DB::select("SELECT
-                                        o.*
-                                    FROM orders o
-                                    WHERE o.status != 'cancel' AND year(o.date) = date('Y')");
+        return view("admin.dashboard");
+    }
 
-        $total['today_sold'] = DB::select("SELECT
-                                    IFNULL(SUM(o.total), 0) as total_amount
-                                    FROM orders o
-                                    WHERE o.status = 'delivery' AND o.updated_at = '$date'");
-        $total['monthly_sold'] = DB::select("SELECT
-                                    IFNULL(SUM(o.total), 0) as total_amount
-                                    FROM orders o
-                                    WHERE o.status = 'delivery' AND month(o.updated_at) = date('m-d')");
-        $total['yearly_sold'] = DB::select("SELECT
-                                    IFNULL(SUM(o.total), 0) as total_amount
-                                    FROM orders o
-                                    WHERE o.status = 'delivery' AND year(o.updated_at) = date('Y')");
+    public function getProfit()
+    {
+        $month = date("m");
+        $year = date("Y");
+        $dayNumber = date('t', mktime(0, 0, 0, $month, 1, $year));
 
-        return view("admin.dashboard", compact('total'));
+        $todayOrder = DB::select("SELECT sm.*
+        FROM orders sm
+        WHERE sm.date = date('Y-m-d') AND sm.status = 'pending'
+        ");
+        $monthOrder = DB::select("SELECT sm.*
+        FROM orders sm
+        WHERE MONTH(sm.date) = '$month' AND sm.status = 'pending'
+        ");
+        $yearOrder = DB::select("SELECT sm.*
+        FROM orders sm
+        WHERE YEAR(sm.date) = '$year' AND sm.status = 'pending'
+        ");
+
+        $dayRecord = DB::select("SELECT 
+        IFNULL(SUM(sm.total), 0 ) AS sales_amount
+        FROM orders sm
+        WHERE sm.date = ?
+        AND sm.status = 'delivery'", [date('Y-m-d')]);
+
+        $monthRecord = DB::select("SELECT 
+        IFNULL(SUM(sm.total), 0 ) AS sales_amount
+        FROM orders sm
+        WHERE MONTH(sm.date) = '$month'
+        AND sm.status = 'delivery'");
+
+        $yearRecord = DB::select("SELECT 
+        IFNULL(SUM(sm.total), 0 ) AS sales_amount
+        FROM orders sm
+        WHERE YEAR(sm.date) = '$year'
+        AND sm.status = 'delivery'");
+
+        // monthly record
+        $monthlyRecord = [];
+        for ($i = 1; $i <= $dayNumber; $i++) {
+            $date = $year . '-' . $month . '-' . sprintf("%02d", $i);
+            $query = DB::select("SELECT 
+            IFNULL(SUM(sm.total), 0 ) AS sales_amount
+            FROM orders sm
+            WHERE sm.date = ?
+            AND sm.status = 'delivery'", [$date]);
+
+            $amount = (float)$query[0]->sales_amount;
+
+            $sale = [sprintf("%02d", $i), $amount];
+            array_push($monthlyRecord, $sale);
+        }
+
+        // yearly record
+        $yearlyRecord = [];
+        for ($i = 1; $i <= 12; $i++) {
+            $Month = sprintf("%02d", $i);
+            $query = DB::select("SELECT 
+                    IFNULL(SUM(sm.total), 0 ) AS sales_amount
+                    FROM orders sm
+                    WHERE MONTH(sm.date) = ?
+                    AND sm.status = 'delivery'", [$Month]);
+
+
+            $amount = (float)$query[0]->sales_amount;
+            $monthName = date("M", mktime(0, 0, 0, $i, 10));
+
+            $sale = [$monthName, $amount];
+            array_push($yearlyRecord, $sale);
+        }
+
+        return response()->json([
+            'today_order'       => $todayOrder,
+            'month_order'       => $monthOrder,
+            'year_order'        => $yearOrder,
+            'today_sale_record' => $dayRecord,
+            'month_sale_record' => $monthRecord,
+            'year_sale_record'  => $yearRecord,
+            'monthly_record'    => $monthlyRecord,
+            'yearly_record'     => $yearlyRecord
+        ]);
     }
 
 

@@ -80,6 +80,7 @@ Route::group(["prefix" => "admin"], function () {
 
     // admin dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/get-profit', [DashboardController::class, 'getProfit'])->name('admin.getprofit');
 
     //profile Route
     Route::get('/profile', [DashboardController::class, 'profileIndex'])->name('admin.profile');

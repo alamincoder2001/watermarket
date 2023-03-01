@@ -30,6 +30,7 @@
         "jQuery": "^1.7.4",
         "moment": "^2.29.4",
         "vue-good-table": "^2.21.11",
+        "vue-google-charts": "^1.1.0",
         "vue-select": "^3.20.2"
     }
 }

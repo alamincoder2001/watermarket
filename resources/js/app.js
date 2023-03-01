@@ -18,12 +18,10 @@ window.$ = require('jquery')
 import CKEditor from '@ckeditor/ckeditor5-vue2';
 Vue.use( CKEditor );
 
+Vue.component("Dashboard", require("./components/Dashboard.vue").default);
 Vue.component("Bank", require("./components/Bank.vue").default);
 Vue.component("Product", require("./components/Product.vue").default);
 Vue.component("published_product", require("./components/publishedProduct.vue").default);
-Vue.component("Purchase", require("./components/Purchase.vue").default);
-Vue.component("purchase_list", require("./components/PurchaseList.vue").default);
-Vue.component("purchase_edit", require("./components/PurchaseEdit.vue").default);
 Vue.component("Customer", require("./components/Customer.vue").default);
 Vue.component("Technician", require("./components/Technician.vue").default);
 Vue.component("Slider", require("./components/Slider.vue").default);
