@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Order;
+use App\Models\OrderDetail;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -109,6 +110,35 @@ class CustomerController extends Controller
         if (Auth::guard("web")->check()) {
             Auth::guard("web")->logout();
             return redirect("/");
+        }
+    }
+
+    public function OrderEdit(Request $request)
+    {
+        try{
+            OrderDetail::where("order_id", $request->orderId)->delete();
+            foreach($request->product_id as $key => $val){
+                $detail = new OrderDetail();
+                $detail->order_id = $request->orderId;
+                $detail->product_id = $val;
+                $detail->quantity = $request->quantity[$key];
+                $detail->unit_price = $request->unitprice[$key];
+                $detail->total = $request->total[$key];
+                $detail->save();
+            }
+            return "Order edit successfully";
+        }catch(\Throwable $e){
+            return "Opps! something went wrong";
+        }
+    }
+
+    public function OrderDelete(Request $request)
+    {
+        try{
+            Order::find($request->id)->update(['status' => "cancel"]);
+            return "Order cancel successfully";
+        }catch(\Throwable $e){
+            return "Opps! something went wrong";
         }
     }
 }

@@ -137,12 +137,12 @@
                                         <td>{{$key + 1}}</td>
                                         <td>{{$item->invoice}}</td>
                                         <td>{{date("d-m-Y", strtotime($item->date))}}</td>
-                                        <td class="{{$item->status == 'pending' ? 'text-danger': 'text-success'}} text-capitalize">{{$item->status}}</td>
+                                        <td class="{{$item->status == 'pending' || $item->status == 'cancel' ? 'text-danger': 'text-success'}} text-capitalize">{{$item->status}}</td>
                                         <td>
                                             <button title="Order Invoice" class="shadow-none text-white" style="background: #00000038;width:25px;height:22px;"><i class="bi bi-file-earmark"></i></button>
                                             @if($item->status == 'pending')
                                             <button onclick="showModal({{$item}})" title="Order Edit" class="shadow-none text-white" style="background: #180174;width:25px;height:22px;"><i class="bi bi-pencil-square"></i></button>
-                                            <button title="Order Delete" class="shadow-none text-white" style="background: red;width:25px;height:22px;">X</button>
+                                            <button title="Order Delete" onclick="OrderCancel({{$item->id}})" class="shadow-none text-white" style="background: red;width:25px;height:22px;">X</button>
                                             @endif
                                         </td>
                                     </tr>
@@ -184,7 +184,8 @@
                                         <td class="text-danger text-capitalize">{{$item->status}}</td>
                                         <td>
                                             <button title="Order Invoice" class="shadow-none text-white" style="background: #00000038;width:25px;height:22px;"><i class="bi bi-file-earmark"></i></button>
-                                            <button title="Order Delete" class="shadow-none text-white" style="background: red;width:25px;height:22px;">X</button>
+                                            <button onclick="showModal({{$item}})" title="Order Edit" class="shadow-none text-white" style="background: #180174;width:25px;height:22px;"><i class="bi bi-pencil-square"></i></button>
+                                            <button title="Order Delete" onclick="OrderCancel({{$item->id}})" class="shadow-none text-white" style="background: red;width:25px;height:22px;">X</button>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -418,22 +419,25 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Sl</th>
-                    <th>Product Name</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <form onsubmit="QuantitySubmit(event)">
+            <input type="hidden" name="orderId" class="orderId">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sl</th>
+                        <th class="text-center">Product Name</th>
+                        <th class="text-center">Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="text-center">
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+        </form>
       </div>
     </div>
   </div>
@@ -591,23 +595,67 @@
 
     // show Modal
     function showModal(rowData){
-        console.log(rowData);
         $(".myModal .modal-body .table tbody").html("")
         $(".myModal").modal("show")
         $(".myModal .modal-title span").text(rowData.invoice)
+        $(".myModal .orderId").val(rowData.id)
 
         $.each(rowData.order_details, (index, value) => {
             let row = `
-                <tr>
-                    <td>${++index}</td>
-                    <td>${value.product.name}</td>
-                    <td>${value.quantity}</td>
-                    <td>${value.unit_price}</td>
-                    <td>${value.total}</td>
+                <tr class="removeItem-${index}">
+                    <td>${index + 1}</td>
+                    <td>${value.product.name}<input type="hidden" name="product_id[]" value="${value.product_id}" class="form-control" /></td>
+                    <td style="width:15%;" class="text-center"><input type="number" name="quantity[]" oninput="QuantityUpdate(event, ${index})" step="0.01" min="0" value="${value.quantity}" class="form-control" /></td>
+                    <td class="text-center">${value.unit_price}<input type="hidden" name="unitprice[]" value="${value.unit_price}" class="form-control unitprice-${index}" /></td>
+                    <td class="text-center"><span class='totaltxt-${index}'>${value.total}</span><input type="hidden" name="total[]" value="${value.total}" class="form-control total-${index}" /></td>
+                    <td class="text-center" style="width:8%;">
+                        <button onclick="deleteItem(${index})" type="button"><i class='fa fa-trash'></i></button>
+                    </td>
                 </tr>
             `;
 
             $(".myModal .modal-body .table tbody").append(row)
+        })
+    }
+
+    function QuantityUpdate(event, sl){
+        let qty       = event.target.value;
+        let unitprice = $(".myModal").find('.unitprice-'+sl).val();
+        let calculate = Number(qty)*parseFloat(unitprice);
+        $(".myModal").find(".total-"+sl).val(calculate.toFixed(2))
+        $(".myModal").find(".totaltxt-"+sl).text(calculate.toFixed(2))
+    }
+
+    function deleteItem(sl){
+        $(".myModal").find(".removeItem-"+sl).remove()
+    }
+
+    // save
+    function QuantitySubmit(event){
+        event.preventDefault();
+        let formdata = new FormData(event.target)
+        $.ajax({
+            url: location.origin+"/order-edit",
+            method: "POST",
+            data: formdata,
+            processData:false,
+            contentType: false,
+            success: res => {
+                $.notify(res, "success")
+                $(".myModal").modal("hide");
+            }
+        })
+    }
+
+    // order cancel
+    function OrderCancel(id){
+        $.ajax({
+            url: location.origin+"/order-delete",
+            method: "POST",
+            data: {id: id},
+            success: res => {
+                $.notify(res, "success")
+            }
         })
     }
 </script>

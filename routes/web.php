@@ -61,6 +61,9 @@ Route::get("/customer-dashboard", [CustomerController::class, 'index'])->name('c
 Route::post("/customer-update", [CustomerController::class, 'update'])->name('customer.update');
 Route::post("/customer-imageUpdate", [CustomerController::class, 'imageUpdate'])->name('customer.imageUpdate');
 Route::get("/customer-logout", [CustomerController::class, 'logout'])->name('customer.logout');
+// order edit
+Route::post("/order-edit", [CustomerController::class, 'OrderEdit'])->name('order.edit');
+Route::post("/order-delete", [CustomerController::class, 'OrderDelete'])->name('order.delete');
 
 // technician dashboard
 Route::get("/technician-dashboard", [TechnicianController::class, 'index'])->name('technician.dashboard');
