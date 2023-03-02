@@ -48,13 +48,13 @@
                     <div class="row">
                         @yield("content")
                     </div>
-
-                    <footer class="footer text-center">
-                        Developed by
-                        <a href="https://linktechbd.com/" target="_blank">Link-Up Technology Ltd.</a>
-                    </footer>
                 </div>
+                <footer class="footer text-center">
+                    Developed by
+                    <a href="https://linktechbd.com/" target="_blank">Link-Up Technology Ltd.</a>
+                </footer>
             </div>
+        </div>
     </main>
     @include("layouts.backend.script")
     <script>

@@ -70,6 +70,32 @@
                 <button class="btn btn-info shadow-none px-3" type="button" @click="searchType = 'year'">Year</button>
             </div>
         </div>
+
+        <div class="col-lg-8 mt-3">
+            <h3 class="text-center">Top Sold Product</h3>
+            <GChart type="PieChart" :data="topData" :options="chartOptions2" />
+        </div>
+        <div class="col-lg-4 mt-3">
+            <h3 class="text-center">Top Buyer List</h3>
+            <table v-if="topCustomer.length > 0" class="table table-bordered" style="border-color: #bdbdbd;">
+                <thead>
+                    <tr>
+                        <th>Sl</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, index) in topCustomer">
+                        <td style="width:5%;">{{ index + 1 }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.total_amount }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center" v-if="topCustomer.length == 0">Not Found Data</div>
+        </div>
+
     </div>
 </template>
 
@@ -88,16 +114,25 @@ export default {
             yearlyData: [
                 ['Month', 'Sales'],
             ],
+            topData: [
+                ['Product Name', 'Quantity'],
+            ],
             chartOptions: {
                 chart: {
-                    title: 'Company Performance',
+                    title: 'Yearly Sold',
                 }
             },
             chartOptions1: {
                 chart: {
-                    title: 'Company Performance',
+                    title: 'Monthly Sold',
                 }
             },
+            chartOptions2: {
+                chart: {
+                    title: 'Top Sold Product',
+                }
+            },
+            topCustomer: [],
             todayOrder : 0,
             monthOrder : 0,
             yearOrder  : 0,
@@ -121,6 +156,12 @@ export default {
                     res.data.monthly_record.forEach(data => {
                         this.monthlyData.push(data)
                     })
+                    res.data.topSold.forEach(p => {
+                        this.topData.push([p.product_name, parseFloat(p.qty)]);
+                    })
+                    this.topCustomer = res.data.topCustomer
+                    
+                    //other
                     this.totdaySale  = res.data.today_sale_record[0].sales_amount
                     this.monthlySale = res.data.month_sale_record[0].sales_amount
                     this.yearlySale  = res.data.year_sale_record[0].sales_amount

@@ -141,4 +141,32 @@ class OrderController extends Controller
             return "Opps! something went wrong";
         }
     }
+
+    public function report()
+    {
+        return view('admin.order.report');
+    }
+
+    public function getCommission(Request $request)
+    {
+        try{
+            $clauses = "";
+            if(!empty($request->dateFrom)){
+                $clauses .= "AND o.date BETWEEN '$request->dateFrom' AND '$request->dateTo'";
+            }
+            $query = DB::select("SELECT
+                                    c.id,
+                                    concat_ws('-', c.customer_code, c.name) AS customer_name,
+                                    SUM(o.total) as paid
+                                FROM orders o
+                                JOIN users c ON c.id = o.customer_id
+                                WHERE c.customer_type != 'Wholesale' 
+                                $clauses
+                                GROUP BY id");
+
+            return $query;
+        }catch(\Throwable $e){
+            return "Opps! something went wrong";
+        }
+    }
 } 

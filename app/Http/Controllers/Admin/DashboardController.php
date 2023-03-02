@@ -94,6 +94,26 @@ class DashboardController extends Controller
             array_push($yearlyRecord, $sale);
         }
 
+        // top sold product
+        $topSold = DB::select("SELECT
+                        p.name AS product_name,
+                        SUM(od.quantity) as qty
+                    FROM order_details od
+                    JOIN products p ON p.id = od.product_id
+                    JOIN orders o ON o.id = od.order_id
+                    WHERE o.status != 'cancel' AND o.status != 'pending'
+                    GROUP BY product_name LIMIT 5");
+        // top sold product
+        $topCustomer = DB::select("SELECT
+                            c.name,
+                            ifnull(SUM(o.total), 0) as total_amount
+                            FROM orders o
+                            JOIN users c ON c.id = o.customer_id
+                            WHERE c.customer_type = 'wholesale' 
+                            AND o.status != 'pending' 
+                            AND o.status != 'cancel'
+                            GROUP BY name LIMIT 5");
+
         return response()->json([
             'today_order'       => $todayOrder,
             'month_order'       => $monthOrder,
@@ -102,7 +122,9 @@ class DashboardController extends Controller
             'month_sale_record' => $monthRecord,
             'year_sale_record'  => $yearRecord,
             'monthly_record'    => $monthlyRecord,
-            'yearly_record'     => $yearlyRecord
+            'yearly_record'     => $yearlyRecord,
+            'topSold'           => $topSold,
+            'topCustomer'       => $topCustomer,
         ]);
     }
 

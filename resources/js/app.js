@@ -31,6 +31,7 @@ Vue.component("proccess-order", require("./components/processOrder.vue").default
 Vue.component("delivered-order", require("./components/deliveredOrder.vue").default);
 Vue.component("cancel-order", require("./components/cancelOrder.vue").default);
 Vue.component("invoice", require("./components/Invoice.vue").default);
+Vue.component("Report", require("./components/Report.vue").default);
 
 const app = new Vue({
     el: "#app",
