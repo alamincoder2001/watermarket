@@ -72,7 +72,7 @@
         </div>
 
         <div class="col-lg-8 mt-3">
-            <h3 class="text-center">Top Sold Product</h3>
+            <h3 class="text-center">Top Sold Products</h3>
             <GChart type="PieChart" :data="topData" :options="chartOptions2" />
         </div>
         <div class="col-lg-4 mt-3">

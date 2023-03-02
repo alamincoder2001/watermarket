@@ -24,8 +24,9 @@
                     <table v-if="commissions.length > 0" class="table table-bordered m-0">
                         <thead style="background: #59d9ff;">
                             <tr>
-                                <th class="text-white" style="font-weight:bold;width:10%;">Sl</th>
+                                <th class="text-white" style="font-weight:bold;width:5%;">Sl</th>
                                 <th class="text-white" style="font-weight:bold;">Customer Name</th>
+                                <th class="text-white" style="font-weight:bold;width:25%;">Commission(.5% per 5 lakhs)</th>
                                 <th class="text-white text-end" style="font-weight:bold;width:15%;">Order Total</th>
                             </tr>
                         </thead>
@@ -33,6 +34,7 @@
                             <tr v-for="(item, index) in commissions">
                                 <td>{{ index + 1 }}</td>
                                 <td>{{ item.customer_name }}</td>
+                                <td>{{ item.paid/500000 > 1 ? Number((item.paid/500000).toString()[0]) * .5:'Not Shown' }} %</td>
                                 <td class="text-end">{{ item.paid }}</td>
                             </tr>
                         </tbody>

@@ -7760,7 +7760,7 @@ var render = function render() {
     staticClass: "col-lg-8 mt-3"
   }, [_c("h3", {
     staticClass: "text-center"
-  }, [_vm._v("Top Sold Product")]), _vm._v(" "), _c("GChart", {
+  }, [_vm._v("Top Sold Products")]), _vm._v(" "), _c("GChart", {
     attrs: {
       type: "PieChart",
       data: _vm.topData,
@@ -9104,7 +9104,7 @@ var render = function render() {
   }, [_vm.commissions.length > 0 ? _c("table", {
     staticClass: "table table-bordered m-0"
   }, [_vm._m(0), _vm._v(" "), _c("tbody", _vm._l(_vm.commissions, function (item, index) {
-    return _c("tr", [_c("td", [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.customer_name))]), _vm._v(" "), _c("td", {
+    return _c("tr", [_c("td", [_vm._v(_vm._s(index + 1))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.customer_name))]), _vm._v(" "), _c("td", [_vm._v(_vm._s(item.paid / 500000 > 1 ? Number((item.paid / 500000).toString()[0]) * 0.5 : "Not Shown") + " %")]), _vm._v(" "), _c("td", {
       staticClass: "text-end"
     }, [_vm._v(_vm._s(item.paid))])]);
   }), 0)]) : _c("div", {
@@ -9122,7 +9122,7 @@ var staticRenderFns = [function () {
     staticClass: "text-white",
     staticStyle: {
       "font-weight": "bold",
-      width: "10%"
+      width: "5%"
     }
   }, [_vm._v("Sl")]), _vm._v(" "), _c("th", {
     staticClass: "text-white",
@@ -9130,6 +9130,12 @@ var staticRenderFns = [function () {
       "font-weight": "bold"
     }
   }, [_vm._v("Customer Name")]), _vm._v(" "), _c("th", {
+    staticClass: "text-white",
+    staticStyle: {
+      "font-weight": "bold",
+      width: "25%"
+    }
+  }, [_vm._v("Commission(.5% per 5 lakhs)")]), _vm._v(" "), _c("th", {
     staticClass: "text-white text-end",
     staticStyle: {
       "font-weight": "bold",
