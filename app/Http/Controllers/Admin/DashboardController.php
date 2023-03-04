@@ -79,12 +79,12 @@ class DashboardController extends Controller
         // yearly record
         $yearlyRecord = [];
         for ($i = 1; $i <= 12; $i++) {
-            $Month = sprintf("%02d", $i);
+            $yearMonth = $year . sprintf("%02d", $i);
             $query = DB::select("SELECT 
                     IFNULL(SUM(sm.total), 0 ) AS sales_amount
                     FROM orders sm
-                    WHERE MONTH(sm.date) = ?
-                    AND sm.status = 'delivery'", [$Month]);
+                    WHERE extract(year_month from sm.date) = ?
+                    AND sm.status = 'delivery'", [$yearMonth]);
 
 
             $amount = (float)$query[0]->sales_amount;
