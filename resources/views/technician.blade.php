@@ -120,7 +120,6 @@
         </div>
     </div>
 </section>
-<div class="text-center">Not Found Data</div>
 @endsection
 
 @push("webjs")

@@ -33,13 +33,19 @@
 
 <body style="position: relative;">
     <!-- Section: Design Block -->
-    <section class="text-center text-lg-start position-fixed w-100 d-flex align-items-center justify-content-center mt-5">
-        <div class="card mb-3 w-75">
+    <h3 class="m-0 text-center mt-5">Welcome To Admin Login Page</h3>
+    <section class="text-center text-lg-start position-fixed w-100 d-flex align-items-center justify-content-center">
+        <div class="card mb-3 w-50">
             <div class="row g-0 d-flex align-items-center">
-                <div class="col-lg-6 d-none d-lg-flex">
-                    <img src="{{asset('backend/assets/images/water.jpg')}}" alt="Water Market BD" class="w-75" style="border-top-left-radius: 0.3rem;border-bottom-left-radius:0.3rem;" />
+                <div class="col-lg-5 d-none d-lg-flex justify-content-center align-items-center gap-2" style="flex-direction: column;margin-top:-85px;">
+                    <div style="width: 180px;height:60px;">
+                        <img style="width: 180px;height:60px;" src="{{asset($profile->logo != null ? $profile->logo: 'noImage.jpg')}}" alt="Water Market BD"/>
+                    </div>
+                    <div>
+                        <h4 class="m-0">{{$profile->company_name}}</h4>
+                    </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="card-body py-5 px-md-5">
 
                         <form onsubmit="AdminLogin(event)">

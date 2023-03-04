@@ -33,6 +33,49 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="row">
+                                    <div class="col-lg-12">
+                                        <h3 class="text-center m-0">Hot Image Section</h3>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <p style="margin: 0;">Hot Image One</p>
+                                            <div class="d-flex align-items-center gap-2" style="margin-bottom: 10px;">
+                                                <img src="{{asset($data->hotImage_one != null ? $data->hotImage_one : 'noImage.jpg')}}" class="hotImageOne" style="width: 40%;height: 30px;border: 1px solid #c1c1c1;margin-top: 5px;">
+                                                <input type="file" id="hotImage_one" name="hotImage_one" autocomplete="off" class="form-control shadow-none" onchange="document.querySelector('.hotImageOne').src = window.URL.createObjectURL(this.files[0])">
+                                            </div>
+                                            <span class="text-danger error error-hotImage_one"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label for="hotText_one">Hot Text One</label>
+                                            <input type="text" class="form-control shadow-none" name="hotText_one" value="{{$data->hotText_one}}"/>
+                                            <span class="text-danger error error-hotText_one"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <p style="margin: 0;">Hot Image Two</p>
+                                            <div class="d-flex align-items-center gap-2" style="margin-bottom: 10px;">
+                                                <img src="{{asset($data->hotImage_two != null ? $data->hotImage_two : 'noImage.jpg')}}" class="hotImageTwo" style="width: 40%;height: 30px;border: 1px solid #c1c1c1;margin-top: 5px;">
+                                                <input type="file" id="hotImage_two" name="hotImage_two" autocomplete="off" class="form-control shadow-none" onchange="document.querySelector('.hotImageTwo').src = window.URL.createObjectURL(this.files[0])">
+                                            </div>
+                                            <span class="text-danger error error-hotImage_two"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-12">
+                                        <div class="form-group">
+                                            <label for="hotText_two">Top Text Two</label>
+                                            <input type="text" class="form-control shadow-none" name="hotText_two" value="{{$data->hotText_two}}"/>
+                                            <span class="text-danger error error-hotText_two"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr style="margin: 8px 0;">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h3 class="text-center m-0">Owner Profile</h3>
+                                    </div>
                                     <div class="col-lg-12 col-12">
                                         <div class="form-group">
                                             <p style="margin: 0;">Owner Image</p>

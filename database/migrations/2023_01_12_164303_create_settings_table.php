@@ -33,6 +33,10 @@ class CreateSettingsTable extends Migration
             $table->string("linkedin")->nullable();
             $table->string("youtube")->nullable();
             $table->integer("minimum_qty")->nullable();
+            $table->string("hotImage_one")->nullable();
+            $table->string("hotText_one")->nullable();
+            $table->string("hotImage_two")->nullable();
+            $table->string("hotText_two")->nullable();
             $table->timestamps();
         });
     }

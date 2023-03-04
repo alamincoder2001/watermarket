@@ -284,13 +284,13 @@
                                     <h4>Hot Line</h4>
                                     <ul>
                                         <li style="margin-bottom: 10px;">
-                                            <a href="#">
-                                                <img style="height: 45px;width:100%;" src="{{asset($profile->image != null ? $profile->image: 'noImage.jpg')}}" alt="">
+                                            <a href="tel:/{{$profile->hotText_one}}">
+                                                <img style="height: 45px;width:100%;" src="{{asset($profile->hotImage_one != null ? $profile->hotImage_one: 'noImage.jpg')}}" alt="">
                                             </a>
                                         </li>
                                         <li style="margin-bottom: 10px;">
-                                            <a href="#">
-                                                <img style="height: 45px;width:100%;" src="{{asset($profile->image != null ? $profile->image: 'noImage.jpg')}}" alt="">
+                                            <a href="tel:/{{$profile->hotText_two}}">
+                                                <img style="height: 45px;width:100%;" src="{{asset($profile->hotImage_two != null ? $profile->hotImage_two: 'noImage.jpg')}}" alt="">
                                             </a>
                                         </li>
                                     </ul>

@@ -7060,8 +7060,14 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    clickMethod: function clickMethod() {
-      alert("hello");
+    Rating: function Rating(event) {
+      var data = {
+        id: this.technicianRow.id,
+        rating: event.target.value
+      };
+      axios.post(location.origin + "/admin/technician/rating", data).then(function (res) {
+        $.notify(res.data, "success");
+      });
     }
   }
 });
@@ -11031,7 +11037,130 @@ var render = function render() {
     staticClass: "row"
   }, [_vm._m(4), _vm._v(" "), _c("div", {
     staticClass: "col-sm-9 text-secondary"
-  }, [_vm._v("\n                                " + _vm._s(_vm.technicianRow.address) + "\n                            ")])]), _vm._v(" "), _c("hr"), _vm._v(" "), _vm._m(5)])])])])])]);
+  }, [_vm._v("\n                                " + _vm._s(_vm.technicianRow.address) + "\n                            ")])]), _vm._v(" "), _c("hr"), _vm._v(" "), _c("div", {
+    staticClass: "row"
+  }, [_vm._m(5), _vm._v(" "), _c("div", {
+    staticClass: "col-sm-9 text-secondary"
+  }, [_c("fieldset", {
+    staticClass: "rating"
+  }, [_c("input", {
+    attrs: {
+      id: "demo-1",
+      type: "radio",
+      name: "demo",
+      value: "1"
+    },
+    on: {
+      change: _vm.Rating
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "demo-1"
+    }
+  }, [_vm._v("1 star")]), _vm._v(" "), _c("input", {
+    attrs: {
+      id: "demo-2",
+      type: "radio",
+      name: "demo",
+      value: "2"
+    },
+    on: {
+      change: _vm.Rating
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "demo-2"
+    }
+  }, [_vm._v("2 stars")]), _vm._v(" "), _c("input", {
+    attrs: {
+      id: "demo-3",
+      type: "radio",
+      name: "demo",
+      value: "3"
+    },
+    on: {
+      change: _vm.Rating
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "demo-3"
+    }
+  }, [_vm._v("3 stars")]), _vm._v(" "), _c("input", {
+    attrs: {
+      id: "demo-4",
+      type: "radio",
+      name: "demo",
+      value: "4"
+    },
+    on: {
+      change: _vm.Rating
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "demo-4"
+    }
+  }, [_vm._v("4 stars")]), _vm._v(" "), _c("input", {
+    attrs: {
+      id: "demo-5",
+      type: "radio",
+      name: "demo",
+      value: "5"
+    },
+    on: {
+      change: _vm.Rating
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "demo-5"
+    }
+  }, [_vm._v("5 stars")]), _vm._v(" "), _c("div", {
+    staticClass: "stars"
+  }, [_c("label", {
+    style: {
+      color: _vm.technicianRow.admin_rating == 1 || _vm.technicianRow.admin_rating == 2 || _vm.technicianRow.admin_rating == 3 || _vm.technicianRow.admin_rating == 4 || _vm.technicianRow.admin_rating == 5 ? "orange" : ""
+    },
+    attrs: {
+      "for": "demo-1",
+      "aria-label": "1 star",
+      title: "1 star"
+    }
+  }), _vm._v(" "), _c("label", {
+    style: {
+      color: _vm.technicianRow.admin_rating == 2 || _vm.technicianRow.admin_rating == 3 || _vm.technicianRow.admin_rating == 4 || _vm.technicianRow.admin_rating == 5 ? "orange" : ""
+    },
+    attrs: {
+      "for": "demo-2",
+      "aria-label": "2 stars",
+      title: "2 stars"
+    }
+  }), _vm._v(" "), _c("label", {
+    style: {
+      color: _vm.technicianRow.admin_rating == 3 || _vm.technicianRow.admin_rating == 4 || _vm.technicianRow.admin_rating == 5 ? "orange" : ""
+    },
+    attrs: {
+      "for": "demo-3",
+      "aria-label": "3 stars",
+      title: "3 stars"
+    }
+  }), _vm._v(" "), _c("label", {
+    style: {
+      color: _vm.technicianRow.admin_rating == 4 || _vm.technicianRow.admin_rating == 5 ? "orange" : ""
+    },
+    attrs: {
+      "for": "demo-4",
+      "aria-label": "4 stars",
+      title: "4 stars"
+    }
+  }), _vm._v(" "), _c("label", {
+    style: {
+      color: _vm.technicianRow.admin_rating == 5 ? "orange" : ""
+    },
+    attrs: {
+      "for": "demo-5",
+      "aria-label": "5 stars",
+      title: "5 stars"
+    }
+  })])])])])])])])])])]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
@@ -11077,15 +11206,10 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "row"
-  }, [_c("div", {
-    staticClass: "col-sm-12"
-  }, [_c("a", {
-    staticClass: "btn btn-info shadow-none",
-    attrs: {
-      href: "#"
-    }
-  }, [_vm._v("Edit")])])]);
+    staticClass: "col-sm-3"
+  }, [_c("h6", {
+    staticClass: "mb-0"
+  }, [_vm._v("Rating")])]);
 }];
 render._withStripped = true;
 
@@ -26070,7 +26194,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.main-body {\r\n    padding: 15px;\n}\n.card {\r\n    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);\n}\n.card {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    min-width: 0;\r\n    word-wrap: break-word;\r\n    background-color: #fff;\r\n    background-clip: border-box;\r\n    border: 0 solid rgba(0, 0, 0, .125);\r\n    border-radius: .25rem;\n}\n.card-body {\r\n    flex: 1 1 auto;\r\n    min-height: 1px;\r\n    padding: 1rem;\n}\n.gutters-sm {\r\n    margin-right: -8px;\r\n    margin-left: -8px;\n}\n.gutters-sm>.col,\r\n.gutters-sm>[class*=col-] {\r\n    padding-right: 8px;\r\n    padding-left: 8px;\n}\n.mb-3,\r\n.my-3 {\r\n    margin-bottom: 1rem !important;\n}\n.bg-gray-300 {\r\n    background-color: #e2e8f0;\n}\n.h-100 {\r\n    height: 100% !important;\n}\n.shadow-none {\r\n    box-shadow: none !important;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.main-body {\r\n    padding: 15px;\n}\n.card {\r\n    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);\n}\n.card {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    min-width: 0;\r\n    word-wrap: break-word;\r\n    background-color: #fff;\r\n    background-clip: border-box;\r\n    border: 0 solid rgba(0, 0, 0, .125);\r\n    border-radius: .25rem;\n}\n.card-body {\r\n    flex: 1 1 auto;\r\n    min-height: 1px;\r\n    padding: 1rem;\n}\n.gutters-sm {\r\n    margin-right: -8px;\r\n    margin-left: -8px;\n}\n.gutters-sm>.col,\r\n.gutters-sm>[class*=col-] {\r\n    padding-right: 8px;\r\n    padding-left: 8px;\n}\n.mb-3,\r\n.my-3 {\r\n    margin-bottom: 1rem !important;\n}\n.bg-gray-300 {\r\n    background-color: #e2e8f0;\n}\n.h-100 {\r\n    height: 100% !important;\n}\n.shadow-none {\r\n    box-shadow: none !important;\n}\n.rating input[type=\"radio\"]:not(:nth-of-type(0)) {\r\n    /* hide visually */\r\n    border: 0;\r\n    clip: rect(0 0 0 0);\r\n    height: 1px;\r\n    margin: -1px;\r\n    overflow: hidden;\r\n    padding: 0;\r\n    position: absolute;\r\n    width: 1px;\n}\n.rating [type=\"radio\"]:not(:nth-of-type(0))+label {\r\n    display: none;\n}\nlabel[for]:hover {\r\n    cursor: pointer;\n}\n.rating .stars label:before {\r\n    content: \"★\";\n}\n.stars label {\r\n    color: lightgray;\n}\n.stars label:hover {\r\n    text-shadow: 0 0 1px #000;\n}\n.rating [type=\"radio\"]:nth-of-type(1):checked~.stars label:nth-of-type(-n+1),\r\n.rating [type=\"radio\"]:nth-of-type(2):checked~.stars label:nth-of-type(-n+2),\r\n.rating [type=\"radio\"]:nth-of-type(3):checked~.stars label:nth-of-type(-n+3),\r\n.rating [type=\"radio\"]:nth-of-type(4):checked~.stars label:nth-of-type(-n+4),\r\n.rating [type=\"radio\"]:nth-of-type(5):checked~.stars label:nth-of-type(-n+5) {\r\n    color: orange;\n}\n.rating [type=\"radio\"]:nth-of-type(1):focus~.stars label:nth-of-type(1),\r\n.rating [type=\"radio\"]:nth-of-type(2):focus~.stars label:nth-of-type(2),\r\n.rating [type=\"radio\"]:nth-of-type(3):focus~.stars label:nth-of-type(3),\r\n.rating [type=\"radio\"]:nth-of-type(4):focus~.stars label:nth-of-type(4),\r\n.rating [type=\"radio\"]:nth-of-type(5):focus~.stars label:nth-of-type(5) {\r\n    color: darkorange;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

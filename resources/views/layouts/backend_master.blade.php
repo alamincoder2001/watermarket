@@ -11,7 +11,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <title>@yield('title')</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('backend/assets/images/logo-text.png')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset($profile->navicon != null ? $profile->navicon : 'noImage.jpg')}}" />
     @include("layouts.backend.style")
 </head>
 

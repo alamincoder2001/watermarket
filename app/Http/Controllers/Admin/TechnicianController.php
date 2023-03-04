@@ -54,4 +54,16 @@ class TechnicianController extends Controller
             return "Opps! something went wrong";
         }
     }
+
+    public function rating(Request $request)
+    {
+        try{
+            $data = Technician::find($request->id);
+            $data->admin_rating = $request->rating;
+            $data->save();
+            return "Rating change successfully";
+        }catch(\Throwable $e){
+            return "Opps! something went wrong";
+        }
+    }
 }

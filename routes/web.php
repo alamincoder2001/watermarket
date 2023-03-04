@@ -95,6 +95,7 @@ Route::group(["prefix" => "admin"], function () {
     Route::post('/logoUpdate', [SettingController::class, 'logoUpdate'])->name('admin.setting.logoUpdate');
     Route::post('/naviconUpdate', [SettingController::class, 'naviconUpdate'])->name('admin.setting.naviconUpdate');
     Route::post('/ownerimageUpdate', [SettingController::class, 'ownerimageUpdate'])->name('admin.setting.ownerimageUpdate');
+    Route::post('/hotImageUpdate', [SettingController::class, 'hotImageUpdate'])->name('admin.setting.hotImageUpdate');
 
     // Website content route
     // Banner Route
@@ -188,4 +189,5 @@ Route::group(["prefix" => "admin"], function () {
     Route::get('/technician/delete/{id}', [AdminTechnicianController::class, 'destroy'])->name("admin.technician.destroy");
     Route::post('/technician/status', [AdminTechnicianController::class, 'status'])->name("admin.technician.status");
     Route::get('/technician/fetch/{id?}', [AdminTechnicianController::class, 'fetch'])->name("admin.technician.fetch");
+    Route::post('/technician/rating', [AdminTechnicianController::class, 'rating'])->name("admin.technician.rating");
 });
