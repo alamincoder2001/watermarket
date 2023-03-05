@@ -7067,6 +7067,9 @@ __webpack_require__.r(__webpack_exports__);
       };
       axios.post(location.origin + "/admin/technician/rating", data).then(function (res) {
         $.notify(res.data, "success");
+        setTimeout(function () {
+          location.reload();
+        }, 1000);
       });
     }
   }

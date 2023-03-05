@@ -38,85 +38,94 @@
 <section class="bg-light" style="padding-bottom: 25px;">
     <div class="container">
         <div class="row technicianShow">
-        @if(Auth::guard('web')->check())
+            @if(Auth::guard('web')->check())
             @foreach($technician as $item)
-                @if(Auth::guard('web')->user()->district_id == $item->district_id)
-                    <div class="col-lg-3">
-                        <div class="card" title="{{$item->name}}" style="cursor: pointer;position:relative;">
-                            @if($item->status == 'v')
-                            <span style="position: absolute;right:0;top:0;background: green;color: white;padding: 0px 5px;border-bottom-left-radius: 10px;">{{$item->status == 'v' ? 'Verified' : ''}}</span>
-                            @endif
-                            <div style="display: flex;align-items:center;justify-content:center;padding-top:15px;">
-                                <img style="height: 150px;width:60%;border:1px solid #d1d1d1;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" />
-                            </div>
-                            <div class="card-body">
-                                <ul style="margin-left: 15px;">
-                                    <li class="position-relative">
-                                        <span class="fa fa-user" style="position: absolute;left:-15px;top:0;"></span>
-                                        <span>{{$item->name}}</span>
-                                    </li>
-                                    <li class="position-relative">
-                                        <span class="fa fa-map-marker" style="position: absolute;left:-15px;top:0;"></span>
-                                        <span>{{$item->address}}@if($item->address != null),@endif {{$item->upazila->name}}, {{$item->district->name}}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+            @if(Auth::guard('web')->user()->district_id == $item->district_id)
+            <div class="col-lg-3">
+                <div class="card" title="{{$item->name}}" style="cursor: pointer;position:relative;">
+                    @if($item->status == 'v')
+                    <span style="position: absolute;right:0;top:0;background: green;color: white;padding: 0px 5px;border-bottom-left-radius: 10px;">{{$item->status == 'v' ? 'Verified' : ''}}</span>
+                    @endif
+                    <div style="display: flex;align-items:center;justify-content:center;padding-top:15px;">
+                        <img style="height: 150px;width:60%;border:1px solid #d1d1d1;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" />
                     </div>
-                @endif
-            @endforeach
-            @foreach($technician as $item)
-                @if(Auth::guard('web')->user()->district_id != $item->district_id)
-                    <div class="col-lg-3">
-                        <div class="card" title="{{$item->name}}" style="cursor: pointer;position:relative;">
-                            @if($item->status == 'v')
-                            <span style="position: absolute;right:0;top:0;background: green;color: white;padding: 0px 5px;border-bottom-left-radius: 10px;">{{$item->status == 'v' ? 'Verified' : ''}}</span>
-                            @endif
-                            <div style="display: flex;align-items:center;justify-content:center;padding-top:15px;">
-                                <img style="height: 150px;width:60%;border:1px solid #d1d1d1;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" />
-                            </div>
-                            <div class="card-body">
-                                <ul style="margin-left: 15px;">
-                                    <li class="position-relative">
-                                        <span class="fa fa-user" style="position: absolute;left:-15px;top:0;"></span>
-                                        <span>{{$item->name}}</span>
-                                    </li>
-                                    <li class="position-relative">
-                                        <span class="fa fa-map-marker" style="position: absolute;left:-15px;top:0;"></span>
-                                        <span>{{$item->address}}@if($item->address != null),@endif {{$item->upazila->name}}, {{$item->district->name}}</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            @endforeach
-        @else
-            @foreach($technician as $item)
-                <div class="col-lg-3">
-                    <div class="card" title="{{$item->name}}" style="cursor: pointer;position:relative;">
-                        @if($item->status == 'v')
-                        <span style="position: absolute;right:0;top:0;background: green;color: white;padding: 0px 5px;border-bottom-left-radius: 10px;">{{$item->status == 'v' ? 'Verified' : ''}}</span>
-                        @endif
-                        <div style="display: flex;align-items:center;justify-content:center;padding-top:15px;">
-                            <img style="height: 150px;width:60%;border:1px solid #d1d1d1;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" />
-                        </div>
-                        <div class="card-body">
-                            <ul style="margin-left: 15px;">
-                                <li class="position-relative">
-                                    <span class="fa fa-user" style="position: absolute;left:-15px;top:0;"></span>
-                                    <span>{{$item->name}}</span>
-                                </li>
-                                <li class="position-relative">
-                                    <span class="fa fa-map-marker" style="position: absolute;left:-15px;top:0;"></span>
-                                    <span>{{$item->address}}@if($item->address != null),@endif {{$item->upazila->name}}, {{$item->district->name}}</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="card-body">
+                        <ul style="margin-left: 15px;">
+                            <li class="position-relative">
+                                <span class="fa fa-user" style="position: absolute;left:-15px;top:0;"></span>
+                                <span>{{$item->name}}</span>
+                            </li>
+                            <li class="position-relative">
+                                <span class="fa fa-map-marker" style="position: absolute;left:-15px;top:0;"></span>
+                                <span>{{$item->address}}@if($item->address != null),@endif {{$item->upazila->name}}, {{$item->district->name}}</span>
+                            </li>
+                            <li class="mt-2">
+                                <a href="{{route('technician.details', $item->id)}}" style="background: #2b46a8;padding: 5px;color: white;">Show Details</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            @endforeach           
-        @endif
+            </div>
+            @endif
+            @endforeach
+            @foreach($technician as $item)
+            @if(Auth::guard('web')->user()->district_id != $item->district_id)
+            <div class="col-lg-3">
+                <div class="card" title="{{$item->name}}" style="cursor: pointer;position:relative;">
+                    @if($item->status == 'v')
+                    <span style="position: absolute;right:0;top:0;background: green;color: white;padding: 0px 5px;border-bottom-left-radius: 10px;">{{$item->status == 'v' ? 'Verified' : ''}}</span>
+                    @endif
+                    <div style="display: flex;align-items:center;justify-content:center;padding-top:15px;">
+                        <img style="height: 150px;width:60%;border:1px solid #d1d1d1;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" />
+                    </div>
+                    <div class="card-body">
+                        <ul style="margin-left: 15px;">
+                            <li class="position-relative">
+                                <span class="fa fa-user" style="position: absolute;left:-15px;top:0;"></span>
+                                <span>{{$item->name}}</span>
+                            </li>
+                            <li class="position-relative">
+                                <span class="fa fa-map-marker" style="position: absolute;left:-15px;top:0;"></span>
+                                <span>{{$item->address}}@if($item->address != null),@endif {{$item->upazila->name}}, {{$item->district->name}}</span>
+                            </li>
+                            <li class="mt-2">
+                                <a href="{{route('technician.details', $item->id)}}" style="background: #2b46a8;padding: 5px;color: white;">Show Details</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @endif
+            @endforeach
+            @else
+            @foreach($technician as $item)
+            <div class="col-lg-3">
+                <div class="card" title="{{$item->name}}" style="cursor: pointer;position:relative;">
+                    @if($item->status == 'v')
+                    <span style="position: absolute;right:0;top:0;background: green;color: white;padding: 0px 5px;border-bottom-left-radius: 10px;">{{$item->status == 'v' ? 'Verified' : ''}}</span>
+                    @endif
+                    <div style="display: flex;align-items:center;justify-content:center;padding-top:15px;">
+                        <img style="height: 150px;width:60%;border:1px solid #d1d1d1;" src="{{asset($item->image != null ? $item->image : 'nouser.png')}}" />
+                    </div>
+                    <div class="card-body">
+                        <ul style="margin-left: 15px;">
+                            <li class="position-relative">
+                                <span class="fa fa-user" style="position: absolute;left:-15px;top:0;"></span>
+                                <span>{{$item->name}}</span>
+                            </li>
+                            <li class="position-relative">
+                                <span class="fa fa-map-marker" style="position: absolute;left:-15px;top:0;"></span>
+                                <span>{{$item->address}}@if($item->address != null),@endif {{$item->upazila->name}}, {{$item->district->name}}</span>
+                            </li>
+                            <li class="mt-2">
+                                <a href="{{route('technician.details', $item->id)}}" style="background: #2b46a8;padding: 5px;color: white;">Show Details</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+            @endif
         </div>
     </div>
 </section>
@@ -145,11 +154,11 @@
 
     function filterTechnician(event) {
         event.preventDefault();
-        if($("#district_id").val() == ""){
+        if ($("#district_id").val() == "") {
             $(".error-district_id").text("District select first")
             return
         }
-        if($("#thana_id").val() == ""){
+        if ($("#thana_id").val() == "") {
             $(".error-district_id").text("")
             $(".error-thana_id").text("Upazila select first")
             return
@@ -168,7 +177,7 @@
                 $(".checkoutImage").removeClass("d-none")
             },
             success: res => {
-                if(res.length > 0){
+                if (res.length > 0) {
                     $.each(res, (index, value) => {
                         let row = `<div class="col-lg-3">
                                         <div class="card" title="${value.name}" style="cursor: pointer;">
@@ -189,10 +198,10 @@
                                             </div>
                                         </div>
                                     </div>`;
-    
+
                         $(".technicianShow").append(row)
                     })
-                }else{
+                } else {
                     $(".technicianShow").html(`<div class="text-center">Not Found Data</div>`)
                 }
             },

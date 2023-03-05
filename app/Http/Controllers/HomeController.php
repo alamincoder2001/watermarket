@@ -69,6 +69,12 @@ class HomeController extends Controller
         return view('technician', compact("technician"));
     }
 
+    public function technicianDetails($id)
+    {
+        $technician = Technician::with('district', 'upazila')->find($id);
+        return view('technician-details', compact("technician"));
+    }
+
     public function contact()
     {
         return view('contact');

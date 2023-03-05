@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Technician;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -137,6 +138,20 @@ class CustomerController extends Controller
         try{
             Order::find($request->id)->update(['status' => "cancel"]);
             return "Order cancel successfully";
+        }catch(\Throwable $e){
+            return "Opps! something went wrong";
+        }
+    }
+
+    public function customerRating(Request $request)
+    {
+        try{
+            if(Auth::guard('web')->check()){
+                Technician::find($request->id)->update(['customer_rating' => $request->rating]);
+                return "Rating change successfully";
+            }else{
+                return ["error" => "Login first"];
+            }
         }catch(\Throwable $e){
             return "Opps! something went wrong";
         }

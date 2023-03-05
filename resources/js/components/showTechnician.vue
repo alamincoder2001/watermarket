@@ -131,6 +131,9 @@ export default {
             axios.post(location.origin+"/admin/technician/rating", data)
                 .then(res => {
                     $.notify(res.data, "success")
+                    setTimeout(() => {
+                        location.reload()
+                    }, 1000);
                 })
         }
     },

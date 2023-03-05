@@ -33,7 +33,7 @@
 
 <body style="position: relative;">
     <!-- Section: Design Block -->
-    <h3 class="m-0 text-center mt-5">Welcome To Admin Login Page</h3>
+    <h3 class="m-0 text-center my-5">Welcome To Admin Login Page</h3>
     <section class="text-center text-lg-start position-fixed w-100 d-flex align-items-center justify-content-center">
         <div class="card mb-3 w-50">
             <div class="row g-0 d-flex align-items-center">
@@ -42,7 +42,9 @@
                         <img style="width: 180px;height:60px;" src="{{asset($profile->logo != null ? $profile->logo: 'noImage.jpg')}}" alt="Water Market BD"/>
                     </div>
                     <div>
-                        <h4 class="m-0">{{$profile->company_name}}</h4>
+                        <a href="{{route('website')}}">
+                            <h4 class="m-0">{{$profile->company_name}}</h4>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-7">

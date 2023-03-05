@@ -32,6 +32,7 @@ Route::get('/product', [HomeController::class, 'ProductShow'])->name('product');
 Route::get('/product-single/{slug}', [HomeController::class, 'singleProductShow'])->name('single.product');
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/technician', [HomeController::class, 'technician'])->name('technician');
+Route::get('/technician-details/{id}', [HomeController::class, 'technicianDetails'])->name('technician.details');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 // cart add route
@@ -61,6 +62,7 @@ Route::get("/customer-dashboard", [CustomerController::class, 'index'])->name('c
 Route::post("/customer-update", [CustomerController::class, 'update'])->name('customer.update');
 Route::post("/customer-imageUpdate", [CustomerController::class, 'imageUpdate'])->name('customer.imageUpdate');
 Route::get("/customer-logout", [CustomerController::class, 'logout'])->name('customer.logout');
+Route::post("/customer-rating", [CustomerController::class, 'customerRating'])->name('customer.rating');
 // order edit
 Route::post("/order-edit", [CustomerController::class, 'OrderEdit'])->name('order.edit');
 Route::post("/order-delete", [CustomerController::class, 'OrderDelete'])->name('order.delete');
