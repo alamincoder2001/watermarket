@@ -7669,7 +7669,7 @@ var render = function render() {
     staticClass: "box bg-warning text-center"
   }, [_c("h3", {
     staticClass: "font-light text-white"
-  }, [_vm._v("Today Order")]), _vm._v(" "), _c("h4", {
+  }, [_vm._v("Today's Order")]), _vm._v(" "), _c("h4", {
     staticClass: "text-white"
   }, [_vm._v(_vm._s(_vm.todayOrder))])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-md-4 col-lg-4 col-xlg-4"
@@ -7699,7 +7699,7 @@ var render = function render() {
     staticClass: "box bg-warning text-center"
   }, [_c("h3", {
     staticClass: "font-light text-white"
-  }, [_vm._v(" Today Sold ")]), _vm._v(" "), _c("h4", {
+  }, [_vm._v(" Today's Sale ")]), _vm._v(" "), _c("h4", {
     staticClass: "text-white"
   }, [_vm._v(" " + _vm._s(_vm.totdaySale) + " ")])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-md-4 col-lg-4 col-xlg-4"
@@ -7709,7 +7709,7 @@ var render = function render() {
     staticClass: "box bg-danger text-center"
   }, [_c("h3", {
     staticClass: "font-light text-white"
-  }, [_vm._v(" Monthly Sold ")]), _vm._v(" "), _c("h4", {
+  }, [_vm._v(" Monthly Sale ")]), _vm._v(" "), _c("h4", {
     staticClass: "text-white"
   }, [_vm._v(_vm._s(_vm.monthlySale))])])])]), _vm._v(" "), _c("div", {
     staticClass: "col-md-4 col-lg-4 col-xlg-4"
@@ -7719,7 +7719,7 @@ var render = function render() {
     staticClass: "box bg-info text-center"
   }, [_c("h3", {
     staticClass: "font-light text-white"
-  }, [_vm._v(" Yearly Sold ")]), _vm._v(" "), _c("h4", {
+  }, [_vm._v(" Yearly Sale ")]), _vm._v(" "), _c("h4", {
     staticClass: "text-white"
   }, [_vm._v(" " + _vm._s(_vm.yearlySale) + " ")])])])]), _vm._v(" "), _vm.searchType == "month" ? _c("div", {
     staticClass: "col-12"

@@ -16,6 +16,11 @@
                     <span class="text-danger error error-name"></span>
                 </div>
                 <div class="form-group">
+                    <label for="isWebsite">Is Website</label>
+                    <input type="checkbox" name="isWebsite" id="isWebsite" value="yes">
+                    <span class="text-danger error error-isWebsite"></span>
+                </div>
+                <div class="form-group">
                     <label for="image">Image</label>
                     <input type="file" name="image" autocomplete="off" class="form-control shadow-none" onchange="document.querySelector('.img').src = window.URL.createObjectURL(this.files[0])">
                     <span class="text-danger error error-image"></span>
@@ -43,6 +48,7 @@
                             <th>Sl</th>
                             <th>Category Name</th>
                             <th>Slug</th>
+                            <th>Is Website</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -70,6 +76,9 @@
             },
             {
                 data: 'slug',
+            },
+            {
+                data: 'is_website',
             },
             {
                 data: null,
@@ -129,6 +138,11 @@
                 $.each(res.data, (index, value) => {
                     $("form").find("#" + index).val(value);
                 })
+                if(res.data.is_website == 'true'){
+                    $("form").find("#isWebsite").prop("checked", true)
+                }else{
+                    $("form").find("#isWebsite").prop("checked", false)
+                }
                 if (res.data.image != null) {
                     document.querySelector('.img').src = location.origin + "/" + res.data.image
                 } else {

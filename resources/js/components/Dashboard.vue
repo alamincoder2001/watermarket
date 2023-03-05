@@ -4,7 +4,7 @@
         <div class="col-md-4 col-lg-4 col-xlg-4">
             <div class="card card-hover">
                 <div class="box bg-warning text-center">
-                    <h3 class="font-light text-white">Today Order</h3>
+                    <h3 class="font-light text-white">Today's Order</h3>
                     <h4 class="text-white">{{ todayOrder }}</h4>
                 </div>
             </div>
@@ -31,7 +31,7 @@
         <div class="col-md-4 col-lg-4 col-xlg-4">
             <div class="card card-hover">
                 <div class="box bg-warning text-center">
-                    <h3 class="font-light text-white"> Today Sold </h3>
+                    <h3 class="font-light text-white"> Today's Sale </h3>
                     <h4 class="text-white"> {{ totdaySale }} </h4>
                 </div>
             </div>
@@ -40,7 +40,7 @@
         <div class="col-md-4 col-lg-4 col-xlg-4">
             <div class="card card-hover">
                 <div class="box bg-danger text-center">
-                    <h3 class="font-light text-white"> Monthly Sold </h3>
+                    <h3 class="font-light text-white"> Monthly Sale </h3>
                     <h4 class="text-white">{{ monthlySale }}</h4>
                 </div>
             </div>
@@ -49,7 +49,7 @@
         <div class="col-md-4 col-lg-4 col-xlg-4">
             <div class="card card-hover">
                 <div class="box bg-info text-center">
-                    <h3 class="font-light text-white"> Yearly Sold </h3>
+                    <h3 class="font-light text-white"> Yearly Sale </h3>
                     <h4 class="text-white"> {{ yearlySale }} </h4>
                 </div>
             </div>

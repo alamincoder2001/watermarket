@@ -27,7 +27,8 @@ class HomeController extends Controller
         $categories         = Category::with('product')->orderBy("name", "ASC")->get();
         $brands             = Brand::with('product')->orderBy("name", "ASC")->get();
         $technician         = Technician::where('status', '!=' ,'p')->orderBy('id', "DESC")->get();
-        return view('website', compact("brands", "technician", "categories", "blog", "newarrival_product", "feature_product", "popular_product", "topsold_product", "banner", "slider"));
+        $isWebsiteCategoryProduct = Category::with('subcategory')->where('is_website', 'true')->get();
+        return view('website', compact("isWebsiteCategoryProduct", "brands", "technician", "categories", "blog", "newarrival_product", "feature_product", "popular_product", "topsold_product", "banner", "slider"));
     }
 
     // Product

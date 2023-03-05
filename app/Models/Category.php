@@ -13,7 +13,7 @@ class Category extends Model
 
     public function subcategory()
     {
-        return $this->hasMany(Subcategory::class, 'category_id', 'id');
+        return $this->hasMany(Subcategory::class, 'category_id', 'id')->with('product');
     }
 
     public function product()

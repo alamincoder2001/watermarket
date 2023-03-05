@@ -57,6 +57,7 @@ class CategoryController extends Controller
             }
 
             $data->name = $request->name;
+            $data->is_website = $request->isWebsite == 'yes' ? 'true' : 'false';
             $data->slug = Str::slug($request->name);
             if ($request->hasFile("image")) {
                 if (isset($old) && $old != "") {
