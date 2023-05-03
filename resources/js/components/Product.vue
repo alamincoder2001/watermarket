@@ -16,8 +16,7 @@
                                     </div>
                                 </div>
                                 <div class="row mt-2">
-                                    <label for="brand_id"
-                                        class="col-5 col-lg-4 d-flex align-items-center">Brand:</label>
+                                    <label for="brand_id" class="col-5 col-lg-4 d-flex align-items-center">Brand:</label>
                                     <div class="col-7 col-lg-8">
                                         <v-select :options="brands" name="brand_id" id="brand" v-model="selectedBrand"
                                             label="name"></v-select>
@@ -27,8 +26,8 @@
                                     <label for="category_id"
                                         class="col-5 col-lg-4 d-flex align-items-center">Category:</label>
                                     <div class="col-7 col-lg-8">
-                                        <v-select :options="categories" name="category_id" id="category" v-model="selectedCategory"
-                                            label="name"></v-select>
+                                        <v-select :options="categories" name="category_id" id="category"
+                                            v-model="selectedCategory" label="name"></v-select>
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -72,13 +71,12 @@
                                     </div>
                                 </div>
                                 <div class="row mt-2">
-                                    <label for="wholesale_rate"
-                                        class="col-5 col-lg-4 d-flex align-items-center">Wholesale
+                                    <label for="wholesale_rate" class="col-5 col-lg-4 d-flex align-items-center">Wholesale
                                         Rate:</label>
                                     <div class="col-7 col-lg-8">
-                                        <input type="number" min="0" step="0.01" id="wholesale_rate"
-                                            name="wholesale_rate" class="form-control shadow-none"
-                                            v-model="product.wholesale_rate" autocomplete="off" />
+                                        <input type="number" min="0" step="0.01" id="wholesale_rate" name="wholesale_rate"
+                                            class="form-control shadow-none" v-model="product.wholesale_rate"
+                                            autocomplete="off" />
                                     </div>
                                 </div>
                                 <div class="row mt-2">
@@ -272,7 +270,7 @@ export default {
                 purchase_rate: val.purchase_rate,
                 selling_rate: val.selling_rate,
                 wholesale_rate: val.wholesale_rate,
-                description:val.description
+                description: val.description
             };
             this.selectedBrand = {
                 id: val.brand_id,
@@ -343,15 +341,18 @@ export default {
 </script>
 
 <style>
-#brand [role="combobox"]{
+#brand [role="combobox"] {
     padding: 0 !important;
 }
+
 #category [role="combobox"] {
     padding: 0 !important;
 }
+
 #subcategory [role="combobox"] {
     padding: 0 !important;
 }
+
 #unit [role="combobox"] {
     padding: 0 !important;
 }
